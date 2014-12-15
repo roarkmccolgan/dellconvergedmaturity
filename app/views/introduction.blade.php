@@ -11,7 +11,7 @@
 @section('header')
 <header id="intro">
     <h1>How TechFit<br/> is Your Business?</h1>
-    <h2>Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet.</h2>
+    <h2></h2>
     <a href="{{'quiz/'.Session::get('startSection').'/page1'}}" class="button-big">Take the Quiz Now</a>
 </header>
 @stop

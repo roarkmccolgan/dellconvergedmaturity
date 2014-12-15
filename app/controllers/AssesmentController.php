@@ -15,8 +15,8 @@
             foreach ($this->quiz as $key => $value) {
                 $temp[$key]['display']=isset($value['display']) ? $value['display']:true;
                 $temp[$key]['numpages']=count($value['pages']);
-                $temp[$key]['colour']=$value['colour'];
-                $temp[$key]['complete']=$value['complete'];
+                $temp[$key]['colour']=isset($value['colour']) ? $value['colour']:'orange';
+                $temp[$key]['complete']=isset($value['display']) ? $value['display']:false;
                 $i = 1;
                 foreach ($value['pages'] as $pkey => $page) {
                     $temp[$key]['pages'][$pkey]['done'] = isset($page['done'])? true : false;
@@ -59,6 +59,7 @@
         {
             if($section===false || $page===false) return Redirect::to('/');
             $validate_data = Input::except('_token');
+            
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
             Session::put('questions.'.$section.'.pages.page'.$page.'.done', true);
 

@@ -14,7 +14,7 @@
     
     <h2>{{$heading}}</h2>
     <p>Your results and what it means</p>
-    img
+    <img src="{{{ asset('img/report.png')}}}">
 </header>
 @stop
 
@@ -24,19 +24,29 @@
     <form class="clearfix" id="form-email-report" action="?" method="post">
         <fieldset>
             <div class="row">
-                <label>First Name</label>
-                <input type="text" class="req" value="" name="">
+                <label>First Name*</label>
+                <input type="text" class="req" value="" name="fname">
                 <span>Enter your name</span>
             </div>
             <div class="row">
-                <label>Phone Number</label>
-                <input type="text" class="req" value="" name="">
-                <span>Enter a valid number</span>
+                <label>Surname*</label>
+                <input type="text" class="req" value="" name="sname">
+                <span>Enter your surname</span>
             </div>
             <div class="row">
                 <label>Email Address*</label>
                 <input type="text" class="req email" value="" name="">
                 <span>Enter a valid email address</span>
+            </div>
+            <div class="row">
+                <label>Phone Number</label>
+                <input type="text" value="" name="">
+                <span>Enter a valid number</span>
+            </div>
+            <div class="row">
+                <label>Company website</label>
+                <input type="text" value="" name="">
+                <span>Enter a valid number</span>
             </div>
             <em>* Required</em>
             <div class="terms">
@@ -46,15 +56,12 @@
                 </label>
                 <aside>
                     <h6>Terms &amp; Condtions</h6>
-                    <p>urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh mentum.</p>
+                    <p>Details of terms and condictions to appear here, with a link to full terms and conditions</p>
                 </aside>
             </div>
             <button class="button" type="submit">Email me my report</button>
         </fieldset>
     </form>
-    <pre>
-    {{print_r($quiz)}}
-    </pre>
 </section>
 @stop
 

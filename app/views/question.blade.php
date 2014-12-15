@@ -96,7 +96,7 @@ jQuery(window).on("beforeunload", function(event){
                                 '<div class="repmod">'+
                                     '<h4>'+val+'</h4>'+
                                     '<div class="rep-img">'+
-                                        '<img src="{{$report['image']}}" alt="Report Analysis Graph" width="80" height="80">'+
+                                        '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
                                     '</div>'+
                                     '<div class="rep-text">'+
                                         '{{addslashes($report['text'])}}'+
@@ -128,7 +128,7 @@ jQuery(window).on("beforeunload", function(event){
                                 '<div class="repmod">'+
                                     '<h4>'+val+'</h4>'+
                                     '<div class="rep-img">'+
-                                        '<img src="{{$report['image']}}" alt="Report Analysis Graph" width="80" height="80">'+
+                                        '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
                                     '</div>'+
                                     '<div class="rep-text">'+
                                         '{{addslashes($report['text'])}}'+

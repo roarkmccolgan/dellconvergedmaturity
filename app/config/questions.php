@@ -36,12 +36,6 @@ return array(
                         'type'=>'icon',
                         'question'=>'How big is the company you work for or run?',
                         'name'=>'s2',
-                        'script'=>'
-                            $(\'.info\').click(function(event){
-                                $(window).off(\'beforeunload\');
-                                $("#form-question").submit();
-                            });
-                        ',
                         'options'=>array(
                             array(
                                 'class'=>'ico-few',
@@ -105,7 +99,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'56% of Western European SMBs see IT as making an important contribution to business objectives. Cost reduction is West European SMBs’ top business priority in 2014.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-A1.png'
                 )
             ),
             'page2' => array(
@@ -141,7 +135,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'In IDC\'s 2014 survey, Western European SMBs rated regulatory compliance as their third most critically important business priority in 2014 and IT has a vital role to play',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-A2.png'
                 )
             ),
             'page3' => array(
@@ -171,8 +165,8 @@ return array(
                     )
                 ),
                 'report' => array(
-                    'text'=>'Digitised workflows reduce costs and allow superior retrieval and storage management. IDC surveys of West European SMBs show that only one-quarter of 26% of SMBs do not intend to replace their paper-based systems with document workflow software solutions – the rest either have done already (>40% in the case of accounting documents) or are planning to do so in the near future.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'text'=>'Digitised workflows reduce costs and allow superior retrieval and storage management. IDC surveys of West European SMBs show that only 26% of SMBs do not intend to replace their paper-based systems with document workflow software solutions – the rest either have done already (>40% in the case of accounting documents) or are planning to do so in the near future.',
+                    'image'=>'img/techfit_icons_Q-A3.png'
                 )
             ),
             'page4' => array(
@@ -203,7 +197,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'IDC surveys in Western Europe indicate that the percentage of companies using mobile devices ranges from 78% in healthcare to nearly 95% in telecom/media, where around 24% of employees are issued with a device. The average adoption is 86%. But the cost of these is very much driven by usage. Controlling the cost of these devices is therefore of critical importance.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-A4.png'
                 )
             ),
             'page5' => array(
@@ -211,7 +205,7 @@ return array(
                 'questions' => array(
                     'b5'=>array(
                         'type'=>'button',
-                        'question'=>' Do you document or control who uses office printers and when they use them? [SELECT ONE]',
+                        'question'=>'Do you document or control who uses office printers and when they use them? [SELECT ONE]',
                         'name'=>'b5',
                         'options'=>array(
                             array(
@@ -234,7 +228,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Controlling who can print what, and where, leads to considerable cost-savings, as well as other benefits such as enhanced privacy and security, reducing legal and business risk. IDC research shows that 26% of West European SMBs have printing device usage and reporting facilities in place today, while 24% have implemented printing device security and ID solutions.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-A5.png'
                 )
             )
         )
@@ -272,7 +266,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'In IDC\'s latest West European IT user survey, 93% of IT and security professionals stated that improving security for existing employees and devices was their highest security priority. Amongst SMBs, spending on all aspects of IT security is prioritised, but especially network and endpoint security solutions.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-B1.png'
                 )
             ),
             'page2' => array(
@@ -284,12 +278,12 @@ return array(
                         'name'=>'e2',
                         'options'=>array(
                             array(
-                                'label'=>'Full enforcement',
+                                'label'=>'Yes, all of them',
                                 'value'=>5,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Partial enforcement',
+                                'label'=>'Yes, some of them',
                                 'value'=>3,
                                 'checked'=>false
                             ),
@@ -303,7 +297,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Data loss prevention is a serious and recurring problem for almost all organisations, large and small. Sensitive data protection is the second most important business objective for West European SMBs in terms of mean score and third in terms of share of respondents rating it as important or very important (60% of all respondents). Loss of devices containing personal data that is unencrypted can be seen as a breach of EU data protection law and fines have been imposed.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-B2.png'
                 )
             ),
             'page3' => array(
@@ -321,7 +315,7 @@ return array(
                             ),
                             array(
                                 'label'=>'Currently investigating',
-                                'value'=>3,
+                                'value'=>1,
                                 'checked'=>false
                             ),
                             array(
@@ -333,8 +327,8 @@ return array(
                     )
                 ),
                 'report' => array(
-                    'text'=>'Restricting printing to ‘document owner present’ minimizes sensitive data loss through unauthorised persons reading / copying documents. Loss of data or unauthorised copying and reading of sensitive documents can be a serious business risk and open the door to legal action. Around 30% of European SMBs have such solutions in place today.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'text'=>'Restricting printing to \'document owner present\' minimises sensitive data loss through unauthorised persons reading / copying documents. Loss of data or unauthorised copying and reading of sensitive documents can be a serious business risk and open the door to legal action. Around 30% of European SMBs have such solutions in place today.',
+                    'image'=>'img/techfit_icons_Q-B3.png'
                 )
             ),
             'page4' => array(
@@ -365,7 +359,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Data loss prevention is critical for business reputation and legal compliance (particularly where that information includes personal data about employees or customers). 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, mobile device management.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-B4.png'
                 )
             )
         )
@@ -427,7 +421,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Cloud allows flexibility, scalability, easier remote working, ‘pay-as-you go’ efficiency, etc',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-C1.png'
                 )
             ),
             'page2' => array(
@@ -458,7 +452,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Cloud storage facilitates collaboration, mobile working, and can be more cost-effective. It is also in high demand from end-users and not putting solutions in place leads to increased ‘shadow IT’ as users adopt consumer solutions – leading to increased business risk through lack of control. IDC’s latest survey on this topic in Western Europe showed that around 20% of organisations had implemented a cloud-based file sharing solution – mostly to a restricted set of users – while 37% of organisations were evaluating or planning to deploy such a solution.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-C2.png'
                 )
             ),
             'page3' => array(
@@ -504,7 +498,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'There is still major controversy over controlling access to cloud-stored data, particularly personal data due to conflicting regulatory regimes and rapidly evolving case law – notably the battle between Microsoft and US-based courts over access to data resident in Dublin, and the EU’s re-appraisal of the provisions of the so-called ‘Safe Harbor’ agreement with the US.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-C3.png'
                 )
             ),
             'page4' => array(
@@ -535,7 +529,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Today 39% of European companies allow cloud-printing. While this can increase business risk if not implemented correctly, potential benefits include productivity, flexibility and reduced need for local infrastructure (fewer PCs deployed)',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-C4.png'
                 )
             ),
             'page5' => array(
@@ -552,12 +546,12 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Currently investigating',
+                                'label'=>'Currently re-evaluating',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'No',
+                                'label'=>'We don\'t believe we need to upgrade at this time',
                                 'value'=>1,
                                 'checked'=>false
                             )
@@ -566,7 +560,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'70% of surveyed organisations stated that improving IT security due to Cloud/SaaS was very or extremely important part of strategy over the next 12 months.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-C5.png'
                 )
             )
         )
@@ -585,12 +579,12 @@ return array(
                         'name'=>'m1',
                         'options'=>array(
                             array(
-                                'label'=>'Yes, we provide access to company systems for information, sales tracking, time recording etc.',
+                                'label'=>'Yes, we give them full access to company systems',
                                 'value'=>5,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Yes, we provide/allow access to basic email, calendaring etc.',
+                                'label'=>'Yes, but we limit the use to basic things',
                                 'value'=>3,
                                 'checked'=>false
                             ),
@@ -604,7 +598,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'53% of companies WW have some type of BYOD policy, but only 25% a formal one. Mobile access to corporate email is widespread but other applications is lower.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-D1.png'
                 )
             ),
             'page2' => array(
@@ -616,7 +610,7 @@ return array(
                         'name'=>'m2',
                         'options'=>array(
                             array(
-                                'label'=>'We provide a custom app for customers',
+                                'label'=>'We have an app for customers',
                                 'value'=>5,
                                 'checked'=>false
                             ),
@@ -634,8 +628,8 @@ return array(
                     )
                 ),
                 'report' => array(
-                    'text'=>'25% of have at least launched their first mobile app; 5% have launched more than one. One in four firms plan to deploy mobile apps in tablets; +40% plan to use HTLM5 tools to enable cross-platform applications',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'text'=>'25% of companies have at least launched their first mobile app; 5% have launched more than one. One in four firms plan to deploy mobile apps in tablets; +40% plan to use HTLM5 tools to enable cross-platform applications',
+                    'image'=>'img/techfit_icons_Q-D2.png'
                 )
             ),
             'page3' => array(
@@ -671,7 +665,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Tablets can be a powerful tool for mobile employees (in sales and service), for knowledge workers, and for management wanting better access to reporting etc. The most recent IDC study shows that 62% of companies have evaluated or deployed tablets.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-D3.png'
                 )
             ),
             'page4' => array(
@@ -692,6 +686,7 @@ return array(
                                 'value'=>3,
                                 'checked'=>false
                             ),
+
                             array(
                                 'label'=>'Yes, company laptops only',
                                 'value'=>3,
@@ -707,7 +702,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'This is an increasingly requested requirement from business users. 85% of companies currently allow this [IDC custom study]. There are several options including wireless printing (WiFi); cloud printing; bluetooth enabled printers.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-D4.png'
                 )
             ),
             'page5' => array(
@@ -720,17 +715,17 @@ return array(
                         'options'=>array(
                             array(
                                 'label'=>'Yes, from any device',
-                                'value'=>5,
+                                'value'=>3,
                                 'checked'=>false
                             ),
                             array(
                                 'label'=>'Yes, from company owned devices only',
-                                'value'=>3,
+                                'value'=>5,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Yes, for home printing only',
-                                'value'=>3,
+                                'label'=>'Yes, BYOD and/or company managed devices',
+                                'value'=>5,
                                 'checked'=>false
                             ),
                             array(
@@ -743,7 +738,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Increased efficiency and effectiveness. 68% of organisations allow printing from outside the office',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-D5.png'
                 )
             )
         )
@@ -781,7 +776,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'Use of visualisation tools is now widespread amongst Western European organisations for interactive data exploration and analysis. And for knowledge workers in particular, such tools are a critical success factor in their work.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-E1.png'
                 )
             ),
             'page2' => array(
@@ -789,7 +784,7 @@ return array(
                 'questions' => array(
                     'b2'=>array(
                         'type'=>'button',
-                        'question'=>'With data analysis across the business becoming more important, are you increasing or redesigning your storage? [SELECT ONE]',
+                        'question'=>'With data analysis across the business becoming more important, what is your status regarding cloud-based analytics? [SELECT ONE]',
                         'name'=>'b2',
                         'options'=>array(
                             array(
@@ -798,7 +793,7 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'We have investigated but not yet deployed cloud-based analytics ',
+                                'label'=>'We have investigated but not yet deployed cloud-based analytics',
                                 'value'=>3,
                                 'checked'=>false
                             ),
@@ -811,8 +806,8 @@ return array(
                     )
                 ),
                 'report' => array(
-                    'text'=>'IDC West European survey: 27 % of organisations are investing in storage technologies to keep up with data growth',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'text'=>'IDC West European survey: 27% of organisations are investing in storage technologies to keep up with data growth',
+                    'image'=>'img/techfit_icons_Q-E2.png'
                 )
             ),
             'page3' => array(
@@ -848,7 +843,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'IDC West European survey: 21% of end users in European organisations have access to Big Data, whether via a feed into an existing production system or a Big Data–specific production system.',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-E3.png'
                 )
             ),
             'page4' => array(
@@ -856,7 +851,7 @@ return array(
                 'questions' => array(
                     'b4'=>array(
                         'type'=>'button',
-                        'question'=>'Do you pay attention to social media sentiment relating to your company, and do you have a process to deal with it? [SELECT ONE]',
+                        'question'=>'Do you have a process to deal with social media sentiment? [SELECT ONE]',
                         'name'=>'b4',
                         'options'=>array(
                             array(
@@ -879,7 +874,7 @@ return array(
                 ),
                 'report' => array(
                     'text'=>'IDC West European survey: 15% of organisations use Big Data to analyse or utilize social media information',
-                    'image'=>'https://cdn3.iconfinder.com/data/icons/prettyoffice/128/chart.png'
+                    'image'=>'img/techfit_icons_Q-E4.png'
                 )
             )
         )
