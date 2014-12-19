@@ -83,11 +83,25 @@
         {
             $this->loadQuestions();
             $vars = array(
-                'heading' => "You're mid-table material",
+                'heading' => "You’re PROACTIVE!",
+                'sub1' => "With great TechFitness already, you’re well placed to succeed in this era of tech-led business transformation. However, there are still things you can consider to ensure you stay ahead. ",
                 'colour' => 'orange',
                 'quiz' => $this->quiz
             );
             return View::make('complete',$vars);
+        }
+        public function postComplete()
+        {
+            $this->loadQuestions();
+            $validate_data = Input::except('_token');
+            $vars = array(
+                'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'],
+                'sub1' => "Your download link will be in your inbox soon.<br/><br/>While you’re waiting why not tweet your results and see how your colleagues measure up?",
+                'tweet' => "I just took the %40HP %23TechFitness quiz, and my company is proactive. Why don’t you take it and see how you do? http://bit.ly/1GwpxoI",
+                'colour' => 'orange',
+                'quiz' => $this->quiz
+            );
+            return View::make('thankyou',$vars);
         }
 
         private function endKey($array){

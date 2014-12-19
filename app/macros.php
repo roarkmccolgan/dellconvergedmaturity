@@ -31,7 +31,6 @@ Form::macro('idcIcon', function($section,$q,$page,$num){
 		$sub = isset($optionSet['sub']) ? '<p>'.$optionSet['sub'].'</p>':'';
 		$html.='<button class="info" type="submit" value="'.$optionSet['label'].'" name="answer" id="'.$key.'-'.$name.'">
 			<i class="'.$optionSet['class'].'"></i>
-			<a href="#" class="more">More info</a>
 			<aside'.$padding.'>
 				<h3>'.$optionSet['label'].'</h3>
 				'.$sub.'

@@ -22,4 +22,5 @@ Route::group(array('prefix' => 'quiz'), function()
 	Route::post('{section}/page{pagenum}', array('uses' => 'AssesmentController@savePage'));
 	Route::get('{section}/page{pagenum}', array('uses' => 'AssesmentController@getPage'));
 	Route::get('complete', array('uses' => 'AssesmentController@getComplete'));
+	Route::post('complete', array('uses' => 'AssesmentController@postComplete'));
 });

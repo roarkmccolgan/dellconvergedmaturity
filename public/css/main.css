@@ -177,6 +177,19 @@ a.button-big:hover {
 .light-blue .button-small:hover{
 	background-position: 0 -1568px;
 }
+.button-tweet{
+	display: block;
+	background: url(../img/tweet_bg.png);
+	margin-top: 30px;
+	padding: 22px 10px 10px 63px;
+	width: 207px;
+	height: 110px;
+	color: #222;
+	text-decoration: none;
+}
+.button-tweet:hover{
+	text-decoration: underline;
+}
 .rel{
 	display: block;
 	position: relative;
@@ -207,6 +220,7 @@ a.button-big:hover {
 
 .dark-blue .btn-q, .dark-blue .icheckbox {
 	background-position: 0 -120px;
+	color:#fff;
 }
 .dark-blue .btn-q:hover, .dark-blue .icheckbox:hover, .dark-blue .icheckbox.hover {
 	background-position: 0 -178px;
@@ -214,6 +228,7 @@ a.button-big:hover {
 
 .purple .btn-q, .purple .icheckbox {
 	background-position: 0 -242px;
+	color:#fff;
 }
 .purple .btn-q:hover, .purple .icheckbox:hover {
 	background-position: 0 -300px;
@@ -250,7 +265,16 @@ a.button-big:hover {
 	height: 41px;
 	padding: 8px 0;
 }
-
+.dark-blue .checktext {
+	color: #fff;
+}
+span.instruct {
+    display: block;
+    font-size: 120%;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
 /*
 .button:before {
 	position: absolute;
@@ -275,7 +299,7 @@ a.button-big:hover {
 	margin: 0 auto -32px;
 }
 #container.intro {
-	background: url(../img/outside-960-nocol.png) repeat-y center center;  
+	background-image: none;  
 }
 #footer, .push {
 	height: 32px;
@@ -565,6 +589,10 @@ a.button-big:hover {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
+#page p {
+	margin-bottom: 10px;
+	font-size: 14px;
+}
 
 #page .info {
 	margin-bottom: 14px;
@@ -652,9 +680,9 @@ a.button-big:hover {
 #page .info aside {
 	padding-top: 8px;
 }
-#page .info h3 {
+#page .info aside h3 {
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: normal;
 	margin-bottom: 8px;
 }
 #page .info p {
@@ -794,9 +822,11 @@ a.button-big:hover {
 }
 .dark-blue .repmod h4{
 	background-color: #024886;
+	color: #fff;
 }
 .purple .repmod h4{
 	background-color: #9138bb;
+	color: #fff;
 }
 .green .repmod h4{
 	background-color: #a4d36c;
@@ -815,7 +845,8 @@ a.button-big:hover {
 }
 
 #footer {
-	background: url(../img/outside-960-f.png) repeat-y center center #024886; 
+	background: url(../img/outside-960-f.png) repeat-y center center #024886;
+	background-image: none;
 	line-height: 32px;
 	overflow: hidden;
 }
@@ -837,8 +868,9 @@ a.button-big:hover {
 	font-family: 'AvenirHeavy';
 	line-height: 34px;
 }
-#footer a.hp {
+#footer span.hp {
 	float: right;
+	font-size: 9px;
 	background: url(../img/hp.png) no-repeat right center;
 	line-height: 32px;
 	background-size: 17px 17px;
@@ -856,7 +888,7 @@ a.button-big:hover {
 	}
 
 	#container.intro {
-		background: url(../img/outside-640-nocol.png) repeat-y center top;
+		background-image: none;
 	}
 	
 	#content .wrapper {
@@ -876,7 +908,8 @@ a.button-big:hover {
 	}
 	
 	#footer {
-		background: url(../img/outside-640-f.png) repeat-y center center #024886; 
+		background: url(../img/outside-640-f.png) repeat-y center center #024886;
+		background-image: none;
 	}
 	#footer .wrapper {
 		width: 600px;
@@ -888,6 +921,7 @@ a.button-big:hover {
 	}
 	#container {
 		background: url(../img/outside-320.png) repeat-y center top #242638;
+		background-image: none;
 	}
 	#container .wrapper {
 		background: none;
@@ -899,6 +933,11 @@ a.button-big:hover {
 		float: none;
 		width: 280px;
 		min-height: 1px;
+	}
+	#side h2 small{
+		position: absolute;
+	    right: 0;
+	    top: -88px;
 	}
 	#side .box {
 		margin-bottom: -20px;

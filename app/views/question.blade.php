@@ -61,7 +61,7 @@
 @section('pagescript')
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-1.10.1.min.js')}}"><\/script>')</script>
-
+<script type="text/javascript">var error = false;</script>
 <script src="{{{ asset('js/plugins.js')}}}"></script>
 <script src="{{{ asset('js/main.js')}}}"></script>
 @if ($script)
@@ -117,31 +117,48 @@ jQuery(window).on("beforeunload", function(event){
             var sibling = $(this).prev("fieldset");
             var parentHeight = sibling.css('height');
             var num = $('label.rel').length;
+            var selected = 0;
             if(num>0){
-                var start = 0;
-                $('button.button-small').fadeOut('fast');
-                jQuery.each($('label.rel'), function( i, item ) {
-                    $(item).fadeOut('fast', function() {
-                        start++;
-                        if(num == start){
-                            html = 
-                                '<div class="repmod">'+
-                                    '<h4>'+val+'</h4>'+
-                                    '<div class="rep-img">'+
-                                        '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
-                                    '</div>'+
-                                    '<div class="rep-text">'+
-                                        '{{addslashes($report['text'])}}'+
-                                    '</div>'+
-                                    '<div class="clearfix"></div>'+
-                                '</div>'+
-                                '<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>';
-                            $(html).hide().appendTo(sibling).fadeIn("fast");
-                        }else{
-                            console.log(num+' - '+start);
-                        }
-                    });
+                $(sibling).find('input.chq').each(function( index ) {
+                    if($(this).is(':checked'))  selected ++;
                 });
+                if(selected>0){
+                    $('div.error').fadeOut('fast', function() {
+                        this.remove();
+                    });
+                    var start = 0;
+                    $('button.button-small').fadeOut('fast');
+                    jQuery.each($('label.rel'), function( i, item ) {
+                        $(item).fadeOut('fast', function() {
+                            start++;
+                            if(num == start && selected>0){
+                                html = 
+                                    '<div class="repmod">'+
+                                        '<h4>'+val+'</h4>'+
+                                        '<div class="rep-img">'+
+                                            '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
+                                        '</div>'+
+                                        '<div class="rep-text">'+
+                                            '{{addslashes($report['text'])}}'+
+                                        '</div>'+
+                                        '<div class="clearfix"></div>'+
+                                    '</div>'+
+                                    '<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>';
+                                $(html).hide().appendTo(sibling).fadeIn("fast");
+                            }
+                        });
+                    });
+                }else{
+                    if(error==false){
+                        html = 
+                            '<div class="error" style="padding:0 15px 0 15px;">'+
+                                '<span style="color: #ed2024;">Please answer this question in order to continue.</span>'+
+                            '</div>';
+                        $(html).hide().appendTo(sibling).fadeIn("fast");
+                        error=true;
+                    }
+                    
+                }
             }
         })
     }

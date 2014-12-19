@@ -26,7 +26,7 @@
 		<footer id="footer">
 			<div class="wrapper clearfix">
 				{{link_to('/', 'Restart Quiz',array('class'=>'restart'))}}
-				{{link_to('http://www.hp.com', 'In association with',array('class'=>'hp'))}}
+				<span class="hp">In association with</span>
 			</div>
 		</footer>
 	@yield('pagescript')
