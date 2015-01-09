@@ -51,7 +51,7 @@ Form::macro('idcButton', function($section,$q,$page){
 		<fieldset>';
 	foreach ($q['options'] as $key => $optionSet) {
 		$html.='
-            <button value="'.$optionSet['label'].'" type="submit" class="btn-q" name="answer" id="'.$key.'-'.$name.'">'.$optionSet['label'].'</button>';
+            <button value="'.$optionSet['label'].'|'.$optionSet['value'].'" type="submit" class="btn-q" name="answer" id="'.$key.'-'.$name.'">'.$optionSet['label'].'</button>';
 	}
 	$html.='
 		</fieldset>';
@@ -70,7 +70,7 @@ Form::macro('idcCheckbox', function($section,$q,$page){
 	foreach ($q['options'] as $key => $optionSet) {
 		$html.='
 			<label class="rel">
-				<input class="chq" type="checkbox" name="answer[]" value="'.$optionSet['label'].'" id="'.$key.'-'.$name.'" style="display: none;">
+				<input class="chq" type="checkbox" name="answer[]" value="'.$optionSet['label'].'|'.$optionSet['value'].'" id="'.$key.'-'.$name.'" style="display: none;">
 				<div class="checktext">'.$optionSet['label'].'</div>
 			</label>';
 	}

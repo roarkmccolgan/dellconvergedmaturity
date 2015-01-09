@@ -28,36 +28,36 @@
         Just provide us your name and email  and we’ll send you a link to download it.
     </p>
 
-    <form class="clearfix" id="form-email-report" action="/quiz/complete" method="post">
+    {{ Form::open(array('url' => '/quiz/complete','id'=>'form-email-report','class'=>'clearfix')) }}
         <fieldset>
-            <div class="row">
+            <div class="row{{$errors->has('fname')?' error':''}}">
                 <label>First Name*</label>
                 <input type="text" class="req" value="" name="fname">
                 <span>Enter your name</span>
             </div>
-            <div class="row">
+            <div class="row{{$errors->has('sname')?' error':''}}">
                 <label>Surname*</label>
                 <input type="text" class="req" value="" name="sname">
                 <span>Enter your surname</span>
             </div>
-            <div class="row">
+            <div class="row{{$errors->has('email')?' error':''}}">
                 <label>Email Address*</label>
-                <input type="text" class="req email" value="" name="">
+                <input type="text" class="req email" value="" name="email">
                 <span>Enter a valid email address</span>
             </div>
-            <div class="row">
+            <div class="row{{$errors->has('website')?' error':''}}">
                 <label>Company website*</label>
-                <input type="text" value="" name="" class="req web">
+                <input type="text" value="" name="website" class="req web">
                 <span>Enter a valid website address</span>
             </div>
             <div class="row">
                 <label>Phone Number</label>
-                <input type="text" value="" name="">
+                <input type="text" value="" name="phone">
                 <span>Enter a valid number</span>
             </div>
             <div class="terms">
-                <label class="checkbox">
-                    <input type="checkbox" class="req" name="">
+                <label class="checkbox{{$errors->has('terms')?' error':''}}">
+                    <input type="checkbox" class="req" name="terms">
                     I accept the terms 
                 </label>
                 <aside>
@@ -68,7 +68,7 @@
             <em>* Required</em>
             <button class="button" type="submit">Email me my report</button>
         </fieldset>
-    </form>
+    {{ Form::close() }}
 </section>
 @stop
 

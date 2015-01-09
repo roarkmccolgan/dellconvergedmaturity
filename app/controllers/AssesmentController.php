@@ -6,6 +6,10 @@
         var $numSections = false;
         var $quiz = false;
         var $menu = false;
+        var $baseline = false;
+
+        var $howfit = false;
+
 
         public function loadQuestions(){
             $this->quiz=Session::get('questions');
@@ -82,9 +86,10 @@
         public function getComplete()
         {
             $this->loadQuestions();
+            $this->calcResults();
             $vars = array(
-                'heading' => "You’re PROACTIVE!",
-                'sub1' => "With great TechFitness already, you’re well placed to succeed in this era of tech-led business transformation. However, there are still things you can consider to ensure you stay ahead. ",
+                'heading' => "You’re ".strtoupper($this->howfit['overall']['rating']),
+                'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
                 'colour' => 'orange',
                 'quiz' => $this->quiz
             );
@@ -93,19 +98,93 @@
         public function postComplete()
         {
             $this->loadQuestions();
+            $result=Session::get('result');
+            $baseline = Session::get('baseline');
+
             $validate_data = Input::except('_token');
-            $vars = array(
-                'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'],
-                'sub1' => "Your download link will be in your inbox soon.<br/><br/>While you’re waiting why not tweet your results and see how your colleagues measure up?",
-                'tweet' => "I just took the %40HP %23TechFitness quiz, and my company is proactive. Why don’t you take it and see how you do? http://bit.ly/1GwpxoI",
-                'colour' => 'orange',
-                'quiz' => $this->quiz
+            $rules = array(
+                'fname'=>'required',
+                'sname'=>'required',
+                'email'=>'required',
+                'website'=>'required',
+                'terms'=>'required'
             );
-            return View::make('thankyou',$vars);
+
+            $validator = Validator::make($validate_data, $rules);
+
+            if ($validator->passes()) {
+                Session::put('user', $validate_data);
+
+                Mail::send('emails.download', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname']), function($message)  use ($validate_data){
+
+                    $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject('Your TechFitness report');
+                });
+
+                $vars = array(
+                    'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'],
+                    'sub1' => "Your download link will be in your inbox soon.<br/><br/>While you’re waiting why not tweet your results and see how your colleagues measure up?",
+                    'tweet' => $baseline['overall']['types'][$result['overall']['rating']]['tweet'],
+                    'colour' => 'orange',
+                    'quiz' => $this->quiz
+                );
+                return View::make('thankyou',$vars);
+            }
+            Input::flashExcept('_token');
+            return Redirect::to('quiz/complete')->withErrors($validator);
+        }
+        public function getDownload(){
+            //PDF file is stored under project/public/download/info.pdf
+            $file= public_path(). "/download/PDF_Report_layout_new.pdf";
+            $headers = array(
+                'Content-Type: application/pdf',
+            );
+            return Response::download($file, 'PDF_Report_layout_new.pdf', $headers);
         }
 
-        private function endKey($array){
-            return end($array);
+        private function calcResults(){
+            $this->baseline = Config::get('baseline');
+            $result = array();
+            $result['overall']['score'] = 0;
+
+            foreach ($this->quiz as $key => $value) {
+                if($key!=='screeners'){
+                    foreach ($value['pages'] as $page => $props) {
+                        foreach ($props['questions'] as $q => $details) {
+                            if($q=='c1' && is_array($details['selected'])){
+                                if(count($details['selected'])==1 && strrpos($details['selected'][0], "Unsure")!==false){
+                                    $val = 1;
+                                }elseif(count($details['selected'])==1 || count($details['selected'])==2){
+                                    $val = 3;
+                                }elseif(count($details['selected'])>=3){
+                                    $val = 5;
+                                }
+                            }else{
+                                $val = explode('|', $details['selected']);
+                                $val = $val[1];
+                            }
+                            if (isset($result[$key]['score'])){
+                                $result[$key]['score'] += $val;
+                            } else {
+                                $result[$key]['score'] = $val;
+                            }
+                        }
+                        foreach ($this->baseline[$key]['types'] as $rating => $limits) {
+                            if($result[$key]['score']>=$limits['low'] && $result[$key]['score']<=$limits['high']){
+                                $result[$key]['rating'] = $rating;
+                            }
+                        }
+                    }
+                    $result['overall']['score'] += $result[$key]['score'];
+                    foreach ($this->baseline['overall']['types'] as $rating => $limits) {
+                        if($result['overall']['score']>=$limits['low'] && $result['overall']['score']<=$limits['high']){
+                            $result['overall']['rating'] = $rating;
+                        }
+                    }
+                }
+            }
+            Session::put('result', $result);
+            Session::put('baseline', $this->baseline);
+            $this->howfit = $result;
         }
  
     }

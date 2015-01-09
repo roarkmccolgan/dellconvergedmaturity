@@ -82,6 +82,7 @@ jQuery(window).on("beforeunload", function(event){
     if($('button.btn-q').length){
         $('button.btn-q').click(function(e){
             e.preventDefault();
+            var title = $(this).text();
             var val = $(this).val();
             var parent = $(this).parent("fieldset");
             var parentHeight = parent.css('height');
@@ -94,7 +95,7 @@ jQuery(window).on("beforeunload", function(event){
                         if(num == start){
                             html = 
                                 '<div class="repmod">'+
-                                    '<h4>'+val+'</h4>'+
+                                    '<h4>'+title+'</h4>'+
                                     '<div class="rep-img">'+
                                         '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
                                     '</div>'+
@@ -113,7 +114,7 @@ jQuery(window).on("beforeunload", function(event){
     }else if($('label.rel').length){
         $('button.button-small').click(function(e){
             e.preventDefault();
-            var val = 'Cloud Services';
+            var title = 'Cloud Services';
             var sibling = $(this).prev("fieldset");
             var parentHeight = sibling.css('height');
             var num = $('label.rel').length;
@@ -134,7 +135,7 @@ jQuery(window).on("beforeunload", function(event){
                             if(num == start && selected>0){
                                 html = 
                                     '<div class="repmod">'+
-                                        '<h4>'+val+'</h4>'+
+                                        '<h4>'+title+'</h4>'+
                                         '<div class="rep-img">'+
                                             '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
                                         '</div>'+
@@ -143,7 +144,7 @@ jQuery(window).on("beforeunload", function(event){
                                         '</div>'+
                                         '<div class="clearfix"></div>'+
                                     '</div>'+
-                                    '<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>';
+                                    '<button class="button-small" type="submit">Next</button>';
                                 $(html).hide().appendTo(sibling).fadeIn("fast");
                             }
                         });

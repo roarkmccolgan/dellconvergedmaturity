@@ -21,7 +21,7 @@
 <section id="page" class="{{$colour}}">
     <h2 class="title">Tweet about TechFitness</h2>
     <a class="button-tweet" href="http://twitter.com/home/?status={{$tweet}}" target="_blank">{{rawurldecode($tweet)}}</a>
-    <div style="float: right"><em>Click to tweet!</em></div>
+    <div style="float: right"><em><a href="http://twitter.com/home/?status={{$tweet}}" target="_blank" style="color: #fff">Click to tweet!</a></em></div>
 </section>
 @stop
 

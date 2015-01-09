@@ -15,8 +15,8 @@ return array(
 	*/
 
 	'mailgun' => array(
-		'domain' => '',
-		'secret' => '',
+		'domain' => 'techfitquiz.com',
+		'secret' => 'key-d9c8b89c95c8dd123d995a83857b8aa0',
 	),
 
 	'mandrill' => array(
