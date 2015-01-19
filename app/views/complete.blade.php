@@ -62,7 +62,10 @@
                 </label>
                 <aside>
                     <h6>Terms &amp; Condtions*</h6>
-                    <p>Details of terms and condictions to appear here, with a link to full terms and conditions</p>
+                    <p>
+                    	By registering with IDC, you accept our <a href="{{'privacy'}}" target="_blank">Privacy Policy</a> and <a href="{{'http://www8.hp.com/uk/en/privacy/privacy.html'}}" target="_blank">HP Privacy Policy</a>
+                        The information we collect will be shared with HP (and possibly other partners) for the purpose of direct marketing
+                    </p>
                 </aside>
             </div>
             <em>* Required</em>

@@ -16,6 +16,10 @@ Route::get('/', array('before'=>'reload', function()
 	return View::make('introduction',array('class'=>'intro'));
 }));
 
+Route::get('email', function()
+{
+	return View::make('emails.download',array('fname'=>'Roark', 'sname'=>'McColgan'));
+});
 Route::group(array('prefix' => 'quiz'), function()
 {
 	//Route::get('/', array('as'=> 'introduction', 'uses' => 'PageController@showIntro'));
@@ -24,4 +28,8 @@ Route::group(array('prefix' => 'quiz'), function()
 	Route::get('complete', array('uses' => 'AssesmentController@getComplete'));
 	Route::post('complete', array('uses' => 'AssesmentController@postComplete'));
 	Route::get('download', array('uses' => 'AssesmentController@getDownload'));
+	Route::get('privacy', function()
+	{
+		return View::make('legal.privacy');
+	});
 });

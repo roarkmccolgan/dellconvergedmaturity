@@ -22,8 +22,7 @@
 				<div class="content">
 					<table bgcolor="#174a85">
 					<tr>
-						<td><img src="{{asset('img/hp.png')}}" /></td>
-						<td align="right"><h6 class="collapse">Your Tech Fit Report</h6></td>
+						<td align="right"><h6>in association with</h6></td>
 					</tr>
 				</table>
 				</div>
@@ -44,8 +43,8 @@
 			<table>
 				<tr>
 					<td>
-						<img src="{{asset('img/email_img.jpg')}}" />
-						<h3>Hi {{$fname.' '.$sname}}</h3>
+						<img src="{{asset('img/email_img.jpg')}}" width="100%" /><br/><br/>
+						<h3>Hi {{$fname}},</h3>
 						<p class="lead">
 							As promised, here’s the link to download your TechFitness report. This breaks down your performance by category and helps you benchmark yourself against other organisations operating within EMEA.
 						</p>
@@ -53,12 +52,12 @@
 						
 						<!-- Callout Panel -->
 						<p class="callout">
-							<a href="http://178.62.2.214/quiz/download">Download it Now! &raquo;</a>
+							<a href="http://178.62.2.214/quiz/download">Download it Now!</a>
 						</p><!-- /Callout Panel -->
 						
 						<!--h3>Title Ipsum <small>This is a note.</small></h3-->
 						<p>
-							Also, once you’ve digested the report why not visit <a href="hp.com/go/businessready">HP Business Ready</a> to keep up to date on the latest business technology thinking. For examples, here is a selection of articles that may be of interest:
+							Also, once you’ve digested the report why not visit <a href="http://hp.com/go/businessready">HP Business Ready</a> to keep up to date on the latest business technology thinking. For examples, here is a selection of articles that may be of interest:
 						</p>
 						<!--a class="btn">Click Me!</a-->
 												
@@ -158,9 +157,7 @@
 				<tr>
 					<td align="center">
 						<p>
-							<a href="#">Terms</a> |
-							<a href="#">Privacy</a> |
-							<a href="#"><unsubscribe>Unsubscribe</unsubscribe></a>
+                        	<a href="#">View in Browser</a>
 						</p>
 					</td>
 				</tr>
