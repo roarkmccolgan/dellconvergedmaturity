@@ -167,7 +167,7 @@ return [
     | Leave it blank to use the default fonts of TCPDF.
     */
 
-    'fonts_directory'             => '',
+    'fonts_directory'             => 'fonts',
 
     /*
     |--------------------------------------------------------------------------
