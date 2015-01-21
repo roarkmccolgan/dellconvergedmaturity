@@ -229,7 +229,7 @@
             $this->report->SetY($this->report->GetY()+2);
             //$this->report->cell(120,0, 'report took '.$execution_time.'seconds to generate');
 			$this->report->SetDisplayMode('fullpage'); 		
-            $this->report->Output('/vagrant/hptechquiz/public/download/'.$this->userid.'_'.str_replace(" ", "_", Session::get('user.fname')).'_'.str_replace(" ", "_", Session::get('user.sname')).'_Tech_Fitness_Report.pdf','F');
+            $this->report->Output(public_path().'/download/'.$this->userid.'_'.str_replace(" ", "_", Session::get('user.fname')).'_'.str_replace(" ", "_", Session::get('user.sname')).'_Tech_Fitness_Report.pdf','F');
         }
  
     }
