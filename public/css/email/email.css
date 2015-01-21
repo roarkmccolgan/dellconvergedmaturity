@@ -51,15 +51,15 @@ a { color: #2BA6CB;}
 	background: url(/img/buttons.png);
 	position: relative;
 	font-size: 14px;
-	font-family: 'Avenir';
+	font-family: 'Avenir', arial;
 	color: #242638;
 	outline: 0 none;
 	margin: 0;
 	padding: 12px 0 0 6px;
 	border: 0;
 	overflow: visible;
-	width: 112px;
-	height: 31px;
+	width: 112px !important;
+	height: 31px !important;
 	background-position: 0 -1061px;
 	text-align: left;
 	margin-bottom: 1em;
@@ -98,32 +98,11 @@ table.social {
 	background-color: #ebebeb;
 	
 }
-.social .soc-btn {
-	padding: 3px 7px;
-	font-size:12px;
-	margin-bottom:10px;
-	text-decoration:none;
-	color: #FFF;font-weight:bold;
-	display:block;
-	text-align:center;
-}
-a.fb { background-color: #3B5998!important; }
-a.tw { background-color: #1daced!important; }
-a.gp { background-color: #DB4A39!important; }
-a.ms { background-color: #000!important; }
-
-.sidebar .soc-btn { 
-	display:block;
-	width:100%;
-}
 
 /* ------------------------------------- 
 		HEADER 
 ------------------------------------- */
 table.head-wrap { width: 100%; color: #fff; font-size: 12px;}
-
-.header.container table td.logo { padding: 15px; }
-.header.container table td.label { padding: 15px; padding-left:0px;}
 
 
 /* ------------------------------------- 
@@ -167,7 +146,7 @@ p, ul {
 	font-weight: normal; 
 	font-size:14px; 
 	line-height:1.2;
-	font-family: 'Avenir', Arial, "Lucida Grande", sans-serif;
+	font-family: 'Avenir', Arial, 'Lucida Grande', sans-serif;
 }
 p.lead { font-size:15px; }
 p.last { margin-bottom:0px;}
@@ -176,33 +155,6 @@ ul li {
 	margin-left:5px;
 	list-style-position: inside;
 }
-
-/* ------------------------------------- 
-		SIDEBAR 
-------------------------------------- */
-ul.sidebar {
-	background:#ebebeb;
-	display:block;
-	list-style-type: none;
-}
-ul.sidebar li { display: block; margin:0;}
-ul.sidebar li a {
-	text-decoration:none;
-	color: #666;
-	padding:10px 16px;
-/* 	font-weight:bold; */
-	margin-right:10px;
-/* 	text-align:center; */
-	cursor:pointer;
-	border-bottom: 1px solid #777777;
-	border-top: 1px solid #FFFFFF;
-	display:block;
-	margin:0;
-}
-ul.sidebar li a.last { border-bottom-width:0px;}
-ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.sidebar li a h5,ul.sidebar li a h6,ul.sidebar li a p { margin-bottom:0!important;}
-
-
 
 /* --------------------------------------------------- 
 		RESPONSIVENESS

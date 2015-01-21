@@ -16,9 +16,22 @@ Route::get('/', array('before'=>'reload', function()
 	return View::make('introduction',array('class'=>'intro'));
 }));
 
-Route::get('email', function()
+Route::get('email/{userid}', function()
 {
-	return View::make('emails.download',array('fname'=>'Roark', 'sname'=>'McColgan'));
+	$user = User::find($userid);
+	if(is_null($user)){
+		return Redirect::to('/');
+	}else{
+		return View::make('emails.download',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+	}
+});
+Route::get('cookies', function()
+{
+	return View::make('legal.cookies');
+});
+Route::get('privacy', function()
+{
+	return View::make('legal.privacy');
 });
 Route::group(array('prefix' => 'quiz'), function()
 {
@@ -27,9 +40,5 @@ Route::group(array('prefix' => 'quiz'), function()
 	Route::get('{section}/page{pagenum}', array('uses' => 'AssesmentController@getPage'));
 	Route::get('complete', array('uses' => 'AssesmentController@getComplete'));
 	Route::post('complete', array('uses' => 'AssesmentController@postComplete'));
-	Route::get('download', array('uses' => 'AssesmentController@getDownload'));
-	Route::get('privacy', function()
-	{
-		return View::make('legal.privacy');
-	});
+	Route::get('download/{userid}', array('uses' => 'AssesmentController@getDownload'));
 });

@@ -758,10 +758,10 @@ return array(
             'page1' => array(
                 'title' => 'Big Data Analytics',
                 'questions' => array(
-                    'b1'=>array(
+                    'd1'=>array(
                         'type'=>'button',
                         'question'=>'Do you give your employees visualisation tools to fully explore data and create reports? <span class="instruct">SELECT ONE</span>',
-                        'name'=>'b1',
+                        'name'=>'d1',
                         'options'=>array(
                             array(
                                 'label'=>'Yes',
@@ -789,10 +789,10 @@ return array(
             'page2' => array(
                 'title' => 'Big Data Analytics',
                 'questions' => array(
-                    'b2'=>array(
+                    'd2'=>array(
                         'type'=>'button',
                         'question'=>'With data analysis across the business becoming more important, what is your status regarding cloud-based analytics? <span class="instruct">SELECT ONE</span>',
-                        'name'=>'b2',
+                        'name'=>'d2',
                         'options'=>array(
                             array(
                                 'label'=>'We are using a cloud-based analytics service',
@@ -820,10 +820,10 @@ return array(
             'page3' => array(
                 'title' => 'Big Data Analytics',
                 'questions' => array(
-                    'b3'=>array(
+                    'd3'=>array(
                         'type'=>'button',
                         'question'=>'Do you currently use Big Data technologies in your business? <span class="instruct">SELECT ONE</span>',
-                        'name'=>'b3',
+                        'name'=>'d3',
                         'options'=>array(
                             array(
                                 'label'=>'We are currently using big data technologies in our business',
@@ -856,10 +856,10 @@ return array(
             'page4' => array(
                 'title' => 'Big Data Analytics',
                 'questions' => array(
-                    'b4'=>array(
+                    'd4'=>array(
                         'type'=>'button',
                         'question'=>'Do you have a process to deal with social media sentiment? <span class="instruct">SELECT ONE</span>',
-                        'name'=>'b4',
+                        'name'=>'d4',
                         'options'=>array(
                             array(
                                 'label'=>'Yes',

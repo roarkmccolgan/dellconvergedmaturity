@@ -14,7 +14,7 @@
     
     <h2>{{$heading}}</h2>
     <p>{{$sub1}}</p>
-    <img src="{{{ asset('img/report.png')}}}">
+    <img src="{{{ asset('img/report.png')}}}" alt="Get your report sent to your inbox">
 </header>
 @stop
 
@@ -64,7 +64,7 @@
                     <h6>Terms &amp; Condtions*</h6>
                     <p>
                     	By registering with IDC, you accept our <a href="{{'privacy'}}" target="_blank">Privacy Policy</a> and <a href="{{'http://www8.hp.com/uk/en/privacy/privacy.html'}}" target="_blank">HP Privacy Policy</a>
-                        The information we collect will be shared with HP (and possibly other partners) for the purpose of direct marketing
+                        The information we collect will be shared with HP for the purpose of direct marketing
                     </p>
                 </aside>
             </div>

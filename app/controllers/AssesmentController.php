@@ -7,8 +7,9 @@
         var $quiz = false;
         var $menu = false;
         var $baseline = false;
-
+		var $userid;
         var $howfit = false;
+		var $report;
 
 
         public function loadQuestions(){
@@ -98,8 +99,8 @@
         public function postComplete()
         {
             $this->loadQuestions();
-            $result=Session::get('result');
-            $baseline = Session::get('baseline');
+            $this->howfit=Session::get('result');
+            $this->baseline = Session::get('baseline');
 
             $validate_data = Input::except('_token');
             $rules = array(
@@ -114,38 +115,60 @@
 
             if ($validator->passes()) {
                 Session::put('user', $validate_data);
+				
+				//save in db
+				$user = new User;
+				$user->fname = $validate_data['fname'];
+				$user->lname = $validate_data['sname'];
+				$user->email = $validate_data['email'];
+				$user->website = $validate_data['website'];
+				$user->tel = $validate_data['phone'];
+				$user->quiz = json_encode($this->quiz);
+				$user->result = json_encode($this->howfit);
+				
+				$user->save();
+				$this->userid = $user->id;
+				$validate_data['userid'] = $user->id;
+				
+				//generate report
+				$this->generateReport();
+				
+				//
+				
+				//send mail
+                Mail::send('emails.download', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
 
-                Mail::send('emails.download', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname']), function($message)  use ($validate_data){
-
-                    $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject('Your TechFitness report');
+                    $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject('Your Tech Fitness Report');
                 });
-
-                $vars = array(
+				
+				$vars = array(
                     'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'],
                     'sub1' => "Your download link will be in your inbox soon.<br/><br/>While you’re waiting why not tweet your results and see how your colleagues measure up?",
-                    'tweet' => $baseline['overall']['types'][$result['overall']['rating']]['tweet'],
+                    'tweet' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['tweet'],
                     'colour' => 'orange',
                     'quiz' => $this->quiz
                 );
+				
                 return View::make('thankyou',$vars);
             }
             Input::flashExcept('_token');
             return Redirect::to('quiz/complete')->withErrors($validator);
         }
-        public function getDownload(){
+        public function getDownload($userid){
             //PDF file is stored under project/public/download/info.pdf
-            $file= public_path(). "/download/PDF_Report_layout_new.pdf";
+			$user = User::find($userid);
+            $file= public_path(). '/download/'.$user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Tech_Fitness_Report.pdf';
             $headers = array(
                 'Content-Type: application/pdf',
             );
-            return Response::download($file, 'PDF_Report_layout_new.pdf', $headers);
+            return Response::download($file, $user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Tech_Fitness_Report.pdf', $headers);
         }
 
         private function calcResults(){
             $this->baseline = Config::get('baseline');
             $result = array();
             $result['overall']['score'] = 0;
-
+		
             foreach ($this->quiz as $key => $value) {
                 if($key!=='screeners'){
                     foreach ($value['pages'] as $page => $props) {
@@ -182,9 +205,31 @@
                     }
                 }
             }
+			
             Session::put('result', $result);
             Session::put('baseline', $this->baseline);
-            $this->howfit = $result;
+			$this->howfit = $result;
+            
+        }
+		
+		private function generateReport(){
+			$this->baseline = Config::get('baseline');
+            $this->report = new Pdf;
+			
+			$time_start = microtime(true);
+
+            $this->report->SetTitle('Your Tech Fitness Report');
+            $this->report->AddPage();
+			$this->report->intro($this->howfit,$this->baseline,$this->quiz);
+            //$this->pdf->SetFont(K_PATH_FONTS.'Latinotype - Arquitecta.otf');
+            //$this->pdf->mainGraph($this->guest_name,$this->guest_company,$this->intent_score,$this->data_score,$this->tech_score,$this->people_score,$this->process_score,$this->overall_score);
+            
+            $time_end = microtime(true);
+            $execution_time = round($time_end - $time_start,2);
+            $this->report->SetY($this->report->GetY()+2);
+            //$this->report->cell(120,0, 'report took '.$execution_time.'seconds to generate');
+			$this->report->SetDisplayMode('fullpage'); 		
+            $this->report->Output('/vagrant/hptechquiz/public/download/'.$this->userid.'_'.str_replace(" ", "_", Session::get('user.fname')).'_'.str_replace(" ", "_", Session::get('user.sname')).'_Tech_Fitness_Report.pdf','F');
         }
  
     }

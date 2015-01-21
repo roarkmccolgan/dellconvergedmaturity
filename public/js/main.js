@@ -2,7 +2,7 @@
    Author: XHTMLmaster.com
    ========================================================================== */
 $(function() {
-	
+	$.cookieBar();
 	$('label.checkbox').click(function(){
 		if($('input:checked', this).length) {
 			$(this).addClass('checked');

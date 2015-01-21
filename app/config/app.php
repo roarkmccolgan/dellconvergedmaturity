@@ -124,6 +124,8 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Maxxscho\LaravelTcpdf\LaravelTcpdfServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider',
+		
 	),
 
 	/*
