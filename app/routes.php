@@ -16,10 +16,10 @@ Route::get('/', array('before'=>'reload', function()
 	return View::make('introduction',array('class'=>'intro'));
 }));
 
-Route::get('email/{userid}', function()
+Route::get('email/{userid}', function($userid)
 {
 	$user = User::find($userid);
-	if(is_null($user)){
+	if(is_null($userid) || is_null($user)){
 		return Redirect::to('/');
 	}else{
 		return View::make('emails.download',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
