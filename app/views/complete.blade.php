@@ -47,7 +47,7 @@
             </div>
             <div class="row{{$errors->has('website')?' error':''}}">
                 <label>Company website*</label>
-                <input type="url" value="" name="website" class="req web" autocapitalize="off">
+                <input type="text" value="" name="website" class="req web" autocapitalize="off">
                 <span>Enter a valid website address</span>
             </div>
             <div class="row">
