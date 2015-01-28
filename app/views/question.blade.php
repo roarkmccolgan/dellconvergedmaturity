@@ -121,8 +121,7 @@ jQuery(window).on("beforeunload", function(event){
 							$('div.repwrap').show();
 							//set original height for later
 							var repheight = $('div.repmod').height();
-							var headheight = $('div.repmod').find('h4').outerHeight(true);
-							console.log(headheight);
+							var headheight = $('div.repmod').find('h4').height();
 							$(parent).css({height: repheight+70 });
 							//set heigh to size of title
 							$('div.repmod').height(headheight);
@@ -205,9 +204,10 @@ jQuery(window).on("beforeunload", function(event){
 								$('div.repwrap').show();
 								//set original height for later
 								var repheight = $('div.repmod').height();
-								$(parent).css({height: repheight+70 });
+								var headheight = $('div.repmod').find('h4').height();
+								$(sibling).css({height: repheight+70 });
 								//set heigh to size of title
-								$('div.repmod').height(48);
+								$('div.repmod').height(headheight);
 								//hide again
 								$('div.repwrap').hide();
 								//move bak into view
