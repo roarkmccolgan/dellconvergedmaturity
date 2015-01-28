@@ -87,12 +87,12 @@ a.button, a.button-big{
 	overflow: visible;
 	width: 229px;
 	height: 41px;
-	background-position: 0 -1736px;
+	background-position: 0 -1686px;
 	text-align: left;
 	margin-bottom: 1em;
 }
 .button:hover {
-	background-position: 0 -1793px;
+	background-position: 0 -1743px;
 }
 .button.disabled,
 .button[disabled="disabled"] {
@@ -113,7 +113,7 @@ a.button-big {
 	overflow: visible;
 	width: 257px;
 	height: 42px;
-	background-position: 0 -957px;
+	background-position: 0 -907px;
 	text-align: left;
 	margin-bottom: 1em;
 	-webkit-border-radius: 9px;
@@ -124,7 +124,7 @@ a.button-big {
 	box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.5);
 }
 a.button-big:hover {
-	background-position: 0 -1032px;
+	background-position: 0 -982px;
 	color: #e7b056;
 }
 
@@ -141,44 +141,44 @@ a.button-big:hover {
 	overflow: visible;
 	width: 112px;
 	height: 43px;
-	background-position: 0 -1111px;
+	background-position: 0 -1061px;
 	text-align: left;
 	margin-bottom: 1em;
 }
 .button-small:hover {
-	background-position: 0 -1163px;
+	background-position: 0 -1113px;
 }
 .orange .button-small{
-	background-position: 0 -1111px;
+	background-position: 0 -1061px;
 }
 .orange .button-small:hover{
-	background-position: 0 -1163px;
+	background-position: 0 -1113px;
 }
 .dark-blue .button-small{
-	background-position: 0 -1224px;
+	background-position: 0 -1174px;
 	color: #FFF;
 }
 .dark-blue .button-small:hover{
-	background-position: 0 -1277px;
+	background-position: 0 -1227px;
 }
 .purple .button-small{
-	background-position: 0 -1337px;
+	background-position: 0 -1287px;
 	color: #FFF;
 }
 .purple .button-small:hover{
-	background-position: 0 -1390px;
+	background-position: 0 -1340px;
 }
 .green .button-small{
-	background-position: 0 -1451px;
+	background-position: 0 -1401px;
 }
 .green .button-small:hover{
-	background-position: 0 -1503px;
+	background-position: 0 -1453px;
 }
 .light-blue .button-small{
-	background-position: 0 -1566px;
+	background-position: 0 -1516px;
 }
 .light-blue .button-small:hover{
-	background-position: 0 -1618px;
+	background-position: 0 -1568px;
 }
 .button-tweet{
 	display: block;
@@ -186,7 +186,7 @@ a.button-big:hover {
 	font-weight: 400;
 	text-align:center;
 	background: url(../img/buttons.png);
-	background-position: 0 -1843px;
+	background-position: 0 -1793px;
 	width: 264px;
 	height: 49px;
 	overflow: hidden;
@@ -197,7 +197,7 @@ a.button-big:hover {
 	padding-left: 18px;
 }
 .button-tweet:hover{
-	background-position: 0 -1901px;
+	background-position: 0 -1851px;
 }
 .rel{
 	display: block;
@@ -224,41 +224,41 @@ a.button-big:hover {
 	overflow: hidden;
 }
 .orange .btn-q, .orange .icheckbox, .dark-blue .icheckbox.checked {
-	background-position: 0 -50px;
+	background-position: 0 0px;
 }
 .orange .btn-q:hover,
 .btn-q:hover, .orange .icheckbox:hover, .orange .icheckbox.hover, .dark-blue .icheckbox.checked.hover {
-	background-position: 0 -108px;
+	background-position: 0 -58px;
 }
 
 .dark-blue .btn-q, .dark-blue .icheckbox {
-	background-position: 0 -170px;
+	background-position: 0 -120px;
 	color:#fff;
 }
 .dark-blue .btn-q:hover, .dark-blue .icheckbox:hover, .dark-blue .icheckbox.hover {
-	background-position: 0 -228px;
+	background-position: 0 -178px;
 }
 
 .purple .btn-q, .purple .icheckbox {
-	background-position: 0 -292px;
+	background-position: 0 -242px;
 	color:#fff;
 }
 .purple .btn-q:hover, .purple .icheckbox:hover {
-	background-position: 0 -350px;
+	background-position: 0 -300px;
 }
 
 .green .btn-q, .green .icheckbox {
-	background-position: 0 -414px;
+	background-position: 0 -364px;
 }
 .green .btn-q:hover, .green .icheckbox {
-	background-position: 0 -471px;
+	background-position: 0 -421px;
 }
 
 .light-blue .btn-q, .light-blue .icheckbox {
-	background-position: 0 -535px;
+	background-position: 0 -485px;
 }
 .light-blue .btn-q:hover, .light-blue .icheckbox:hover {
-	background-position: 0 -592px;
+	background-position: 0 -542px;
 }
 .icheckbox, .checktext {
 	position: absolute;
