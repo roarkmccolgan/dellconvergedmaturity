@@ -54,11 +54,11 @@ nav ul {
 
 a {
 	color: #e7b056;
-	-webkit-transition: all .2s ease-in-out;	
+	/*-webkit-transition: all .2s ease-in-out;	
 	-moz-transition: all .2s ease-in-out;	
 	-o-transition: all .2s ease-in-out;	
 	-ms-transition: all .2s ease-in-out;	
-	transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;*/
 }
 a.button, a.button-big{
 	-webkit-transition: none;
@@ -87,12 +87,12 @@ a.button, a.button-big{
 	overflow: visible;
 	width: 229px;
 	height: 41px;
-	background-position: 0 -1686px;
+	background-position: 0 -1736px;
 	text-align: left;
 	margin-bottom: 1em;
 }
 .button:hover {
-	background-position: 0 -1743px;
+	background-position: 0 -1793px;
 }
 .button.disabled,
 .button[disabled="disabled"] {
@@ -113,7 +113,7 @@ a.button-big {
 	overflow: visible;
 	width: 257px;
 	height: 42px;
-	background-position: 0 -907px;
+	background-position: 0 -957px;
 	text-align: left;
 	margin-bottom: 1em;
 	-webkit-border-radius: 9px;
@@ -124,7 +124,7 @@ a.button-big {
 	box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.5);
 }
 a.button-big:hover {
-	background-position: 0 -982px;
+	background-position: 0 -1032px;
 	color: #e7b056;
 }
 
@@ -141,57 +141,63 @@ a.button-big:hover {
 	overflow: visible;
 	width: 112px;
 	height: 43px;
-	background-position: 0 -1061px;
+	background-position: 0 -1111px;
 	text-align: left;
 	margin-bottom: 1em;
 }
 .button-small:hover {
-	background-position: 0 -1113px;
+	background-position: 0 -1163px;
 }
 .orange .button-small{
-	background-position: 0 -1061px;
+	background-position: 0 -1111px;
 }
 .orange .button-small:hover{
-	background-position: 0 -1113px;
+	background-position: 0 -1163px;
 }
 .dark-blue .button-small{
-	background-position: 0 -1174px;
+	background-position: 0 -1224px;
 	color: #FFF;
 }
 .dark-blue .button-small:hover{
-	background-position: 0 -1227px;
+	background-position: 0 -1277px;
 }
 .purple .button-small{
-	background-position: 0 -1287px;
+	background-position: 0 -1337px;
 	color: #FFF;
 }
 .purple .button-small:hover{
-	background-position: 0 -1340px;
+	background-position: 0 -1390px;
 }
 .green .button-small{
-	background-position: 0 -1401px;
+	background-position: 0 -1451px;
 }
 .green .button-small:hover{
-	background-position: 0 -1453px;
+	background-position: 0 -1503px;
 }
 .light-blue .button-small{
-	background-position: 0 -1516px;
+	background-position: 0 -1566px;
 }
 .light-blue .button-small:hover{
-	background-position: 0 -1568px;
+	background-position: 0 -1618px;
 }
 .button-tweet{
 	display: block;
-	background: url(../img/tweet_bg.png);
-	margin-top: 30px;
-	padding: 22px 10px 10px 63px;
-	width: 207px;
-	height: 110px;
+	font-family: 'AvenirHeavy', arial;
+	font-weight: 400;
+	text-align:center;
+	background: url(../img/buttons.png);
+	background-position: 0 -1843px;
+	width: 264px;
+	height: 49px;
+	overflow: hidden;
 	color: #222;
 	text-decoration: none;
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 18px;
 }
 .button-tweet:hover{
-	text-decoration: underline;
+	background-position: 0 -1901px;
 }
 .rel{
 	display: block;
@@ -218,41 +224,41 @@ a.button-big:hover {
 	overflow: hidden;
 }
 .orange .btn-q, .orange .icheckbox, .dark-blue .icheckbox.checked {
-	background-position: 0 0;
+	background-position: 0 -50px;
 }
 .orange .btn-q:hover,
 .btn-q:hover, .orange .icheckbox:hover, .orange .icheckbox.hover, .dark-blue .icheckbox.checked.hover {
-	background-position: 0 -58px;
+	background-position: 0 -108px;
 }
 
 .dark-blue .btn-q, .dark-blue .icheckbox {
-	background-position: 0 -120px;
+	background-position: 0 -170px;
 	color:#fff;
 }
 .dark-blue .btn-q:hover, .dark-blue .icheckbox:hover, .dark-blue .icheckbox.hover {
-	background-position: 0 -178px;
+	background-position: 0 -228px;
 }
 
 .purple .btn-q, .purple .icheckbox {
-	background-position: 0 -242px;
+	background-position: 0 -292px;
 	color:#fff;
 }
 .purple .btn-q:hover, .purple .icheckbox:hover {
-	background-position: 0 -300px;
+	background-position: 0 -350px;
 }
 
 .green .btn-q, .green .icheckbox {
-	background-position: 0 -364px;
+	background-position: 0 -414px;
 }
 .green .btn-q:hover, .green .icheckbox {
-	background-position: 0 -421px;
+	background-position: 0 -471px;
 }
 
 .light-blue .btn-q, .light-blue .icheckbox {
-	background-position: 0 -485px;
+	background-position: 0 -535px;
 }
 .light-blue .btn-q:hover, .light-blue .icheckbox:hover {
-	background-position: 0 -542px;
+	background-position: 0 -592px;
 }
 .icheckbox, .checktext {
 	position: absolute;
@@ -575,7 +581,7 @@ span.instruct {
 	top: 70px;
 }
 #page h2 {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 1.5em;
 	margin-bottom: 2em;
 	padding-top: 16px;
@@ -583,7 +589,7 @@ span.instruct {
 }
 #page h2.title {
 	font-family: 'Avenir';	
-	font-size: 18px;
+	font-size: 16px;
 	padding-top: 14px;
 	margin-bottom: 0.5em;
 }
@@ -691,9 +697,14 @@ span.instruct {
 	padding-top: 8px;
 }
 #page .info aside h3 {
+	position: relative;
+	padding:0;
 	font-size: 15px;
 	font-weight: normal;
 	margin-bottom: 8px;
+	display: table-cell;
+	vertical-align: middle;
+	height: 60px;
 }
 #page .info p {
 	font-size: 10px;
@@ -708,7 +719,7 @@ span.instruct {
 	font-size: 12px;
 	margin-bottom: 8px;
 }
-#page .row input {
+#page .row input, #page .row select {
 	background: #fff;
 	border: solid 2px #e7b056;
 	font: 12px Arial, Helvetica, sans-serif;
@@ -717,6 +728,11 @@ span.instruct {
 	padding: 10px;
 	width: 256px;
 }
+
+#page .row select {
+	width: 279px;
+}
+
 #page .row span {
 	background: #ed2024;
 	position: absolute;
@@ -727,11 +743,14 @@ span.instruct {
 	font-size: 12px;
 	display: none;
 }
-#page .error input {
+#page .error input, #page .error select {
 	background-image: url(../img/warning.png);
 	background-position: 99% center;
 	background-repeat: no-repeat;
 	border-color: #ed2024;
+}
+#page .error select {
+	background-position: 90% center;
 }
 #page .error span {
 	display: block;
@@ -771,7 +790,9 @@ span.instruct {
 	font-size: 9px;
 	line-height: 1.4em;
 }
-
+.question fieldset{
+	position: relative;	
+}
 #page form .checkbox {
 	font-size: 12px;
 	color: #fff;
@@ -815,6 +836,7 @@ span.instruct {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .repmod h4{
@@ -822,13 +844,17 @@ span.instruct {
 	font-weight: bold;
 	font-family: Arial, sans-serif;
 	color: #222;
-	padding: 15px 10px;
+	padding: 0px 4px;
+	width: 282px;
+	height: 49px;
 	background-color: #e7b056;
 	text-align: center;
 	margin-bottom: 5px;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
 	border-radius: 10px 10px 0 0;
+	display: table-cell;
+	vertical-align: middle;
 }
 .dark-blue .repmod h4{
 	background-color: #024886;
@@ -933,6 +959,9 @@ span.instruct {
 		background: url(../img/outside-320.png) repeat-y center top #242638;
 		background-image: none;
 	}
+	#container.intro {
+		background-color: transparent;
+	}
 	#container .wrapper {
 		background: none;
 	}
@@ -943,6 +972,9 @@ span.instruct {
 		float: none;
 		width: 280px;
 		min-height: 1px;
+	}
+	#intro {
+		padding-left: 20px;
 	}
 	#side h2 small{
 		position: absolute;

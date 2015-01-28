@@ -69,6 +69,9 @@ function validate(form){
 		if ($(this).hasClass('email') && reg.test($(this).val()) == false) {
 			$(this).closest('.row').addClass('error');
 			flag = 0;
+		} else if ($(this).hasClass('sel') && $(this).find(":selected").text()=='Please select') {
+			$(this).closest('.row').addClass('error');
+			flag = 0;
 		} else {
 			if ($.trim($(this).val())=="") {
 				$(this).closest('.row').addClass('error');

@@ -107,7 +107,8 @@
                 'fname'=>'required',
                 'sname'=>'required',
                 'email'=>'required',
-                'website'=>'required',
+                'company'=>'required',
+				'country'=>'required',
                 'terms'=>'required'
             );
 
@@ -121,7 +122,7 @@
 				$user->fname = $validate_data['fname'];
 				$user->lname = $validate_data['sname'];
 				$user->email = $validate_data['email'];
-				$user->website = $validate_data['website'];
+				$user->company = $validate_data['company'];
 				$user->tel = $validate_data['phone'];
 				$user->quiz = json_encode($this->quiz);
 				$user->result = json_encode($this->howfit);
@@ -142,8 +143,8 @@
                 });
 				
 				$vars = array(
-                    'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'],
-                    'sub1' => "Your download link will be in your inbox soon.<br/><br/>While you’re waiting why not tweet your results and see how your colleagues measure up?",
+                    'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'].",",
+                    'sub1' => "Your download link will be in your inbox soon.",
                     'tweet' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['tweet'],
                     'colour' => 'orange',
                     'quiz' => $this->quiz

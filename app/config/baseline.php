@@ -91,7 +91,7 @@ return array(
             'Reactive' => array(
                 'low' => 0,
                 'high' => 48,
-                'copy' => 'Okay, your TechFitness could be better – but it’s a long race. Taking this quiz is good first step. The second step is to digest our free report. The third step is up to you!',
+                'copy' => 'Okay, your TechFitness could be better – but it\'s a long race. Taking this quiz is a good first step. The second step is to digest our free report. The third step is up to you!',
                 'tweet' => 'I took the @HP TechFitness quiz and it’s shown me where I can get tech fitter. Quiz covers Security, Mobility and more. Interested?'
             ),
             'Moderate' => array(

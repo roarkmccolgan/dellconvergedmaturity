@@ -19,9 +19,8 @@
 
 @section('main')
 <section id="page" class="{{$colour}}">
-    <h2 class="title">Tweet about TechFitness</h2>
-    <a class="button-tweet" href="http://twitter.com/home/?status={{$tweet}}" target="_blank">{{rawurldecode($tweet)}}</a>
-    <div style="float: right"><em><a href="http://twitter.com/home/?status={{$tweet}}" target="_blank" style="color: #fff">Click to tweet!</a></em></div>
+    <h2 class="title">While you're waiting why not tweet your results and see how your colleagues measure up?</h2>
+    <a class="button-tweet" href="http://twitter.com/home/?status={{$tweet}}" target="_blank">Tweet</a>
 </section>
 @stop
 

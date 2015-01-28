@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+		"doctrine/dbal": "~2.3",
 		"cartalyst/sentry": "2.1.*",
 		"maxxscho/laravel-tcpdf": "0.*",
 		"maatwebsite/excel": "1.*",

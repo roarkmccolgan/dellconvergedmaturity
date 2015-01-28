@@ -34,7 +34,7 @@
 <section id="page" class="{{$colour}}">
     @foreach ($questions as $question)
     <h2>{{$question['question']}}</h2>
-    {{ Form::open(array('url' => 'quiz/'.$section.'/page'.$page,'id'=>'form-question','class'=>'clearfix')) }}
+    {{ Form::open(array('url' => 'quiz/'.$section.'/page'.$page,'id'=>'form-question','class'=>'clearfix question')) }}
     {{ Form::errors($errors) }}
         {{Form::hidden('section', $section);}}
         {{Form::hidden('page', $page);}}
@@ -84,6 +84,7 @@ jQuery(window).on("beforeunload", function(event){
             e.preventDefault();
             var title = $(this).text();
             var val = $(this).val();
+			var pos = $(this).position();
             var parent = $(this).parent("fieldset");
             var parentHeight = parent.css('height');
             var num = $('button.btn-q').length;
@@ -93,19 +94,60 @@ jQuery(window).on("beforeunload", function(event){
                     $(item).fadeOut('fast', function() {
                         start++;
                         if(num == start){
-                            html = 
-                                '<div class="repmod">'+
-                                    '<h4>'+title+'</h4>'+
-                                    '<div class="rep-img">'+
-                                        '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
-                                    '</div>'+
-                                    '<div class="rep-text">'+
-                                        '{{addslashes($report['text'])}}'+
-                                    '</div>'+
-                                    '<div class="clearfix"></div>'+
-                                '</div>'+
-                                '<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>';
-                            $(html).hide().appendTo(parent).fadeIn("fast");
+                            html = '<div class="repwrap">'+
+										'<div class="repmod">'+
+											'<h4>'+title+'</h4>'+
+											'<div class="rep-img">'+
+												'<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
+											'</div>'+
+											'<div class="rep-text">'+
+												'{{addslashes($report['text'])}}'+
+											'</div>'+
+											'<div class="clearfix"></div>'+
+										'</div>'+
+										'<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>'+
+									'</div>';
+							$(html).hide().appendTo(parent);
+							
+							//hide next buttton
+							$('div.repwrap').find('button.button-small').hide();
+							
+							//move out of view
+							$('div.repwrap').css({
+									position : "absolute",
+									top : pos.top,
+									left: -90000
+							});
+							$('div.repwrap').show();
+							//set original height for later
+							var repheight = $('div.repmod').height();
+							var headheight = $('div.repmod').find('h4').outerHeight(true);
+							console.log(headheight);
+							$(parent).css({height: repheight+70 });
+							//set heigh to size of title
+							$('div.repmod').height(headheight);
+							//hide again
+							$('div.repwrap').hide();
+							//move bak into view
+							$('div.repwrap').css({
+									left: 0
+							});
+								
+							$('div.repwrap').fadeIn("fast",function(){
+								if(pos.top!=0){
+									$('div.repwrap').animate({
+										top: 0
+									}, 'slow', function() {
+										$('div.repmod').animate({ height: repheight },400,function(){
+											$('div.repwrap').find('button.button-small').fadeIn("fast");
+										});
+									});
+								}else{
+									$('div.repmod').animate({ height: repheight },400,function(){
+										$('div.repwrap').find('button.button-small').fadeIn("fast");
+									});
+								}
+							});
                         }
                     });
                 });
@@ -116,6 +158,7 @@ jQuery(window).on("beforeunload", function(event){
             e.preventDefault();
             var title = 'Cloud Services';
             var sibling = $(this).prev("fieldset");
+			var pos = $(sibling).position();
             var parentHeight = sibling.css('height');
             var num = $('label.rel').length;
             var selected = 0;
@@ -134,18 +177,59 @@ jQuery(window).on("beforeunload", function(event){
                             start++;
                             if(num == start && selected>0){
                                 html = 
-                                    '<div class="repmod">'+
-                                        '<h4>'+title+'</h4>'+
-                                        '<div class="rep-img">'+
-                                            '<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
-                                        '</div>'+
-                                        '<div class="rep-text">'+
-                                            '{{addslashes($report['text'])}}'+
-                                        '</div>'+
-                                        '<div class="clearfix"></div>'+
-                                    '</div>'+
-                                    '<button class="button-small" type="submit">Next</button>';
-                                $(html).hide().appendTo(sibling).fadeIn("fast");
+									'<div class="repwrap">'+
+										'<div class="repmod">'+
+											'<h4>'+title+'</h4>'+
+											'<div class="rep-img">'+
+												'<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
+											'</div>'+
+											'<div class="rep-text">'+
+												'{{addslashes($report['text'])}}'+
+											'</div>'+
+											'<div class="clearfix"></div>'+
+										'</div>'+
+                                    	'<button class="button-small" type="submit">Next</button>'+
+									'</div>';
+								
+								$(html).hide().appendTo(sibling);
+							
+								//hide next buttton
+								$('div.repwrap').find('button.button-small').hide();
+								
+								//move out of view
+								$('div.repwrap').css({
+										position : "absolute",
+										top : pos.top,
+										left: -90000
+								});
+								$('div.repwrap').show();
+								//set original height for later
+								var repheight = $('div.repmod').height();
+								$(parent).css({height: repheight+70 });
+								//set heigh to size of title
+								$('div.repmod').height(48);
+								//hide again
+								$('div.repwrap').hide();
+								//move bak into view
+								$('div.repwrap').css({
+										left: 0
+								});
+									
+								$('div.repwrap').fadeIn("fast",function(){
+									if(pos.top!=0){
+										$('div.repwrap').animate({
+											top: 0
+										}, 'slow', function() {
+											$('div.repmod').animate({ height: repheight },400,function(){
+												$('div.repwrap').find('button.button-small').fadeIn("fast");
+											});
+										});
+									}else{
+										$('div.repmod').animate({ height: repheight },400,function(){
+											$('div.repwrap').find('button.button-small').fadeIn("fast");
+										});
+									}
+								});
                             }
                         });
                     });

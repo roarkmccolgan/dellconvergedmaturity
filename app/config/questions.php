@@ -10,7 +10,7 @@ return array(
                 'questions' => array(
                     's1'=>array(
                         'type'=>'icon',
-                        'question'=>'Which of these best describes your role within your company? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Which of these best describes your role within your company?',
                         'name'=>'s1',
                         'options'=>array(
                             array(
@@ -34,7 +34,7 @@ return array(
                 'questions' => array(
                     's2'=>array(
                         'type'=>'icon',
-                        'question'=>'How big is the company you work for or run? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'How big is the company you work for or run?',
                         'name'=>'s2',
                         'options'=>array(
                             array(
@@ -71,7 +71,7 @@ return array(
                 'questions' => array(
                     'b1'=>array(
                         'type'=>'button',
-                        'question'=>'How important is IT when it comes to your business goals, especially improving business performance and reducing operating costs? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'How important is IT when it comes to your business goals, especially improving business performance and reducing operating costs?',
                         'name'=>'b1',
                         'options'=>array(
                             array(
@@ -107,7 +107,7 @@ return array(
                 'questions' => array(
                     'b2'=>array(
                         'type'=>'button',
-                        'question'=>'How important is IT for you in achieving legal and regulatory compliance? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'How important is IT for you in achieving legal and regulatory compliance?',
                         'name'=>'b2',
                         'options'=>array(
                             array(
@@ -143,7 +143,7 @@ return array(
                 'questions' => array(
                     'b3'=>array(
                         'type'=>'button',
-                        'question'=>'Have you replaced, or are you planning to replace, key paper documents with digital alternatives? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Have you replaced, or are you planning to replace, key paper documents with digital alternatives?',
                         'name'=>'b3',
                         'options'=>array(
                             array(
@@ -174,7 +174,7 @@ return array(
                 'questions' => array(
                     'b4'=>array(
                         'type'=>'button',
-                        'question'=>'Do you use a wireless telecoms expense management solution to track the cost and use of company mobile devices? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you use a wireless telecoms expense management solution to track the cost and use of company mobile devices?',
                         'name'=>'b4',
                         'options'=>array(
                             array(
@@ -205,7 +205,7 @@ return array(
                 'questions' => array(
                     'b5'=>array(
                         'type'=>'button',
-                        'question'=>'Do you document or control who uses office printers and when they use them? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you document or control who uses office printers and when they use them?',
                         'name'=>'b5',
                         'options'=>array(
                             array(
@@ -243,7 +243,7 @@ return array(
                 'questions' => array(
                     'e1'=>array(
                         'type'=>'button',
-                        'question'=>'Are you upgrading your current IT security to adapt to changing or emerging threats? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Are you upgrading your current IT security to adapt to changing or emerging threats?',
                         'name'=>'e1',
                         'options'=>array(
                             array(
@@ -274,7 +274,7 @@ return array(
                 'questions' => array(
                     'e2'=>array(
                         'type'=>'button',
-                        'question'=>'Do you make sure that all mobile devices used in your company – including laptops and memory sticks – are all data encrypted? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you make sure that all mobile devices used in your company – including laptops and memory sticks – are all data encrypted?',
                         'name'=>'e2',
                         'options'=>array(
                             array(
@@ -305,7 +305,7 @@ return array(
                 'questions' => array(
                     'e3'=>array(
                         'type'=>'button',
-                        'question'=>'Are you able to restrict printing to times when the document owner is present? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Are you able to restrict printing to times when the document owner is present?',
                         'name'=>'e3',
                         'options'=>array(
                             array(
@@ -336,7 +336,7 @@ return array(
                 'questions' => array(
                     'e4'=>array(
                         'type'=>'button',
-                        'question'=>'Can you remotely disable or erase mobile devices if they are lost/stolen/misused etc? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Can you remotely disable or erase mobile devices if they are lost/stolen/misused etc?',
                         'name'=>'e4',
                         'options'=>array(
                             array(
@@ -436,7 +436,7 @@ return array(
                 'questions' => array(
                     'c2'=>array(
                         'type'=>'button',
-                        'question'=>'Are you using Cloud “sync-and-share” storage services? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Are you using Cloud “sync-and-share” storage services?',
                         'name'=>'c2',
                         'options'=>array(
                             array(
@@ -467,7 +467,7 @@ return array(
                 'questions' => array(
                     'c3'=>array(
                         'type'=>'button',
-                        'question'=>'Do you know where your Cloud data is stored and can you control that location? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you know where your Cloud data is stored and can you control that location?',
                         'name'=>'c3',
                         'options'=>array(
                             array(
@@ -513,7 +513,7 @@ return array(
                 'questions' => array(
                     'c4'=>array(
                         'type'=>'button',
-                        'question'=>'Can your users print using the Cloud? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Can your users print using the Cloud?',
                         'name'=>'c4',
                         'options'=>array(
                             array(
@@ -544,7 +544,7 @@ return array(
                 'questions' => array(
                     'c5'=>array(
                         'type'=>'button',
-                        'question'=>'Has using the Cloud changed your IT security strategy? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Has using the Cloud changed your IT security strategy?',
                         'name'=>'c5',
                         'options'=>array(
                             array(
@@ -582,7 +582,7 @@ return array(
                 'questions' => array(
                     'm1'=>array(
                         'type'=>'button',
-                        'question'=>'Do you let employees use their own devices for work (“BYOD”)? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you let employees use their own devices for work (“BYOD”)?',
                         'name'=>'m1',
                         'options'=>array(
                             array(
@@ -613,7 +613,7 @@ return array(
                 'questions' => array(
                     'm2'=>array(
                         'type'=>'button',
-                        'question'=>'Do you create apps for your company’s customers to access your products and services? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you create apps for your company’s customers to access your products and services?',
                         'name'=>'m2',
                         'options'=>array(
                             array(
@@ -644,7 +644,7 @@ return array(
                 'questions' => array(
                     'm3'=>array(
                         'type'=>'button',
-                        'question'=>'Do you support the use of tablet devices in your business? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you support the use of tablet devices in your business?',
                         'name'=>'m3',
                         'options'=>array(
                             array(
@@ -680,7 +680,7 @@ return array(
                 'questions' => array(
                     'm4'=>array(
                         'type'=>'button',
-                        'question'=>'Does your company provide the capability for staff to print directly from their mobile devices? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Does your company provide the capability for staff to print directly from their mobile devices?',
                         'name'=>'m4',
                         'options'=>array(
                             array(
@@ -717,7 +717,7 @@ return array(
                 'questions' => array(
                     'm5'=>array(
                         'type'=>'button',
-                        'question'=>'Does your company let staff print from outside the office from laptops or other mobile devices? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Does your company let staff print from outside the office from laptops or other mobile devices?',
                         'name'=>'m5',
                         'options'=>array(
                             array(
@@ -760,7 +760,7 @@ return array(
                 'questions' => array(
                     'd1'=>array(
                         'type'=>'button',
-                        'question'=>'Do you give your employees visualisation tools to fully explore data and create reports? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you give your employees visualisation tools to fully explore data and create reports?',
                         'name'=>'d1',
                         'options'=>array(
                             array(
@@ -791,7 +791,7 @@ return array(
                 'questions' => array(
                     'd2'=>array(
                         'type'=>'button',
-                        'question'=>'With data analysis across the business becoming more important, what is your status regarding cloud-based analytics? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'With data analysis across the business becoming more important, what is your status regarding cloud-based analytics?',
                         'name'=>'d2',
                         'options'=>array(
                             array(
@@ -822,7 +822,7 @@ return array(
                 'questions' => array(
                     'd3'=>array(
                         'type'=>'button',
-                        'question'=>'Do you currently use Big Data technologies in your business? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you currently use Big Data technologies in your business?',
                         'name'=>'d3',
                         'options'=>array(
                             array(
@@ -858,7 +858,7 @@ return array(
                 'questions' => array(
                     'd4'=>array(
                         'type'=>'button',
-                        'question'=>'Do you have a process to deal with social media sentiment? <span class="instruct">SELECT ONE</span>',
+                        'question'=>'Do you have a process to deal with social media sentiment?',
                         'name'=>'d4',
                         'options'=>array(
                             array(

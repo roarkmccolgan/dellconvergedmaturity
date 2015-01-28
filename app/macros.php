@@ -26,12 +26,10 @@ Form::macro('idcIcon', function($section,$q,$page,$num){
 	$class = '';
 
 	foreach ($q['options'] as $key => $optionSet) {
-		$len = strlen($optionSet['label']);
-		$padding = $len<=15 ? ' style="padding-top:8px"':($len>15 && $len<=30 ? ' style="padding-top:4px"':($len>30 ? ' style="padding-top:0px"':''));
 		$sub = isset($optionSet['sub']) ? '<p>'.$optionSet['sub'].'</p>':'';
 		$html.='<button class="info" type="submit" value="'.$optionSet['label'].'" name="answer" id="'.$key.'-'.$name.'">
 			<i class="'.$optionSet['class'].'"></i>
-			<aside'.$padding.'>
+			<aside>
 				<h3>'.$optionSet['label'].'</h3>
 				'.$sub.'
 			</aside>
