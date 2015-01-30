@@ -6,8 +6,6 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Your TechFitness report</title>
-	
-<link rel="stylesheet" href="{{asset('css/email/email.css')}}" />
 
 </head>
 <style>
@@ -86,7 +84,7 @@ ul li {
             <div class="content" style="padding:0px;max-width:600px;margin:0 auto;display:block;">
                 <table bgcolor="#174a85" style="width: 100%;margin:0; padding:0;">
                 <tr>
-                    <td align="right" style="margin:0; padding:0;"><h6 style="margin:0; padding:0;font-weight:900; font-size: 12px; color:#FFF; font-weight: normal; line-height: 30px; margin-bottom: 0; background: url({{ URL::asset('img/hp_email.png')}}) no-repeat 100% 50%; padding-right: 30px;">in association with</h6></td>
+                    <td align="right" style="margin:0; padding:0;"><h6 style="margin:0; padding:0; font-family: 'Avenir', Arial, 'Lucida Grande', sans-serif; line-height: 1.1;font-weight:900; font-size: 12px; color:#FFF; font-weight: normal; line-height: 30px; margin-bottom: 0; background: url(../../img/hp_email.png) no-repeat 100% 50%; padding-right: 30px;">in association with</h6></td>
                 </tr>
             </table>
             </div>
@@ -112,7 +110,7 @@ ul li {
 						
 						<!-- Callout Panel -->
 						<p class="callout" style="margin:15px auto; width: 316px;">
-							<a href="{{ URL::asset('quiz/download/'.$userid) }}" style="display: block;background: url({{ URL::asset('img/email_download.jpg')}});position: relative;font-size: 22px;font-family: arial;color: #242638;display: block;text-decoration: none;margin: 0;padding: 135px 0 0 41px;border: 0;overflow: visible;width: 275px;height: 60px;text-align: left;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;">Download now</a>
+							<a href="{{ URL::asset('quiz/download/'.$userid) }}" style="display: block;background: url({{ URL::asset('img/email_download.jpg')}});position: relative;font-size: 22px;font-family: arial;color: #242638;display: block;text-decoration: none;margin: 0;padding: 135px 0 0 41px;border: 0;overflow: visible;width: 275px;height: 60px;text-align: left;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px; text-indent:-9999px; overflow:hidden">Download now</a>
 						</p><!-- /Callout Panel -->
 						
 						<!--h3>Title Ipsum <small>This is a note.</small></h3-->
@@ -136,7 +134,7 @@ ul li {
 												<p class="" style="margin:0; margin-bottom: 10px; font-weight: normal; font-size:14px; line-height:1.2; font-family: 'Avenir', Arial, 'Lucida Grande', sans-serif;padding:0; height: 55px;">
 													Is your printer putting sensitive data at risk? Top 10 dangers of staying on Windows XP 
 												</p>
-												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Is-your-printer-putting-sensitive-data-at-risk/ba-p/89690#.VI7r8FesV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/buttons.png')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 12px 0 0 6px;border: 0;overflow: visible;width: 112px !important;height: 31px !important;background-position: 0 840px;text-align: left;margin-bottom: 1em;">Click here</a>
+												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Is-your-printer-putting-sensitive-data-at-risk/ba-p/89690#.VI7r8FesV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/email_click.jpg')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 0px;border: 0;overflow: visible;width: 150px;height: 53px;text-align: left;margin-bottom: 1em; text-indent:-9999px;overflow:hidden">Click here</a>
 											</td>
 										</tr>
 									</table><!-- /column 1 -->	
@@ -149,13 +147,11 @@ ul li {
 												<p class="" style="margin:0; margin-bottom: 10px; font-weight: normal; font-size:14px; line-height:1.2; font-family: 'Avenir', Arial, 'Lucida Grande', sans-serif;padding:0; height: 55px;">
 													Enterprise cloud computing myths debunked
 												</p>
-												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Top-10-dangers-of-staying-on-Windows-XP/ba-p/92718#.VI7tFVesV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/buttons.png')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 12px 0 0 6px;border: 0;overflow: visible;width: 112px;height: 31px;background-position: 0 840px;text-align: left;margin-bottom: 1em;">Click here</a>
+												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Top-10-dangers-of-staying-on-Windows-XP/ba-p/92718#.VI7tFVesV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/email_click.jpg')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 0px;border: 0;overflow: visible;width: 150px;height: 53px;text-align: left;margin-bottom: 1em; text-indent:-9999px;overflow:hidden">Click here</a>
 											</td>
 										</tr>
 									</table><!-- /column 2 -->
-									
 									<span class="clear"></span>	
-									
 								</td>
 							</tr>
 							<tr>
@@ -170,7 +166,7 @@ ul li {
 													A guide to hot desking BYOD printing: the things to consider
 
 												</p>
-												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Enterprise-cloud-computing-myths-debunked/ba-p/91496#.VI7tc1esV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/buttons.png')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 12px 0 0 6px;border: 0;overflow: visible;width: 112px;height: 31px;background-position: 0 840px;text-align: left;margin-bottom: 1em;">Click here</a>
+												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Enterprise-cloud-computing-myths-debunked/ba-p/91496#.VI7tc1esV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/email_click.jpg')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 0px;border: 0;overflow: visible;width: 150px;height: 53px;text-align: left;margin-bottom: 1em; text-indent:-9999px;overflow:hidden">Click here</a>
 											</td>
 										</tr>
 									</table><!-- /column 1 -->	
@@ -183,7 +179,7 @@ ul li {
 												<p class="" style="margin:0; margin-bottom: 10px; font-weight: normal; font-size:14px; line-height:1.2; font-family: 'Avenir', Arial, 'Lucida Grande', sans-serif;padding:0; height: 55px;">
 													5 ways your small business could benefit from big data
 												</p>
-												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/5-ways-your-small-business-can-benefit-from-big-data/ba-p/92118#.VI7uqVesV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/buttons.png')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 12px 0 0 6px;border: 0;overflow: visible;width: 112px;height: 31px;background-position: 0 840px;text-align: left;margin-bottom: 1em;">Click here</a>
+												<a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/5-ways-your-small-business-can-benefit-from-big-data/ba-p/92118#.VI7uqVesV7c" class="btn" style="display: block;text-decoration: none;background: url({{asset('img/email_click.jpg')}});position: relative;font-size: 14px;font-family: 'Avenir', Arial, 'Lucida Grande';color: #242638;outline: 0 none;margin: 0;padding: 0px;border: 0;overflow: visible;width: 150px;height: 53px;text-align: left;margin-bottom: 1em; text-indent:-9999px;overflow:hidden">Click here</a>
 											</td>
 										</tr>
 									</table><!-- /column 2 -->
@@ -206,23 +202,10 @@ ul li {
 <!-- FOOTER -->
 <table class="footer-wrap" style="width: 100%;	clear:both!important;margin:0; padding:0; border-collapse:collapse;">
 	<tr>
-		<td></td>
-		<td class="container" style="margin:0; padding:0;">
-			
-				<!-- content -->
-				<div class="content">
-				<table>
-				<tr>
-					<td align="center" style="margin:0; padding:5px;">
-						
-                        	<a href="{{url('/email', array($userid))}}">View in Browser</a>
-					</td>
-				</tr>
-			</table>
-				</div><!-- /content -->
-				
-		</td>
-		<td></td>
+		<td align="center" style="margin:0; padding:10px;">
+            <p>This email is automatically generated, please do not reply.<br/></p>
+            <a href="{{url('/email', array($userid))}}" style="color:#024886;font-family: 'Avenir', Arial, 'Lucida Grande', sans-serif;">View in Browser</a><br/>
+        </td>
 	</tr>
 </table><!-- /FOOTER -->
 

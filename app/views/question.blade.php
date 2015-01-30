@@ -88,50 +88,53 @@ jQuery(window).on("beforeunload", function(event){
             var parent = $(this).parent("fieldset");
             var parentHeight = parent.css('height');
             var num = $('button.btn-q').length;
+			var that = this;
             if(num>0){
                 var start = 1;
+				//inject info
+				html = '<div class="repwrap">'+
+							'<div class="repmod">'+
+								'<h4>'+title+'</h4>'+
+								'<div class="rep-img">'+
+									'<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
+								'</div>'+
+								'<div class="rep-text">'+
+									'{{addslashes($report['text'])}}'+
+								'</div>'+
+								'<div class="clearfix"></div>'+
+							'</div>'+
+							'<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>'+
+						'</div>';
+				$(html).hide().appendTo(parent);
+				
+				//hide next buttton
+				$('div.repwrap').find('button.button-small').hide();
+				
+				//move out of view
+				$('div.repwrap').css({
+						position : "absolute",
+						top : pos.top,
+						left: -90000
+				});
+				$('div.repwrap').show();
+				//set original height for later
+				var repheight = $('div.repmod').height();
+				var headheight = $('div.repmod').find('h4').height();
+				$(parent).css({height: repheight+70 });
+				//set heigh to size of title
+				$('div.repmod').height(headheight);
+				//hide again
+				//$('div.repwrap').hide();
+				//move bak into view
+				$('div.repwrap').css({
+						left: 0
+				});
+				
+				
                 jQuery.each($('button.btn-q'), function( i, item ) {
                     $(item).fadeOut('fast', function() {
                         start++;
-                        if(num == start){
-                            html = '<div class="repwrap">'+
-										'<div class="repmod">'+
-											'<h4>'+title+'</h4>'+
-											'<div class="rep-img">'+
-												'<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
-											'</div>'+
-											'<div class="rep-text">'+
-												'{{addslashes($report['text'])}}'+
-											'</div>'+
-											'<div class="clearfix"></div>'+
-										'</div>'+
-										'<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>'+
-									'</div>';
-							$(html).hide().appendTo(parent);
-							
-							//hide next buttton
-							$('div.repwrap').find('button.button-small').hide();
-							
-							//move out of view
-							$('div.repwrap').css({
-									position : "absolute",
-									top : pos.top,
-									left: -90000
-							});
-							$('div.repwrap').show();
-							//set original height for later
-							var repheight = $('div.repmod').height();
-							var headheight = $('div.repmod').find('h4').height();
-							$(parent).css({height: repheight+70 });
-							//set heigh to size of title
-							$('div.repmod').height(headheight);
-							//hide again
-							$('div.repwrap').hide();
-							//move bak into view
-							$('div.repwrap').css({
-									left: 0
-							});
-								
+                        if(num == start){								
 							$('div.repwrap').fadeIn("fast",function(){
 								if(pos.top!=0){
 									$('div.repwrap').animate({
@@ -157,28 +160,35 @@ jQuery(window).on("beforeunload", function(event){
             e.preventDefault();
             var title = 'Cloud Services';
             var sibling = $(this).prev("fieldset");
-			var pos = $(sibling).position();
+			var pos = false;
             var parentHeight = sibling.css('height');
             var num = $('label.rel').length;
             var selected = 0;
             if(num>0){
                 $(sibling).find('input.chq').each(function( index ) {
-                    if($(this).is(':checked'))  selected ++;
+                    if($(this).is(':checked')){
+						selected ++;
+						pos = $(this).parents('label').position();
+					}
                 });
                 if(selected>0){
                     $('div.error').fadeOut('fast', function() {
                         this.remove();
                     });
                     var start = 0;
+					
+					
                     $('button.button-small').fadeOut('fast');
                     jQuery.each($('label.rel'), function( i, item ) {
                         $(item).fadeOut('fast', function() {
                             start++;
                             if(num == start && selected>0){
-                                html = 
+                                									
+								//inject new thing
+								html = 
 									'<div class="repwrap">'+
 										'<div class="repmod">'+
-											'<h4>'+title+'</h4>'+
+											'<h4 style="font-size: 13px;">'+title+'</h4>'+
 											'<div class="rep-img">'+
 												'<img src="{{URL::to("/").'/'.$report['image']}}" alt="" width="80" height="80">'+
 											'</div>'+
@@ -187,49 +197,11 @@ jQuery(window).on("beforeunload", function(event){
 											'</div>'+
 											'<div class="clearfix"></div>'+
 										'</div>'+
-                                    	'<button class="button-small" type="submit">Next</button>'+
+										'<button class="button-small" type="submit">Next</button>'+
 									'</div>';
 								
-								$(html).hide().appendTo(sibling);
+								$(html).appendTo(sibling);
 							
-								//hide next buttton
-								$('div.repwrap').find('button.button-small').hide();
-								
-								//move out of view
-								$('div.repwrap').css({
-										position : "absolute",
-										top : pos.top,
-										left: -90000
-								});
-								$('div.repwrap').show();
-								//set original height for later
-								var repheight = $('div.repmod').height();
-								var headheight = $('div.repmod').find('h4').height();
-								$(sibling).css({height: repheight+70 });
-								//set heigh to size of title
-								$('div.repmod').height(headheight);
-								//hide again
-								$('div.repwrap').hide();
-								//move bak into view
-								$('div.repwrap').css({
-										left: 0
-								});
-									
-								$('div.repwrap').fadeIn("fast",function(){
-									if(pos.top!=0){
-										$('div.repwrap').animate({
-											top: 0
-										}, 'slow', function() {
-											$('div.repmod').animate({ height: repheight },400,function(){
-												$('div.repwrap').find('button.button-small').fadeIn("fast");
-											});
-										});
-									}else{
-										$('div.repmod').animate({ height: repheight },400,function(){
-											$('div.repwrap').find('button.button-small').fadeIn("fast");
-										});
-									}
-								});
                             }
                         });
                     });
