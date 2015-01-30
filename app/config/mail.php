@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'notifications@techfitquiz.com', 'name' => 'Tech Fit Quiz Notifications'),
+	'from' => array('address' => 'donotreply@techfitquiz.com', 'name' => 'Do Not Reply'),
 
 	/*
 	|--------------------------------------------------------------------------
