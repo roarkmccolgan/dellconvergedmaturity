@@ -390,7 +390,7 @@
                 	<td align="center" valign="top" id="bodyCell">
                     	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
                             <tr>
-                                <td valign="top" class="preheaderBar" align="center" style="background-color: #024886">
+                                <td valign="top" class="preheaderBar" align="center">
                                 	<table border="0" cellpadding="0" cellspacing="0" id="template600" align="center" style="max-width: 600px">
                                         <tr>
                                             <td align="center" valign="top">                                                
@@ -450,7 +450,7 @@
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN COLUMNS // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns" style="background-color:#ebebeb;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
                                     	<tr>
                                         	<td align="center" valign="top" class="templateColumnContainer" style="padding-top:20px;">
                                             	<table border="0" cellpadding="20" cellspacing="0" width="100%">
@@ -482,7 +482,7 @@
                             <tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN COLUMNS // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns" style="background-color:#ebebeb;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns">
                                     	<tr>
                                         	<td align="center" valign="top" class="templateColumnContainer" style="padding-top:20px;">
                                             	<table border="0" cellpadding="20" cellspacing="0" width="100%">
