@@ -43,22 +43,12 @@
 			#bodyCell{padding:20px; padding-top:0}
 			#templateContainer, #template600{width:600px;}
 
-			/**
-			* @tab Page
-			* @section background style
-			* @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
-			* @theme page
-			*/
+			
 			body, #bodyTable{
 				background-color:#FFF;
 			}
 
-			/**
-			* @tab Page
-			* @section heading 1
-			* @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
-			* @style heading 1
-			*/
+			
 			h1{
 				color:#242638 !important;
 				display:block;
@@ -75,12 +65,7 @@
 				text-align:left;
 			}
 
-			/**
-			* @tab Page
-			* @section heading 2
-			* @tip Set the styling for all second-level headings in your emails.
-			* @style heading 2
-			*/
+	
 			h2{
 				color:#242638 !important;
 				display:block;
@@ -97,12 +82,7 @@
 				text-align:left;
 			}
 
-			/**
-			* @tab Page
-			* @section heading 3
-			* @tip Set the styling for all third-level headings in your emails.
-			* @style heading 3
-			*/
+		
 			h3{
 				color:#242638 !important;
 				display:block;
@@ -119,12 +99,7 @@
 				text-align:left;
 			}
 
-			/**
-			* @tab Page
-			* @section heading 4
-			* @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
-			* @style heading 4
-			*/
+	
 			h4{
 				color:#242638 !important;
 				display:block;
@@ -141,23 +116,11 @@
 				text-align:left;
 			}
 
-			/* ========== Header Styles ========== */
-
-			/**
-			* @tab Header
-			* @section preheader style
-			* @tip Set the background color and bottom border for your email's preheader area.
-			* @theme header
-			*/
+	
 			#templatePreheader{
 				background-color:#F4F4F4;
 			}
 
-			/**
-			* @tab Header
-			* @section preheader text
-			* @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
-			*/
 			.preheaderContent{
 				color:#242638;
 				font-family:'Avenir', arial;
@@ -174,32 +137,19 @@
 				background-color: #024886
 			}
 
-			/**
-			* @tab Header
-			* @section preheader link
-			* @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
-			*/
+
 			.preheaderContent a:link, .preheaderContent a:visited, /* Yahoo! Mail Override */ .preheaderContent a .yshortcuts /* Yahoo! Mail Override */{
 				color:#606060;
 				font-weight:normal;
 				text-decoration:underline;
 			}
 
-			/**
-			* @tab Header
-			* @section header style
-			* @tip Set the background color and borders for your email's header area.
-			* @theme header
-			*/
+
 			#templateHeader{
 				background-color:#FFF;
 			}
 
-			/**
-			* @tab Header
-			* @section header text
-			* @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
-			*/
+
 			.headerContent{
 				color:#505050;
 				font-family:'Avenir', arial;
@@ -214,11 +164,7 @@
 				vertical-align:middle;
 			}
 
-			/**
-			* @tab Header
-			* @section header link
-			* @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
-			*/
+	
 			.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
 				color:#EB4102;
 				font-weight:normal;
@@ -230,23 +176,12 @@
 				max-width:600px;
 			}
 
-			/* ========== Body Styles ========== */
-
-			/**
-			* @tab Body
-			* @section body style
-			* @tip Set the background color and borders for your email's body area.
-			*/
+	
 			#templateBody{
 				background-color:#FFF;
 			}
 
-			/**
-			* @tab Body
-			* @section body text
-			* @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
-			* @theme main
-			*/
+	
 			.bodyContent{
 				color:#242638;
 				font-family:'Avenir', arial;
@@ -259,11 +194,7 @@
 				text-align:left;
 			}
 
-			/**
-			* @tab Body
-			* @section body link
-			* @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
-			*/
+	
 			.bodyContent a:link, .bodyContent a:visited, /* Yahoo! Mail Override */ .bodyContent a .yshortcuts /* Yahoo! Mail Override */{
 				color:#2aa6cb;
 				font-weight:normal;
@@ -276,24 +207,15 @@
 				max-width:560px;
 			}
 
-			/* ========== Column Styles ========== */
 
 			.templateColumnContainer{width:260px;}
 
-			/**
-			* @tab Columns
-			* @section column style
-			* @tip Set the background color and borders for your email's column area.
-			*/
+	
 			#templateColumns{
 				background-color:#ebebeb;
 			}
 
-			/**
-			* @tab Columns
-			* @section left column text
-			* @tip Set the styling for your email's left column content text. Choose a size and color that is easy to read.
-			*/
+	
 			.leftColumnContent{
 				color:#242638 ;
 				font-family:'Avenir', arial;
@@ -306,22 +228,14 @@
 				text-align:left;
 			}
 
-			/**
-			* @tab Columns
-			* @section left column link
-			* @tip Set the styling for your email's left column content links. Choose a color that helps them stand out from your text.
-			*/
+		
 			.leftColumnContent a:link, .leftColumnContent a:visited, /* Yahoo! Mail Override */ .leftColumnContent a .yshortcuts /* Yahoo! Mail Override */{
 				color:#2ba6cb;
 				font-weight:normal;
 				text-decoration:underline;
 			}
 
-			/**
-			* @tab Columns
-			* @section right column text
-			* @tip Set the styling for your email's right column content text. Choose a size and color that is easy to read.
-			*/
+		
 			.rightColumnContent{
 				color:#242638 ;
 				font-family:'Avenir', arial;
@@ -334,11 +248,7 @@
 				text-align:left;
 			}
 
-			/**
-			* @tab Columns
-			* @section right column link
-			* @tip Set the styling for your email's right column content links. Choose a color that helps them stand out from your text.
-			*/
+		
 			.rightColumnContent a:link, .rightColumnContent a:visited, /* Yahoo! Mail Override */ .rightColumnContent a .yshortcuts /* Yahoo! Mail Override */{
 				color:#2ba6cb;
 				font-weight:normal;
@@ -351,25 +261,12 @@
 				max-width:260px;
 			}
 
-			/* ========== Footer Styles ========== */
-
-			/**
-			* @tab Footer
-			* @section footer style
-			* @tip Set the background color and borders for your email's footer area.
-			* @theme footer
-			*/
 			#templateFooter{
 				background-color:#FFF;
 				text-align: center;
 			}
 
-			/**
-			* @tab Footer
-			* @section footer text
-			* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
-			* @theme footer
-			*/
+		
 			.footerContent{
 				color:#242638;
 				font-family:'Avenir', arial;
@@ -382,11 +279,7 @@
 				text-align:center;
 			}
 
-			/**
-			* @tab Footer
-			* @section footer link
-			* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
-			*/
+		
 			.footerContent a:link, .footerContent a:visited, /* Yahoo! Mail Override */ .footerContent a .yshortcuts, .footerContent a span /* Yahoo! Mail Override */{
 				color:#2aa5cb;
 				font-weight:normal;
@@ -403,56 +296,34 @@
 				/* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
 				#bodyCell{padding:10px !important;}
 
-
 				/* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
 
 				/* ======== Page Styles ======== */
 
-				/**
-				* @tab Mobile Styles
-				* @section template width
-				* @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
-				*/
 				#templateContainer, #template600{
 					max-width:600px !important;
 					width:100% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section heading 1
-				* @tip Make the first-level headings larger in size for better readability on small screens.
-				*/
+			
 				h1{
 					font-size:24px !important;
 					line-height:100% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section heading 2
-				* @tip Make the second-level headings larger in size for better readability on small screens.
-				*/
+	
 				h2{
 					font-size:20px !important;
 					line-height:100% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section heading 3
-				* @tip Make the third-level headings larger in size for better readability on small screens.
-				*/
+			
 				h3{
 					font-size:18px !important;
 					line-height:100% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section heading 4
-				* @tip Make the fourth-level headings larger in size for better readability on small screens.
-				*/
+		
 				h4{
 					font-size:16px !important;
 					line-height:100% !important;
@@ -462,34 +333,18 @@
 
 				#templatePreheader{display:none !important;} /* Hide the template preheader to save space */
 
-				/**
-				* @tab Mobile Styles
-				* @section header image
-				* @tip Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
-				*/
 				#headerImage{
 					height:auto !important;
 					max-width:600px !important;
 					width:100% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section header text
-				* @tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-				*/
 				.headerContent{
 					font-size:20px !important;
 					line-height:125% !important;
 				}
 
-				/* ======== Body Styles ======== */
-
-				/**
-				* @tab Mobile Styles
-				* @section body text
-				* @tip Make the body content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-				*/
+			
 				.bodyContent{
 					font-size:18px !important;
 					line-height:125% !important;
@@ -499,44 +354,26 @@
 
 				.templateColumnContainer{display:block !important; width:100% !important;}
 
-				/**
-				* @tab Mobile Styles
-				* @section column image
-				* @tip Make the column image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
-				*/
+		
 				.columnImage{
 					height:auto !important;
 					max-width:480px !important;
 					width:100% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section left column text
-				* @tip Make the left column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-				*/
+			
 				.leftColumnContent{
 					font-size:16px !important;
 					line-height:125% !important;
 				}
 
-				/**
-				* @tab Mobile Styles
-				* @section right column text
-				* @tip Make the right column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-				*/
+			
 				.rightColumnContent{
 					font-size:16px !important;
 					line-height:125% !important;
 				}
 
-				/* ======== Footer Styles ======== */
-
-				/**
-				* @tab Mobile Styles
-				* @section footer text
-				* @tip Make the body content text larger in size for better readability on small screens.
-				*/
+			
 				.footerContent{
 					font-size:14px !important;
 					line-height:115% !important;

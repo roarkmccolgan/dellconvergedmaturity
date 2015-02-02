@@ -22,7 +22,7 @@ Route::get('email/{userid}', function($userid)
 	if(is_null($userid) || is_null($user)){
 		return Redirect::to('/');
 	}else{
-		return View::make('emails.download',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+		return View::make('emails.download2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
 	}
 });
 Route::get('cookies', function()
