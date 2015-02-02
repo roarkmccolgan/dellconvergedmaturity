@@ -402,7 +402,7 @@
                                                         </td>
                                                         <!-- *|IFNOT:ARCHIVE_PAGE|* -->
                                                         <td valign="top" width="15" style="padding-right:10px; padding-top:2px; padding-bottom: 2px;">
-                                                            <img src="{{ URL::asset('img/email_download.jpg')}}" style="max-width:20px;" alt="HP" />
+                                                            <img src="{{ URL::asset('img/hp_email.png')}}" style="max-width:20px;" alt="HP" />
                                                         </td>
                                                         <!-- *|END:IF|* -->
                                                     </tr>
