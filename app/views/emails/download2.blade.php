@@ -391,7 +391,7 @@
                     	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
                             <tr>
                                 <td valign="top" class="preheaderBar" align="center">
-                                	<table border="0" cellpadding="0" cellspacing="0" id="template600" align="center">
+                                	<table border="0" cellpadding="0" cellspacing="0" id="template600" align="center" style="max-width: 600px">
                                         <tr>
                                             <td align="center" valign="top">                                                
                                                 <!-- BEGIN PREHEADER // -->
@@ -414,7 +414,7 @@
                             	</td>
                             </tr>
                         </table>
-                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="max-width:600px">
                         	<tr>
                             	<td align="center" valign="top">
                                 	<!-- BEGIN HEADER // -->
