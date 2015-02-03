@@ -397,7 +397,7 @@
                                                 <!-- BEGIN PREHEADER // -->
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
                                                     <tr>
-                                                        <td valign="top" style="padding-right:2px; padding-top:2px; padding-bottom: 2px; text-align:right">
+                                                        <td valign="top" width="573" style="padding-right:2px; padding-top:2px; padding-bottom: 2px; text-align:right; color:#FFF">
                                                             In association with
                                                         </td>
                                                         <!-- *|IFNOT:ARCHIVE_PAGE|* -->
@@ -440,7 +440,7 @@
                                                 <br /><br/>
                                                 <a href="{{ URL::asset('quiz/download/'.$userid) }}" target="_blank"><img src="{{ URL::asset('img/email_download.jpg')}}" style="max-width:316px;display:block; margin:0 auto" align="middle"/></a>
                                                 <br/><br/>
-                                                Also, once you've digested the report why not visit <a href="http://hp.com/go/businessready" style="color:#024886">HP Business Ready</a> to keep up to date on the latest business technology thinking. For examples, here is a selection of articles that may be of interest:
+                                                Also, once you've digested the report why not visit <a href="http://hp.com/go/businessready" style="color:#024886">HP Business Ready</a> to keep up to date on the latest business technology thinking. For examples, here is a selection of articles that may be of interest:<br/><br/>
                                             </td>
                                         </tr>
                                     </table>
@@ -469,7 +469,7 @@
                                                     	<td valign="top" class="rightColumnContent" height="150">
                                                             <h2>Cloud Computing</h2>
                                                             Enterprise cloud computing myths debunked<br/><br/>
-                                                            <a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Top-10-dangers-of-staying-on-Windows-XP/ba-p/92718#.VI7tFVesV7c" target="_blank"><img src="{{asset('img/email_click.jpg')}}" style="max-width:150px;"/></a>
+                                                            <a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Enterprise-cloud-computing-myths-debunked/ba-p/91496#.VI7tc1esV7c" target="_blank"><img src="{{asset('img/email_click.jpg')}}" style="max-width:150px;"/></a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -490,7 +490,7 @@
                                                     	<td valign="top" class="leftColumnContent" height="150">
                                                             <h2>Mobility</h2>
                                                             A guide to hot desking BYOD printing: the things to consider<br/><br/>
-                                                            <a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/Enterprise-cloud-computing-myths-debunked/ba-p/91496#.VI7tc1esV7c" target="_blank"><img src="{{asset('img/email_click.jpg')}}" style="max-width:150px;"/></a>
+                                                            <a href="http://h20435.www2.hp.com/t5/HP-BusinessReady/BYOD-printing-the-things-to-consider/ba-p/92150#.VI7uWFesV7c" target="_blank"><img src="{{asset('img/email_click.jpg')}}" style="max-width:150px;"/></a>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -516,7 +516,7 @@
                                 	<!-- BEGIN FOOTER // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" align="center">
                                         <tr>
-                                            <td valign="top" class="footerContent">
+                                            <td valign="top" class="footerContent"><br/><br/>
                                                 This email is automatically generated, please do not reply.<br/>
                                                 <a href="{{url('/email', array($userid))}}">View in Browser</a>
                                             </td>
