@@ -137,7 +137,7 @@
 				//
 				
 				//send mail to user
-                Mail::send('emails.download2', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
+                Mail::send(array('emails.download2', 'emails.downloadtext'), array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
 
                     $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject('Your Tech Fitness Report');
                 });
