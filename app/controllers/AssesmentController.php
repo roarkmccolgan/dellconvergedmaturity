@@ -145,7 +145,7 @@
 				$emails = ['nikhil.kalanjee@hp.com', 'ftang@idc.com','kerry.gilbert@hp.com','emma.westley@hp.com','roarkmccolgan@gmail.com'];
 				Mail::send('emails.notification', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'email'=>$validate_data['email'], 'company'=>$validate_data['company'], 'phone'=>$validate_data['phone'], 'screener1'=>$this->quiz['screeners']['pages']['page1']['questions']['s1']['selected'], 'screener2'=>$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'], 'score'=>$this->howfit['overall']['score'], 'rating'=>$this->howfit['overall']['rating'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
 
-                    $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject('Tech fitness Report Completed');
+                    $message->to($emails)->subject('Tech fitness Report Completed');
                 });
 				
 				$vars = array(
