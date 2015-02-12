@@ -68,28 +68,13 @@
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
             Session::put('questions.'.$section.'.pages.page'.$page.'.done', true);
 			
-			$cookie_qs = Session::get('questions');
-			$bake = false;
-			foreach($cookie_qs as $key=>$value){
-				foreach ($value['pages'] as $pkey => $page_info) {
-					foreach ($page_info['questions'] as $qkey => $props) {
-						if(isset($props['selected'])){
-							$bake[$key]['pages'][$pkey]['questions'][$qkey]['selected'] = $props['selected'];
-						}
-						if(isset($page_info['done'])){
-							$bake[$key]['pages'][$pkey]['done'] = true;
-						}
-					}
-				}
-			}
+			$bake = 'hello';
 			
 			$cookie = Cookie::queue('quiz_progress', $bake, 2880);
-			
-			dd($cookie);
 
             if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
                 //$this->getPage($section,$page+1);
-                return Redirect::to('quiz/'.$section.'/page'.($page+1));
+                return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
             }else{
                 Session::put('questions.'.$section.'.complete', true);
                 $questions = Session::get('questions');
@@ -97,7 +82,7 @@
                     next($questions);
                 }
                 next($questions);
-                if(key($questions)==null) return Redirect::to('quiz/complete');
+                if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
                 //return $this->getPage(key($questions),1);
                 return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
             }
