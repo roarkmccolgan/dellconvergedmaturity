@@ -30,24 +30,26 @@
 
     {{ Form::open(array('url' => '/quiz/complete','id'=>'form-email-report','class'=>'clearfix')) }}
         <fieldset>
+        	<input type="hidden" value="{{$source['form_source']?$source['form_source']:'HP Tech Fit Quiz'}}" name="form_source">
+            
             <div class="row{{$errors->has('fname')?' error':''}}">
                 <label>First Name*</label>
-                <input type="text" class="req" value="" name="fname">
+                <input type="text" class="req" value="{{$source['C_FirstName']?$source['C_FirstName']:''}}" name="fname">
                 <span>Enter your name</span>
             </div>
             <div class="row{{$errors->has('sname')?' error':''}}">
                 <label>Surname*</label>
-                <input type="text" class="req" value="" name="sname">
+                <input type="text" class="req" value="{{$source['C_LastName']?$source['C_LastName']:''}}" name="sname">
                 <span>Enter your surname</span>
             </div>
             <div class="row{{$errors->has('email')?' error':''}}">
                 <label>Email Address*</label>
-                <input type="text" class="req email" value="" name="email">
+                <input type="text" class="req email" value="{{$source['C_emailAddress']?$source['C_emailAddress']:''}}" name="email">
                 <span>Enter a valid email address</span>
             </div>
             <div class="row{{$errors->has('company')?' error':''}}">
                 <label>Company name*</label>
-                <input type="text" value="" name="company" class="req">
+                <input type="text" value="{{$source['C_Company']?$source['C_Company']:''}}" name="company" class="req">
                 <span>Enter your company name</span>
             </div>
             <div class="row{{$errors->has('country')?' error':''}}">
@@ -291,11 +293,17 @@
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
+                @if($source['C_Country'])
+                <script>
+				var element = document.getElementById('country');
+    			element.value = '{{$source['C_Country']}}';
+				</script>
+                @endif
                 <span>Please select your country</span>
             </div>
             <div class="row">
                 <label>Phone Number</label>
-                <input type="text" value="" name="phone">
+                <input type="text" value="{{$source['C_BusPhone']?$source['C_BusPhone']:''}}" name="phone">
                 <span>Enter a valid number</span>
             </div>
             <div class="terms">

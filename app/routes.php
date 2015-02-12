@@ -13,7 +13,25 @@
 
 Route::get('/', array('before'=>'reload', function()
 {
-	return View::make('introduction',array('class'=>'intro'));
+	$form_source = Input::get('form_source');
+	if($form_source){
+		$source = array(
+			'C_emailAddress'=>Input::get('C_emailAddress'),
+			'C_FirstName'=>Input::get('C_FirstName'),
+			'C_LastName'=>Input::get('C_LastName'),
+			'C_Company'=>Input::get('C_Company'),
+			'C_Country'=>Input::get('C_Country'),
+			'C_BusPhone'=>Input::get('C_BusPhone'),
+			'form_source'=>Input::get('form_source')
+		);
+		Session::put('source', $source);
+	}
+	$return_visitor = Cookie::has('quiz_progress');
+	$data = array(
+		'class'=>'intro',
+		'return_visitor'=>$return_visitor
+	);
+	return View::make('introduction',$data);
 }));
 
 Route::get('email/{userid}', function($userid)
@@ -41,4 +59,37 @@ Route::group(array('prefix' => 'quiz'), function()
 	Route::get('complete', array('uses' => 'AssesmentController@getComplete'));
 	Route::post('complete', array('uses' => 'AssesmentController@postComplete'));
 	Route::get('download/{userid}', array('uses' => 'AssesmentController@getDownload'));
+});
+Route::get('restart', function()
+{
+	$cookie = Cookie::forget('quiz_progress');
+	return Redirect::to('/')->withCookie($cookie);
+});
+Route::get('continue', function()
+{
+	if(!Cookie::has('quiz_progress')) return Redirect::to('/');
+	
+	$questions = Cookie::get('quiz_progress');
+	Session::put('questions', $questions);
+	reset($questions);
+	$prog = false;
+	foreach ($questions as $key => $value) {
+		foreach ($value['pages'] as $pkey => $page) {
+			if(!isset($page['done'])){
+				$last_set['section']=$key;
+				$last_set['page']=$pkey;
+				break 2;
+			}else{
+				//must have started
+				$prog = true;
+			}
+		}
+	}
+	$cookie = Cookie::forget('quiz_progress');
+	//must be finished?
+	if(!isset($last_set) && $prog){
+		return Redirect::to('/quiz/complete')->withCookie($cookie);
+	}else{
+		return Redirect::to('/quiz/'.$last_set['section'].'/'.$last_set['page'])->withCookie($cookie);
+	}
 });

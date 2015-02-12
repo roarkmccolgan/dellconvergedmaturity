@@ -26,7 +26,7 @@
 		</div>
 		<footer id="footer">
 			<div class="wrapper clearfix">
-				{{link_to('/', 'Restart Quiz',array('class'=>'restart'))}}
+				{{link_to('/restart', 'Restart Quiz',array('class'=>'restart'))}}
 				<span class="hp">In association with</span>
 			</div>
 		</footer>

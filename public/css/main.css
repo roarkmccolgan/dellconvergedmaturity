@@ -145,6 +145,9 @@ a.button-big:hover {
 	text-align: left;
 	margin-bottom: 1em;
 }
+a.button-small {
+	display: inline-block;
+}
 .button-small:hover {
 	background-position: 0 -1113px;
 }
@@ -1043,6 +1046,30 @@ span.instruct {
 		background-size: 22px 66px;
 	}
 } 
+
+/*LEAN MODAL*/
+#trigger_id{
+	 display: none;
+}
+#return {
+    background: none repeat scroll 0 0 #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    display: none;
+	color:#000;
+    padding: 30px;
+    width: 290px;
+}
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
 
 /* ==========================================================================
    Helper classes

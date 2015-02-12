@@ -56,6 +56,10 @@ $('button:submit').click(function(){
 	$(window).off('beforeunload');
 });
 $('input.chq').iCheck();
+if ($("#trigger_id").length > 0) {
+    $("#trigger_id").leanModal().trigger('click');
+}
+
 
 
 function validate(form){

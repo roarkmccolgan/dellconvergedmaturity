@@ -67,9 +67,28 @@
             
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
             Session::put('questions.'.$section.'.pages.page'.$page.'.done', true);
+			
+			$cookie_qs = Session::get('questions');
+			$bake = false;
+			foreach($cookie_qs as $key=>$value){
+				foreach ($value['pages'] as $pkey => $page_info) {
+					foreach ($page_info['questions'] as $qkey => $props) {
+						if(isset($props['selected'])){
+							$bake[$key]['pages'][$pkey]['questions'][$qkey]['selected'] = $props['selected'];
+						}
+						if(isset($page_info['done'])){
+							$bake[$key]['pages'][$pkey]['done'] = true;
+						}
+					}
+				}
+			}
+			
+			$cookie = Cookie::queue('quiz_progress', $bake, 2880);
+			
+			dd($cookie);
 
             if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
-                $this->getPage($section,$page+1);
+                //$this->getPage($section,$page+1);
                 return Redirect::to('quiz/'.$section.'/page'.($page+1));
             }else{
                 Session::put('questions.'.$section.'.complete', true);
@@ -80,19 +99,26 @@
                 next($questions);
                 if(key($questions)==null) return Redirect::to('quiz/complete');
                 //return $this->getPage(key($questions),1);
-                return Redirect::to('quiz/'.key($questions).'/page1');
+                return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
             }
         }
 
         public function getComplete()
         {
+			echo '<pre>';
+			print_r($bake);
+			echo '</pre>';
+			dd();
             $this->loadQuestions();
             $this->calcResults();
             $vars = array(
-                'heading' => "You’re ".strtoupper($this->howfit['overall']['rating']),
-                'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
+                //'heading' => "You’re ".strtoupper($this->howfit['overall']['rating']),
+                //'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
+				'heading' => "You're",
+                'sub1' => "hello",
                 'colour' => 'orange',
-                'quiz' => $this->quiz
+                'quiz' => $this->quiz,
+				'source' => Session::get('source')
             );
             return View::make('complete',$vars);
         }
@@ -117,12 +143,25 @@
             if ($validator->passes()) {
                 Session::put('user', $validate_data);
 				
+				//update source
+				$source = array(
+					'C_emailAddress'=>$validate_data['email'],
+					'C_FirstName'=>$validate_data['fname'],
+					'C_LastName'=>$validate_data['sname'],
+					'C_Company'=>$validate_data['company'],
+					'C_Country'=>$validate_data['country'],
+					'C_BusPhone'=>$validate_data['phone'],
+					'form_source'=>Input::get('form_source')
+				);
+				Session::put('source', $source);
+				
 				//save in db
 				$user = new User;
 				$user->fname = $validate_data['fname'];
 				$user->lname = $validate_data['sname'];
 				$user->email = $validate_data['email'];
 				$user->company = $validate_data['company'];
+				$user->country = $validate_data['country'];
 				$user->tel = $validate_data['phone'];
 				$user->quiz = json_encode($this->quiz);
 				$user->result = json_encode($this->howfit);
@@ -134,16 +173,40 @@
 				//generate report
 				$this->generateReport();
 				
-				//
+				//send guzzle request
+				$client = new GuzzleHttp\Client();
+				$url = 'https://s2048.t.eloqua.com/e/f2.aspx';
+				$url = 'http://www.google.com';
+				try {
+					$request = $client->createRequest('GET', $url);
+					$query = $request->getQuery();
+					$query['elqFormName'] = 'BusNow_IDC_Eloqua_testintegration';
+					$query['elqSiteID'] = '2048';
+					foreach($source as $key=>$item){
+						$query[$key] = $item;
+					}
+									
+					$response = $client->send($request);
+				} catch (GuzzleHttp\Exception\RequestException $e) {
+					
+					Mail::queue('emails.errors', array('process'=>'Guzzle', 'message'=>$e->getMessage(), 'time'=>date('l jS \of F Y h:i:s A')), function($message)
+					{
+						$message->to('roarkmccolgan@gmail.com', 'Roark McColgan')->subject('Error on HP Tech Quiz!');
+					});
+				}
 				
 				//send mail to user
-                Mail::send(array('emails.download2', 'emails.downloadtext'), array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
+                Mail::queue(array('emails.download2', 'emails.downloadtext'), array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
 
                     $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject('Your Tech Fitness Report');
                 });
-				//send mailt to notification people
-				$emails = ['nikhil.kalanjee@hp.com', 'ftang@idc.com','kerry.gilbert@hp.com','emma.westley@hp.com','roarkmccolgan@gmail.com'];
-				Mail::send('emails.notification', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'email'=>$validate_data['email'], 'company'=>$validate_data['company'], 'phone'=>$validate_data['phone'], 'screener1'=>$this->quiz['screeners']['pages']['page1']['questions']['s1']['selected'], 'screener2'=>$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'], 'score'=>$this->howfit['overall']['score'], 'rating'=>$this->howfit['overall']['rating'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data, $emails){
+				//send mail to notification people
+				if(App::isLocal()){
+					$emails = ['roarkmccolgan@gmail.com'];
+				}else{
+					$emails = ['nikhil.kalanjee@hp.com', 'ftang@idc.com','kerry.gilbert@hp.com','emma.westley@hp.com','roarkmccolgan@gmail.com'];
+				}
+				Mail::queue('emails.notification', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'email'=>$validate_data['email'], 'company'=>$validate_data['company'], 'phone'=>$validate_data['phone'], 'screener1'=>$this->quiz['screeners']['pages']['page1']['questions']['s1']['selected'], 'screener2'=>$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'], 'score'=>$this->howfit['overall']['score'], 'rating'=>$this->howfit['overall']['rating'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data, $emails){
 
                     $message->to($emails)->subject('Tech fitness Report Completed');
                 });
@@ -155,8 +218,9 @@
                     'colour' => 'orange',
                     'quiz' => $this->quiz
                 );
+				$cookie = Cookie::forget('quiz_progress');
 				
-                return View::make('thankyou',$vars);
+                return View::make('thankyou',$vars)->withCookie($cookie);
             }
             Input::flashExcept('_token');
             return Redirect::to('quiz/complete')->withErrors($validator);

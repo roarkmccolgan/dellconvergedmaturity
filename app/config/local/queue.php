@@ -43,10 +43,10 @@ return array(
 
 		'sqs' => array(
 			'driver' => 'sqs',
-			'key'    => getenv('SQSKEY'),
-			'secret' => getenv('SQSSECRET'),
-			'queue'  => getenv('SQSQUEUE'),
-			'region' => getenv('SQSREGION'),
+			'key'    => 'AKIAIJUOS2MO3XKM7WGA',
+			'secret' => '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',
+			'queue'  => 'https://sqs.eu-west-1.amazonaws.com/716643049827/Homestead',
+			'region' => 'eu-west-1',
 		),
 
 		'iron' => array(

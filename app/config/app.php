@@ -125,6 +125,7 @@ return array(
 		'Maxxscho\LaravelTcpdf\LaravelTcpdfServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
+		'Aws\Laravel\AwsServiceProvider',
 		
 	),
 
@@ -194,6 +195,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry' 			=> 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Excel' 			=> 'Maatwebsite\Excel\Facades\Excel',
+		'AWS'				=> 'Aws\Laravel\AwsFacade',
 		
 	),
 
