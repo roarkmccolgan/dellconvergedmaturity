@@ -68,13 +68,14 @@
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
             Session::put('questions.'.$section.'.pages.page'.$page.'.done', true);
 			
-			$bake = 'hello';
+			//$bake = 'hello';
 			
-			$cookie = Cookie::queue('quiz_progress', $bake, 2880);
+			//$cookie = Cookie::queue('quiz_progress', $bake, 2880);
 
             if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
                 //$this->getPage($section,$page+1);
-                return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
+                //return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
+				return Redirect::to('quiz/'.$section.'/page'.($page+1));
             }else{
                 Session::put('questions.'.$section.'.complete', true);
                 $questions = Session::get('questions');
@@ -82,18 +83,16 @@
                     next($questions);
                 }
                 next($questions);
-                if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
+                //if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
+				if(key($questions)==null) return Redirect::to('quiz/complete');
                 //return $this->getPage(key($questions),1);
-                return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
+                //return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
+				return Redirect::to('quiz/'.key($questions).'/page1');
             }
         }
 
         public function getComplete()
         {
-			echo '<pre>';
-			print_r($bake);
-			echo '</pre>';
-			dd();
             $this->loadQuestions();
             $this->calcResults();
             $vars = array(
@@ -161,7 +160,7 @@
 				//send guzzle request
 				$client = new GuzzleHttp\Client();
 				$url = 'https://s2048.t.eloqua.com/e/f2.aspx';
-				$url = 'http://www.google.com';
+				//$url = 'http://www.google.com';
 				try {
 					$request = $client->createRequest('GET', $url);
 					$query = $request->getQuery();
@@ -203,9 +202,10 @@
                     'colour' => 'orange',
                     'quiz' => $this->quiz
                 );
-				$cookie = Cookie::forget('quiz_progress');
+				//$cookie = Cookie::forget('quiz_progress');
 				
-                return View::make('thankyou',$vars)->withCookie($cookie);
+                //return View::make('thankyou',$vars)->withCookie($cookie);
+				return View::make('thankyou',$vars);
             }
             Input::flashExcept('_token');
             return Redirect::to('quiz/complete')->withErrors($validator);
