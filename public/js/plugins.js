@@ -78,7 +78,7 @@ b[_type],e=/wn|up/.test(d)?t:v;if(!c[n]){if(d==_click)A(a,!1,!0);else{if(/wn|er|
   };
   
   // self injection init
-  var msg = 'We use cookies to ensure that we give you the best experience on our website. By continuing to browse through our website you are agreeing to our use of cookies in accordance with our <a href="/cookies">Cookies Policy</a>. We have updated our <a href="/cookies">Privacy Policy</a>, effective as of 21 Jan 2015, by using continuing to browse through our website you are also agreeing to this updated policy.';
+  var msg = 'We use cookies to ensure that we give you the best experience on our website. By continuing to browse through our website you are agreeing to our use of cookies in accordance with our <a href="/cookies">Cookies Policy</a>. We have updated our <a href="/privacy">Privacy Policy</a>, effective as of 21 Jan 2015, by using continuing to browse through our website you are also agreeing to this updated policy.';
   $.cookieBar = function( options ) {  
 	$('body').prepend('<div class="ui-widget"><div style="display: none;" class="cookie-message ui-widget-header blue"><p>'+msg+'</p></div></div>');     
 	$('.cookie-message').cookieBar(options);

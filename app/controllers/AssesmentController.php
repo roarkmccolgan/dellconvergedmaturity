@@ -14,6 +14,7 @@
 
         public function loadQuestions(){
             $this->quiz=Session::get('questions');
+			
             if(!$this->quiz) return Redirect::to('/');
             $this->numSections=count($this->quiz);
             $temp = array();
@@ -68,26 +69,46 @@
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
             Session::put('questions.'.$section.'.pages.page'.$page.'.done', true);
 			
-			//$bake = 'hello';
+			$new_step[$section]['pages']['page'.$page]['questions'][$validate_data['question']]['selected'] = $validate_data['answer'];
+			$new_step[$section]['pages']['page'.$page]['done'] = true;
+			if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
+				$new_step[$section]['complete'] = true;
+			}
 			
-			//$cookie = Cookie::queue('quiz_progress', $bake, 2880);
-
+			if(Cookie::has('quiz_progress')){
+				$progress_id = Cookie::get('quiz_progress');
+				$progress = Progress::find($progress_id);
+				if(!$progress){
+					$cookie = Cookie::forget('quiz_progress');
+					return Redirect::to('/')->withCookie($cookie);
+				}
+				$existing = json_decode($progress->progress,true);
+				$new_progress = array_merge_recursive($existing, $new_step);
+				$progress->progress = json_encode($new_progress);
+				$progress->save();
+			}else{
+				$progress = new Progress;
+				$progress->progress=json_encode($new_step);
+				$progress->source=json_encode(Session::get('source'));
+				$progress->save();
+				$progress_id = $progress->id;
+			}
+			$bake = $progress_id;
+			
+			$cookie = Cookie::make('quiz_progress', $bake, 2880);
             if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
                 //$this->getPage($section,$page+1);
-                //return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
-				return Redirect::to('quiz/'.$section.'/page'.($page+1));
+                return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
             }else{
-                Session::put('questions.'.$section.'.complete', true);
+              				
                 $questions = Session::get('questions');
                 while (key($questions) !== $section  && key($questions) !== null) {
                     next($questions);
                 }
                 next($questions);
-                //if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
-				if(key($questions)==null) return Redirect::to('quiz/complete');
+                if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
                 //return $this->getPage(key($questions),1);
-                //return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
-				return Redirect::to('quiz/'.key($questions).'/page1');
+                return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
             }
         }
 
@@ -96,10 +117,8 @@
             $this->loadQuestions();
             $this->calcResults();
             $vars = array(
-                //'heading' => "You’re ".strtoupper($this->howfit['overall']['rating']),
-                //'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
-				'heading' => "You're",
-                'sub1' => "hello",
+                'heading' => "You’re ".strtoupper($this->howfit['overall']['rating']),
+                'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
                 'colour' => 'orange',
                 'quiz' => $this->quiz,
 				'source' => Session::get('source')
@@ -127,6 +146,9 @@
             if ($validator->passes()) {
                 Session::put('user', $validate_data);
 				
+				$screener1=$this->quiz['screeners']['pages']['page1']['questions']['s1']['selected'];
+				$screener2=$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'];
+				
 				//update source
 				$source = array(
 					'C_emailAddress'=>$validate_data['email'],
@@ -135,6 +157,8 @@
 					'C_Company'=>$validate_data['company'],
 					'C_Country'=>$validate_data['country'],
 					'C_BusPhone'=>$validate_data['phone'],
+					'C_Job_Responsibilities_1'=>$screener1=="You run or work within the IT dept of your company" ? "IT" : "Business / Operations",
+					'C_NumberofEmployees_Range_1'=>$screener2,
 					'form_source'=>Input::get('form_source')
 				);
 				Session::put('source', $source);
@@ -202,10 +226,14 @@
                     'colour' => 'orange',
                     'quiz' => $this->quiz
                 );
-				//$cookie = Cookie::forget('quiz_progress');
+				if(Cookie::has('quiz_progress')){
+					$progress_id = Cookie::get('quiz_progress');
+					$progress = Progress::find($progress_id);
+					$progress->delete();
+				}
+				$cookie = Cookie::forget('quiz_progress');
 				
-                //return View::make('thankyou',$vars)->withCookie($cookie);
-				return View::make('thankyou',$vars);
+                return View::make('thankyou',$vars)->withCookie($cookie);
             }
             Input::flashExcept('_token');
             return Redirect::to('quiz/complete')->withErrors($validator);

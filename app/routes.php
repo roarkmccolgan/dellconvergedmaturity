@@ -14,18 +14,17 @@
 Route::get('/', array('before'=>'reload', function()
 {
 	$form_source = Input::get('form_source');
-	if($form_source){
-		$source = array(
-			'C_emailAddress'=>Input::get('C_emailAddress'),
-			'C_FirstName'=>Input::get('C_FirstName'),
-			'C_LastName'=>Input::get('C_LastName'),
-			'C_Company'=>Input::get('C_Company'),
-			'C_Country'=>Input::get('C_Country'),
-			'C_BusPhone'=>Input::get('C_BusPhone'),
-			'form_source'=>Input::get('form_source')
-		);
-		Session::put('source', $source);
-	}
+	$source = array(
+		'C_emailAddress'=>Input::get('C_emailAddress'),
+		'C_FirstName'=>Input::get('C_FirstName'),
+		'C_LastName'=>Input::get('C_LastName'),
+		'C_Company'=>Input::get('C_Company'),
+		'C_Country'=>Input::get('C_Country'),
+		'C_BusPhone'=>Input::get('C_BusPhone'),
+		'form_source'=>Input::get('form_source','HP Tech Fit Quiz')
+	);
+	Session::put('source', $source);
+
 	$return_visitor = Cookie::has('quiz_progress');
 	$data = array(
 		'class'=>'intro',
@@ -62,34 +61,47 @@ Route::group(array('prefix' => 'quiz'), function()
 });
 Route::get('restart', function()
 {
+	if(Cookie::has('quiz_progress')){
+		$progress_id = Cookie::get('quiz_progress');
+		$progress = Progress::find($progress_id);
+		$progress->delete();
+	}
 	$cookie = Cookie::forget('quiz_progress');
 	return Redirect::to('/')->withCookie($cookie);
 });
-Route::get('continue', function()
+Route::get('continue', array('before'=>'reload', function()
 {
 	if(!Cookie::has('quiz_progress')) return Redirect::to('/');
 	
-	$questions = Cookie::get('quiz_progress');
-	Session::put('questions', $questions);
-	reset($questions);
-	$prog = false;
-	foreach ($questions as $key => $value) {
-		foreach ($value['pages'] as $pkey => $page) {
-			if(!isset($page['done'])){
-				$last_set['section']=$key;
-				$last_set['page']=$pkey;
+	$questions = Config::get('questions');
+	$progress_id = Cookie::get('quiz_progress');
+	$progress = Progress::find($progress_id);
+	
+	if(!$progress) return Redirect::to('/');
+	
+	$saved_progress = json_decode($progress->progress, true);
+	
+	$new_questions = array_merge_recursive($questions,$saved_progress);
+	
+	reset($new_questions);
+	
+	//add to session
+	Session::put('questions', $new_questions);
+	Session::put('source', json_decode($progress->source, true));
+	
+	foreach($new_questions as $section=>$pages){
+		foreach($pages['pages'] as $page=>$details){
+			if(!isset($details['done'])){
+				$last_set['section'] = $section;
+				$last_set['page'] = $page;
 				break 2;
-			}else{
-				//must have started
-				$prog = true;
 			}
 		}
 	}
-	$cookie = Cookie::forget('quiz_progress');
 	//must be finished?
-	if(!isset($last_set) && $prog){
-		return Redirect::to('/quiz/complete')->withCookie($cookie);
+	if(!isset($last_set)){
+		return Redirect::to('/quiz/complete');
 	}else{
-		return Redirect::to('/quiz/'.$last_set['section'].'/'.$last_set['page'])->withCookie($cookie);
+		return Redirect::to('/quiz/'.$last_set['section'].'/'.$last_set['page']);
 	}
-});
+}));

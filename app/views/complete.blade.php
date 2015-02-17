@@ -30,7 +30,7 @@
 
     {{ Form::open(array('url' => '/quiz/complete','id'=>'form-email-report','class'=>'clearfix')) }}
         <fieldset>
-        	<input type="hidden" value="{{$source['form_source']?$source['form_source']:'HP Tech Fit Quiz'}}" name="form_source">
+        	<input type="hidden" value="{{$source['form_source']}}" name="form_source">
             
             <div class="row{{$errors->has('fname')?' error':''}}">
                 <label>First Name*</label>

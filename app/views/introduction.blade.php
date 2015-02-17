@@ -20,7 +20,7 @@
     <div id="return">
     	<h1>Welcome back!</h1><br />
         <p>
-        	We noticed you have started the quiz but did not complete it.
+        	We noticed you started the quiz but have not complete it.
             <br/><br/>
         	Would you like to continue where you left off or would you like to restart?
         </p>
