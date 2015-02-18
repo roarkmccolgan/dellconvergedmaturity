@@ -191,7 +191,7 @@
 				try {
 					$request = $client->createRequest('GET', $url);
 					$query = $request->getQuery();
-					$query['elqFormName'] = 'BusNow_IDC_Eloqua_testintegration';
+					$query['elqFormName'] = 'FM_425867_PPS-Cross_GB_EN-GB_IDC_ELQ_integration';
 					$query['elqSiteID'] = '2048';
 					foreach($source as $key=>$item){
 						$query[$key] = $item;
