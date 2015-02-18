@@ -64,7 +64,8 @@ Route::get('restart', function()
 	if(Cookie::has('quiz_progress')){
 		$progress_id = Cookie::get('quiz_progress');
 		$progress = Progress::find($progress_id);
-		$progress->delete();
+		if($progress) $progress->delete();
+		
 	}
 	$cookie = Cookie::forget('quiz_progress');
 	return Redirect::to('/')->withCookie($cookie);

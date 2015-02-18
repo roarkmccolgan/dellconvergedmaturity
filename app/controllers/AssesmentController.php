@@ -69,7 +69,7 @@
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
             Session::put('questions.'.$section.'.pages.page'.$page.'.done', true);
 			
-			$new_step[$section]['pages']['page'.$page]['questions'][$validate_data['question']]['selected'] = $validate_data['answer'];
+			/*$new_step[$section]['pages']['page'.$page]['questions'][$validate_data['question']]['selected'] = $validate_data['answer'];
 			$new_step[$section]['pages']['page'.$page]['done'] = true;
 			if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
 				$new_step[$section]['complete'] = true;
@@ -95,10 +95,11 @@
 			}
 			$bake = $progress_id;
 			
-			$cookie = Cookie::make('quiz_progress', $bake, 2880);
+			$cookie = Cookie::make('quiz_progress', $bake, 2880);*/
             if(Session::has('questions.'.$section.'.pages.page'.($page+1))){
                 //$this->getPage($section,$page+1);
-                return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
+                //return Redirect::to('quiz/'.$section.'/page'.($page+1))->withCookie($cookie);
+				return Redirect::to('quiz/'.$section.'/page'.($page+1));
             }else{
               				
                 $questions = Session::get('questions');
@@ -106,9 +107,11 @@
                     next($questions);
                 }
                 next($questions);
-                if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
+                //if(key($questions)==null) return Redirect::to('quiz/complete')->withCookie($cookie);
+				if(key($questions)==null) return Redirect::to('quiz/complete');
                 //return $this->getPage(key($questions),1);
-                return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
+                //return Redirect::to('quiz/'.key($questions).'/page1')->withCookie($cookie);
+				return Redirect::to('quiz/'.key($questions).'/page1');
             }
         }
 
@@ -226,14 +229,15 @@
                     'colour' => 'orange',
                     'quiz' => $this->quiz
                 );
-				if(Cookie::has('quiz_progress')){
+				/*if(Cookie::has('quiz_progress')){
 					$progress_id = Cookie::get('quiz_progress');
 					$progress = Progress::find($progress_id);
-					$progress->delete();
+					if($progress) $progress->delete();
 				}
-				$cookie = Cookie::forget('quiz_progress');
+				$cookie = Cookie::forget('quiz_progress');*/
 				
-                return View::make('thankyou',$vars)->withCookie($cookie);
+                //return View::make('thankyou',$vars)->withCookie($cookie);
+				return View::make('thankyou',$vars);
             }
             Input::flashExcept('_token');
             return Redirect::to('quiz/complete')->withErrors($validator);
