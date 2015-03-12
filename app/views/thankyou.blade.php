@@ -10,7 +10,7 @@
 
 @section('header')
 <header id="side">
-    <h1>How TechFit is Your Business?</h1>
+    <h1>{{Lang::get('general.title')}}</h1>
     
     <h2>{{$heading}}</h2>
     <p>{{$sub1}}</p>
@@ -19,7 +19,7 @@
 
 @section('main')
 <section id="page" class="{{$colour}}">
-    <h2 class="title">While you're waiting why not tweet your results and see how your colleagues measure up?</h2>
+    <h2 class="title">{{Lang::get('general.wait')}}</h2>
     <a class="button-tweet" href="http://twitter.com/home/?status={{$tweet}}" target="_blank">Tweet</a>
 </section>
 @stop

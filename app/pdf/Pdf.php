@@ -2,7 +2,9 @@
 
 class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 
-	var $tempLabels = array('business'=>'Business effectiveness and IT capability', 'security'=>'IT Security', 'cloud'=>'Cloud solutions', 'mobility'=>'Mobility and BYOD', 'bigdataanalytics'=>'Big Data Analytics');
+	var $tempLabels;
+	var $copyY;
+	
     //Page header
     public function Header() {
 
@@ -109,67 +111,75 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 	
 	public function intro($result,$baseline,$quiz){
 		File::requireOnce(app_path().'/library/SVGGraph/SVGGraph.php');
+		$bus = Lang::get('report.business');
+		$sec = Lang::get('report.security');
+		$clo = Lang::get('report.cloud');
+		$mob = Lang::get('report.mobility');
+		$dat = Lang::get('report.data');
+		
+		$this->tempLabels = array('business'=>$bus, 'security'=>$sec, 'cloud'=>$clo, 'mobility'=>$mob, 'bigdataanalytics'=>$dat);
+		
 		$this->SetY(25);
 		$this->SetLineStyle(array('width' => 0.85 / $this->k, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(147)));
 		$this->SetX($this->original_lMargin);
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 88,89,91);
-		$this->Cell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, 'RESULTS', 'B', 2, 'L');
+		$this->Cell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, strtoupper(Lang::get('report.results')), 'B', 2, 'L');
 		
 		$this->SetFont('helvetica', '', 8);
 		
 		$txt = "
-Thank you for completing the IDC How TechFit Are You quiz sponsored by HP. The quiz aims to establish your organisation's fitness and ability to cope with the latest technology challenges in the following areas: ";
+".Lang::get('report.thankyou')." ".Lang::get('report.aims');
 
 		$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
 		
 		$this->SetXY($this->GetX()+5, $this->GetY()+3);
 		$this->ImageEps(K_PATH_IMAGES.'business.ai', '', '', 5);
 		$this->SetX($this->GetX()+6);
-		$this->Cell(75, 0, 'Business effectiveness and IT capability', 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.business'), 0, 2, 'L');
 		
 		$this->SetXY($this->GetX()-6, $this->GetY()+1);
 		$this->ImageEps(K_PATH_IMAGES.'security.ai', '', '', 4);
 		$this->SetXY($this->GetX()+6, $this->GetY()+1.5);
-		$this->Cell(75, 0, 'IT Security', 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.security'), 0, 2, 'L');
 		
 		$this->SetXY($this->GetX()-6, $this->GetY()+2);
 		$this->ImageEps(K_PATH_IMAGES.'cloud.ai', '', '', 4.5);
 		$this->SetXY($this->GetX()+6, $this->GetY());
-		$this->Cell(75, 0, 'Cloud solutions', 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.cloud'), 0, 2, 'L');
 		
 		$this->SetXY($this->GetX()-5.5, $this->GetY()+2);
 		$this->ImageEps(K_PATH_IMAGES.'mobility.ai', '', '', 3);
 		$this->SetXY($this->GetX()+5.5, $this->GetY());
-		$this->Cell(75, 0, 'Mobility and BYOD', 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.mobility'), 0, 2, 'L');
 		
 		$this->SetXY($this->GetX()-6, $this->GetY()+2);
 		$this->ImageEps(K_PATH_IMAGES.'bigdataanalytics.ai', '', '', 4);
 		$this->SetXY($this->GetX()+6, $this->GetY());
-		$this->Cell(75, 0, 'Big Data Analytics', 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.data'), 0, 2, 'L');
 		
 		$this->SetY($this->GetY()+4);
 		
 		$this->SetFont('helvetica', 'I', 8);
-		$txt = "Based on your responses, we would classify your overall TechFitness as:";
+		$txt = Lang::get('report.based');
 		$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
 		
 		$this->SetFont('helvetica', 'B', 8);
 		$this->SetColor('text', 0,82,148);
 		$this->SetY($this->GetY()+2);
-		$this->Cell(($this->w - $this->original_lMargin), 0, strtoupper($result['overall']['rating']), 0, 1, 'L');
+		$this->Cell(($this->w - $this->original_lMargin), 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
 		$this->resetText();
 		
 		switch($result['overall']['rating']){
 			case "Proactive":
-				$txt = "Congratulations! You are ahead of the curve and demonstrate a competitive advantage through technology leadership.";
+				$txt = Lang::get('report.proactiveintro');
 				break;
 			case "Moderate":
-				$txt = "Your organisation is at the midway point. There are some IT initiatives in place, but you still need to catch up.";
+				$txt = Lang::get('report.moderateintro');
 				break;
 			case "Reactive":
-				$txt = "Your organisation is falling behind your competitors and is not sufficiently responding to major challenges.";
+				$txt = Lang::get('report.reactiveintro');
 				break;
 		}
 		$this->SetY($this->GetY()+2);
@@ -181,7 +191,7 @@ Thank you for completing the IDC How TechFit Are You quiz sponsored by HP. The q
 			if($key!='overall' && ($res['rating']=='Reactive' || $res['rating']=='Moderate')){
 				if($improve==0){
 					$txt = "
-Based on your responses you can look to improve your overall score by focusing on improving your:";
+".Lang::get('report.basedimprove');;
 					$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
 					$this->SetY($this->GetY()+2);
 					$this->SetColor('text', 0,82,148);
@@ -197,6 +207,7 @@ Based on your responses you can look to improve your overall score by focusing o
 				$improve++;
 			}
 		}
+		$this->copyY = $this->GetY();
 		
 		//graphs
 		$this->SetY($this->GetY()+2);
@@ -206,7 +217,7 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($rightX, 36);
 		$this->SetFont('helvetica', '', 9);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(($this->w/2 - $this->original_lMargin - 5), 0, 'OVERALL TECHFITNESS', 0, 1, 'L');
+		$this->Cell(($this->w/2 - $this->original_lMargin - 5), 0, strtoupper(Lang::get('report.overall')), 0, 1, 'L');
 		
 		
 		//first graph
@@ -238,7 +249,7 @@ Based on your responses you can look to improve your overall score by focusing o
 		$graph = new SVGGraph(300, 120, $settings);
 		$graph->colours = $colours;
 		$values = array(
-			 array('BASELINE SCORE' => $baseline['overall']['baseline'], 'YOUR SCORE' => $result['overall']['score'])
+			 array(strtoupper(Lang::get('report.baselinescore')) => $baseline['overall']['baseline'], strtoupper(Lang::get('report.yourscore')) => $result['overall']['score'])
 		);
 		$graph->Values($values);
 		
@@ -251,16 +262,16 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($rightX+65, 43);
 		$this->SetFont('helvetica_condensed', '', 10);
 		$this->SetColor('text', 172);
-		$this->Cell(30, 0, strtoupper($result['overall']['rating']), 0, 1, 'L');
+		$this->Cell(30, 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
 		$this->SetX($rightX+65);
 		$this->SetFont('impact', '', 34);
-		$this->Cell(30, 0, strtoupper($result['overall']['score']), 0, 1, 'L');
+		$this->Cell(30, 0, $result['overall']['score'], 0, 1, 'L');
 		
 		//second graph
 		$this->SetXY($rightX, 72);
 		$this->SetFont('helvetica', '', 9);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(($this->w/2 - $this->original_lMargin - 5), 0, 'SECTION RESULTS', 0, 1, 'L');
+		$this->Cell(($this->w/2 - $this->original_lMargin - 5), 0, strtoupper(Lang::get('report.section')), 0, 1, 'L');
 		
 		$settings = array(
 			'back_colour' => '#eee',
@@ -288,8 +299,8 @@ Based on your responses you can look to improve your overall score by focusing o
 		$graph = new SVGGraph(300, 100, $settings);
 		$graph->colours = $colours;
 		$values = array(
-			 array('Business effectiveness and IT capability' => $result['business']['score'], 'IT Security' => $result['security']['score'], 'Cloud solutions' => $result['cloud']['score'], 'Mobility and BYOD' => $result['mobility']['score'], 'Big Data Analytics' => $result['bigdataanalytics']['score']),
-			 array('Business effectiveness and IT capability' => $baseline['business']['baseline'], 'IT Security' => $baseline['security']['baseline'], 'Cloud solutions' => $baseline['cloud']['baseline'], 'Mobility and BYOD' => $baseline['mobility']['baseline'], 'Big Data Analytics' => $baseline['bigdataanalytics']['baseline'])
+			 array(Lang::get('report.business') => $result['business']['score'], Lang::get('report.security') => $result['security']['score'], Lang::get('report.cloud') => $result['cloud']['score'], Lang::get('report.mobility') => $result['mobility']['score'], Lang::get('report.data') => $result['bigdataanalytics']['score']),
+			 array(Lang::get('report.business') => $baseline['business']['baseline'], Lang::get('report.security') => $baseline['security']['baseline'], Lang::get('report.cloud') => $baseline['cloud']['baseline'], Lang::get('report.mobility') => $baseline['mobility']['baseline'], Lang::get('report.data') => $baseline['bigdataanalytics']['baseline'])
 		);
 		$graph->Values($values);
 		//first graph
@@ -299,28 +310,29 @@ Based on your responses you can look to improve your overall score by focusing o
 		//legend
 		$this->SetFont('helvetica_condensed', '', 8);
 		$this->SetColor('text', 88,89,91);
-		$this->Rect($rightX+40,$this->getY()-3,4,4,'F',array(),array(164, 211, 108));
-		$this->SetXY($rightX+45,$this->getY()-2.5);
-		$this->MultiCell(15, 5, 'Your Result', 0, 'L', 0, 0, '', '', true);
+		$this->Rect($rightX+40,$this->getY(),4,4,'F',array(),array(164, 211, 108));
+		$this->SetXY($rightX+45,$this->getY());
+		$this->MultiCell(15, 5, Lang::get('report.yourscore'), 0, 'L', 0, 0, '', '', true);
 		
 		$this->Rect($rightX+60,$this->getY()-.5,4,4,'F',array(),array(147, 52, 184));
 		$this->SetXY($rightX+65,$this->getY());
-		$this->MultiCell(20, 5, 'Baseline Result', 0, 'L', 0, 0, '', '', true);
+		$this->MultiCell(20, 5, Lang::get('report.baselinescore'), 0, 'L', 0, 0, '', '', true);
 		
 		//x-axiz lables
 		$this->SetColor('text', 0,82,148);
 		$this->SetXY($rightX+7,$this->getY()+28);
 		
 		$this->SetFont('helvetica_condensed', '', 8);
-		$this->MultiCell(15, 5, 'Business effectiveness & IT capability', 0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, 'IT Security', 0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, 'Cloud solutions', 0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, 'Mobility & BYOD',0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, 'Big Data Analytics', 0, 'C', 0, 0, '', '', true);
-		$this->SetY($this->getY()+23);
+		$this->MultiCell(15, 5, Lang::get('report.business'), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(15, 5, Lang::get('report.security'), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(15, 5, Lang::get('report.cloud'), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(15, 5, Lang::get('report.mobility'),0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(15, 5, Lang::get('report.data'), 0, 'C', 0, 0, '', '', true);
+		//$this->SetY($this->getY()+23);
 		$this->resetText();
 		
 		//copy
+		$this->SetY($this->copyY+12);
 		$this->drawBorder();
 		
 		//get_answers
@@ -358,43 +370,43 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($indent, $this->GetY()+1);
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper('Business effectiveness and IT capability'), 0, 2, 'L');
+		$this->Cell(0, 0, strtoupper(Lang::get('report.business')), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "According to your responses in this section, your organisation's Business Effectiveness &amp; IT Capability TechFitness is: <b>".$result['business']['rating']."</b>";
+		$txt = Lang::get('report.businesssummary')." <b>".Lang::get('general.'.strtolower($result['business']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
 		$this->SetX($indent);
-		$this->Cell(0, 0, 'How To Get Ahead?', 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "<b>IT should not be considered a cost centre in organisations.</b> IT should be considered crucial in achieving a competitive advantage. Currently, only 56% of European organisations believe that their IT makes an important contribution to business objectives";
+		$txt = Lang::get('report.business1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
 		if($answers['b2']<5){
-			$txt = "<b>Ensure compliance risks are understood throughout the business.</b> Regulatory compliance is increasingly more prescriptive and officials more fervent in what they expect from organisation's compliance programs. Regulatory compliance should be integrated into IT strategies at the development stage with a major focus on security";
+			$txt = Lang::get('report.business2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['b3']<5){
-			$txt = "<b>Understand the business processes and requirements before attempting to automate document workflow.</b> Digitised business workflows have been adopted, or plan to be adopted by three quarters of organisations interviewed, however to successfully deploy an automated document workflow you need a full understanding of business rules and procedures before looking for the right solution.";
+			$txt = Lang::get('report.business3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['b4']<5){
-			$txt = "<b>Adopt telecom expense management to manage costs.</b> 86% of organisations have adopted the use of mobile devices, the cost of running these are very much driven by individual usage. The need to control the cost of these devices is therefore of critical importance. Around one-third of companies are adopting telecom expense management to manage costs associated with mobile device usage.";
+			$txt = Lang::get('report.business4');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['b5']<5){
-			$txt = "<b>Implement print device usage and reporting facilities.</b> Controlling who can print what, and where, leads to considerable cost savings, as well as other benefits such as enhanced privacy and security, reducing legal and business risk. IDC research shows that 26% of European SMBs have printing device usage and reporting facilities in place today, while 24% have implemented printing device security and ID solutions.";
+			$txt = Lang::get('report.business5');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
@@ -405,37 +417,37 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($indent, $this->GetY()+1);
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper('IT Security'), 0, 2, 'L');
+		$this->Cell(0, 0, strtoupper(Lang::get('report.security')), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "According to your responses in this section, your organisation's IT Security TechFitness i: <b>".$result['security']['rating']."</b>";
+		$txt =  Lang::get('report.securitysummary')." <b>".Lang::get('general.'.strtolower($result['security']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
 		$this->SetX($indent);
-		$this->Cell(0, 0, 'How To Get Ahead?', 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "<b>Security is a business function that needs to be incorporated into the way you do business.</b> Security should be built by design rather than as a bolt on afterthought. 93% of IT users view the improvement of security for existing employees and devices as their highest security priority";
+		$txt = Lang::get('report.security1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
 		if($answers['e2']<5){
-			$txt = "<b>Create secure, protected workspaces within central servers to eliminate risks in the deployment of mobile devices.</b> Mobile employees drive the need for secure access to data, however data loss prevention is a serious and recurring problem for almost all organisations. Sensitive data protection is the second most important business objective for businesses (60%)";
+			$txt = Lang::get('report.security2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['e3']<5){
-			$txt = "<b>Restrict printing to 'document owner present' minimises sensitive data loss through unauthorised persons reading/copying documents.</b> Loss of data or unauthorised copying and reading of sensitive documents can be a serious business risk and open the door to legal action. Around 30% of European SMBs have such solutions in place today.";
+			$txt = Lang::get('report.security3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['e4']<5){
-			$txt = "<b>Control your mobile devices through Mobile Device Management (MDM) software.</b> MDM allows network administrators to secure mobile devices regardless of connection. The management of mobile computing should be based on the principle of isolation of transactions so that any malware incursion can be isolated, examined, and then discarded. Other features include the encryption of files, authentication and access privileges, locking down applications, and validating security identification. 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, MDM. ";
+			$txt = Lang::get('report.security4');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
@@ -446,43 +458,43 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper('Cloud solutions'), 0, 2, 'L');
+		$this->Cell(0, 0, strtoupper(Lang::get('report.cloud')), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "According to your responses in this section, your organisation's Cloud TechFitness is: <b>".$result['cloud']['rating']."</b>";
+		$txt =  Lang::get('report.cloudsummary')." <b>".Lang::get('general.'.strtolower($result['cloud']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
 		$this->SetX($indent);
-		$this->Cell(0, 0, 'How To Get Ahead?', 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "<b>Focus on the architecture and planning.</b> Cloud has the potential to turn any mobile device into a supercomputer, providing access to processing power as needed to analyse virtually any type of information required. However, performance issues can affect cloud computing efforts; this is caused by cloud-based apps being widely distributed, with the data far away from the application logic. Unless careful planning has gone into the design of the system, latency and reliability may become major issues.";
+		$txt = Lang::get('report.cloud1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
 		if($answers['c2']<5){
-			$txt = "<b>Inform, educate, and control users over their file sharing activities.</b> Although Cloud storage facilitates collaboration, mobile working, and can be more cost-effective, it is also in high demand from end-users and not having a solution in place leads to increased 'shadow IT' as users adopt consumer solutions. This in turn may lead to increased business risk through lack of control. In the latest IDC survey around 20% of organisations had implemented a cloud-based file sharing solution – mostly to a restricted set of users";
+			$txt = Lang::get('report.cloud2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['c3']<5){
-			$txt = "<b>Evaluate your data security needs.</b> Preferences for data location and data security are often based on personal preference and misinformation. Consult with your local data privacy office to understand the actual requirements for certain data types, such as financial information, customer information, employee information, and personal identifiable information";
+			$txt = Lang::get('report.cloud3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['c4']<5){
-			$txt = "<b>Audit your organisation's printing infrastructure.</b> Consider device type (printer, MFP, toner, inkjet), brand, and age of devices. Evaluate the requirements of your internal customers – and, potentially, of external partners and other stakeholders that may need to print at corporate locations – including document types and output features. Today, 39% of European companies utilise cloud-printing, potentially benefitting from increased productivity and flexibility, while reducing the need for local infrastructure (fewer PCs deployed).";
+			$txt = Lang::get('report.cloud4');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['c5']<5){
-			$txt = "<b>Evaluate your existing level of maturity for cloud services to begin vendor qualification process.</b> 70% of surveyed organisations stated that improving IT security due to Cloud/SaaS usage was a very or extremely important part of strategy for the upcoming 12 months. Investment in the correct training and development is needed for the enterprise staff to ensure they understand how to operate securely in a cloud environment";
+			$txt = Lang::get('report.cloud5');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
@@ -493,43 +505,43 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper('Mobility and BYOD'), 0, 2, 'L');
+		$this->Cell(0, 0, strtoupper(Lang::get('report.mobility')), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "According to your responses in this section, your organisation's Mobility and BYOD TechFitness is: <b>".$result['mobility']['rating']."</b>";
+		$txt =  Lang::get('report.mobilitysummary')." <b>".Lang::get('general.'.strtolower($result['mobility']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
 		$this->SetX($indent);
-		$this->Cell(0, 0, 'How To Get Ahead?', 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "<b>Ensure your BYOD policy is up to date with your BYOD practice.</b> 53% of companies worldwide have some type of BYOD practice, however only 25% have a formal policy in place to support usage. With the growth in BYOD, organisations face growing threats to security risks. The need for effective governance of employee-managed devices and the utilisation of technology that allows employees to access information remotely without bringing it onto their personal devices will help to control security breaches";
+		$txt = Lang::get('report.mobility1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
 		if($answers['m2']<5){
-			$txt = "<b>Shift your focus from technology to solutions and business enablement in your go-to-market strategy.</b> Organisations are maturing in their application strategies and building, deploying and distributing a wide number of native or hybrid applications via multiple back-end systems. 25% of companies surveyed have at least launched their first mobile app and 5% have launched more than one. ";
+			$txt = Lang::get('report.mobility2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['m3']<5){
-			$txt = "<b>Consider multiple platforms and points of access for your staff.</b> Tablets can be a powerful tool for mobile staff, for knowledge workers, and for management wanting better access to reporting. The most recent IDC study shows that 62% of companies have evaluated or deployed tablets. ";
+			$txt = Lang::get('report.mobility3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['m4']<5){
-			$txt = "<b>Consider mobile print solutions that are easy to operate and suitable for use in the work environment.</b> Staff requests to print using a mobile device are increasing (75% of companies interviewed saw an increase in requests). Seamless mobility can drive new business processes and improve worker productivity. Successful mobile printing solutions depend on a convenient, intuitive process for workers to follow";
+			$txt = Lang::get('report.mobility4');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['m5']<5){
-			$txt = "<b>Consider implementing mobile print facilities for mobile workers.</b> The ability to print is fundamental to productivity and mobility. 68% of European organisations allow printing from outside the office, not being able to print remotely hampers productivity and the distribution of information. Ensure that the mobile print facilities are secure and private.";
+			$txt = Lang::get('report.mobility5');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
@@ -540,39 +552,39 @@ Based on your responses you can look to improve your overall score by focusing o
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper('Big Data Analytics'), 0, 2, 'L');
+		$this->Cell(0, 0, strtoupper(Lang::get('report.data')), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = "According to your responses in this section, your organisation's Big Data and Analytics TechFitness is: <b>".$result['bigdataanalytics']['rating']."</b>";
+		$txt = Lang::get('report.datasummary')." <b>".Lang::get('general.'.strtolower($result['bigdataanalytics']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
 		$this->SetX($indent);
-		$this->Cell(0, 0, 'How To Get Ahead?', 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
 		if($answers['d1']<5){
-			$txt = "<b>Provide visual and interactive analytics tools to empower employees.</b> The use of visualization tools is common among European companies to drive business success and agility. The tools allow employees to analyze vast quantities of data, including social media to take full advantage improving customer satisfaction. ";
+			$txt = Lang::get('report.data1');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['d2']<5){
-			$txt = "<b>Cloud-based analytics should be considered with other means of analytics solution deployment options.</b> Users are able to access analytical functionality more readily than on-premise deployments, and departments or smaller work groups can often fund purchases through operational budgets. ";
+			$txt = Lang::get('report.data2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['d3']<5){
-			$txt = "<b>Drive the C-agenda with Big Data.</b> The promise of better and faster data-driven decision making has pushed the Big Data initiative to the top of C-suite agenda. Access to information and the ability to create collective organisational intelligence as well as being able to act on these insights in a timely manner creates competitive advantage. 21% of European organisations have access to Big Data, whether via a feed into an existing production system or a Big Data–specific production system. ";
+			$txt = Lang::get('report.data3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
 		if($answers['d4']<5){
-			$txt = "<b>Monitor your social media sentiment to ensure you are gaining the most from your customer base.</b> As customers are increasingly becoming multi-channel with suppliers, it is important to monitor and understand your customer requirements. In a recent European survey 15% of organisations said they use Big Data to analyse or utilise social media information. This needn't be a big in-house operation, but it may make more sense to use simple cloud services or applications that offer social dashboards, alerting and timeline views";
+			$txt = Lang::get('report.data4');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}

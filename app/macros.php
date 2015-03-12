@@ -72,8 +72,14 @@ Form::macro('idcCheckbox', function($section,$q,$page){
 				<div class="checktext">'.$optionSet['label'].'</div>
 			</label>';
 	}
+	$currentLocal = App::getLocale();
+	$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
+	$btnsize = '-small';
+	if($localQuestions=='es'){
+		$btnsize = '-small lang';
+	}
 	$html.='
 		</fieldset>
-		<button class="button-small" type="submit">Next</button>';
+		<button class="button'.$btnsize.'" type="submit">'.Lang::get('general.next').'</button>';
 	return $html;
 });

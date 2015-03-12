@@ -78,7 +78,22 @@ b[_type],e=/wn|up/.test(d)?t:v;if(!c[n]){if(d==_click)A(a,!1,!0);else{if(/wn|er|
   };
   
   // self injection init
-  var msg = 'We use cookies to ensure that we give you the best experience on our website. By continuing to browse through our website you are agreeing to our use of cookies in accordance with our <a href="/cookies">Cookies Policy</a>. We have updated our <a href="/privacy">Privacy Policy</a>, effective as of 21 Jan 2015, by using continuing to browse through our website you are also agreeing to this updated policy.';
+  var subdomain_name = window.location.hostname.split('.').length >= 3 ? window.location.hostname.split('.')[0]:false;
+  if(!subdomain_name){
+	  var msg = 'We use cookies to ensure that we give you the best experience on our website. By continuing to browse through our website you are agreeing to our use of cookies in accordance with our <a href="/cookies">Cookies Policy</a>. We have updated our <a href="/privacy">Privacy Policy</a>, effective as of 21 Jan 2015, by using continuing to browse through our website you are also agreeing to this updated policy.';
+  }
+  if(subdomain_name=='fr'){
+	  var msg = 'Nous utilisons les cookies pour nous assurer que nous vous offrons la meilleure expérience sur notre site. En continuant à parcourir notre site , vous acceptez notre utilisation des cookies en conformité avec notre <a href="/cookies">politique sur les cookies</a>. Nous avons mis à jour notre <a href="/privacy">Politique de confidentialité</a>, à compter du 21 janvier 2015 , à l\'aide continue à parcourir notre site, vous acceptez également à cette politique mise à jour.';
+  }
+  if(subdomain_name=='de'){
+	  var msg = 'Wir verwenden Cookies, um sicherzustellen, dass wir Ihnen die beste Erfahrung auf unserer Website. Durch die fortgesetzte durch unsere Website nutzen, stimmen Sie der Verwendung von Cookies in Übereinstimmung mit unseren <a href="/cookies"> Cookies Policy </a> . Wir haben unsere <a href="/privacy"> Datenschutz </a> mit Hilfe weiterhin durch unsere Website sind Sie auch Zustimmung zu dieser aktualisierte Richtlinie aktualisiert , wie der 21. Januar 2015 wirksam .';
+  }
+  if(subdomain_name=='it'){
+	  var msg = 'Utilizziamo i cookie per assicurarsi che vi diamo la migliore esperienza sul nostro sito. Continuando a navigare attraverso il nostro sito web l\'utente accetta di utilizzare i cookie in accordo con la nostra <a href="/cookies"> Policy Cookies </a> . Abbiamo aggiornato la nostra <a href="/privacy"> Privacy Policy </a> , in vigore dal 21 gennaio 2015 , utilizzando continuando a navigare attraverso il nostro sito si sta anche accettando questa politica aggiornata .';
+  }
+  if(subdomain_name=='es'){
+	  var msg = 'Utilizamos cookies para asegurarse de que le damos la mejor experiencia en nuestro sitio web . Al continuar navegar a través de nuestro sitio web , usted acepta el uso de cookies de acuerdo con nuestra Política de cookies <a href="/cookies"> </a> . Hemos actualizado nuestra <a href="/privacy"> Política de privacidad </a> , efectiva a partir del 21 de enero 2015 , mediante el uso continuo para navegar por la web, además está de acuerdo con esta política actualizada .';
+  }
   $.cookieBar = function( options ) {  
 	$('body').prepend('<div class="ui-widget"><div style="display: none;" class="cookie-message ui-widget-header blue"><p>'+msg+'</p></div></div>');     
 	$('.cookie-message').cookieBar(options);

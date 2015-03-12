@@ -10,9 +10,9 @@
 
 @section('header')
 <header id="intro">
-    <h1>How TechFit<br/> is Your Business?</h1>
-    <h2>A New Style of IT is emerging. Take this 5-10 minute quiz and see how your tech fitness compares to industry benchmarks in key areas such as security and mobility, plus receive a report on how to become tech fitter.</h2>
-    <a href="{{'quiz/'.Session::get('startSection').'/page1'}}" class="button-big">Take the quiz</a>
+    <h1>{{Lang::get('general.title')}}</h1>
+    <h2>{{Lang::get('general.landing')}}</h2>
+    <a href="{{'quiz/'.Session::get('startSection').'/page1'}}" class="button-big {{App::getLocale()}}">{{Lang::get('general.startbut')}}</a>
 </header>
 @stop
 @if($return_visitor)

@@ -14,5 +14,7 @@ return array(
 	*/
 
 	'debug' => true,
+	
+	'host' => "hptechquiz.app",
 
 );

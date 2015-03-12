@@ -14,7 +14,6 @@
 
         public function loadQuestions(){
             $this->quiz=Session::get('questions');
-			
             if(!$this->quiz) return Redirect::to('/');
             $this->numSections=count($this->quiz);
             $temp = array();
@@ -26,14 +25,14 @@
                 $i = 1;
                 foreach ($value['pages'] as $pkey => $page) {
                     $temp[$key]['pages'][$pkey]['done'] = isset($page['done'])? true : false;
-                    $temp[$key]['pages'][$pkey]['progress'] = $i.' of '.$temp[$key]['numpages'];
+                    $temp[$key]['pages'][$pkey]['progress'] = $i.' '.Lang::get('general.of').' '.$temp[$key]['numpages'];
                     $i++;
                 }
             }
             $this->menu = $temp;
         }
 
-        public function getPage($section=false, $page=false)
+        public function getPage($section=false, $page=false, $cunt=false)
         {
             if($section===false || $page===false) return Redirect::to('/');
             $this->loadQuestions();
@@ -48,6 +47,12 @@
                     $script[]=$question['script'];
                 }
             }
+			$currentLocal = App::getLocale();
+			$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
+			$btnsize = '-small';
+			if($localQuestions=='es'){
+				$btnsize = '-small lang';
+			}
             $vars = array(
                 'questions' => $sectionQuestions['questions'],
                 'heading' => $sectionQuestions['title'],
@@ -56,7 +61,8 @@
                 'colour' => $data['colour'],
                 'section'=>$section,
                 'page'=>$page,
-                'script'=>$script
+                'script'=>$script,
+				'btnsize'=>$btnsize
             );
             return View::make('question',$vars);
         }
@@ -119,12 +125,19 @@
         {
             $this->loadQuestions();
             $this->calcResults();
+			$currentLocal = App::getLocale();
+			$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
+			$btnclass = '';
+			if($localQuestions=='es' || $localQuestions=='fr' || $localQuestions=='de' || $localQuestions=='it'){
+				$btnclass = 'lang';
+			}
             $vars = array(
-                'heading' => "You’re ".strtoupper($this->howfit['overall']['rating']),
+                'heading' => Lang::get('general.youre').' '.strtoupper(Lang::get('general.'.strtolower($this->howfit['overall']['rating']))),
                 'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
                 'colour' => 'orange',
                 'quiz' => $this->quiz,
-				'source' => Session::get('source')
+				'source' => Session::get('source'),
+				'btnclass'=>$btnclass
             );
             return View::make('complete',$vars);
         }
@@ -153,6 +166,8 @@
 				$screener2=$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'];
 				
 				//update source
+				$currentLocal = App::getLocale();
+				$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
 				$source = array(
 					'C_emailAddress'=>$validate_data['email'],
 					'C_FirstName'=>$validate_data['fname'],
@@ -160,10 +175,11 @@
 					'C_Company'=>$validate_data['company'],
 					'C_Country'=>$validate_data['country'],
 					'C_BusPhone'=>$validate_data['phone'],
-					'C_Job_Responsibilities_1'=>$screener1=="You run or work within the IT dept of your company" ? "IT" : "Business / Operations",
+					'C_Job_Responsibilities_1'=>$screener1==Config::get($localQuestions.'questions.screeners.pages.page1.questions.s1.options.0.label') ? "IT" : "Business / Operations",
 					'C_NumberofEmployees_Range_1'=>$screener2,
 					'form_source'=>Input::get('form_source')
 				);
+				
 				Session::put('source', $source);
 				
 				//save in db
@@ -219,12 +235,12 @@
 				}
 				Mail::queue('emails.notification', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'email'=>$validate_data['email'], 'company'=>$validate_data['company'], 'phone'=>$validate_data['phone'], 'screener1'=>$this->quiz['screeners']['pages']['page1']['questions']['s1']['selected'], 'screener2'=>$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'], 'score'=>$this->howfit['overall']['score'], 'rating'=>$this->howfit['overall']['rating'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data, $emails){
 
-                    $message->to($emails)->subject('Tech fitness Report Completed');
+                    $message->to($emails)->subject('Tech fitness Report Completed ('.App::getLocale().')');
                 });
 				
 				$vars = array(
-                    'heading' => "Hi ".$validate_data['fname']." ".$validate_data['sname'].",",
-                    'sub1' => "Your download link will be in your inbox soon.",
+                    'heading' => Lang::get('general.hi').' '.$validate_data['fname']." ".$validate_data['sname'].",",
+                    'sub1' => Lang::get('general.soon'),
                     'tweet' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['tweet'],
                     'colour' => 'orange',
                     'quiz' => $this->quiz

@@ -10,7 +10,7 @@
 
 @section('header')
 <header id="side">
-    <h1>How TechFit is Your Business?</h1>
+    <h1>{{Lang::get('general.title')}}</h1>
     <nav id="steps" class="clearfix">
         @foreach ($menu as $key=>$pages)
             @if($pages['display'])
@@ -103,12 +103,13 @@ jQuery(window).on("beforeunload", function(event){
 								'</div>'+
 								'<div class="clearfix"></div>'+
 							'</div>'+
-							'<button class="button-small" type="submit" value="'+val+'" name="answer">Next</button>'+
+							'<button class="button{{$btnsize}}" type="submit" value="'+val+'" name="answer">{{Lang::get('general.next')}}</button>'+
 						'</div>';
 				$(html).hide().appendTo(parent);
 				
 				//hide next buttton
-				$('div.repwrap').find('button.button-small').hide();
+				$('div.repwrap').find('button.button{{$btnsize}}').hide();
+				$('div.repwrap').find('button.button{{str_replace(" ",".",$btnsize)}}').hide();
 				
 				//move out of view
 				$('div.repwrap').css({
@@ -141,12 +142,14 @@ jQuery(window).on("beforeunload", function(event){
 										top: 0
 									}, 'slow', function() {
 										$('div.repmod').animate({ height: repheight },400,function(){
-											$('div.repwrap').find('button.button-small').fadeIn("fast");
+											$('div.repwrap').find('button.button{{$btnsize}}').fadeIn("fast");
+											$('div.repwrap').find('button.button{{str_replace(" ",".",$btnsize)}}').fadeIn("fast");
 										});
 									});
 								}else{
 									$('div.repmod').animate({ height: repheight },400,function(){
-										$('div.repwrap').find('button.button-small').fadeIn("fast");
+										$('div.repwrap').find('button.button{{$btnsize}}').fadeIn("fast");
+										$('div.repwrap').find('button.button{{str_replace(" ",".",$btnsize)}}').fadeIn("fast");
 									});
 								}
 							});
@@ -178,7 +181,8 @@ jQuery(window).on("beforeunload", function(event){
                     var start = 0;
 					
 					
-                    $('button.button-small').fadeOut('fast');
+                    $('button.button{{$btnsize}}').fadeOut('fast');
+					$('button.button{{str_replace(" ",".",$btnsize)}}').fadeOut("fast");
                     jQuery.each($('label.rel'), function( i, item ) {
                         $(item).fadeOut('fast', function() {
                             start++;
@@ -197,7 +201,7 @@ jQuery(window).on("beforeunload", function(event){
 											'</div>'+
 											'<div class="clearfix"></div>'+
 										'</div>'+
-										'<button class="button-small" type="submit">Next</button>'+
+										'<button class="button{{$btnsize}}" type="submit">{{Lang::get('general.next')}}</button>'+
 									'</div>';
 								
 								$(html).appendTo(sibling);

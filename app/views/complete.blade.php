@@ -20,12 +20,12 @@
 
 @section('main')
 <section id="page" class="{{$colour}}">
-    <h2 class="title">We can send you the full results directly to your mailbox</h2>
+    <h2 class="title">{{Lang::get('general.send')}}</h2>
     <p>
-        Want a full report that benchmarks your tech fitness and suggests how you can improve?
+        {{Lang::get('general.fullreport')}}
     </p>
     <p>
-        Just provide us your name and email  and we’ll send you a link to download it.
+        {{Lang::get('general.provide')}}
     </p>
 
     {{ Form::open(array('url' => '/quiz/complete','id'=>'form-email-report','class'=>'clearfix')) }}
@@ -33,27 +33,27 @@
         	<input type="hidden" value="{{$source['form_source']}}" name="form_source">
             
             <div class="row{{$errors->has('fname')?' error':''}}">
-                <label>First Name*</label>
+                <label>{{Lang::get('general.fname')}}*</label>
                 <input type="text" class="req" value="{{$source['C_FirstName']?$source['C_FirstName']:''}}" name="fname">
                 <span>Enter your name</span>
             </div>
             <div class="row{{$errors->has('sname')?' error':''}}">
-                <label>Surname*</label>
+                <label>{{Lang::get('general.sname')}}*</label>
                 <input type="text" class="req" value="{{$source['C_LastName']?$source['C_LastName']:''}}" name="sname">
                 <span>Enter your surname</span>
             </div>
             <div class="row{{$errors->has('email')?' error':''}}">
-                <label>Email Address*</label>
+                <label>{{Lang::get('general.email')}}*</label>
                 <input type="text" class="req email" value="{{$source['C_emailAddress']?$source['C_emailAddress']:''}}" name="email">
                 <span>Enter a valid email address</span>
             </div>
             <div class="row{{$errors->has('company')?' error':''}}">
-                <label>Company name*</label>
+                <label>{{Lang::get('general.company')}}*</label>
                 <input type="text" value="{{$source['C_Company']?$source['C_Company']:''}}" name="company" class="req">
                 <span>Enter your company name</span>
             </div>
             <div class="row{{$errors->has('country')?' error':''}}">
-                <label>Country*</label>
+                <label>{{Lang::get('general.country')}}*</label>
                 <select id="country" name="country" class="sel req">
                 	<option value="">Please select</option>
                     <option value="Afghanistan">Afghanistan</option>
@@ -302,25 +302,24 @@
                 <span>Please select your country</span>
             </div>
             <div class="row">
-                <label>Phone Number</label>
+                <label>{{Lang::get('general.phone')}}</label>
                 <input type="text" value="{{$source['C_BusPhone']?$source['C_BusPhone']:''}}" name="phone">
                 <span>Enter a valid number</span>
             </div>
             <div class="terms">
                 <label class="checkbox{{$errors->has('terms')?' error':''}}">
                     <input type="checkbox" class="req" name="terms">
-                    I accept the terms 
+                    {{Lang::get('general.accept')}} 
                 </label>
                 <aside>
-                    <h6>Terms &amp; Condtions*</h6>
+                    <h6>{{Lang::get('general.terms')}} *</h6>
                     <p>
-                    	By registering with IDC, you accept our <a href="{{'/privacy'}}" target="_blank">Privacy Policy</a> and <a href="{{'http://www8.hp.com/uk/en/privacy/privacy.html'}}" target="_blank">HP Privacy Policy</a>
-                        The information we collect will be shared with HP for the purpose of direct marketing
+                    	{{Lang::get('general.byreg')}}
                     </p>
                 </aside>
             </div>
-            <em>* Required</em>
-            <button class="button" type="submit">Email me my report</button>
+            <em>* {{Lang::get('general.required')}}</em>
+            <button class="button {{$btnclass}}" type="submit">{{Lang::get('general.emailreport')}}</button>
         </fieldset>
     {{ Form::close() }}
 </section>

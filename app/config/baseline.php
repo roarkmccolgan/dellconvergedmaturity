@@ -91,20 +91,20 @@ return array(
             'Reactive' => array(
                 'low' => 0,
                 'high' => 48,
-                'copy' => 'Okay, your TechFitness could be better – but it\'s a long race. Taking this quiz is a good first step. The second step is to digest our free report. The third step is up to you!',
-                'tweet' => 'I took the @HP TechFitness quiz and it’s shown me where I can get tech fitter. Quiz covers Security, Mobility and more. Interested?'
+                'copy' => Lang::get('general.reativetxt'),
+				'tweet' => Lang::get('general.relativetweet')
             ),
             'Moderate' => array(
                 'low' => 48.1,
                 'high' => 92,
-                'copy' => 'Not a bad result, your TechFitness is similar to many of your industry peers. That said, there’s a lot for you to consider if your business is to succeed in this era of tech-led business transformation.',
-                'tweet' => 'I took the @HP TechFitness quiz and my company is on the right track. Quiz covers Security, Mobility and more. Interested? '
+                'copy' => Lang::get('general.moderatetxt'),
+                'tweet' => Lang::get('general.moderatetweet')
             ),
             'Proactive' => array(
                 'low' => 92.1,
                 'high' => 115,
-                'copy' => 'With great TechFitness already, you’re well placed to succeed in this era of tech-led business transformation. However, there are still things you can consider to ensure you stay ahead.',
-                'tweet' => 'I took the @HP TechFitness quiz and my company looks well placed to succeed in the future. Why don’t you take it and see how you do?'
+                'copy' => Lang::get('general.proactivetxt'),
+                'tweet' => Lang::get('general.proactivetweet')
             )
         )
     )

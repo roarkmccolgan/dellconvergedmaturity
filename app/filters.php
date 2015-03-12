@@ -59,10 +59,49 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('french', function($route)
+{
+	$loc = 'fr';
+	if (in_array($loc, Config::get('app.alt_langs'))) {
+		App::setLocale($loc);
+	}
+});
+Route::filter('german', function($route)
+{
+	$loc = 'de';
+	if (in_array($loc, Config::get('app.alt_langs'))) {
+		App::setLocale($loc);
+	}
+});
+Route::filter('italian', function($route)
+{
+	$loc = 'it';
+	if (in_array($loc, Config::get('app.alt_langs'))) {
+		App::setLocale($loc);
+	}
+});
+Route::filter('spanish', function($route)
+{
+	$loc = 'es';
+	if (in_array($loc, Config::get('app.alt_langs'))) {
+		App::setLocale($loc);
+	}
+});
+
+Route::filter('local', function($route)
+{
+	$loc = $route->getParameter('loc');
+	if (in_array($loc, Config::get('app.alt_langs'))) {
+		App::setLocale($loc);
+	}
+});
+
 Route::filter('reload', function()
 {
 	Session::flush();
-    $questions = Config::get('questions');
+	$currentLocal = App::getLocale();
+	$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
+    $questions = Config::get($localQuestions.'questions');
     Session::put('questions', $questions);
     reset($questions);
     Session::put('startSection', key($questions));

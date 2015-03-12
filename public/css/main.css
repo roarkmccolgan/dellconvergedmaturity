@@ -78,6 +78,7 @@ a.button, a.button-big{
 	background: url(../img/buttons.png);
 	position: relative;
 	font-size: 18px;
+	line-height: 20px;
 	font-family: 'Avenir';
 	color: #242638;
 	outline: 0 none;
@@ -128,6 +129,13 @@ a.button-big:hover {
 	color: #e7b056;
 }
 
+a.button-big.es, a.button-big.fr {
+	font-size: 18px;
+}
+a.button-big.fr {
+	font-size: 16px;
+}
+
 .button-small {
 	background: url(../img/buttons.png);
 	position: relative;
@@ -136,7 +144,7 @@ a.button-big:hover {
 	color: #242638;
 	outline: 0 none;
 	margin: 0;
-	padding: 0 0 0 25px;
+	padding: 0 0 0 15px;
 	border: 0;
 	overflow: visible;
 	width: 112px;
@@ -144,6 +152,10 @@ a.button-big:hover {
 	background-position: 0 -1061px;
 	text-align: left;
 	margin-bottom: 1em;
+}
+.button-small.lang{
+	padding: 0 0 0 10px;
+	font-size: 14px;
 }
 a.button-small {
 	display: inline-block;
@@ -213,6 +225,7 @@ a.button-small {
 	background: url(../img/buttons.png);
 	position: relative;
 	font-size: 14px;
+	line-height: 14px;
 	font-weight: bold;
 	font-family: Arial, sans-serif;
 	width: 282px;
@@ -274,6 +287,7 @@ a.button-small {
 	z-index: 1;
 	color: #222;
 	font-size: 13px;
+	line-height: 13px;
 	font-weight: bold;
 	text-align: center;
 	vertical-align: baseline;
@@ -762,6 +776,11 @@ span.instruct {
 #page form .button, #page form .button-small {
 	float: right;
 }
+#page form .button.lang{
+	padding: 0 0 0 10px;
+	font-size: 14px;
+	line-height: 14px;	
+}
 #page form em {
 	display: block;
 	text-align: right;
@@ -844,6 +863,7 @@ span.instruct {
 
 .repmod h4{
 	font-size: 14px;
+	line-height: 14px;
 	font-weight: bold;
 	font-family: Arial, sans-serif;
 	color: #222;

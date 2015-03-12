@@ -26,8 +26,8 @@
 		</div>
 		<footer id="footer">
 			<div class="wrapper clearfix">
-				{{link_to('/restart', 'Restart Quiz',array('class'=>'restart'))}}
-				<span class="hp">In association with</span>
+				{{link_to('/restart', Lang::get('general.restart'),array('class'=>'restart'))}}
+				<span class="hp">{{Lang::get('general.assoc')}}</span>
 			</div>
 		</footer>
 	@yield('pagescript')

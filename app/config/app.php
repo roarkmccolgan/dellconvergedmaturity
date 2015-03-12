@@ -66,6 +66,18 @@ return array(
 	*/
 
 	'fallback_locale' => 'en',
+	
+	/**
+	 * List of alternative languages (not including the one specified as 'locale')
+	 */
+	'alt_langs' => array ('fr', 'de', 'it', 'es'),
+	
+	
+	/**
+	 * domain name
+	 */
+	'host' => "techfitquiz.com",
+	
 
 	/*
 	|--------------------------------------------------------------------------
