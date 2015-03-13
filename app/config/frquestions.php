@@ -802,7 +802,7 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nous avons conduit des recherches préliminaires mais nous n\'avons pas encore déployé de fonctions d\'analyse sur le Cloud ',
+                                'label'=>'Nous étudions la possibilité de déployer des fonctions d’analyse sur le cloud mais ne l’avons pas encore fait.',
                                 'value'=>3,
                                 'checked'=>false
                             ),
