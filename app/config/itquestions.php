@@ -545,7 +545,7 @@ return array(
                 'questions' => array(
                     'c5'=>array(
                         'type'=>'button',
-                        'question'=>'L\'utilizzo del cloud ha modificato la sua strategia per la sicurezza IT? [SELEZIONARE UNA RISPOSTA]',
+                        'question'=>'L\'utilizzo del cloud ha modificato la sua strategia per la sicurezza IT?',
                         'name'=>'c5',
                         'options'=>array(
                             array(

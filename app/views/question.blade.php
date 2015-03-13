@@ -161,7 +161,7 @@ jQuery(window).on("beforeunload", function(event){
     }else if($('label.rel').length){
         $('button.button-small').click(function(e){
             e.preventDefault();
-            var title = 'Cloud Services';
+            var title = '{{$heading}}';
             var sibling = $(this).prev("fieldset");
 			var pos = false;
             var parentHeight = sibling.css('height');

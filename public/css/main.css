@@ -999,6 +999,9 @@ span.instruct {
 	#intro {
 		padding-left: 20px;
 	}
+	#side h1{
+		max-width: 89%;
+	}
 	#side h2 small{
 		position: absolute;
 	    right: 0;

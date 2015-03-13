@@ -28,7 +28,7 @@ return array(
     'country'=>'Country',
     'phone'=>'Phone Number',
     'terms'=>'Terms &amp; Conditions',
-    'byreg'=>'By registering with IDC, you accept our <a href="{{\'/privacy\'}}" target="_blank">Privacy Policy</a> and <a href="{{\'http://www8.hp.com/uk/en/privacy/privacy.html\'}}" target="_blank">HP Privacy Policy</a> The information we collect will be shared with HP for the purpose of direct marketing',
+    'byreg'=>'By registering with IDC, you accept our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="http://www8.hp.com/uk/en/privacy/privacy.html" target="_blank">HP Privacy Policy</a> The information we collect will be shared with HP for the purpose of direct marketing',
     'accept'=>'I accept the terms',
     'required'=>'Required',
     'emailreport'=>'Email me my report',

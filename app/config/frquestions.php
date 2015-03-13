@@ -30,7 +30,7 @@ return array(
                 )
             ),
             'page2' => array(
-                'title' => 'OUne dernière question avant de commencer.',
+                'title' => 'Une dernière question avant de commencer.',
                 'questions' => array(
                     's2'=>array(
                         'type'=>'icon',

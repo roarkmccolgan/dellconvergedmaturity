@@ -419,7 +419,7 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'No está seguro [SE EXCLUYEN MUTUAMENTE].',
+                                'label'=>'No está seguro.',
                                 'value'=>1,
                                 'checked'=>false
                             )

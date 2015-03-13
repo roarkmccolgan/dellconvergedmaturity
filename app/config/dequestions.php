@@ -67,7 +67,7 @@ return array(
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => 'Business Effectiveness &amp; IT Capability',
+                'title' => 'Geschäftseffizienz Und It-kompetenz',
                 'questions' => array(
                     'b1'=>array(
                         'type'=>'button',
@@ -103,7 +103,7 @@ return array(
                 )
             ),
             'page2' => array(
-                'title' => 'Business Effectiveness &amp; IT Capability',
+                'title' => 'Geschäftseffizienz Und It-kompetenz',
                 'questions' => array(
                     'b2'=>array(
                         'type'=>'button',
@@ -139,7 +139,7 @@ return array(
                 )
             ),
             'page3' => array(
-                'title' => 'Business Effectiveness &amp; IT Capability',
+                'title' => 'Geschäftseffizienz Und It-kompetenz',
                 'questions' => array(
                     'b3'=>array(
                         'type'=>'button',
@@ -170,7 +170,7 @@ return array(
                 )
             ),
             'page4' => array(
-                'title' => 'Business Effectiveness &amp; IT Capability',
+                'title' => 'Geschäftseffizienz Und It-kompetenz',
                 'questions' => array(
                     'b4'=>array(
                         'type'=>'button',
@@ -201,7 +201,7 @@ return array(
                 )
             ),
             'page5' => array(
-                'title' => 'Business Effectiveness &amp; IT Capability',
+                'title' => 'Geschäftseffizienz Und It-kompetenz',
                 'questions' => array(
                     'b5'=>array(
                         'type'=>'button',
@@ -423,7 +423,7 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nicht sicher [KEINE MEHRFACHAUSWAHL MÖGLICH]',
+                                'label'=>'Nicht sicher',
                                 'value'=>1,
                                 'checked'=>false
                             )
@@ -721,7 +721,7 @@ return array(
                 'questions' => array(
                     'm5'=>array(
                         'type'=>'button',
-                        'question'=>'Können Ihre Mitarbeiter Druckaufträge von außerhalb des Büros über Laptops oder andere Mobilgeräte ausführen? [BITTE EINE ANTWORT AUSWÄHLEN]',
+                        'question'=>'Können Ihre Mitarbeiter Druckaufträge von außerhalb des Büros über Laptops oder andere Mobilgeräte ausführen?',
                         'name'=>'m5',
                         'options'=>array(
                             array(

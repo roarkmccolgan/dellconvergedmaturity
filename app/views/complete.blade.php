@@ -10,7 +10,7 @@
 
 @section('header')
 <header id="side">
-    <h1>How TechFit is Your Business?</h1>
+    <h1>{{Lang::get('general.title')}}</h1>
     
     <h2>{{$heading}}</h2>
     <p>{{$sub1}}</p>

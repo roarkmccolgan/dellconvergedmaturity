@@ -43,11 +43,12 @@ b[_type],e=/wn|up/.test(d)?t:v;if(!c[n]){if(d==_click)A(a,!1,!0);else{if(/wn|er|
  
 (function( $ ){
   $.fn.cookieBar = function( options ) {  
+  	var subdomain_name = window.location.hostname.split('.').length >= 3 ? window.location.hostname.split('.')[0]:'';
 	var settings = $.extend( {
       'closeButton' : 'none',
 	  'secure' : false,
 	  'path' : '/',
-	  'domain' : ''
+	  'domain' : subdomain_name+'techfitquiz.com'
     }, options);
   
     return this.each(function() {       
@@ -79,7 +80,7 @@ b[_type],e=/wn|up/.test(d)?t:v;if(!c[n]){if(d==_click)A(a,!1,!0);else{if(/wn|er|
   
   // self injection init
   var subdomain_name = window.location.hostname.split('.').length >= 3 ? window.location.hostname.split('.')[0]:false;
-  if(!subdomain_name || subdomain_name=='www'){
+  if(subdomain_name=='' || subdomain_name=='www'){
 	  var msg = 'We use cookies to ensure that we give you the best experience on our website. By continuing to browse through our website you are agreeing to our use of cookies in accordance with our <a href="/cookies">Cookies Policy</a>. We have updated our <a href="/privacy">Privacy Policy</a>, effective as of 21 Jan 2015, by using continuing to browse through our website you are also agreeing to this updated policy.';
   }
   if(subdomain_name=='fr'){
