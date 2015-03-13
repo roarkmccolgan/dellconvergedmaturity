@@ -231,7 +231,8 @@
 				if(App::isLocal()){
 					$emails = ['roarkmccolgan@gmail.com'];
 				}else{
-					$emails = ['nikhil.kalanjee@hp.com', 'ftang@idc.com','kerry.gilbert@hp.com','roarkmccolgan@gmail.com'];
+					//$emails = ['nikhil.kalanjee@hp.com', 'ftang@idc.com','kerry.gilbert@hp.com','roarkmccolgan@gmail.com'];
+					$emails = ['roarkmccolgan@gmail.com'];
 				}
 				Mail::queue('emails.notification', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'email'=>$validate_data['email'], 'company'=>$validate_data['company'], 'phone'=>$validate_data['phone'], 'screener1'=>$this->quiz['screeners']['pages']['page1']['questions']['s1']['selected'], 'screener2'=>$this->quiz['screeners']['pages']['page2']['questions']['s2']['selected'], 'score'=>$this->howfit['overall']['score'], 'rating'=>$this->howfit['overall']['rating'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data, $emails){
 
