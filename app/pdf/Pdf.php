@@ -368,9 +368,10 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetX($this->GetX()+2);
 		$this->ImageEps(K_PATH_IMAGES.'business.ai', '', '', 10);
 		$this->SetXY($indent, $this->GetY()+1);
+		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper(Lang::get('report.business')), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.business'), 0, 2, 'L');
 		$this->resetText();
 		
 		$txt = Lang::get('report.businesssummary')." <b>".Lang::get('general.'.strtolower($result['business']['rating']))."</b>";
@@ -417,7 +418,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetXY($indent, $this->GetY()+1);
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper(Lang::get('report.security')), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.security'), 0, 2, 'L');
 		$this->resetText();
 		
 		$txt =  Lang::get('report.securitysummary')." <b>".Lang::get('general.'.strtolower($result['security']['rating']))."</b>";
@@ -458,7 +459,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper(Lang::get('report.cloud')), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.cloud'), 0, 2, 'L');
 		$this->resetText();
 		
 		$txt =  Lang::get('report.cloudsummary')." <b>".Lang::get('general.'.strtolower($result['cloud']['rating']))."</b>";
@@ -505,7 +506,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper(Lang::get('report.mobility')), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.mobility'), 0, 2, 'L');
 		$this->resetText();
 		
 		$txt =  Lang::get('report.mobilitysummary')." <b>".Lang::get('general.'.strtolower($result['mobility']['rating']))."</b>";
@@ -552,7 +553,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, strtoupper(Lang::get('report.data')), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.data'), 0, 2, 'L');
 		$this->resetText();
 		
 		$txt = Lang::get('report.datasummary')." <b>".Lang::get('general.'.strtolower($result['bigdataanalytics']['rating']))."</b>";
