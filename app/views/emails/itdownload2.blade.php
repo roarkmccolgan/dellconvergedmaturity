@@ -518,7 +518,7 @@
                                         <tr>
                                             <td valign="top" class="footerContent"><br/><br/>
                                                 Questo messaggio e-mail è generato automaticamente, non rispondere.<br/>
-                                                <a href="{{url('http://it.techfitquiz.com/email', array($userid))}}">Visualizza nel browser
+                                                <a href="{{url('http://it.techfitquiz.com/email/'.$userid)}}">Visualizza nel browser
 </a>
                                             </td>
                                         </tr>
