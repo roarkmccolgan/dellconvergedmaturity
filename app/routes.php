@@ -51,7 +51,7 @@ Route::group(array('domain' => 'fr.'.$host, 'before' => 'french'), function()
 		if(is_null($userid) || is_null($user)){
 			return Redirect::to('/');
 		}else{
-			return View::make('emails.download2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+			return View::make('emails.frdownload2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
 		}
 	});
 	
@@ -105,7 +105,7 @@ Route::group(array('domain' => 'de.'.$host, 'before' => 'german'), function()
 		if(is_null($userid) || is_null($user)){
 			return Redirect::to('/');
 		}else{
-			return View::make('emails.download2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+			return View::make('emails.dedownload2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
 		}
 	});
 	
@@ -159,7 +159,7 @@ Route::group(array('domain' => 'it.'.$host, 'before' => 'italian'), function()
 		if(is_null($userid) || is_null($user)){
 			return Redirect::to('/');
 		}else{
-			return View::make('emails.download2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+			return View::make('emails.itdownload2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
 		}
 	});
 	
@@ -213,7 +213,7 @@ Route::group(array('domain' => 'es.'.$host, 'before' => 'spanish'), function()
 		if(is_null($userid) || is_null($user)){
 			return Redirect::to('/');
 		}else{
-			return View::make('emails.download2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+			return View::make('emails.esdownload2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
 		}
 	});
 	
