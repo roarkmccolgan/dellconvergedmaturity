@@ -226,10 +226,11 @@
 				}
 				$subject = Lang::get('email.report');
 				//send mail to user
-                Mail::queue(array('emails.'.$curloc.'download2'), array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
+                Mail::queue('emails.'.$curloc.'download2', array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
 
                     $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject($subject);
                 });
+				
 				//send mail to notification people
 				if(App::isLocal()){
 					$emails = ['roarkmccolgan@gmail.com'];
