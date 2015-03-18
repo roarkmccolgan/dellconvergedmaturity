@@ -199,6 +199,7 @@
 				
 				//generate report
 				$this->generateReport();
+				$curloc = App::getLocale();
 				
 				if(!App::isLocal()){
 					//send guzzle request
@@ -219,15 +220,15 @@
 						
 						Mail::queue('emails.errors', array('process'=>'Guzzle', 'message'=>$e->getMessage(), 'time'=>date('l jS \of F Y h:i:s A')), function($message)
 						{
-							$message->to('roarkmccolgan@gmail.com', 'Roark McColgan')->subject('Error on HP Tech Quiz! ('.App::getLocale().')');
+							$message->to('roarkmccolgan@gmail.com', 'Roark McColgan')->subject('Error on HP Tech Quiz! ('.$curloc.')');
 						});
 					}
 				}
-				
+				$subject = Lang::get('email.report');
 				//send mail to user
-                Mail::queue(array('emails.'.App::getLocale().'download2'), array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
+                Mail::queue(array('emails.'.$curloc.'download2'), array('fname'=>$validate_data['fname'], 'sname'=>$validate_data['sname'], 'userid'=>$validate_data['userid']), function($message)  use ($validate_data){
 
-                    $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject(Lang::get('email.report'));
+                    $message->to($validate_data['email'], $validate_data['fname'].' '.$validate_data['sname'])->subject($subject);
                 });
 				//send mail to notification people
 				if(App::isLocal()){
