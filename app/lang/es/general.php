@@ -1,6 +1,7 @@
 <?php
 
 return array(
+    'elqFormName'=>'FM_463174_PPS-Cross_ES_ES-ES_IDC_ELQ_integration',
     'restart'=>'Reiniciar cuestionario',
     'assoc'=>'En asociación con',
     'title'=>'¿Cuál es la aptitud tecnológica de su negocio?',

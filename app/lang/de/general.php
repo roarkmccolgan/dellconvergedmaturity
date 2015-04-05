@@ -1,6 +1,7 @@
 <?php
 
 return array(
+    'elqFormName'=>'FM_463403_PPS-Cross_DE_DE-DE_IDC_ELQ_integration',
     'restart'=>'Quiz neu starten',
     'assoc'=>'In Zusammenarbeit mit',
     'title'=>'Ist Ihr Unternehmen Technik-fit?',

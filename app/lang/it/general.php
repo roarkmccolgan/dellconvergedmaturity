@@ -1,6 +1,7 @@
 <?php
 
 return array(
+    'elqFormName'=>'FM_463232_PPS-Cross_IT_IT-IT_IDC_ELQ_integration',
     'restart'=>'Inizia di nuovo il quiz',
     'assoc'=>'In associazione con',
     'title'=>'Quanto è pronta la sua azienda ad affrontare le sfide tecnologiche?',

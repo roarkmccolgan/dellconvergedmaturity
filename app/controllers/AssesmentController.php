@@ -209,7 +209,7 @@
 					try {
 						$request = $client->createRequest('GET', $url);
 						$query = $request->getQuery();
-						$query['elqFormName'] = 'FM_425867_PPS-Cross_GB_EN-GB_IDC_ELQ_integration';
+						$query['elqFormName'] = Lang::get('general.elqFormName');
 						$query['elqSiteID'] = '2048';
 						foreach($source as $key=>$item){
 							$query[$key] = $item;

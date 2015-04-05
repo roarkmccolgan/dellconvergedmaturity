@@ -1,6 +1,7 @@
 <?php
 
 return array(
+    'elqFormName'=>'FM_463220_PPS-Cross_FR_FR-FR_IDC_ELQ_integration',
     'restart'=>'Reprendre le questionnaire',
     'assoc'=>'En partenariat avec',
     'title'=>'Votre informatique est-elle en forme ?',
