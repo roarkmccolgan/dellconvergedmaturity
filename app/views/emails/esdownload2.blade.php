@@ -440,7 +440,7 @@
                                                 <br /><br/>
                                                 <a href="{{ URL::asset('http://es.techfitquiz.com/quiz/download/'.$userid) }}" target="_blank"><img src="{{ URL::asset('img/esemail_download.jpg')}}" style="max-width:316px;display:block; margin:0 auto" align="middle"/></a>
                                                 <br/><br/>
-                                                Asimismo, una vez que haya analizado el informe, ¿por qué no visita <a href="http://hp.com/go/businessready" style="color:#024886">HP Business Ready</a> para estar al tanto de las últimas novedades en tecnología para empresas? Por ejemplo, a continuación encontrará una selección de artículos que podrían resultarle de interés:<br/><br/>
+                                                Asimismo, una vez que haya analizado el informe, ¿por qué no visita <a href="http://h30657.www3.hp.com/t5/HP-BusinessNow-Espa%C3%B1a/ct-p/HPBusinessReadyEspana" style="color:#024886">HP Business Ready</a> para estar al tanto de las últimas novedades en tecnología para empresas? Por ejemplo, a continuación encontrará una selección de artículos que podrían resultarle de interés:<br/><br/>
                                             </td>
                                         </tr>
                                     </table>
