@@ -1,4 +1,4 @@
-<?php
+    <?php
 return array(
     'screeners' => array(
         'colour' => '',
@@ -858,7 +858,7 @@ return array(
                 'questions' => array(
                     'd4'=>array(
                         'type'=>'button',
-                        'question'=>'¿Dispone de procesos para ocuparse las opiniones en las redes sociales?',
+                        'question'=>'¿Dispone de procesos para ocuparse de las opiniones en las redes sociales?',
                         'name'=>'d4',
                         'options'=>array(
                             array(
