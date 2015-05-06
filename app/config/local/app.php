@@ -17,4 +17,8 @@ return array(
 	
 	'host' => "hptechquiz.app",
 
+	'providers' => array(
+		'Way\Generators\GeneratorsServiceProvider',		
+	),
+
 );

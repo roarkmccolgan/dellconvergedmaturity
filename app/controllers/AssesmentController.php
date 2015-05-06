@@ -247,6 +247,9 @@
                     'sub1' => Lang::get('general.soon'),
                     'tweet' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['tweet'],
                     'colour' => 'orange',
+                    'script' => ['
+                        _gaq.push([\'_trackEvent\', \'Form Submit\', \'Registration\']);
+                        '],
                     'quiz' => $this->quiz
                 );
 				/*if(Cookie::has('quiz_progress')){
