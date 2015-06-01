@@ -10,7 +10,8 @@
 		"maxxscho/laravel-tcpdf": "0.*",
 		"maatwebsite/excel": "1.*",
 		"guzzlehttp/guzzle": "~4.0",
-		"aws/aws-sdk-php-laravel": "1.*"
+		"aws/aws-sdk-php-laravel": "1.*",
+		"vlucas/phpdotenv": "^1.1"
 	},
 	"require-dev": {
 		"way/generators": "~2.0"
