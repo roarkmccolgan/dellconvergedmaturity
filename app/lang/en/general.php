@@ -36,5 +36,11 @@ return array(
     'hi'=>'Hi',
     'soon'=>'Your download link will be in your inbox soon.',
     'wait'=>'While you\'re waiting why not tweet your results and see how your colleagues measure up?',
-    'multierror'=>'Please answer this question in order to continue.'
+    'multierror'=>'Please answer this question in order to continue.',
+    'errorFname'=>'Enter your name',
+    'errorSname'=>'Enter your surname',
+    'errorEmail'=>'Enter a valid email email address',
+    'errorCompany'=>'Enter your company name',
+    'errorCountry'=>'Please select your country',
+    'errorNumber'=>'Enter a valid number'
 );

@@ -35,22 +35,22 @@
             <div class="row{{$errors->has('fname')?' error':''}}">
                 <label>{{Lang::get('general.fname')}}*</label>
                 <input type="text" class="req" value="{{$source['C_FirstName']?$source['C_FirstName']:''}}" name="fname">
-                <span>Enter your name</span>
+                <span>{{Lang::get('general.errorFname')}}</span>
             </div>
             <div class="row{{$errors->has('sname')?' error':''}}">
                 <label>{{Lang::get('general.sname')}}*</label>
                 <input type="text" class="req" value="{{$source['C_LastName']?$source['C_LastName']:''}}" name="sname">
-                <span>Enter your surname</span>
+                <span>{{Lang::get('general.errorSname')}}</span>
             </div>
             <div class="row{{$errors->has('email')?' error':''}}">
                 <label>{{Lang::get('general.email')}}*</label>
                 <input type="text" class="req email" value="{{$source['C_emailAddress']?$source['C_emailAddress']:''}}" name="email">
-                <span>Enter a valid email address</span>
+                <span>{{Lang::get('general.errorEmail')}}</span>
             </div>
             <div class="row{{$errors->has('company')?' error':''}}">
                 <label>{{Lang::get('general.company')}}*</label>
                 <input type="text" value="{{$source['C_Company']?$source['C_Company']:''}}" name="company" class="req">
-                <span>Enter your company name</span>
+                <span>{{Lang::get('general.errorCompany')}}</span>
             </div>
             <div class="row{{$errors->has('country')?' error':''}}">
                 <label>{{Lang::get('general.country')}}*</label>
@@ -299,12 +299,12 @@
     			element.value = '{{$source['C_Country']}}';
 				</script>
                 @endif
-                <span>Please select your country</span>
+                <span>{{Lang::get('general.errorCountry')}}</span>
             </div>
             <div class="row">
                 <label>{{Lang::get('general.phone')}}</label>
                 <input type="text" value="{{$source['C_BusPhone']?$source['C_BusPhone']:''}}" name="phone">
-                <span>Enter a valid number</span>
+                <span>{{Lang::get('general.errorNumber')}}</span>
             </div>
             <div class="terms">
                 <label class="checkbox{{$errors->has('terms')?' error':''}}">

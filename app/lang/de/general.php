@@ -36,5 +36,12 @@ return array(
     'hi'=>'Hallo',
     'soon'=>'Ihr Link zum Herunterladen erscheint in Kürze in Ihrem Posteingang.',
     'wait'=>'In der Zwischenzeit könnten Sie Ihre Ergebnisse tweeten und sehen, wie Ihre Kollegen das Quiz meistern.',
-    'multierror'=>'Bitte beantworten Sie diese Frage auch weiterhin.'
+    'multierror'=>'Bitte beantworten Sie diese Frage auch weiterhin.',
+    'errorFname'=>'Gib deinen Namen ein',
+    'errorSname'=>'Geben Sie Ihren Nachnamen',
+    'errorEmail'=>'Geben Sie eine gültige E-Mail E-Mail -Adresse',
+    'errorCompany'=>'Geben Sie den Namen Ihres Unternehmens',
+    'errorCountry'=>'Bitte wählen Sie Ihr Land',
+    'errorNumber'=>'Geben Sie eine gültige Nummer'
+
 );

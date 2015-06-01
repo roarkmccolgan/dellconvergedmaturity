@@ -36,5 +36,11 @@ return array(
     'hi'=>'Buongiorno',
     'soon'=>'Il link per il download verrà inviato a breve al suo indirizzo e-mail.',
     'wait'=>'Nell\'attesa perché non pubblica i suoi risultati su Twitter in modo che i suoi colleghi possano confrontarsi?',
-    'multierror'=>'Si prega di rispondere a questa domanda per continuare.'
+    'multierror'=>'Si prega di rispondere a questa domanda per continuare.',
+    'errorFname'=>'Inserisci il tuo nome',
+    'errorSname'=>'Inserisci il tuo cognome',
+    'errorEmail'=>'Inserisci un indirizzo email e-mail valido',
+    'errorCompany'=>'Inserisci il tuo nome azienda',
+    'errorCountry'=>'Seleziona il tuo Paese',
+    'errorNumber'=>'Immettere un numero valido'
 );
