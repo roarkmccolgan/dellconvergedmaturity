@@ -35,5 +35,6 @@ return array(
     'emailreport'=>'Ich möchte den Bericht<br/> per E-Mail erhalten',
     'hi'=>'Hallo',
     'soon'=>'Ihr Link zum Herunterladen erscheint in Kürze in Ihrem Posteingang.',
-    'wait'=>'In der Zwischenzeit könnten Sie Ihre Ergebnisse tweeten und sehen, wie Ihre Kollegen das Quiz meistern.'
+    'wait'=>'In der Zwischenzeit könnten Sie Ihre Ergebnisse tweeten und sehen, wie Ihre Kollegen das Quiz meistern.',
+    'multierror'=>'Bitte beantworten Sie diese Frage auch weiterhin.'
 );

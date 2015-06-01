@@ -213,7 +213,7 @@ jQuery(window).on("beforeunload", function(event){
                     if(error==false){
                         html = 
                             '<div class="error" style="padding:0 15px 0 15px;">'+
-                                '<span style="color: #ed2024;">Please answer this question in order to continue.</span>'+
+                                '<span style="color: #ed2024;">{{Lang::get('general.multierror')}}</span>'+
                             '</div>';
                         $(html).hide().appendTo(sibling).fadeIn("fast");
                         error=true;

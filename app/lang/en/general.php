@@ -35,5 +35,6 @@ return array(
     'emailreport'=>'Email me my report',
     'hi'=>'Hi',
     'soon'=>'Your download link will be in your inbox soon.',
-    'wait'=>'While you\'re waiting why not tweet your results and see how your colleagues measure up?'
+    'wait'=>'While you\'re waiting why not tweet your results and see how your colleagues measure up?',
+    'multierror'=>'Please answer this question in order to continue.'
 );

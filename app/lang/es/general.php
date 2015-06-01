@@ -35,5 +35,6 @@ return array(
     'emailreport'=>'Deseo recibir mi informe<br/> por correo electrónico.',
     'hi'=>'Hola',
     'soon'=>'Recibirá en breve en su bandeja de entrada su enlace de descarga.',
-    'wait'=>'Mientras espera ¿por qué no enviar sus resultados por tweet y ver qué han obtenido sus colegas con respecto a usted?'
+    'wait'=>'Mientras espera ¿por qué no enviar sus resultados por tweet y ver qué han obtenido sus colegas con respecto a usted?',
+    'multierror'=>'Por favor, conteste esta pregunta para continuar.'
 );
