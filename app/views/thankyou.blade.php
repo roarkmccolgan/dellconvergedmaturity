@@ -8,35 +8,27 @@
 <meta name="description" content="">
 @stop
 
-@section('header')
-<header id="side">
-    <h1>{{Lang::get('general.title')}}</h1>
-    
-    <h2>{{$heading}}</h2>
-    <p>{{$sub1}}</p>
-</header>
-@stop
-
 @section('main')
-<section id="page" class="{{$colour}}">
-    <h2 class="title">{{Lang::get('general.wait')}}</h2>
-    <a class="button-tweet" href="http://twitter.com/home/?status={{$tweet}}" target="_blank">Tweet</a>
-</section>
+<!--=== Content ===-->
+<div class="container margin-bottom-40">
+    <div class="row">
+        <div class="col-md-9">
+        	<div class="row">
+                <div class="col-md-10 col-md-offset-2">
+	                <div class="headline"><h2>{{$sub1}}</h2></div>
+	                <p>
+	                    {{$sub2}}<br/>{{Lang::get('general.wait')}}</p>
+	                <a class="btn-u" href="http://twitter.com/home/?status={{$tweet}}" target="_blank" style="margin-top: 20px;"><i class="fa fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @stop
+@section('javascript')
+@parent
+<!-- JS Page Level -->
 
-@section('pagescript')
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-1.10.1.min.js')}}"><\/script>')</script>
-
-<script src="{{{ asset('js/plugins.js')}}}"></script>
-<script src="{{{ asset('js/main.js')}}}"></script>
-@if (isset($script))
-<script>
-$(function() {
-    @foreach ($script as $s)
-       {{ $s }}
-    @endforeach
-});
-</script>
-@endif
+<script src="{{ asset('js/app.js')}}"></script>
+<script src="{{ asset('js/main.js')}}"></script>
 @stop

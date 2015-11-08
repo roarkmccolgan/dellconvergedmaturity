@@ -111,107 +111,124 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 	
 	public function intro($result,$baseline,$quiz){
 		File::requireOnce(app_path().'/library/SVGGraph/SVGGraph.php');
-		$bus = Lang::get('report.business');
-		$sec = Lang::get('report.security');
-		$clo = Lang::get('report.cloud');
-		$mob = Lang::get('report.mobility');
-		$dat = Lang::get('report.data');
+		$bus = Lang::get('report.itbusiness');
+		$ser = Lang::get('report.itservicedelivery');
+		$inf = Lang::get('report.itinfrastructure');
 		
-		$this->tempLabels = array('business'=>$bus, 'security'=>$sec, 'cloud'=>$clo, 'mobility'=>$mob, 'bigdataanalytics'=>$dat);
+		$this->tempLabels = array('itbusiness'=>$bus, 'itservicedelivery'=>$ser, 'itinfrastructure'=>$inf);
 		
 		$this->SetY(25);
 		$this->SetLineStyle(array('width' => 0.85 / $this->k, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(147)));
 		$this->SetX($this->original_lMargin);
 		
 		$this->SetFont('helvetica', 'B', 10);
-		$this->SetColor('text', 88,89,91);
+		$this->SetColor('text', 10,38,56);
 		$this->Cell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, strtoupper(Lang::get('report.results')), 'B', 2, 'L');
 		
 		$this->SetFont('helvetica', '', 8);
+		$this->SetColor('text', 85,85,85);
 		
-		$txt = "
-".Lang::get('report.thankyou')." ".Lang::get('report.aims');
+		$txt = Lang::get('report.thankyou');
 
 		$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
+
+		$this->SetY($this->GetY()+2);
+		$txt = '
+<ul style="color: #2A96DE; line-height: 1.5; list-style-type:img|png|2|2|'.K_PATH_IMAGES.'/bullet.png">
+    <li>Faster time to market for new products and services, which allow them to better capture competitive advantages</li>
+    <li>Superior business agility and flexibility, enabling them to anticipate and respond quickly to changes in the market, mitigate threats, and capture opportunities</li>
+    <li>Increased employee productivity, allowing them to optimize business processes and reduce costs while increasing output</li>
+    <li>Enhanced customer experience to deliver more reliable, intuitive and better performing services to employees, partners, and customers</li>
+    <li>Innovation, which enables them to move resources and operations into new business areas</li>
+    <li>More efficient IT operations, helping reduce costs while creating a more scalable infrastructure</li>
+    <li>Enablement of mobile operations to deliver a full range of business applications</li>
+<ul>';
+
+		// output the HTML content
+		$this->writeHTMLCell(($this->w/2 - $this->original_lMargin),0,$this->GetX(),$this->GetY(),$txt,0, true, false, true, '');
+		$this->SetY($this->GetY()+2);
+		
+		$txt = Lang::get('report.aims');
+		$this->MultiCell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, $txt, 0, 'L');
+
+		$this->SetFont('helvetica', 'B', 8);
+		$this->SetColor('text', 10,38,56);
+		$this->Cell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, Lang::get('report.looked'), 0, 2, 'L');
+		$this->SetFont('helvetica', '', 8);
+		$this->SetColor('text', 85,85,85);
+
 		
 		$this->SetXY($this->GetX()+5, $this->GetY()+3);
-		$this->ImageEps(K_PATH_IMAGES.'business.ai', '', '', 5);
+		$this->ImageEps(K_PATH_IMAGES.'itbusiness.ai', '', '', 4);
 		$this->SetX($this->GetX()+6);
-		$this->Cell(75, 0, Lang::get('report.business'), 0, 2, 'L');
-		
-		$this->SetXY($this->GetX()-6, $this->GetY()+1);
-		$this->ImageEps(K_PATH_IMAGES.'security.ai', '', '', 4);
-		$this->SetXY($this->GetX()+6, $this->GetY()+1.5);
-		$this->Cell(75, 0, Lang::get('report.security'), 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.itbusiness'), 0, 2, 'L');
 		
 		$this->SetXY($this->GetX()-6, $this->GetY()+2);
-		$this->ImageEps(K_PATH_IMAGES.'cloud.ai', '', '', 4.5);
+		$this->ImageEps(K_PATH_IMAGES.'itservicedelivery.ai', '', '', 4);
 		$this->SetXY($this->GetX()+6, $this->GetY());
-		$this->Cell(75, 0, Lang::get('report.cloud'), 0, 2, 'L');
-		
-		$this->SetXY($this->GetX()-5.5, $this->GetY()+2);
-		$this->ImageEps(K_PATH_IMAGES.'mobility.ai', '', '', 3);
-		$this->SetXY($this->GetX()+5.5, $this->GetY());
-		$this->Cell(75, 0, Lang::get('report.mobility'), 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.itservicedelivery'), 0, 2, 'L');
 		
 		$this->SetXY($this->GetX()-6, $this->GetY()+2);
-		$this->ImageEps(K_PATH_IMAGES.'bigdataanalytics.ai', '', '', 4);
+		$this->ImageEps(K_PATH_IMAGES.'itinfrastructure.ai', '', '', 4);
 		$this->SetXY($this->GetX()+6, $this->GetY());
-		$this->Cell(75, 0, Lang::get('report.data'), 0, 2, 'L');
+		$this->Cell(75, 0, Lang::get('report.itinfrastructure'), 0, 2, 'L');
+		
 		
 		$this->SetY($this->GetY()+4);
 		
-		$this->SetFont('helvetica', 'I', 8);
+		$this->SetFont('helvetica', '', 8);
 		$txt = Lang::get('report.based');
-		$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
+		$this->MultiCell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, $txt, 0, 'L');
 		
 		$this->SetFont('helvetica', 'B', 8);
 		$this->SetColor('text', 0,82,148);
+
 		$this->SetY($this->GetY()+2);
 		$this->Cell(($this->w - $this->original_lMargin), 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
 		$this->resetText();
 		
 		switch($result['overall']['rating']){
-			case "Proactive":
-				$txt = Lang::get('report.proactiveintro');
+			case "Current":
+				$txt = Lang::get('report.currentintro');
 				break;
-			case "Moderate":
-				$txt = Lang::get('report.moderateintro');
+			case "Future-Aware":
+				$txt = Lang::get('report.future-awareintro');
 				break;
-			case "Reactive":
-				$txt = Lang::get('report.reactiveintro');
+			case "Future-Focused":
+				$txt = Lang::get('report.future-focusedintro');
+				break;
+			case "Future-Creator":
+				$txt = Lang::get('report.future-creatorintro');
 				break;
 		}
-		$this->SetY($this->GetY()+2);
-		$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
+		$this->SetY($this->GetY()+1);
+		$this->MultiCell(($this->w - $this->original_lMargin), 0, $txt, 0, 'L');
 		$this->resetText();
-		
-		$improve = 0;
+		$this->SetY($this->GetY()+2);
+		if($result['overall']['rating']=='Current' || $result['overall']['rating']=='Future-Aware'){
+			$this->MultiCell(($this->w - $this->original_lMargin), 0, str_replace('#STATUS#', $result['overall']['rating'],  Lang::get('report.currentaware')), 0, 'L');
+		}else{
+			$this->MultiCell(($this->w - $this->original_lMargin), 0, str_replace('#STATUS#', $result['overall']['rating'],  Lang::get('report.focusedcreator')), 0, 'L');
+		}
+		$this->SetY($this->GetY()+1);
 		foreach($result as $key=>$res){
-			if($key!='overall' && ($res['rating']=='Reactive' || $res['rating']=='Moderate')){
-				if($improve==0){
-					$txt = "
-".Lang::get('report.basedimprove');;
-					$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
-					$this->SetY($this->GetY()+2);
-					$this->SetColor('text', 0,82,148);
-				}
+			if($key!='overall' && ($res['rating']=='Reactive' || $res['rating']=='Mainstream')){
 				
-				if($this->GetX()+$this->GetStringWidth($this->tempLabels[strtolower($key)])+2 > ($this->w/2 - $this->original_lMargin)){
+				if($this->GetX()+$this->GetStringWidth($this->tempLabels[strtolower($key)])+2 > ($this->w - $this->original_lMargin)){
 					$this->SetXY($this->original_lMargin, $this->GetY()+1);
 					$this->ln();
 				}
-				
+				$this->SetFont('helvetica', 'B', 8);
+				$this->SetColor('text', 0,82,148);
 				$this->Cell($this->GetStringWidth($this->tempLabels[strtolower($key)])+2, 0, " • ".$this->tempLabels[strtolower($key)], 0, 0, 'L');
 				$this->SetX($this->GetX()+2);
-				$improve++;
 			}
 		}
 		$this->copyY = $this->GetY();
 		
 		//graphs
 		$this->SetY($this->GetY()+2);
-		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 34, ($this->w/2 - $this->original_lMargin - 5), 30, 5, '1010', 'F',array(), array(230,231,232));
+		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 34, ($this->w/2 - $this->original_lMargin - 5), 30, 5, '0000', 'F',array(), array(230,231,232));
 		
 		$rightX = ($this->w/2 - $this->original_lMargin)+17;
 		$this->SetXY($rightX, 36);
@@ -245,7 +262,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 			'pad_left' => 10,
 			'grid_division_h' => 20
         );
-		$colours = array('#9334B8','#A4D36C');
+		$colours = array('#0A2638','#2A96DE');
 		$graph = new SVGGraph(300, 120, $settings);
 		$graph->colours = $colours;
 		$values = array(
@@ -256,7 +273,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$output = $graph->fetch('HorizontalBarGraph');
 		$this->ImageSVG('@'.$output, $rightX, $this->GetY(), $w=60, $h='', '', $align='', $palign='', '', $fitonpage=false);
 		
-		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 70, ($this->w/2 - $this->original_lMargin - 5), 45, 5, '1010', 'F',array(), array(230,231,232));
+		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 70, ($this->w/2 - $this->original_lMargin - 5), 45, 5, '0000', 'F',array(), array(230,231,232));
 		
 		//overall
 		$this->SetXY($rightX+65, 43);
@@ -295,12 +312,12 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 			'show_axis_text_h' => false
 			
         );
-		$colours = array('#A4D36C','#9334B8');
+		$colours = array('#2A96DE','#0A2638');
 		$graph = new SVGGraph(300, 100, $settings);
 		$graph->colours = $colours;
 		$values = array(
-			 array(Lang::get('report.business') => $result['business']['score'], Lang::get('report.security') => $result['security']['score'], Lang::get('report.cloud') => $result['cloud']['score'], Lang::get('report.mobility') => $result['mobility']['score'], Lang::get('report.data') => $result['bigdataanalytics']['score']),
-			 array(Lang::get('report.business') => $baseline['business']['baseline'], Lang::get('report.security') => $baseline['security']['baseline'], Lang::get('report.cloud') => $baseline['cloud']['baseline'], Lang::get('report.mobility') => $baseline['mobility']['baseline'], Lang::get('report.data') => $baseline['bigdataanalytics']['baseline'])
+			 array(Lang::get('report.itbusiness') => $result['itbusiness']['score'], Lang::get('report.itservicedelivery') => $result['itservicedelivery']['score'], Lang::get('report.itinfrastructure') => $result['itinfrastructure']['score']),
+			 array(Lang::get('report.itbusiness') => $baseline['itbusiness']['baseline'], Lang::get('report.itservicedelivery') => $baseline['itservicedelivery']['baseline'], Lang::get('report.itinfrastructure') => $baseline['itinfrastructure']['baseline'])
 		);
 		$graph->Values($values);
 		//first graph
@@ -309,12 +326,12 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		
 		//legend
 		$this->SetFont('helvetica_condensed', '', 8);
-		$this->SetColor('text', 88,89,91);
-		$this->Rect($rightX+40,$this->getY(),4,4,'F',array(),array(164, 211, 108));
+		$this->SetColor('text', 10,38,56);
+		$this->Rect($rightX+40,$this->getY(),4,4,'F',array(),array(42,150,222));
 		$this->SetXY($rightX+45,$this->getY());
 		$this->MultiCell(15, 5, Lang::get('report.yourscore'), 0, 'L', 0, 0, '', '', true);
 		
-		$this->Rect($rightX+60,$this->getY()-.5,4,4,'F',array(),array(147, 52, 184));
+		$this->Rect($rightX+60,$this->getY()-.5,4,4,'F',array(),array(10,38,56));
 		$this->SetXY($rightX+65,$this->getY());
 		$this->MultiCell(20, 5, Lang::get('report.baselinescore'), 0, 'L', 0, 0, '', '', true);
 		
@@ -323,22 +340,21 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetXY($rightX+7,$this->getY()+28);
 		
 		$this->SetFont('helvetica_condensed', '', 8);
-		$this->MultiCell(15, 5, Lang::get('report.business'), 0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, Lang::get('report.security'), 0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, Lang::get('report.cloud'), 0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, Lang::get('report.mobility'),0, 'C', 0, 0, '', '', true);
-        $this->MultiCell(15, 5, Lang::get('report.data'), 0, 'C', 0, 0, '', '', true);
+		$this->MultiCell(25, 5, Lang::get('report.itbusiness'), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(25, 5, Lang::get('report.itservicedelivery'), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(25, 5, Lang::get('report.itinfrastructure'), 0, 'C', 0, 0, '', '', true);
+   
 		//$this->SetY($this->getY()+23);
 		$this->resetText();
 		
 		//copy
-		$this->SetY($this->copyY+12);
+		$this->SetY($this->copyY+5);
 		$this->drawBorder();
 		
 		//get_answers
 		$answers = array();
 		foreach($quiz as $section=>$props){
-			if($section!='screeners'){
+			if($section!='demographics'){
 				foreach($props['pages'] as $page=>$details){
 					foreach($details['questions'] as $q=>$att){
 						if(!is_array($att['selected'])){
@@ -347,7 +363,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 						}else{
 							$answers[$q] = 0;
 							foreach($att['selected'] as $select){
-								$val = explode("|", $select);
+								$val = explode("|", $select[0]);
 								$answers[$q] += (int) $val[1];
 							}
 						}
@@ -364,17 +380,17 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$para_cell = $this->w - $margins['left'] - $margins['right']-$indent;
 		$bullet_cell = $this->w - $margins['left'] - $margins['right']-($indent+$bullet);
 		
-		//business
+		//itbusiness
 		$this->SetX($this->GetX()+2);
-		$this->ImageEps(K_PATH_IMAGES.'business.ai', '', '', 10);
+		$this->ImageEps(K_PATH_IMAGES.'itbusiness.ai', '', '', 10);
 		$this->SetXY($indent, $this->GetY()+1);
 		
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, Lang::get('report.business'), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.itbusiness'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = Lang::get('report.businesssummary')." <b>".Lang::get('general.'.strtolower($result['business']['rating']))."</b>";
+		$txt = Lang::get('report.itbusinesssummary')." <b>".Lang::get('general.'.strtolower($result['itbusiness']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
@@ -384,44 +400,50 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = Lang::get('report.business1');
+		$txt = Lang::get('report.itbusiness1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
-		if($answers['b2']<5){
-			$txt = Lang::get('report.business2');
+		if($answers['a1']<5){
+			$txt = Lang::get('report.itbusiness2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['b3']<5){
-			$txt = Lang::get('report.business3');
+		if($answers['a2']<4){
+			$txt = Lang::get('report.itbusiness3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['b4']<5){
-			$txt = Lang::get('report.business4');
+		if($answers['a3']<4){
+			$txt = Lang::get('report.itbusiness4');
+			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
+			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
+		}
+
+		if($answers['a4']<4){
+			$txt = Lang::get('report.itbusiness5');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['b5']<5){
-			$txt = Lang::get('report.business5');
+		if($answers['a5']<3){
+			$txt = Lang::get('report.itbusiness6');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		//it
+		//itservicedelivery
 		$this->SetXY($this->GetX()+3,$this->GetY()+5);
-		$this->ImageEps(K_PATH_IMAGES.'security.ai', '', '', 7);
+		$this->ImageEps(K_PATH_IMAGES.'itservicedelivery.ai', '', '', 7);
 		$this->SetXY($indent, $this->GetY()+1);
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, Lang::get('report.security'), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.itservicedelivery'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt =  Lang::get('report.securitysummary')." <b>".Lang::get('general.'.strtolower($result['security']['rating']))."</b>";
+		$txt =  Lang::get('report.itservicedeliverysummary')." <b>".Lang::get('general.'.strtolower($result['itservicedelivery']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
@@ -431,38 +453,56 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = Lang::get('report.security1');
+		$txt = Lang::get('report.itservicedelivery1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
-		if($answers['e2']<5){
-			$txt = Lang::get('report.security2');
+		if($answers['b1']<4){
+			$txt = Lang::get('report.itservicedelivery2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['e3']<5){
-			$txt = Lang::get('report.security3');
+		if($answers['b2']<4){
+			$txt = Lang::get('report.itservicedelivery3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['e4']<5){
-			$txt = Lang::get('report.security4');
+		if($answers['b3']<4){
+			$txt = Lang::get('report.itservicedelivery4');
+			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
+			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
+		}
+
+		if($answers['b4']<4){
+			$txt = Lang::get('report.itservicedelivery5');
+			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
+			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
+		}
+
+		if($answers['b5']<4){
+			$txt = Lang::get('report.itservicedelivery6');
+			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
+			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
+		}
+
+		if($answers['b6']<5){
+			$txt = Lang::get('report.itservicedelivery7');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		//cloud
+		//itinfrastructure
 		$this->SetXY($this->GetX()+3,$this->GetY()+6);
-		$this->ImageEps(K_PATH_IMAGES.'cloud.ai', '', '', 8);
+		$this->ImageEps(K_PATH_IMAGES.'itinfrastructure.ai', '', '', 8);
 		$this->SetXY($indent, $this->GetY());
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, Lang::get('report.cloud'), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.itinfrastructure'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt =  Lang::get('report.cloudsummary')." <b>".Lang::get('general.'.strtolower($result['cloud']['rating']))."</b>";
+		$txt =  Lang::get('report.itinfrastructuresummary')." <b>".Lang::get('general.'.strtolower($result['itinfrastructure']['rating']))."</b>";
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
 		
@@ -472,134 +512,63 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt = Lang::get('report.cloud1');
+		$txt = Lang::get('report.itinfrastructure1');
 		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		
-		if($answers['c2']<5){
-			$txt = Lang::get('report.cloud2');
+		if($answers['c1']<3){
+			$txt = Lang::get('report.itinfrastructure2');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['c3']<5){
-			$txt = Lang::get('report.cloud3');
+		if($answers['c2']<3){
+			$txt = Lang::get('report.itinfrastructure3');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['c4']<5){
-			$txt = Lang::get('report.cloud4');
+		if($answers['c3']<3){
+			$txt = Lang::get('report.itinfrastructure4');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		if($answers['c5']<5){
-			$txt = Lang::get('report.cloud5');
+		if($answers['c4']<4){
+			$txt = Lang::get('report.itinfrastructure5');
+			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
+			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
+		}
+
+		if($answers['c5']<3){
+			$txt = Lang::get('report.itinfrastructure6');
 			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
 			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
 		}
 		
-		//mobility
-		$this->SetXY($this->GetX()+4,$this->GetY()+6);
-		$this->ImageEps(K_PATH_IMAGES.'mobility.ai', '', '', 6);
-		$this->SetXY($indent, $this->GetY());
+
+		//Conclusion
+		$this->SetXY($this->GetX()+3,$this->GetY()+5);
+		$this->SetXY($indent, $this->GetY()+1);
 		$this->SetFont('helvetica', 'B', 10);
 		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, Lang::get('report.mobility'), 0, 2, 'L');
+		$this->Cell(0, 0, Lang::get('report.conclusion'), 0, 2, 'L');
 		$this->resetText();
 		
-		$txt =  Lang::get('report.mobilitysummary')." <b>".Lang::get('general.'.strtolower($result['mobility']['rating']))."</b>";
+		$txt =  Lang::get('report.conclusionsummary');
 		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
 		$this->ln();
-		
-		$this->SetFont('helvetica', 'B', 10);
-		$this->SetColor('text', 0,82,148);
-		$this->SetX($indent);
-		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
-		$this->resetText();
-		
-		$txt = Lang::get('report.mobility1');
-		$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-		$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		
-		if($answers['m2']<5){
-			$txt = Lang::get('report.mobility2');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		if($answers['m3']<5){
-			$txt = Lang::get('report.mobility3');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		if($answers['m4']<5){
-			$txt = Lang::get('report.mobility4');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		if($answers['m5']<5){
-			$txt = Lang::get('report.mobility5');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		//bigdataanalytics
-		$this->SetXY($this->GetX()+4,$this->GetY()+6);
-		$this->ImageEps(K_PATH_IMAGES.'bigdataanalytics.ai', '', '', 6);
-		$this->SetXY($indent, $this->GetY());
-		$this->SetFont('helvetica', 'B', 10);
-		$this->SetColor('text', 0,82,148);
-		$this->Cell(0, 0, Lang::get('report.data'), 0, 2, 'L');
-		$this->resetText();
-		
-		$txt = Lang::get('report.datasummary')." <b>".Lang::get('general.'.strtolower($result['bigdataanalytics']['rating']))."</b>";
-		$this->writeHTMLCell($para_cell,0,$this->GetX(),$this->GetY()+1, $txt, 0, 1);
-		$this->ln();
-		
-		$this->SetFont('helvetica', 'B', 10);
-		$this->SetColor('text', 0,82,148);
-		$this->SetX($indent);
-		$this->Cell(0, 0, Lang::get('report.getahead'), 0, 2, 'L');
-		$this->resetText();
-		
-		if($answers['d1']<5){
-			$txt = Lang::get('report.data1');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		if($answers['d2']<5){
-			$txt = Lang::get('report.data2');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		if($answers['d3']<5){
-			$txt = Lang::get('report.data3');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
-		
-		if($answers['d4']<5){
-			$txt = Lang::get('report.data4');
-			$this->Circle($indent+1.25,$this->GetY()+4,.75, 0, 360, 'D', $style3);
-			$this->writeHTMLCell($bullet_cell,0,$indent+$bullet,$this->GetY()+2, $txt, 0, 1);
-		}
 		
 	}
 	
 	public function resetText(){
 		$this->SetFont('helvetica', '', 8);
-		$this->SetColor('text', 88,89,91);
+		$this->SetColor('text', 10,38,56);
 	}
 	
 	public function drawBorder(){
 		$margins = $this->GetMargins();
-		$this->RoundedRect($this->original_lMargin , $this->GetY()-3, $this->w - $this->original_lMargin - $this->original_rMargin, $this->h - $this->GetY() - ($margins['footer']-5), 5, '1010', 'D',array(147,149,152), array());
+		$this->RoundedRect($this->original_lMargin , $this->GetY()-3, $this->w - $this->original_lMargin - $this->original_rMargin, $this->h - $this->GetY() - ($margins['footer']-5), 5, '0000', 'D',array(147,149,152), array());
 		$this->SetY($this->GetY()+5);
 	}
 	
@@ -610,10 +579,10 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
         $this->SetY(-15);
         // Set font		
         $this->SetFont('helvetica', 'I', 8);
-		$this->SetColor('text', 88,89,91);
+		$this->SetColor('text', 10,38,56);
         // Page number
         $this->Cell(0, 10, 'Page '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
 		
-		$this->ImageEps(K_PATH_IMAGES.'sponsored.ai', $this->w-$this->original_rMargin-24, $this->GetY()-2, 28);
+		$this->ImageEps(K_PATH_IMAGES.'sponsored.ai', $this->w-$this->original_rMargin-47, $this->GetY()-8, 47);
     }
 }

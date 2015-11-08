@@ -1,0 +1,498 @@
+/*** Custom CSS for  DELL Future Index Tool ***/
+/** Devanshi Patel **/ 
+
+
+/** Header and Footer, Landing Image **/
+.header-nav {
+	border-bottom:1px solid #eee !important; 
+	margin-top:5px !important; 
+	padding-bottom:10px;
+}
+
+.header-logo {
+	height:50px; 
+	padding-right:20px;
+	margin-bottom: 10px;
+}
+
+.header-title {
+	font-size: 30px;
+    padding: 20px;
+}
+
+h1.title{
+	
+}
+.landing-image {
+	margin: 0 0 15px 0;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    position: relative;
+    cursor: default;
+}
+
+.landing-image .caption-bottom {
+    width:100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    background: #2F80B7;
+    opacity: 0.9;
+}
+
+.font-white {
+	color:#fff;
+}
+
+.landing-image .caption-bottom .subtitle {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.feature {
+	margin:0px 10px;
+}
+
+.bg-grey {
+	background: #fcfcfc;
+	border: none;
+	padding:20px;
+	padding-bottom: 10px;
+}
+
+.feature-txt {
+	margin-left: 50px;
+}
+
+.feature-txt h5 {
+	font-size: 16px;
+}
+
+.small-icon {
+	background:#3498db;
+	color:#fff !important;
+	border: solid 1px #3498db !important;
+	width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 27px;
+    float: left;
+    padding-left: 6px;
+    margin-right: 10px;
+}
+
+.footer-v2 {
+	background: #fdfdfd;
+	border-top:1px solid #e0eded;
+	border-bottom: 1px solid #e0eded;
+	padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.footer-hr-margin {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.footer-v2 hr {
+	border-top: 1px solid #444;
+}
+
+/** End Header and Footer **/
+#form-question{
+	margin-top: 30px;
+}
+.groupcheck{
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.btnoption,
+.icheckbox_line,
+.iradio_line{
+	border: 1px solid #E5E5E5;
+	border-radius: 3px !important;
+	cursor: pointer;
+	font-weight: 400;
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	margin: 5px;
+	font-size: 14px;
+	vertical-align: middle;
+	padding: 15px 30px 15px 55px;
+	background-color: #fdfdfd;
+	color: #3498db;
+	min-width: 270px;
+	text-align:  left;
+}
+.btnoption:hover,
+.btnoption.checked,
+.icheckbox_line.hover,
+.icheckbox_line.checked.hover,
+.iradio_line.hover,
+.icheckbox_line:hover,
+.iradio_line:hover  {
+	color: #fff;
+	border: 1px solid #3498db;
+	background-color: #3498db;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.btnoption .fa, .icheckbox_line .fa, .iradio_line .fa{
+	position: absolute;
+	left: 18px;
+	top: 15px;
+	font-size: 150%;
+	line-height: 120%;
+	z-index: 1;
+	color: #fdfdfd;
+}
+.icheckbox_line.checked,
+.iradio_line.checked {
+    background: #3498db;
+    color: #fdfdfd;
+}
+.btnoption:hover .fa{
+}
+.btnoption span{
+	display: inline-block;
+}
+.btnoption span:before,
+.icheckbox_line span:before,
+.iradio_line span:before{
+	content: "";
+	display: block;
+	position: absolute;
+	top:10px;
+	left: 10px;
+	width: 35px;
+	height: 35px;
+	border-radius: 3px;
+	border: 1px solid #E5E5E5;
+	z-index: 0;
+}
+.btnoption span.idcradio:before,
+.iradio_line span:before{
+	border-radius: 18px;
+}
+
+
+.btn-pdf {
+	border-radius: 3px !important;
+	background: #3498db;
+	border: 0;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 4px 10px;
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.form-group span{
+	display: none;
+	color: red;
+}
+.form-group.error span{
+	display: inline;
+}
+ a.btn-pdf {
+	color: #fff;
+}
+
+.btn-pdf:hover, .btn-pdf:focus, .btn-pdf:active, .btn-pdf.active, .open .dropdown-toggle.btn-pdf {
+	background: #2980b9;
+}
+
+.dropcap-bg {
+	border-radius: 3px !important;
+}
+
+.icon-block-custom {
+	float: left;
+    height: 142px;
+}
+
+
+.btn-u {
+	border-radius: 3px !important;
+}
+
+.btn-grey {
+	background: #ecf0f1;
+	color: #000;
+	padding:10px 13px;
+}
+
+.btn-grey:hover {
+	background: #fff !important;
+	color: #000 !important;
+}
+
+.headline {
+	border:none;
+}
+
+.sky-form .note {
+	font-size: 13px;
+	color:#555;
+}
+
+.no-border {
+	border:none;
+}
+
+.margin-15 {
+	margin:15px 0px;
+}
+
+.margin-10 {
+	margin: 10px 0px;
+}
+
+.margin-right-20 {
+	margin-right: 20px;
+}
+
+.bg-custom-green {
+	background: #2ecc71;
+}
+
+.bg-custom {
+	padding:25px;
+	font-size: 50px;
+	margin-right: 20px;
+}
+
+.bg-custom-grey {
+	background: #ecf0f1;
+	padding: 25px 30px;
+	color: #333;
+}
+
+
+.bg-custom-red {
+	background: #e91b23;
+	padding: 25px 30px;
+}
+
+.bg-custom-blue {
+	background: #3498db;
+	padding: 25px 30px;
+}
+
+.bg-blue {
+	background: #3498db;
+	padding:10px !important;
+	color:#fff !important;
+}
+
+.bg-red {
+	background: #a10f2b;
+	padding:10px !important;
+	color:#fff !important;
+}
+
+.header-top {
+	margin-right: 10px;
+}
+
+.icon-bg-color {
+	background:#3498db;
+	color:#fff !important;
+	border: solid 1px #3498db !important;
+	width: 100px;
+    height: 100px;
+    font-size: 34px;
+    line-height: 100px;
+    margin-bottom: 10px;
+}
+
+i.icon-bg-color:hover {
+	background-color:white;
+	color: #3498db !important;
+	border: solid 1px #3498db !important;
+}
+
+
+table th {
+	background: #eee;
+}
+
+strong {
+	font-weight:bold !important;
+}
+.sky-form .label {
+	font-size: 14px !important;
+}
+
+.sky-form .radio {
+	font-size:14px !important;
+	font-weight:normal !important;
+}
+
+/** Data Mining Calendar Style **/
+
+.input-tab {
+	border: 1px solid #ccc;
+    padding: 6px;
+    padding-right: 5px;
+    display: inline-block;
+    background: #eee;
+    border-radius: 3px !important;
+}
+
+.calendar-icon {
+	vertical-align: 0% !important;
+}
+
+.date-input {
+	border: none;
+    padding: 3px 0px 0px 8px;
+    width: 160px;
+    background: #eee;
+}
+
+/** Usage Report li style**/
+
+.usage li {
+	padding:5px 0;
+}
+
+/** Bootstrap Table Border **/
+.fixed-table-container {
+	border-radius: 3px !important;
+}
+
+/** Sky Form TextBox **/
+.sky-form .input input, .sky-form .select select, .sky-form .textarea textarea {
+	background: #f9f9f9;
+	border-radius: 4px !important;
+}
+
+/** Event Tabs **/
+.widget {
+    margin-bottom: 30px;
+}
+
+ul.categories {
+    list-style: none;
+    margin: 0;
+    padding: 0 !important;
+    border: 1px solid #e0eded;
+    overflow: hidden;
+}
+
+ul.categories>li {
+    border-bottom: 1px solid #e0eded;
+    position: relative;
+}
+
+ul.categories>li .subprogress {
+	float: left;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    width: 70%;
+}
+
+ul.categories>li.base .subprogress{
+	color: #FFF;
+}
+ul.categories>li:hover .subprogress, ul.categories>li.base .subprogress a{
+	color: #FFF;
+}
+ul.categories>li .subprogresstext {
+	float: left;
+	text-align: right;
+	padding-right: 8px;
+	width: 20%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+ul.categories>li.base .subprogresstext{
+	color: #FFF;
+}
+
+
+ul.categories>li>a {
+    display: block;
+    padding: 10px 15px 3px;
+}
+
+.base {
+    background: #3498db;
+    color: #fff !important;
+}
+ul.categories>li.base>a{
+	background: #3498db;
+	color: #fff;
+    text-decoration: none;
+}
+ul.categories>li:hover{
+    background: #3498db;
+}
+ul.categories>li:hover a{
+	color: #fff;
+    text-decoration: none;
+}
+
+
+ul.categories>li>a:after {
+    font-family: 'FontAwesome';
+    content: "\f105";
+    position: relative;
+    top: 0;
+    float: right;
+}
+
+
+.wp-block {
+    margin: 0 0 15px 0;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    position: relative;
+    cursor: default;
+    border-radius: 2px;
+}
+
+.wp-block.white {
+    margin: 0 0 15px 0;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    border: 1px solid #e0eded;
+}
+
+.white {
+    background: #fff;
+    color: #333 !important;
+}
+
+
+.sky-form .select i {
+	background: #f9f9f9;
+}
+
+
+/** Validation style colors **/
+input.form-control.has-error {
+  border-color: #a94442 !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+input.form-control.has-success {
+  border-color: #3c763d !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}

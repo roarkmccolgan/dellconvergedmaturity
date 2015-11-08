@@ -1,109 +1,81 @@
 <?php
 return array(
-    'business' => array(
-        'baseline' => 15.49,
+    'itbusiness' => array(
+        'baseline' => 17.5,
         'types' => array(
             'Reactive' => array(
-                'low' => 0,
-                'high' => 11
+                'low' => 5,
+                'high' => 12.9
             ),
-            'Moderate' => array(
-                'low' => 11.1,
-                'high' => 20
+            'Mainstream' => array(
+                'low' => 13,
+                'high' => 17.9
             ),
             'Proactive' => array(
-                'low' => 20.1,
+                'low' => 18,
                 'high' => 25
             )
         )
     ),
-    'security' => array(
-        'baseline' => 12.33,
+    'itservicedelivery' => array(
+        'baseline' => 11,
         'types' => array(
             'Reactive' => array(
-                'low' => 0,
-                'high' => 9
+                'low' => 6,
+                'high' => 14.9
             ),
-            'Moderate' => array(
-                'low' => 9.1,
-                'high' => 16
+            'Mainstream' => array(
+                'low' => 15,
+                'high' => 20.9
             ),
             'Proactive' => array(
-                'low' => 16.1,
-                'high' => 20
+                'low' => 21,
+                'high' => 30
             )
         )
     ),
-    'cloud' => array(
-        'baseline' => 14.76,
+    'itinfrastructure' => array(
+        'baseline' => 12.05,
         'types' => array(
             'Reactive' => array(
-                'low' => 0,
-                'high' => 9
+                'low' => 5,
+                'high' => 10.9
             ),
-            'Moderate' => array(
-                'low' => 9.1,
-                'high' => 20
-            ),
-            'Proactive' => array(
-                'low' => 20.1,
-                'high' => 25
-            )
-        )
-    ),
-    'mobility' => array(
-        'baseline' => 14.45,
-        'types' => array(
-            'Reactive' => array(
-                'low' => 0,
-                'high' => 11
-            ),
-            'Moderate' => array(
-                'low' => 11.1,
-                'high' => 20
+            'Mainstream' => array(
+                'low' => 11,
+                'high' => 15.4
             ),
             'Proactive' => array(
-                'low' => 20.1,
-                'high' => 25
-            )
-        )
-    ),
-    'bigdataanalytics' => array(
-        'baseline' => 9.58,
-        'types' => array(
-            'Reactive' => array(
-                'low' => 0,
-                'high' => 9
-            ),
-            'Moderate' => array(
-                'low' => 9.1,
-                'high' => 16
-            ),
-            'Proactive' => array(
-                'low' => 16.1,
-                'high' => 20
+                'low' => 15.5,
+                'high' => 22
             )
         )
     ),
     'overall' => array(
-        'baseline' => 66.61,
+        'baseline' => 51.5,
         'types' => array(
-            'Reactive' => array(
-                'low' => 0,
-                'high' => 48,
-                'copy' => Lang::get('general.reativetxt'),
-				'tweet' => Lang::get('general.relativetweet')
+            'Current-Focused' => array(
+                'low' => 16,
+                'high' => 38.4,
+                'copy' => Lang::get('general.currenttxt'),
+				'tweet' => Lang::get('general.reactivetweet')
             ),
-            'Moderate' => array(
-                'low' => 48.1,
-                'high' => 92,
-                'copy' => Lang::get('general.moderatetxt'),
+            'Future-Aware' => array(
+                'low' => 38.5,
+                'high' => 49.9,
+                'copy' => Lang::get('general.future-awaretxt'),
                 'tweet' => Lang::get('general.moderatetweet')
             ),
-            'Proactive' => array(
-                'low' => 92.1,
-                'high' => 115,
-                'copy' => Lang::get('general.proactivetxt'),
+            'Future-Focused' => array(
+                'low' => 50,
+                'high' => 61.4,
+                'copy' => Lang::get('general.future-focusedtxt'),
+                'tweet' => Lang::get('general.proactivetweet')
+            ),
+            'Future-Creator' => array(
+                'low' => 61.5,
+                'high' => 77,
+                'copy' => Lang::get('general.future-creatortxt'),
                 'tweet' => Lang::get('general.proactivetweet')
             )
         )

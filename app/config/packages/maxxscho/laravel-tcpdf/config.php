@@ -99,7 +99,7 @@ return [
     */
 
     'header_on'                   => true,
-    'header_title'                => 'Tech Fitness Report',
+    'header_title'                => 'Converged Infrastructure Maturity Model',
     'header_string'               => 'by IDC UK',
     'header_font'                 => 'helvetica',
     'header_font_size'            => 8,

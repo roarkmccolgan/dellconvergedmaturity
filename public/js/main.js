@@ -45,7 +45,14 @@ $(function() {
 		});
 	}
 });
-
+$('.btnoption').click(function(){
+	var self = $(this);
+	$(window).off('beforeunload');
+	$('.btnoption').each(function(){
+		$(this).removeClass('checked')
+	});
+	self.addClass('cheked');
+});
 $('.btn-q').click(function(){
 	$(window).off('beforeunload');
 });
@@ -55,7 +62,29 @@ $('button.info').click(function(){
 $('button:submit').click(function(){
 	$(window).off('beforeunload');
 });
-$('input.chq').iCheck();
+$('input.chq').each(function(){
+	var self = $(this),
+	icon = 'check',
+	label = self.next(),
+	label_text = label.text();
+	input_type = self.attr( "type" );
+	/*if(input_type == 'radio'){
+		icon = 'circle';
+	}*/
+	var facon = $('<i class="fa fa-'+icon+'"></i>');
+	facon.click(function() {
+	   self.iCheck('toggle');
+	   return false;
+	});
+	label.remove();
+	self.iCheck({
+		checkboxClass: 'icheckbox_line',
+		radioClass: 'iradio_line',
+		insert: facon
+	});
+	facon.after('<span>' + label_text + '</span>');
+});
+//$('input.chq').iCheck();
 if ($("#trigger_id").length > 0) {
     $("#trigger_id").leanModal().trigger('click');
 }
@@ -67,18 +96,18 @@ function validate(form){
 	
 	$('*', form).removeClass('error');
 
-	$('.row .req', form).each(function(i){
+	$('.form-group .req', form).each(function(i){
 		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 		var web = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
 		if ($(this).hasClass('email') && reg.test($(this).val()) == false) {
-			$(this).closest('.row').addClass('error');
+			$(this).closest('.form-group').addClass('error has-error');
 			flag = 0;
 		} else if ($(this).hasClass('sel') && $(this).find(":selected").text()=='Please select') {
-			$(this).closest('.row').addClass('error');
+			$(this).closest('.form-group').addClass('error has-error');
 			flag = 0;
 		} else {
 			if ($.trim($(this).val())=="") {
-				$(this).closest('.row').addClass('error');
+				$(this).closest('.form-group').addClass('error has-error');
 				flag = 0;
 			}
 		}
@@ -88,7 +117,7 @@ function validate(form){
 		if ($(this).is(':checked')) {
 			
 		} else {
-			$(this).closest('.checkbox').addClass('error');
+			$(this).closest('.form-group').addClass('error has-error');
 			flag = 0;
 		}
 	});
