@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://dellconverged.app',
+	'url' => 'http://convergedmaturity.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ return array(
 	/**
 	 * domain name
 	 */
-	'host' => "techfitquiz.com",
+	'host' => "convergedmaturity.com",
 	
 
 	/*

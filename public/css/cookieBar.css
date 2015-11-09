@@ -1,10 +1,10 @@
 .cookie-message {
   position:fixed;
-  top:0px;left:0;right:0;
-  padding:0 85px 0 20px;
+  bottom:0px;left:0;right:0;
+  padding:10 85px 10px 20px;
   background:#fff;
   border-top:1px solid #ccc;
-  z-index: 99;
+  z-index: 999;
 }
 .cookie-message a.cookiebar-close {
   position:absolute;

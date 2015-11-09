@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'elqFormName'=>'FM_425867_PPS-Cross_GB_EN-GB_IDC_ELQ_integration',
+    'extFormName'=>'FM_425867_PPS-Cross_GB_EN-GB_IDC_ELQ_integration',
     'restart'=>'Restart Quiz',
     'assoc'=>'In association with',
     'title'=>'Converge Infrastructure - Maturity Benchmark',

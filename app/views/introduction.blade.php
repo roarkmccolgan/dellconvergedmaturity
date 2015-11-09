@@ -54,13 +54,16 @@
 @endif
 
 @stop
-@section('pagescript')
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-1.10.1.min.js')}}"><\/script>')</script>
-@if($return_visitor)
-    <script src="{{ asset('js/jquery.leanModal.min.js')}}"></script>
-@endif
+@section('javascript')
+@parent
+<!-- JS Page Level -->
 
-<script src="{{{ asset('js/plugins.js')}}}"></script>
-<script src="{{{ asset('js/main.js')}}}"></script>
+<script src="{{ asset('js/app.js')}}"></script>
+<script src="{{ asset('js/main.js')}}"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+    });
+</script>
 @stop
