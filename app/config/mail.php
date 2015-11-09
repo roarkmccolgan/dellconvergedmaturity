@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'donotreply@techfitquiz.com', 'name' => 'Do Not Reply'),
+	'from' => array('address' => 'donotreply@convergedmaturity.com', 'name' => 'Do Not Reply'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'postmaster@techfitquiz.com',
+	'username' => 'postmaster@convergedmaturity.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => '019a533c055df7382d002585611ee7f8',
+	'password' => getenv('mailgun_pass'),
 
 	/*
 	|--------------------------------------------------------------------------
