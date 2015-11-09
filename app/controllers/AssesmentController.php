@@ -275,7 +275,8 @@
                 Session::put('user', $validate_data);
 				
 				$screener1=$this->quiz['demographics']['pages']['page1']['questions']['s1']['selected'];
-				$screener2=$this->quiz['demographics']['pages']['page2']['questions']['s2']['selected'];
+                $screener2=$this->quiz['demographics']['pages']['page2']['questions']['s2']['selected'];
+				$screener3=$this->quiz['demographics']['pages']['page2']['questions']['s3']['selected'];
 				
 				//update source
 				$currentLocal = App::getLocale();
@@ -381,11 +382,11 @@
         public function getDownload($userid){
             //PDF file is stored under project/public/download/info.pdf
 			$user = User::find($userid);
-            $file= public_path(). '/download/'.$user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Tech_Fitness_Report.pdf';
+            $file= public_path(). '/download/'.$user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Converged_Infrastructure_Report.pdf';
             $headers = array(
                 'Content-Type: application/pdf',
             );
-            return Response::download($file, $user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Tech_Fitness_Report.pdf', $headers);
+            return Response::download($file, $user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Converged_Infrastructure_Report.pdf', $headers);
         }
 
         private function calcResults(){

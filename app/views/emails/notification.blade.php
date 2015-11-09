@@ -183,7 +183,8 @@
         email: <strong>{{$email}}</strong><br/>
         Company: <strong>{{$company}}</strong><br/>
         Phone: <strong>{{$phone}}</strong><br/>
-        Role in Company: <strong>"{{$screener1}}"</strong><br/>
+        Company Country: <strong>"{{$screener1}}"</strong><br/>
+        Industry: <strong>"{{$screener3}}"</strong><br/>
         Size of Company: <strong>"{{$screener2}}"</strong><br/><br/>
         
         Score: <strong>{{$score}}</strong><br/>
