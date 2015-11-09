@@ -1,7 +1,7 @@
 .cookie-message {
   position:fixed;
   bottom:0px;left:0;right:0;
-  padding:10 85px 10px 20px;
+  padding:10px 85px 10px 20px;
   background:#fff;
   border-top:1px solid #ccc;
   z-index: 999;
