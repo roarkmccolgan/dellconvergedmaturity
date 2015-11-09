@@ -193,7 +193,7 @@ ul li, ol li {
 						<table>
 							<tr>
 								<td class="padding">
-									<p><a href="{{ URL::asset('quiz/download/'.$userid) }}" class="btn-primary">Download Report</a></p>
+									<p><a href="{{ URL::asset('quiz/download/'.$userid) }}" class="btn-primary">Download Report dude</a></p>
 								</td>
 							</tr>
 						</table>
