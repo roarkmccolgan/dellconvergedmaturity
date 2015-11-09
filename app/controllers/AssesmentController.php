@@ -276,7 +276,7 @@
 				
 				$screener1=$this->quiz['demographics']['pages']['page1']['questions']['s1']['selected'];
                 $screener2=$this->quiz['demographics']['pages']['page2']['questions']['s2']['selected'];
-				$screener3=$this->quiz['demographics']['pages']['page2']['questions']['s3']['selected'];
+				$screener3=$this->quiz['demographics']['pages']['page3']['questions']['s3']['selected'];
 				
 				//update source
 				$currentLocal = App::getLocale();
