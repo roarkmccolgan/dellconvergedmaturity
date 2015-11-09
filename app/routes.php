@@ -251,8 +251,7 @@ Route::get('/', array('before'=>'reload', function()
 		'class'=>'intro',
 		'return_visitor'=>$return_visitor
 	);
-	return App::environment();
-	//return View::make('introduction',$data);
+	return View::make('introduction',$data);
 }));
 
 	//Route::get('/', array('as'=> 'introduction', 'uses' => 'PageController@showIntro'));
