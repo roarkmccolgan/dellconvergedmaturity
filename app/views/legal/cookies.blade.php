@@ -12,7 +12,7 @@
 <h1>IDC Privacy Policy</h1>
 <h3>Information about our Use of Cookies</h3>
 <p>
-Our website (<a href="http://www.techfitquiz.com" target="_blank">http://www.techfitquiz.com</a>) uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. By continuing to browse the site, you are agreeing to our use of cookies.
+Our website (<a href="http://www.convergedmaturity.com" target="_blank">http://www.convergedmaturity.com</a>) uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. By continuing to browse the site, you are agreeing to our use of cookies.
 </p>
 <p>
 A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer if you agree. Cookies contain information that is transferred to your computer's hard drive.
@@ -81,7 +81,7 @@ You can block cookies by activating the setting on your browser that allows you 
 If you want to know how to block cookies, please look at the menu on your browser, or visit www.allaboutcookies.org for more information about cookies and how you can turn them off. The Microsoft cookies guide is also a good source of information about what cookies do http://www.microsoft.com/info/uk-en/cookies.mspx. Alternatively, you can use third-party "anonymiser" services to mask information in your cookies, or even general data such as your IP address.
 </p>
 <p>
-You can also read more about how we protect your privacy by reading our <a href="http://www.techfitquiz.com/policy" target="_blank">Privacy Policy</a>
+You can also read more about how we protect your privacy by reading our <a href="http://www.convergedmaturity.com/policy" target="_blank">Privacy Policy</a>
 </p>
 
 @stop

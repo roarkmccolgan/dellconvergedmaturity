@@ -17,7 +17,7 @@ IDC UK Limited ("<strong>IDC</strong>" or "<strong>we</strong>") are committed t
 This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us.  Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it.
 </p>
 <p>
-By visiting [<a href="http://www.techfitquiz.com">http://www.techfitquiz.com</a>] ("<strong>Website</strong>") you are accepting and consenting to the practices described in this policy and you agree to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your personal data is treated securely and in accordance with this privacy policy.
+By visiting [<a href="http://www.convergedmaturity.com">http://www.convergedmaturity.com</a>] ("<strong>Website</strong>") you are accepting and consenting to the practices described in this policy and you agree to this transfer, storing or processing. We will take all steps reasonably necessary to ensure that your personal data is treated securely and in accordance with this privacy policy.
 </p>
 <p>
 For purposes of this policy, the term "<strong>you</strong>" includes all visitors to the Website who are not yet customers, those who become customers, as well as those who do not become customers; whether you upload information to the Website, download it, or are merely visiting the Website. You can choose not to provide certain information when using the Website but please note that you then might not be able to take advantage of many of the Website features.
@@ -55,7 +55,7 @@ Our use of cookies also allows registered users to be presented with a personali
 If you do not wish cookies to be placed on your computer, then they can be disabled in your web browser. The option to do so is normally found in your browser's "security settings" section. However, please note, permanently disabling cookies in your browser may hinder your use of the Website as well as other websites and interactive services.
 </p>
 <p>
-For detailed information on the cookies we use and the purposes for which we use them see our <a href="http://www.techfitquiz.com/cookies">Cookie policy</a>.
+For detailed information on the cookies we use and the purposes for which we use them see our <a href="http://www.convergedmaturity.com/cookies">Cookie policy</a>.
 </p>
 <h3>Web Beacons</h3>
 <p>
