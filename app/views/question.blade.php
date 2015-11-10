@@ -37,6 +37,8 @@
                     </li>
                     @endforeach
                 </ul>
+                <a href="#" class="btn-u historyback" style="margin-top:5px;"><i class="fa fa-arrow-left"> </i> {{Lang::get('general.back')}} </a>
+                <a href="/" class="btn-u" style="margin-top:5px;"><i class="fa fa-undo"></i> {{Lang::get('general.restart')}}</a>
             </div>
         </div>
 

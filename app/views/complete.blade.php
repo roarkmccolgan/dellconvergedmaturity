@@ -29,6 +29,12 @@
                         <p>
                             {{$sub1}}
                         </p>
+                        @if($sub2)
+                        <p>
+                            {{sub2}}
+                            {{improve}}
+                        </p>
+                        @endif
                         <hr class="devider devider-dashed">
                         <p style="margin-bottom: 30px;">
                             <strong>{{Lang::get('general.send')}}</strong><br/>
@@ -78,6 +84,9 @@
                     <div class="col-sm-10">
                         <select id="country" name="country" class="req sel form-control">
                             <option value="">Please select</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>

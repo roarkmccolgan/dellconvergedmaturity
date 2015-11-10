@@ -2,11 +2,12 @@
 
 return array(
     'extFormName'=>'FM_425867_PPS-Cross_GB_EN-GB_IDC_ELQ_integration',
-    'restart'=>'Retake Converged Infrastructure - Maturity Benchmark',
+    'restart'=>'Restart',
+    'back'=>'back',
     'assoc'=>'In association with',
     'title'=>'Converged Infrastructure - Maturity Benchmark',
     'next'=>'Next',
-    'landing'=>'The Dell Converged Infrastructure Maturity Benchmark Tool provides an independently sourced, fact-based framework to help IT organizations make business and IT decisions associated with converged infrastructure.',
+    'landing'=>'The Dell Converged Infrastructure Maturity Benchmark Tool provides an independently sourced, facts-based framework to help IT organizations make business and IT decisions associated with converged infrastructure.',
     'startbut'=>'Get Started',
     'of'=>'of',
     'youre'=>'You\'re ',
@@ -29,6 +30,8 @@ return array(
     'future-creator' => 'Future Focused',
     'future-creatortxt'=> 'You\re leading the pack! There are a few thing you can consider to keep your lead',
 
+    'improve' => 'Areas where your business can improve their Converged infrastructure are:',
+
     'send'=>'We can send you the full report directly to your mailbox',
     'fullreport'=>'Want a full report that benchmarks your Converged Infrastructure Maturity and suggests how you can improve?',
     'provide'=>'Just provide us your name and email and we\'ll send you a link to download it.',
@@ -45,7 +48,7 @@ return array(
     'emailreport'=>'Email me the personalized report',
     'hi'=>'Thank you',
     'soon'=>'Your download link will be in your inbox soon.',
-    'wait'=>'While you\'re waiting why not tweet your results and see how your colleagues measure up?',
+    'wait'=>'While you\'re waiting why not tweet your results and see how your followers measure up?',
     'multierror'=>'Please answer all questions in order to continue.',
     'errorFname'=>'Enter your name',
     'errorSname'=>'Enter your surname',

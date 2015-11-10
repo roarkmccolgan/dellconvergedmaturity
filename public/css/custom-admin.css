@@ -70,6 +70,22 @@ h1.title{
 .feature-txt h5 {
 	font-size: 16px;
 }
+/*language*/
+.flag{
+	display: inline-block;
+	text-indent: -999px;
+	vertical-align: text-bottom;
+	width: 24px;
+	height: 18px;
+	overflow: hidden;
+	background: url("../images/flags.png") no-repeat 0 0;
+}
+.flag.fr{
+	background-position: -24px -19px;
+}
+.flag.de{
+	background-position: -48px 0;
+}
 
 .small-icon {
 	background:#3498db;

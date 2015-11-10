@@ -241,10 +241,27 @@
 			if($localQuestions=='es' || $localQuestions=='fr' || $localQuestions=='de' || $localQuestions=='it'){
 				$btnclass = 'lang';
 			}
+
+            $bus = Lang::get('report.itbusiness');
+            $ser = Lang::get('report.itservicedelivery');
+            $inf = Lang::get('report.itinfrastructure');
+
+            $improve = '';
+            
+            $this->tempLabels = array('itbusiness'=>$bus, 'itservicedelivery'=>$ser, 'itinfrastructure'=>$inf);
+            foreach($this->howfit as $key=>$res){
+                if($key!='overall' && ($res['rating']=='Reactive' || $res['rating']=='Mainstream')){
+                    if($improve=='') $improve.='<ul>';
+                    $improve.= "<li>".$this->tempLabels[strtolower($key)]."</li>";
+                }
+            }
+            if($improve!='') $improve.='</ul>';
             $vars = array(
                 'heading' => Lang::get('general.title'),
                 'result' => Lang::get('general.youre').' '.strtoupper(Lang::get('general.'.strtolower($this->howfit['overall']['rating']))),
                 'sub1' => $this->baseline['overall']['types'][$this->howfit['overall']['rating']]['copy'],
+                'sub2' => $improve!='' ? Lang::get('general.improve'):false,
+                'improve' => $improve!='' ? $improve:false,
                 'colour' => 'orange',
                 'quiz' => $this->quiz,
 				'source' => Session::get('source'),

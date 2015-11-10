@@ -78,15 +78,24 @@
 			<div> 
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-3 col-md-offset-9">
+						<div class="col-md-4">
+							<div class="btn-group">
+		                        <button type="button" class="btn btn-default rounded dropdown-toggle" data-toggle="dropdown">
+		                            <i class="flag"></i> Change language 
+		                            <i class="fa fa-angle-down"></i>
+		                        </button>
+		                        <ul class="dropdown-menu" role="menu">
+		                            <li><a href="#"><i class="flag fr"></i> French</a></li>
+		                            <li><a href="#"><i class="flag de"></i> German</a></li>
+		                        </ul>
+		                    </div>
+						</div>
+						<div class="col-sm-3 col-md-offset-5">
 							<h5 class="pull-right">SPONSORED BY</h5>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-4">
-							<a href="/"><i class="fa fa-undo"></i> {{Lang::get('general.restart')}}</a>
-						</div>
-						<div class="col-sm-3 col-md-offset-5">                       
+						<div class="col-sm-3 col-md-offset-9">                       
 							<a href="http://dell.com" class="pull-right"><img src="{{asset('images/dell_intel_lockup.png')}}" alt="logo"></a>
 
 						</div>

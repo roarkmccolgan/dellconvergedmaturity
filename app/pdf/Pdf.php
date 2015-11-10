@@ -282,7 +282,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->Cell(30, 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
 		$this->SetX($rightX+65);
 		$this->SetFont('impact', '', 34);
-		$this->Cell(30, 0, $result['overall']['score'], 0, 1, 'L');
+		$this->Cell(30, 0, round($result['overall']['score'], 1), 0, 1, 'L');
 		
 		//second graph
 		$this->SetXY($rightX, 72);

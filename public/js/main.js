@@ -24,6 +24,9 @@ $(function() {
 		window.open(url, '_blank', 'scrollbars,resizable,height=600,width=600');
 		return false;
 	});
+	$('.historyback').click(function() {
+		window.history.back();
+	});
 	
 	if(!Modernizr.input.placeholder){
 
