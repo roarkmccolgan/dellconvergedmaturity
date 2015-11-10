@@ -83,10 +83,10 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-md-4">
 							<a href="/"><i class="fa fa-undo"></i> {{Lang::get('general.restart')}}</a>
 						</div>
-						<div class="col-sm-3 col-md-offset-7">                       
+						<div class="col-sm-3 col-md-offset-5">                       
 							<a href="http://dell.com" class="pull-right"><img src="{{asset('images/dell_intel_lockup.png')}}" alt="logo"></a>
 
 						</div>
