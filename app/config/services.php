@@ -15,7 +15,7 @@ return array(
 	*/
 
 	'mailgun' => array(
-		'domain' => 'techfitquiz.com',
+		'domain' => 'convergedmaturity.com',
 		'secret' => 'key-d9c8b89c95c8dd123d995a83857b8aa0',
 	),
 
