@@ -1,6 +1,6 @@
 @extends('_layout.default')
 
-@section('pagetitle', 'Dell Converge Infrastructure - Maturity Benchmark')
+@section('pagetitle', 'Dell Converged Infrastructure - Maturity Benchmark')
 
 
 @section('head')
