@@ -15,7 +15,7 @@ return array(
 
 	'debug' => true,
 	
-	'host' => "hptechquiz.app",
+	'host' => "dellconverged.app",
 
 	'providers' => array(
 		'Way\Generators\GeneratorsServiceProvider',		

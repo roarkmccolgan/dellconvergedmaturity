@@ -350,7 +350,7 @@
 						
 						Mail::queue('emails.errors', array('process'=>'Guzzle', 'message'=>$e->getMessage(), 'time'=>date('l jS \of F Y h:i:s A')), function($message)
 						{
-							$message->to('roarkmccolgan@gmail.com', 'Roark McColgan')->subject('Error on HP Tech Quiz! ('.$curloc.')');
+							$message->to('roarkmccolgan@gmail.com', 'Roark McColgan')->subject('Error on Converged Infrastructure - Maturity Benchmark! ('.$curloc.')');
 						});
 					}
 				}*/
