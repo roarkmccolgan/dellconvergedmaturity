@@ -120,7 +120,7 @@ h1.title{
 	display: inline-block;
 	text-decoration: none;
 	margin: 5px;
-	font-size: 14px;
+	font-size: 16px;
 	vertical-align: middle;
 	padding: 15px 30px 15px 55px;
 	background-color: #fdfdfd;
@@ -146,8 +146,8 @@ h1.title{
 }
 .btnoption .fa, .icheckbox_line .fa, .iradio_line .fa{
 	position: absolute;
-	left: 18px;
-	top: 15px;
+	left: 16px;
+	top: 13px;
 	font-size: 150%;
 	line-height: 120%;
 	z-index: 1;
@@ -395,6 +395,7 @@ ul.categories {
 ul.categories>li {
     border-bottom: 1px solid #e0eded;
     position: relative;
+    font-size: 16px;
 }
 
 ul.categories>li .subprogress {

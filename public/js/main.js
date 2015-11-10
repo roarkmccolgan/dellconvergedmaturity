@@ -19,6 +19,11 @@ $(function() {
 		else 
 		return false
   });
+	$('.pop-up').click(function() {
+		url = $(this).attr('href');
+		window.open(url, '_blank', 'scrollbars,resizable,height=600,width=600');
+		return false;
+	});
 	
 	if(!Modernizr.input.placeholder){
 

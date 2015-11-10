@@ -95,7 +95,7 @@
 					<div class="row" >
 						<div class="col-md-12" >
 							<div class="col-sm-8 "style="border-top:1px solid #444; padding-top:5px;">
-								<a href="http://www.idc.com/about/termsofuse.jsp">Terms of Use</a> | <a href="#" data-toggle="modal" data-target="#disclaimer">Disclaimer</a>
+								<a href="http://www.idc.com/about/termsofuse.jsp" class="pop-up" target="_blank">Terms of Use</a> | <a href="#" data-toggle="modal" data-target="#disclaimer">Disclaimer</a>
 							</div> 
 							<div class="col-sm-4" style="border-top:1px solid #444; padding-top:5px;">
 								<p class="text-right">Copyright {{{ date('Y') }}} IDC. All rights reserved.</p>

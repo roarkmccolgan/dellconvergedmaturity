@@ -8,7 +8,7 @@ return array(
         'complete' => false,
         'pages' => array(
         	'page1' => array(
-                'title' => false,
+                'title' => 'In which country is the company you work for situated?',
                 'questions' => array(
                     's1'=>array(
                         'type'=>'radio',
@@ -38,11 +38,11 @@ return array(
                 )
             ),
             'page2' => array(
-                'title' => false,
+                'title' => 'How many full time employees work at your organization in that country',
                 'questions' => array(
                     's2'=>array(
                         'type'=>'radio',
-                        'question'=>'How many full time employees work at your organization in country',
+                        'question'=>'How many full time employees work at your organization in that country',
                         'name'=>'s2',
                         'options'=>array(
                             array(
@@ -68,7 +68,7 @@ return array(
                 )
             ),
             'page3' => array(
-                'title' => false,
+                'title' => 'Which of the following industry classifications best represents your organization?',
                 'questions' => array(
                     's3'=>array(
                         'type'=>'radio',
@@ -150,7 +150,7 @@ return array(
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => false,
+                'title' => 'Which statement best reflects how the role of IT is seen by the Senior Management of the business?',
                 'questions' => array(
                     'a1'=>array(
                         'type'=>'radio',
@@ -182,7 +182,7 @@ return array(
                 'report' => false
             ),
             'page2' => array(
-                'title' => false,
+                'title' => 'How would you describe the level of IT investment in your organization?',
                 'questions' => array(
                     'a2'=>array(
                         'type'=>'radio',
@@ -223,7 +223,7 @@ return array(
                 )
             ),
             'page3' => array(
-                'title' => false,
+                'title' => 'When it comes to business requests for new or enhanced applications or services, which statement best reflects your IT department\'s capabilities?',
                 'questions' => array(
                     'a3'=>array(
                         'type'=>'radio',
@@ -259,7 +259,7 @@ return array(
                 )
             ),
             'page4' => array(
-                'title' => false,
+                'title' => 'How involved is IT in overall projects and business initiatives?',
                 'questions' => array(
                     'a4'=>array(
                         'type'=>'radio',
@@ -295,7 +295,7 @@ return array(
                 )
             ),
             'page5' => array(
-                'title' => 'Business Effectiveness &amp; IT Capability',
+                'title' => 'Which statements describe the activities that you do to gauge your IT department\'s maturity and capability compared to best in class or other companies in the industry?',
                 'questions' => array(
                     'a5'=>array(
                         'type'=>'radio',
@@ -345,11 +345,11 @@ return array(
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => false,
+                'title' => 'How would you describe your implementation or use of the following areas of IT service delivery?',
                 'questions' => array(
                     'b1'=>array(
                         'type'=>'groupradio',
-                        'question'=>'How would you describe your implementation or use of the following areas of IT service delivery? <span class="instruct">select the option that best matches your situation for each example</span>',
+                        'question'=>'How would you describe your implementation or use of the following areas of IT service delivery?',
                         'name'=>'b1',
                         'options'=>array(
                             array(
@@ -569,7 +569,7 @@ return array(
                 )
             ),
             'page2' => array(
-                'title' => false,
+                'title' => 'What is your attitude towards investing in shared IT infrastructure that can run any number of applications or workloads rather than spending on hardware that supports specific dedicated applications?',
                 'questions' => array(
                     'b2'=>array(
                         'type'=>'radio',
@@ -615,7 +615,7 @@ return array(
                 )
             ),
             'page3' => array(
-                'title' => false,
+                'title' => 'What is your attitude towards investing in end-to-end IT service monitoring and management tools in order to enhance IT service delivery and quality?',
                 'questions' => array(
                     'b3'=>array(
                         'type'=>'radio',
@@ -661,7 +661,7 @@ return array(
                 )
             ),
             'page4' => array(
-                'title' => false,
+                'title' => 'What is your primary means of managing your IT infrastructure including servers, storage and networking?',
                 'questions' => array(
                     'b4'=>array(
                         'type'=>'radio',
@@ -702,7 +702,7 @@ return array(
                 )
             ),
             'page5' => array(
-                'title' => false,
+                'title' => 'To what level have you adopted automation in your IT management?',
                 'questions' => array(
                     'b5'=>array(
                         'type'=>'radio',
@@ -743,7 +743,7 @@ return array(
                 )
             ),
             'page6' => array(
-                'title' => false,
+                'title' => 'What statement best describes the setup of your IT operations teams?',
                 'questions' => array(
                     'b6'=>array(
                         'type'=>'radio',
@@ -793,11 +793,11 @@ return array(
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => 'false',
+                'title' => 'On-premises. To what extent do you use the following?',
                 'questions' => array(
                     'c1'=>array(
                         'type'=>'groupradio',
-                        'question'=>'On-premises. To what extent do you use of the following?',
+                        'question'=>'On-premises. To what extent do you use the following?',
                         'name'=>'c1',
                         'options'=>array(
                             array(
@@ -935,11 +935,11 @@ return array(
                 )
             ),
             'page2' => array(
-                'title' => 'false',
+                'title' => 'Third Party Managed Services or Hosting. To what extent do you use the following?',
                 'questions' => array(
                     'c2'=>array(
                         'type'=>'groupradio',
-                        'question'=>'Third Party Managed Services or Hosting. To what extent do you use of the following?',
+                        'question'=>'Third Party Managed Services or Hosting. To what extent do you use the following?',
                         'name'=>'c2',
                         'options'=>array(
                             array(
@@ -1035,11 +1035,11 @@ return array(
                 )
             ),
             'page3' => array(
-                'title' => 'false',
+                'title' => 'Cloud. To what extent do you use the following?',
                 'questions' => array(
                     'c3'=>array(
                         'type'=>'groupradio',
-                        'question'=>'Cloud. To what extent do you use of the following?',
+                        'question'=>'Cloud. To what extent do you use the following?',
                         'name'=>'c3',
                         'options'=>array(
                             array(
@@ -1135,7 +1135,7 @@ return array(
                 )
             ),
             'page4' => array(
-                'title' => false,
+                'title' => 'Which of the following best describes your IT department\'s approach to adopting new technologies?',
                 'questions' => array(
                     'c4'=>array(
                         'type'=>'radio',
@@ -1176,7 +1176,7 @@ return array(
                 )
             ),
             'page5' => array(
-                'title' => false,
+                'title' => 'When it comes to buying infrastructure, what statement best describes your approach?',
                 'questions' => array(
                     'c5'=>array(
                         'type'=>'radio',

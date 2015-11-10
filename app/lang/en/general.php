@@ -42,7 +42,7 @@ return array(
     'byreg'=>'By registering with IDC, you accept our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="http://www.dell.com/learn/uk/en/ukcorp1/policies-privacy" target="_blank">DELL Privacy Policy</a> The information we collect will be shared with DELL for the purpose of direct marketing',
     'accept'=>'I accept the terms',
     'required'=>'Required',
-    'emailreport'=>'Email me my report',
+    'emailreport'=>'Email me the personalized report',
     'hi'=>'Thank you',
     'soon'=>'Your download link will be in your inbox soon.',
     'wait'=>'While you\'re waiting why not tweet your results and see how your colleagues measure up?',
