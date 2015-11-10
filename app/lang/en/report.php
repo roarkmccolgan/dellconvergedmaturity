@@ -3,7 +3,7 @@
 return array(
     'results'=>'Results',
     'thankyou'=>'
-Thank you for completing the IDC \'Is your infrastructure future-ready?\' quiz sponsored by Dell and Intel. The economic benefits of being future ready are clear — increased future readiness corresponds to better business outcomes.
+Thank you for completing IDC’s Converge Infrastructure - Maturity Benchmark sponsored by Dell and Intel. The economic benefits of being future ready are clear — increased future readiness corresponds to better business outcomes.
 
 Organizations don’t have to be at the top of the future-readiness scale to enjoy benefits; data from a number of IDC Converged Infrastructure and Cloud studies have shown that organizations can obtain benefits by moving to the next stage of future readiness regardless of where you start. Organizations that improve their "future readiness" consistently improve their time to market with new products and services, increase business agility, employee productivity and even improved innovation.
 
