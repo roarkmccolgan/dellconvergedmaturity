@@ -31,8 +31,8 @@
                         </p>
                         @if($sub2)
                         <p>
-                            {{sub2}}
-                            {{improve}}
+                            {{$sub2}}
+                            {{$improve}}
                         </p>
                         @endif
                         <hr class="devider devider-dashed">

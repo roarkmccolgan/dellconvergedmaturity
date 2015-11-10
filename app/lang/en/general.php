@@ -28,7 +28,7 @@ return array(
     'future-focused' => 'Future Focused',
     'future-focusedtxt'=> 'Great result! You have a good footing in Converged infrastructure, follow the guidance in your free report to get to the top.',
     'future-creator' => 'Future Focused',
-    'future-creatortxt'=> 'You\re leading the pack! There are a few thing you can consider to keep your lead',
+    'future-creatortxt'=> 'You\'re leading the pack! There are a few thing you can consider to keep your lead',
 
     'improve' => 'Areas where your business can improve their Converged infrastructure are:',
 
