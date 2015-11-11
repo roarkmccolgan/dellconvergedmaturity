@@ -1,27 +1,35 @@
 <?php
 return array(
-    'screeners' => array(
+    'demographics' => array(
+        'title' => 'Démographie',
+        'description' => 'Pour commencer, nous aimerions vous poser quelques questions sur votre entreprise.',
         'colour' => '',
         'display' => false,
         'complete' => false,
         'pages' => array(
-        	'page1' => array(
-                'title' => 'Tout d\'abord, quelques questions sur vous et votre entreprise.',
+            'page1' => array(
+                'title' => 'Dans quel pays est située l\'entreprise pour laquelle vous travaillez?',
                 'questions' => array(
                     's1'=>array(
-                        'type'=>'icon',
-                        'question'=>'Lequel de ces énoncés décrit le mieux votre rôle au sein de l\'entreprise ?',
+                        'type'=>'radio',
+                        'question'=>'Dans quel pays est située l\'entreprise pour laquelle vous travaillez?',
                         'name'=>'s1',
                         'options'=>array(
                             array(
-                                'class'=>'ico-it',
-                                'label'=>'Vous travaillez au sein du service informatique de votre entreprise ou le dirigez',
+                                'class'=>'',
+                                'label'=>'France',
                                 'value'=>false,
                                 'checked'=>false
                             ),
                             array(
-                                'class'=>'ico-o',
-                                'label'=>'Vous ne faites pas partie du service informatique, mais vous avez une influence sur la stratégie informatique',
+                                'class'=>'',
+                                'label'=>'Allemagne',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Royaume-Uni',
                                 'value'=>false,
                                 'checked'=>false
                             )
@@ -30,862 +38,1177 @@ return array(
                 )
             ),
             'page2' => array(
-                'title' => 'Une dernière question avant de commencer.',
+                'title' => 'Combien de salariés à plein temps travaillent dans votre organisation dans ce pays?',
                 'questions' => array(
                     's2'=>array(
-                        'type'=>'icon',
-                        'question'=>'Quelle est la taille de l\'entreprise pour laquelle vous travaillez ou que vous dirigez ?',
+                        'type'=>'radio',
+                        'question'=>'Combien de salariés à plein temps travaillent dans votre organisation dans ce pays?',
                         'name'=>'s2',
                         'options'=>array(
                             array(
-                                'class'=>'ico-few',
-                                'label'=>'0 à 9 salariés',
+                                'class'=>'',
+                                'label'=>'250-499 employés',
                                 'value'=>false,
                                 'checked'=>false
                             ),
                             array(
-                                'class'=>'ico-more',
-                                'label'=>'10 à 99 salariés',
+                                'class'=>'',
+                                'label'=>'500-999 employés',
                                 'value'=>false,
                                 'checked'=>false
                             ),
                             array(
-                                'class'=>'ico-most',
-                                'label'=>'Plus de 100 salariés',
+                                'class'=>'',
+                                'label'=>'1000 et plus employés',
                                 'value'=>false,
                                 'checked'=>false
                             )
                         )
                     )
                 )
-            )
+            ),
+            'page3' => array(
+                'title' => 'Laquelle des classifications de l\'industrie suivantes représente le mieux votre organisation?',
+                'questions' => array(
+                    's3'=>array(
+                        'type'=>'radio',
+                        'question'=>'Laquelle des classifications de l\'industrie suivantes représente le mieux votre organisation?',
+                        'name'=>'s3',
+                        'options'=>array(
+                            array(
+                                'class'=>'',
+                                'label'=>'Services financiers',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Industrie manufacturière',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Services de télécommunication',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Transport, distribution et logistique',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Vente au détail/en gros',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Conseil informatique et services informatiques professionnels',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Conseil non-informatique et autres services professionnels',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Gouvernement central ou local, ou services publics',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Caritatif ou à but non lucratif',
+                                'value'=>false,
+                                'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Autre',
+                                'value'=>false,
+                                'checked'=>false,
+                                'custom' => 'input'
+                            )
+                        )
+                    )
+                )//end question
+            )//end page
         )
     ),
-    'business' => array(
+    'itbusiness' => array(
+        'title' => 'Informatique et entreprise',
+        'description' => 'The following questions ask about how IT is aligned with the business and how it supports the ongoing strategic plan and requirements',
         'colour' => 'orange',
         'display' => true,
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => 'Efficacité Structurelle et Capacité Informatique',
+                'title' => 'Quel énoncé reflète le mieux la façon dont le rôle de l\'informatique est considérée par la haute direction de l\'entreprise?',
                 'questions' => array(
-                    'b1'=>array(
-                        'type'=>'button',
-                        'question'=>'Quelle place tient l\'informatique dans les objectifs de l\'entreprise, et en particulier, en ce qui concerne l\'amélioration des performances et la réduction des coûts d\'exploitation ?',
-                        'name'=>'b1',
+                    'a1'=>array(
+                        'type'=>'radio',
+                        'question'=>'Quel énoncé reflète le mieux la façon dont le rôle de l\'informatique est considérée par la haute direction de l\'entreprise?',
+                        'name'=>'a1',
                         'options'=>array(
                             array(
-                                'label'=>'Extrêmement importante',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Très importante',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Relativement importante',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Peu ou pas importante',
+                                'label'=>'L\'informatique est considérée comme un coût nécessaire',
                                 'value'=>1,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'L\'informatique est considérée comme un facteur d\'efficacité de l\'entreprise',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'L\'informatique est considérée comme une source d\'avantage concurrentiel ou de croissance du chiffre d\'affaires',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
-                ),
+                )/*,
                 'report' => array(
-                    'text'=>'56 % des PME en Europe de l\'Ouest considèrent que l\'informatique contribue de manière très importante à leurs objectifs. En 2014, la rationalisation des coûts est la priorité absolue des PME d\'Europe de l\'Ouest.',
+                    'text'=>'56% of Western European SMBs see IT as making an important contribution to business objectives. Cost reduction is West European SMBs’ top business priority in 2014.',
                     'image'=>'img/techfit_icons_Q-A1.png'
-                )
+                )*/,
+                'report' => false
             ),
             'page2' => array(
-                'title' => 'Efficacité Structurelle et Capacité Informatique',
+                'title' => 'Comment décririez-vous le niveau des investissements informatiques dans votre organisation ?',
                 'questions' => array(
-                    'b2'=>array(
-                        'type'=>'button',
-                        'question'=>'Quelle place tient l\'informatique dans la conformité juridique et réglementaire ? ',
-                        'name'=>'b2',
+                    'a2'=>array(
+                        'type'=>'radio',
+                        'question'=>'Comment décririez-vous le niveau des investissements informatiques dans votre organisation ?',
+                        'name'=>'a2',
                         'options'=>array(
                             array(
-                                'label'=>'Extrêmement importante',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Très importante',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Relativement importante',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Peu ou pas importante',
+                                'label'=>'L\'investissement informatique est loin d\'être suffisant pour ce que nous avons à faire',
                                 'value'=>1,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'L\'investissement informatique est serré, couvrant à peine les opérations essentielles',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'L\'investissement informatique est généralement correct pour les opérations de base, mais serré pour de nouvelles initiatives',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'L\'investissement informatique est correct pour les opérations de base, et pour des nouvelles initiatives où la valeur est claire',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'L\'investissement informatique est facilement disponible dans l\'ensemble avec une bonne analyse de rentabilisation, même pour le développement expérimental',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Dans l\'enquête menée en 2014 par IDC, les PME d\'Europe de l\'Ouest indiquent que la conformité réglementaire est leur troisième priorité sur l\'année et que l\'informatique joue un rôle crucial à cet égard',
+                    'text'=>'In IDC\'s 2014 survey, Western European SMBs rated regulatory compliance as their third most critically important business priority in 2014 and IT has a vital role to play',
                     'image'=>'img/techfit_icons_Q-A2.png'
                 )
             ),
             'page3' => array(
-                'title' => 'Efficacité Structurelle et Capacité Informatique',
+                'title' => 'Face aux demandes de l\'entreprise pour des applications ou des services nouveaux ou améliorés, quel énoncé reflète le mieux les capacités de votre service informatique ?',
                 'questions' => array(
-                    'b3'=>array(
-                        'type'=>'button',
-                        'question'=>'Avez-vous remplacé, ou envisagez-vous de remplacer, vos principaux documents sur papier par des versions numériques ?',
-                        'name'=>'b3',
+                    'a3'=>array(
+                        'type'=>'radio',
+                        'question'=>'Face aux demandes de l\'entreprise pour des applications ou des services nouveaux ou améliorés, quel énoncé reflète le mieux les capacités de votre service informatique ?',
+                        'name'=>'a3',
                         'options'=>array(
                             array(
-                                'label'=>'Oui',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous étudions la question',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
+                                'label'=>'Nous avons du mal à faire face à la plupart des demandes',
                                 'value'=>1,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous sommes généralement OK avec les demandes concernant des applications ou des services existants, mais avons du mal pour les demandes de services nouveaux ou améliorés',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous sommes généralement OK avec les demandes, à la fois pour les applications et services existants et pour les services nouveaux ou améliorés',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous sommes très bons à satisfaire toutes les demandes ou presque',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Les flux de travail numérisés réduisent les coûts et optimisent la gestion de la recherche et du stockage des données. Les enquêtes IDC menées auprès de PME en Europe de l\'Ouest montrent que sur 26 % de sociétés, seulement un quart n\'a aucune intention de remplacer les supports papier par des solutions logicielles de flux de travail de documents. Les autres entreprises l\'ont déjà fait (plus de 40 % pour ce qui est des documents comptables) ou envisagent de le faire prochainement. ',
+                    'text'=>'Digitised workflows reduce costs and allow superior retrieval and storage management. IDC surveys of West European SMBs show that only 26% of SMBs do not intend to replace their paper-based systems with document workflow software solutions – the rest either have done already (>40% in the case of accounting documents) or are planning to do so in the near future.',
                     'image'=>'img/techfit_icons_Q-A3.png'
                 )
             ),
             'page4' => array(
-                'title' => 'Efficacité Structurelle et Capacité Informatique',
+                'title' => 'Comment l\'informatique est-elle impliquée dans l\'ensemble des projets et des initiatives de l\'entreprise ? ',
                 'questions' => array(
-                    'b4'=>array(
-                        'type'=>'button',
-                        'question'=>'Disposez-vous d\'une solution de gestion des dépenses de télécommunications sans fil afin de suivre le coût et l\'utilisation des appareils mobiles de l\'entreprise ?',
-                        'name'=>'b4',
+                    'a4'=>array(
+                        'type'=>'radio',
+                        'question'=>'Comment l\'informatique est-elle impliquée dans l\'ensemble des projets et des initiatives de l\'entreprise ? ',
+                        'name'=>'a4',
                         'options'=>array(
                             array(
-                                'label'=>'Oui',
-                                'value'=>5,
+                                'label'=>'L\'entreprise a tendance à aller de l\'avant avec de nombreux projets avec des exigences de technologie sans y associer l\'informatique, et nous devons chercher activement ce qui se passe',
+                                'value'=>1,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nous étudions la question',
+                                'label'=>'Nous sommes impliqués dans tous ou presque tous les projets qui ont des exigences identifiées de technologie, mais souvent pas assez tôt ou pas assez profondément',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
+                                'label'=>'Nous sommes fortement impliqués dans tous ou presque tous les projets qui ont identifié les besoins technologiques',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous sommes fortement impliqués dans la planification de la plupart ou de tous les projets de l\'entreprise, même ceux qui ne possèdent pas toujours une exigence identifiée de technologie',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Les enquêtes IDC en Europe de l\'Ouest montrent que le pourcentage d\'entreprises utilisant des appareils mobiles va de 78 % dans le secteur de la santé à près de 95 % dans les secteurs des télécommunications/médias, où environ 24 % des employés reçoivent un appareil professionnel. Le taux d\'adoption moyen est de 86 %, mais les dépenses associées dépendent largement de l\'utilisation. Par conséquent, il est impératif de maîtriser le coût de ces appareils. ',
+                    'text'=>'IDC surveys in Western Europe indicate that the percentage of companies using mobile devices ranges from 78% in healthcare to nearly 95% in telecom/media, where around 24% of employees are issued with a device. The average adoption is 86%. But the cost of these is very much driven by usage. Controlling the cost of these devices is therefore of critical importance.',
                     'image'=>'img/techfit_icons_Q-A4.png'
                 )
             ),
             'page5' => array(
-                'title' => 'Efficacité Structurelle et Capacité Informatique',
+                'title' => 'Quels énoncés décrivent les activités que vous faites pour évaluer la maturité et la capacité de votre département informatique par rapport aux meilleures ou à d\'autres sociétés du secteur ? ',
                 'questions' => array(
-                    'b5'=>array(
-                        'type'=>'button',
-                        'question'=>'Est-ce que vous documentez ou effectuez un suivi de l\'utilisation des imprimantes de bureau et les périodes où elles sont utilisées ? ',
-                        'name'=>'b5',
+                    'a5'=>array(
+                        'type'=>'radio',
+                        'question'=>'Quels énoncés décrivent les activités que vous faites pour évaluer la maturité et la capacité de votre département informatique par rapport aux meilleures ou à d\'autres sociétés du secteur ? ',
+                        'name'=>'a5',
                         'options'=>array(
                             array(
-                                'label'=>'Oui',
-                                'value'=>5,
+                                'label'=>'Nous ne faisons vraiment rien de cela',
+                                'value'=>1,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nous étudions la question',
+                                'label'=>'Revues informelles de l\'informatique en interne',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Revues formelles de l\'informatique en interne',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
+                                'label'=>'Nous regardons ce que d\'autres entreprises semblent faire',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous utilisons des évaluateurs externes qui nous font part de nos points forts, nos faiblesses et nos lacunes',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'En mettant en place des droits qui limitent le type et le lieu d\'impression selon les utilisateurs, vous êtes à même de générer des économies considérables. En outre, ce contrôle présente d\'autres avantages, notamment l\'optimisation de la confidentialité et de la sécurité, et une meilleure maîtrise des risques juridiques et commerciaux. Selon les recherches d\'IDC, 26 % des PME d\'Europe de l\'Ouest ont déjà déployé des fonctions de rapport et de contrôle d\'utilisation des imprimantes, et 24 % d\'entre elles ont mis en œuvre des solutions d\'identification et de sécurisation pour les impressions. ',
+                    'text'=>'Controlling who can print what, and where, leads to considerable cost-savings, as well as other benefits such as enhanced privacy and security, reducing legal and business risk. IDC research shows that 26% of West European SMBs have printing device usage and reporting facilities in place today, while 24% have implemented printing device security and ID solutions.',
                     'image'=>'img/techfit_icons_Q-A5.png'
                 )
             )
         )
     ),
-    'security' => array(
+    'itservicedelivery' => array(
+        'title' => 'Prestation de services informatiques',
+        'description' => 'The following questions ask about how you approach the delivery of IT applications and services internally in your organization',
         'colour' => 'purple',
         'display' => true,
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => 'Sécurité',
+                'title' => 'Comment décririez-vous votre mise en œuvre ou votre utilisation des domaines suivants de prestation de services informatiques ?',
                 'questions' => array(
-                    'e1'=>array(
-                        'type'=>'button',
-                        'question'=>'Mettez-vous à niveau votre sécurité informatique actuelle pour vous adapter à l\'évolution et à l\'émergence des nouvelles menaces ?',
-                        'name'=>'e1',
+                    'b1'=>array(
+                        'type'=>'groupradio',
+                        'question'=>'Comment décririez-vous votre mise en œuvre ou votre utilisation des domaines suivants de prestation de services informatiques ?',
+                        'name'=>'b1',
                         'options'=>array(
                             array(
-                                'label'=>'Oui',
-                                'value'=>5,
-                                'checked'=>false
+                                'label'=>'Un catalogue de services clairement définis',
+                                'name'=>'b1.1',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>5,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Nous réévaluons actuellement notre sécurité informatique',
-                                'value'=>3,
-                                'checked'=>false
+                                'label'=>'Apport et gestion de la charge de travail en libre-service',
+                                'name'=>'b1.2',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Pas de mise à niveau en cours',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Adoption de la Bibliothèque pour l\'infrastructure des technologies de l\'information (ITIL) ou d\'une approche similaire pour la fourniture formelle de services informatiques',
+                                'name'=>'b1.3',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Contrats de niveau de service clairement compris',
+                                'name'=>'b1.4',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Surveillance du niveau de service et reporting',
+                                'name'=>'b1.5',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Suivi de la satisfaction de l\'utilisateur final',
+                                'name'=>'b1.6',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Automatisation et orchestration',
+                                'name'=>'b1.7',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Suivi de la performance des applications',
+                                'name'=>'b1.8',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Non existante',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Au coup par coup',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Dans des secteurs sélectionnés',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Répandue',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Lors de la dernière enquête d\'IDC en Europe de l\'Ouest, 93 % des professionnels de la sécurité et de l\'informatique ont déclaré que l\'amélioration de la sécurité pour les employés et les périphériques actuels était leur priorité absolue. La priorité des PME est d\'investir dans tous les aspects de la sécurité informatique, mais surtout dans des solutions de sécurité des réseaux et des nœuds d\'extrémité. ',
+                    'text'=>'In IDC\'s latest West European IT user survey, 93% of IT and security professionals stated that improving security for existing employees and devices was their highest security priority. Amongst SMBs, spending on all aspects of IT security is prioritised, but especially network and endpoint security solutions.',
                     'image'=>'img/techfit_icons_Q-B1.png'
                 )
             ),
             'page2' => array(
-                'title' => 'Sécurité',
+                'title' => 'Quelle est votre attitude face au fait d\'investir dans une infrastructure informatique partagée qui peut exécuter un nombre d\'applications ou un volume de travail quelconque, plutôt que de dépenser pour du matériel prenant en charge des applications dédiées spécifiques ?',
                 'questions' => array(
-                    'e2'=>array(
-                        'type'=>'button',
-                        'question'=>'Tous les appareils mobiles utilisés dans votre entreprise (notamment les ordinateurs portables et les clés USB) sont-ils cryptés ?',
-                        'name'=>'e2',
+                    'b2'=>array(
+                        'type'=>'radio',
+                        'question'=>'Quelle est votre attitude face au fait d\'investir dans une infrastructure informatique partagée qui peut exécuter un nombre d\'applications ou un volume de travail quelconque, plutôt que de dépenser pour du matériel prenant en charge des applications dédiées spécifiques ?',
+                        'name'=>'b2',
                         'options'=>array(
                             array(
-                                'label'=>'Oui, tous',
-                                'value'=>5,
+                                'label'=>'Nous ne faisons rien de cela pour le moment',
+                                'value'=>1,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Certains d\'entre eux',
+                                'label'=>'Nous faisons cela officieusement en utilisant en partie d\'autres investissements pour financer l\'infrastructure',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous faisons cela un peu pour le moment, mais il est difficile de le faire et nous ne le voyons pas augmenter',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous faisons cela un peu pour le moment, et nous essayons de l\'augmenter',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
+                                'label'=>'Nous faisons cela beaucoup pour le moment',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous faisons cela chaque fois que possible',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'La perte de données est un problème grave et récurrent pour presque toutes les entreprises, quelle que soit leur taille. La protection des données sensibles est le deuxième objectif le plus important des PME d\'Europe de l\'Ouest selon la moyenne des scores et le troisième en termes du nombre de personnes interrogées qui la considèrent comme importante ou très importante (60 % de toutes les personnes interrogées). La perte d\'appareils contenant des informations personnelles non cryptées peut être considérée comme une violation du droit européen sur la protection des données. Certaines sociétés ont donc dû faire face à des sanctions pécuniaires.',
+                    'text'=>'Data loss prevention is a serious and recurring problem for almost all organisations, large and small. Sensitive data protection is the second most important business objective for West European SMBs in terms of mean score and third in terms of share of respondents rating it as important or very important (60% of all respondents). Loss of devices containing personal data that is unencrypted can be seen as a breach of EU data protection law and fines have been imposed.',
                     'image'=>'img/techfit_icons_Q-B2.png'
                 )
             ),
             'page3' => array(
-                'title' => 'Sécurité',
+                'title' => 'Quelle est votre attitude à l\'égard de l\'investissement dans des outils de suivi et de gestion de bout-en-bout des services informatiques afin d\'améliorer la prestation et la qualité des services informatiques ?',
                 'questions' => array(
-                    'e3'=>array(
-                        'type'=>'button',
-                        'question'=>'Êtes-vous en mesure de n\'autoriser l\'impression que si l\'utilisateur ayant lancé la tâche se trouve à côté de l\'imprimante ?',
-                        'name'=>'e3',
+                    'b3'=>array(
+                        'type'=>'radio',
+                        'question'=>'Quelle est votre attitude à l\'égard de l\'investissement dans des outils de suivi et de gestion de bout-en-bout des services informatiques afin d\'améliorer la prestation et la qualité des services informatiques ?',
+                        'name'=>'b3',
                         'options'=>array(
                             array(
-                                'label'=>'Oui, nous avons accès à cette fonctionnalité ',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous étudions la question',
+                                'label'=>'Nous ne faisons rien de cela pour le moment',
                                 'value'=>1,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'Il convient de n\'autoriser l\'impression que si l\'utilisateur ayant lancé la tâche se trouve à côté de l\'imprimante. Cela permet de limiter le risque de consultation ou de copie des données sensibles par des personnes non autorisées. La perte de données ou la copie et la consultation non autorisées de documents sensibles peuvent représenter un risque majeur, impliquant de possibles répercussions judiciaires. Environ 30 % des PME européennes disposent aujourd\'hui de ce type de solutions.',
-                    'image'=>'img/techfit_icons_Q-B3.png'
-                )
-            ),
-            'page4' => array(
-                'title' => 'Sécurité',
-                'questions' => array(
-                    'e4'=>array(
-                        'type'=>'button',
-                        'question'=>'Pouvez-vous désactiver ou effacer à distance des appareils mobiles en cas de perte/vol/utilisation abusive, etc. ?',
-                        'name'=>'e4',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui, tous les appareils utilisés à des fins professionnelles (y compris les appareils personnels : BYOD)',
-                                'value'=>5,
+                                'label'=>'Nous faisons cela officieusement en utilisant en partie d\'autres investissements pour financer l\'infrastructure',
+                                'value'=>2,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Uniquement, les appareils appartenant à l\'entreprise',
+                                'label'=>'Nous faisons cela un peu pour le moment, mais il est difficile de le faire et nous ne le voyons pas augmenter',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous faisons cela un peu pour le moment, et nous essayons de l\'augmenter',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
+                                'label'=>'Nous faisons cela beaucoup pour le moment',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous faisons cela chaque fois que possible',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'La prévention de la perte de données est essentielle en matière de réputation et de respect de la législation (en particulier lorsque ces informations comprennent des données personnelles concernant les salariés ou les clients). 62 % des entreprises de moins de 1 000 salariés ont adopté un logiciel de gestion des appareils mobiles, ou ont l\'intention de le faire dans les 24 prochains mois..',
+                    'text'=>'Restricting printing to \'document owner present\' minimises sensitive data loss through unauthorised persons reading / copying documents. Loss of data or unauthorised copying and reading of sensitive documents can be a serious business risk and open the door to legal action. Around 30% of European SMBs have such solutions in place today.',
+                    'image'=>'img/techfit_icons_Q-B3.png'
+                )
+            ),
+            'page4' => array(
+                'title' => 'Quel est votre principal moyen de gérer votre infrastructure informatique - en incluant serveurs, stockage et mise en réseau ? ',
+                'questions' => array(
+                    'b4'=>array(
+                        'type'=>'radio',
+                        'question'=>'Quel est votre principal moyen de gérer votre infrastructure informatique - en incluant serveurs, stockage et mise en réseau ? ',
+                        'name'=>'b4',
+                        'options'=>array(
+                            array(
+                                'label'=>'Au coup par coup, en utilisant des feuilles de calcul, etc.',
+                                'value'=>1,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous utilisons principalement des outils prêts à l\'emploi de nos fournisseurs de matériel',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous utilisons une combinaison d\'outils de gestion spécialisés avec quelques outils prêts à l\'emploi',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous utilisons principalement des outils de gestion spécialisés',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous utilisons une suite de gestion de services bout-en-bout intégrée',
+                                'value'=>5,
+                                'checked'=>false
+                            )
+                        )
+                    )
+                ),
+                'report' => array(
+                    'text'=>'Data loss prevention is critical for business reputation and legal compliance (particularly where that information includes personal data about employees or customers). 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, mobile device management.',
+                    'image'=>'img/techfit_icons_Q-B4.png'
+                )
+            ),
+            'page5' => array(
+                'title' => 'Jusqu\'à quel niveau avez-vous adopté l\'automatisation dans votre gestion de l\'informatique ?',
+                'questions' => array(
+                    'b5'=>array(
+                        'type'=>'radio',
+                        'question'=>'Jusqu\'à quel niveau avez-vous adopté l\'automatisation dans votre gestion de l\'informatique ?',
+                        'name'=>'b5',
+                        'options'=>array(
+                            array(
+                                'label'=>'Procédures manuelles dans l\'ensemble',
+                                'value'=>1,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Principalement procédures manuelles avec un peu d\'automatisation',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Bon équilibre entre automatisation et procédures manuelles',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Principalement automatisation avec un peu de procédures manuelles',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Automatisation dans l\'ensemble',
+                                'value'=>5,
+                                'checked'=>false
+                            )
+                        )
+                    )
+                ),
+                'report' => array(
+                    'text'=>'Data loss prevention is critical for business reputation and legal compliance (particularly where that information includes personal data about employees or customers). 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, mobile device management.',
+                    'image'=>'img/techfit_icons_Q-B4.png'
+                )
+            ),
+            'page6' => array(
+                'title' => 'Quel énoncé décrit le mieux la configuration de vos équipes d\'exploitation informatique ? ',
+                'questions' => array(
+                    'b6'=>array(
+                        'type'=>'radio',
+                        'question'=>'Quel énoncé décrit le mieux la configuration de vos équipes d\'exploitation informatique ? ',
+                        'name'=>'b6',
+                        'options'=>array(
+                            array(
+                                'label'=>'Nous avons des équipes distinctes pour serveur, stockage et réseau',
+                                'value'=>1,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous avons intégré les équipes serveur et stockage, avec une équipe réseau distincte',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous avons intégré les équipes serveur et réseau, avec une équipe stockage distincte',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous avons intégré les équipes stockage et réseau, avec une équipe serveur distincte',
+                                'value'=>3,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous avons une équipe intégrée serveur, stockage et réseau',
+                                'value'=>4,
+                                'checked'=>false
+                            )
+                        )
+                    )
+                ),
+                'report' => array(
+                    'text'=>'Data loss prevention is critical for business reputation and legal compliance (particularly where that information includes personal data about employees or customers). 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, mobile device management.',
                     'image'=>'img/techfit_icons_Q-B4.png'
                 )
             )
         )
     ),
-    'cloud' => array(
+    'itinfrastructure' => array(
+        'title' => 'Technologie d\'infrastructure informatique',
+        'description' => 'The following questions ask about how IT is managed and operated at a high level',
         'colour' => 'dark-blue',
         'display' => true,
         'complete' => false,
         'pages' => array(
             'page1' => array(
-                'title' => 'Cloud',
+                'title' => 'Sur site. Dans quelle mesure utilisez-vous les éléments suivants ?',
                 'questions' => array(
                     'c1'=>array(
-                        'type'=>'checkbox',
-                        'question'=>'Pour quelles fonctions utilisez-vous des services Cloud :  <span class="instruct">SÉLECTIONNER TOUTES LES RÉPONSES QUI S\'APPLIQUENT</span>',
+                        'type'=>'groupradio',
+                        'question'=>'Sur site. Dans quelle mesure utilisez-vous les éléments suivants ?',
                         'name'=>'c1',
-                        'script'=>'
-                            $(\'#4-c1\').on(\'ifChecked\', function(event){
-                                $(\'div.error\').fadeOut(\'fast\', function() {
-                                    this.remove();
-                                    error=false;
-                                });
-                                $(\'#0-c1\').iCheck(\'uncheck\');
-                                $(\'#1-c1\').iCheck(\'uncheck\');
-                                $(\'#2-c1\').iCheck(\'uncheck\');
-                                $(\'#3-c1\').iCheck(\'uncheck\');
-                            });
-                            jQuery.each([$(\'#0-c1\'),$(\'#1-c1\'),$(\'#2-c1\'),$(\'#3-c1\')], function( i, item ) {
-                                $(item).on(\'ifChecked\', function(event){
-                                    $(\'div.error\').fadeOut(\'fast\', function() {
-                                        this.remove();
-                                        error=false;
-                                    });
-                                    $(\'#4-c1\').iCheck(\'uncheck\');
-                                });
-                            });
-                        ',
                         'options'=>array(
                             array(
-                                'label'=>'Les activités quotidiennes telles que l\'accueil de nouveaux collaborateurs, les feuilles de présence et les notes de frais. ',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Virtualisation du serveur',
+                                'name'=>'c1.1',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Communication et collaboration',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Virtualisation du stockage',
+                                'name'=>'c1.2',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Hébergement de systèmes de vente et de marketing en ligne',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Virtualisation du réseau',
+                                'name'=>'c1.3',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Systèmes de sécurité informatique ',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Système intégré (serveurs, stockage, réseau, gestion vendus en un ensemble intégré)',
+                                'name'=>'c1.4',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Pas sûr',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Cloud privé sur site',
+                                'name'=>'c1.5',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Cloud hybride (prestation informatique utilisant à la fois les services cloud privé et public)',
+                                'name'=>'c1.6',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Le Cloud présente de nombreux avantages : flexibilité, évolutivité, simplicité du travail à distance, avantage du paiement à l\'usage, etc.',
+                    'text'=>'Cloud allows flexibility, scalability, easier remote working, ‘pay-as-you go’ efficiency, etc',
                     'image'=>'img/techfit_icons_Q-C1.png'
                 )
             ),
             'page2' => array(
-                'title' => 'Cloud',
+                'title' => 'Services gérés ou hébergement tiers. Dans quelle mesure utilisez-vous les éléments suivants ?',
                 'questions' => array(
                     'c2'=>array(
-                        'type'=>'button',
-                        'question'=>'Utilisez-vous un service Cloud offrant les fonctions « synchroniser et-partager » ? ',
+                        'type'=>'groupradio',
+                        'question'=>'Services gérés ou hébergement tiers. Dans quelle mesure utilisez-vous les éléments suivants ?',
                         'name'=>'c2',
                         'options'=>array(
                             array(
-                                'label'=>'Oui, nous avons déployé une solution de ce type',
-                                'value'=>5,
-                                'checked'=>false
+                                'label'=>'Hébergement informatique non géré (colocation, etc.)',
+                                'name'=>'c2.1',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Nous étudions la question',
-                                'value'=>3,
-                                'checked'=>false
+                                'label'=>'Services informatiques gérés',
+                                'name'=>'c2.2',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>3,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Services d\'externalisation',
+                                'name'=>'c2.3',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
+                            ),
+                            array(
+                                'label'=>'Cloud privé hébergé/en colocation',
+                                'name'=>'c2.4',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Le stockage sur le Cloud facilite la collaboration et le travail mobile, et peut s\'avérer plus rentable. La demande de la part des utilisateurs finaux est en forte croissance. En conséquence, si une entreprise ne dispose d\'aucune solution Cloud, les utilisateurs peuvent prendre l\'initiative d\'adopter des solutions grand public, un phénomène appelé « Shadow IT ». Cela conduit à une augmentation du risque car il est difficile de contrôler la situation. La dernière enquête d\'IDC sur ce sujet en Europe de l\'Ouest révèle qu\'environ 20 % des entreprises ont mis en œuvre une solution de partage de fichiers sur le Cloud (en général pour un échantillon restreint d\'utilisateurs), alors que 37 % des entreprises envisagent d\'en déployer une.',
-                    'image'=>'img/techfit_icons_Q-C2.png'
+                    'text'=>'Cloud allows flexibility, scalability, easier remote working, ‘pay-as-you go’ efficiency, etc',
+                    'image'=>'img/techfit_icons_Q-C1.png'
                 )
             ),
             'page3' => array(
-                'title' => 'Cloud',
+                'title' => 'Cloud public. Dans quelle mesure utilisez-vous les éléments suivants ?',
                 'questions' => array(
                     'c3'=>array(
-                        'type'=>'button',
-                        'question'=>'Savez-vous où vos données sur le Cloud sont stockées et avez-vous votre mot à dire sur cet emplacement ?',
+                        'type'=>'groupradio',
+                        'question'=>'Cloud public. Dans quelle mesure utilisez-vous les éléments suivants ?',
                         'name'=>'c3',
                         'options'=>array(
                             array(
-                                'label'=>'Nous avons notre mot à dire sur l\'emplacement de stockage des données',
-                                'value'=>5,
-                                'checked'=>false
+                                'label'=>'Cloud public - Infrastructure en tant que service',
+                                'name'=>'c3.1',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Nous avons choisi nos fournisseurs en fonction de l\'emplacement de stockage',
-                                'value'=>5,
-                                'checked'=>false
+                                'label'=>'Cloud public - Stockage en tant que service',
+                                'name'=>'c3.2',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Nous savons où nos données sont stockées, mais nous ne pouvons pas modifier l\'emplacement',
-                                'value'=>3,
-                                'checked'=>false
+                                'label'=>'Cloud public - Plate-forme en tant que service',
+                                'name'=>'c3.3',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             ),
                             array(
-                                'label'=>'Nous ne savons pas où nos données sont stockées',
-                                'value'=>1,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous n\'utilisons pas de services Cloud, justement en raison du problème de l\'emplacement de stockage',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous n\'utilisons pas de services Cloud pour d\'autres raisons',
-                                'value'=>1,
-                                'checked'=>false
+                                'label'=>'Cloud public - Logiciel en tant que service',
+                                'name'=>'c3.4',
+                                'options'=>array(
+                                    array(
+                                        'label'=>'Pas encore considérée',
+                                        'value'=>1,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Utilisation limitée',
+                                        'value'=>2,
+                                        'checked'=>false,
+                                    ),
+                                    array(
+                                        'label'=>'Forte utilisation',
+                                        'value'=>4,
+                                        'checked'=>false,
+                                    )
+                                )
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Le contrôle de l\'accès aux données stockées sur le Cloud fait encore polémique, en particulier les données personnelles, à cause des conflits de lois et d\'une jurisprudence en rapide évolution. Pensez notamment au contentieux entre Microsoft et des tribunaux basés aux États-Unis au sujet de l\'accès à des données conservées à Dublin, sans oublier la réévaluation par l\'Union européenne des dispositions de l\'accord dit « Sphère de sécurité » conclu avec les États-Unis.',
-                    'image'=>'img/techfit_icons_Q-C3.png'
+                    'text'=>'Cloud allows flexibility, scalability, easier remote working, ‘pay-as-you go’ efficiency, etc',
+                    'image'=>'img/techfit_icons_Q-C1.png'
                 )
             ),
             'page4' => array(
-                'title' => 'Cloud',
+                'title' => 'Lequel des énoncés suivants décrit le mieux l\'approche de votre service informatique pour adopter des nouvelles technologies ? ',
                 'questions' => array(
                     'c4'=>array(
-                        'type'=>'button',
-                        'question'=>'Vos utilisateurs peuvent-ils imprimer depuis le Cloud ?',
+                        'type'=>'radio',
+                        'question'=>'Lequel des énoncés suivants décrit le mieux l\'approche de votre service informatique pour adopter des nouvelles technologies ? ',
                         'name'=>'c4',
                         'options'=>array(
                             array(
-                                'label'=>'Oui',
-                                'value'=>5,
+                                'label'=>'Nous sommes lents à adopter des nouvelles technologies',
+                                'value'=>1,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nous étudions la question',
+                                'label'=>'Nous avons tendance à attendre pour mettre en œuvre des nouvelles technologies que leur maturité et leur fonctionnement soient bien établis',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous sommes prompts à mettre en œuvre des nouvelles technologies si nous y voyons un avantage tangible pour l\'activité existante',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Non',
-                                'value'=>1,
+                                'label'=>'Nous suivons nos concurrents ou pairs du secteur de très près et mettons en œuvre des nouvelles technologies, rapidement après eux',
+                                'value'=>4,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous cherchons activement de nouvelles technologies ou capacités dans lesquelles nous pouvons voir un moyen d\'aider l\'entreprise à croître',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'Aujourd\'hui, 39 % des entreprises européennes pratiquent l\'impression depuis le Cloud. Cette situation peut augmenter les risques si la mise en œuvre n\'est pas effectuée correctement, mais les avantages potentiels sont nombreux : productivité, flexibilité et réduction de l\'infrastructure locale nécessaire (moins d\'ordinateurs déployés)',
-                    'image'=>'img/techfit_icons_Q-C4.png'
+                    'text'=>'Data loss prevention is critical for business reputation and legal compliance (particularly where that information includes personal data about employees or customers). 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, mobile device management.',
+                    'image'=>'img/techfit_icons_Q-B4.png'
                 )
             ),
             'page5' => array(
-                'title' => 'Cloud',
+                'title' => 'Pour l\'achat de l\'infrastructure, quel énoncé décrit le mieux votre approche ? ',
                 'questions' => array(
                     'c5'=>array(
-                        'type'=>'button',
-                        'question'=>'L\'utilisation du Cloud a-t-elle modifié votre stratégie de sécurité ? ',
+                        'type'=>'radio',
+                        'question'=>'Pour l\'achat de l\'infrastructure, quel énoncé décrit le mieux votre approche ? ',
                         'name'=>'c5',
                         'options'=>array(
                             array(
-                                'label'=>'Oui',
-                                'value'=>5,
+                                'label'=>'Nous achetons séparément serveurs, stockage ou composants réseau',
+                                'value'=>1,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nous réévaluons actuellement notre stratégie',
+                                'label'=>'Nous achetons serveurs, stockage ou composants réseau séparément le plus souvent, mais pour des parties limitées de l\'infrastructure, nous les achetons ensemble dans le cadre d\'un plan stratégique',
+                                'value'=>2,
+                                'checked'=>false
+                            ),
+                            array(
+                                'label'=>'Nous achetons serveurs, stockage et composants réseau en grande partie dans le cadre d\'un plan stratégique',
                                 'value'=>3,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Nous ne pensons pas avoir besoin d\'une mise à niveau en ce moment',
-                                'value'=>1,
+                                'label'=>'Nous achetons ensemble tout, serveurs, stockage et infrastructure réseau, dans le cadre d\'un plan stratégique',
+                                'value'=>5,
                                 'checked'=>false
                             )
                         )
                     )
                 ),
                 'report' => array(
-                    'text'=>'70 % des entreprises interrogées ont déclaré que l\'amélioration de la sécurité informatique représente une partie très ou extrêmement importante de leur stratégie pour les 12 mois à venir, à cause de l\'utilisation du Cloud ou de solutions SaaS.',
-                    'image'=>'img/techfit_icons_Q-C5.png'
-                )
-            )
-        )
-    ),
-    'mobility' => array(
-        'colour' => 'green',
-        'display' => true,
-        'complete' => false,
-        'pages' => array(
-            'page1' => array(
-                'title' => 'Mobilité',
-                'questions' => array(
-                    'm1'=>array(
-                        'type'=>'button',
-                        'question'=>'Permettez-vous à vos employés d\'utiliser leurs propres appareils pour travailler (« BYOD ») ?',
-                        'name'=>'m1',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui, nous leur donnons un accès total aux systèmes de l\'entreprise',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Oui, mais nous limitons l\'utilisation à des tâches élémentaires',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'53 % des entreprises internationales appliquent une règle informelle concernant l\'utilisation d\'appareils personnels sur le lieu de travail, mais 25 % seulement ont formalisé cette politique. L\'accès mobile à la messagerie d\'entreprise est largement répandu, mais l\'accès aux autres applications connait un développement plus modeste. ',
-                    'image'=>'img/techfit_icons_Q-D1.png'
-                )
-            ),
-            'page2' => array(
-                'title' => 'Mobilité',
-                'questions' => array(
-                    'm2'=>array(
-                        'type'=>'button',
-                        'question'=>'Créez-vous des applications pour les clients de votre entreprise afin d\'accéder à vos produits et services ?',
-                        'name'=>'m2',
-                        'options'=>array(
-                            array(
-                                'label'=>'Nous avons une application pour les clients',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Le site Web de notre entreprise est utilisable depuis les appareils mobiles',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Aucune prise en charge spéciale pour les appareils mobiles',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'25 % des entreprises interrogées ont au moins lancé leur première application mobile, et 5 % en ont lancé plus d\'une. Une entreprise sur quatre envisage de déployer des applications mobiles sur des tablettes ; plus de 40 % envisagent d\'utiliser des outils HTML5 pour activer des applications multi plates-formes',
-                    'image'=>'img/techfit_icons_Q-D2.png'
-                )
-            ),
-            'page3' => array(
-                'title' => 'Mobilité',
-                'questions' => array(
-                    'm3'=>array(
-                        'type'=>'button',
-                        'question'=>'Prenez-vous en charge l\'utilisation de tablettes dans votre entreprise ?',
-                        'name'=>'m3',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui, nous prenons en charge et fournissons ces outils pour les salariés qui ont besoin de ce service',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous prenons en charge les tablettes personnelles des salariés',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous fournissons cette solution aux cadres supérieurs qui le souhaitent',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'Les tablettes peuvent être des outils puissants pour les employés itinérants (intervenant dans des activités de ventes et de service), pour les travailleurs du savoir et pour les membres de la direction qui souhaitent un meilleur accès aux rapports, etc. L\'étude la plus récente d\'IDC montre que 62 % des entreprises ont évalué ou déployé des tablettes. ',
-                    'image'=>'img/techfit_icons_Q-D3.png'
-                )
-            ),
-            'page4' => array(
-                'title' => 'Mobilité',
-                'questions' => array(
-                    'm4'=>array(
-                        'type'=>'button',
-                        'question'=>'Votre entreprise permet-elle aux membres du personnel d\'imprimer directement à partir de leurs appareils mobiles ?',
-                        'name'=>'m4',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui, à partir de n\'importe quel appareil',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Oui, uniquement à partir d\'appareils appartenant à l\'entreprise',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-
-                            array(
-                                'label'=>'Oui, uniquement les ordinateurs portables de l\'entreprise',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'C\'est une exigence de plus en plus demandée par les utilisateurs professionnels. 85 % des entreprises l\'autorisent actuellement [étude IDC]. Il existe plusieurs options, notamment l\'impression sans fil (Wi-Fi), l\'impression dans le Cloud et les imprimantes compatibles Bluetooth.',
-                    'image'=>'img/techfit_icons_Q-D4.png'
-                )
-            ),
-            'page5' => array(
-                'title' => 'Mobilité',
-                'questions' => array(
-                    'm5'=>array(
-                        'type'=>'button',
-                        'question'=>'Votre entreprise permet-elle aux membres du personnel d\'imprimer quand ils sont en déplacement, depuis des ordinateurs portables ou autres appareils mobiles ?',
-                        'name'=>'m5',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui, sur n\'importe quel appareil',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Oui, uniquement à partir d\'appareils appartenant à l\'entreprise',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Oui, les appareils personnels et/ou ceux qui sont gérés par l\'entreprise',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'Accroissement de l\'efficacité. 68 % des entreprises permettent aux employés d\'imprimer quand ils sont hors du bureau',
-                    'image'=>'img/techfit_icons_Q-D5.png'
-                )
-            )
-        )
-    ),
-    'bigdataanalytics' => array(
-        'colour' => 'light-blue',
-        'display' => true,
-        'complete' => false,
-        'pages' => array(
-            'page1' => array(
-                'title' => 'Analyse du Big Data'
-,
-                'questions' => array(
-                    'd1'=>array(
-                        'type'=>'button',
-                        'question'=>'Donnez-vous à vos employés les outils de visualisation nécessaires pour explorer pleinement les données et créer des rapports ?',
-                        'name'=>'d1',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous étudions la question',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'L\'utilisation d\'outils de visualisation est désormais répandue parmi les entreprises d\'Europe occidentale, afin de leur permettre de bénéficier de fonctions interactives d\'exploration et d\'analyse des données. Spécifiquement pour les travailleurs du savoir, ces outils sont un facteur essentiel de réussite.',
-                    'image'=>'img/techfit_icons_Q-E1.png'
-                )
-            ),
-            'page2' => array(
-                'title' => 'Analyse du Big Data'
-,
-                'questions' => array(
-                    'd2'=>array(
-                        'type'=>'button',
-                        'question'=>'L\'analyse des données d\'entreprise devient de plus en plus importante. Dans ce contexte, quelle est votre position concernant l\'analyse basée sur le Cloud ? ',
-                        'name'=>'d2',
-                        'options'=>array(
-                            array(
-                                'label'=>'Nous utilisons un service d\'analyse sur le Cloud',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous étudions la possibilité de déployer des fonctions d’analyse sur le cloud.',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'Enquête IDC en Europe de l\'Ouest : 27 % des entreprises investissent dans des technologies de stockage pour répondre à la croissance des données',
-                    'image'=>'img/techfit_icons_Q-E2.png'
-                )
-            ),
-            'page3' => array(
-                'title' => 'Analyse du Big Data'
-,
-                'questions' => array(
-                    'd3'=>array(
-                        'type'=>'button',
-                        'question'=>'Utilisez-vous actuellement des technologies de Big Data dans votre entreprise ?',
-                        'name'=>'d3',
-                        'options'=>array(
-                            array(
-                                'label'=>'Nous utilisons actuellement des technologies de Big Data dans notre entreprise',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous envisageons de mettre en œuvre des technologies de Big Data dans les 6 à 18 mois à venir',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous étudions actuellement les possibilités',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Aucun projet dans ce sens',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'Enquête IDC en Europe de l\'Ouest : 21 % des utilisateurs finaux des entreprises européennes ont accès aux Big Data, via un système de production existant ou un système spécifique de production de Big Data.',
-                    'image'=>'img/techfit_icons_Q-E3.png'
-                )
-            ),
-            'page4' => array(
-                'title' => 'Analyse du Big Data'
-,
-                'questions' => array(
-                    'd4'=>array(
-                        'type'=>'button',
-                        'question'=>'Avez-vous un processus de traitement de la réputation sur les réseaux sociaux ?',
-                        'name'=>'d4',
-                        'options'=>array(
-                            array(
-                                'label'=>'Oui',
-                                'value'=>5,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Nous étudions la question',
-                                'value'=>3,
-                                'checked'=>false
-                            ),
-                            array(
-                                'label'=>'Non',
-                                'value'=>1,
-                                'checked'=>false
-                            )
-                        )
-                    )
-                ),
-                'report' => array(
-                    'text'=>'Enquête IDC en Europe de l\'Ouest : 15 % des entreprises utilisent le Big Data pour analyser ou exploiter des informations sur les réseaux sociaux',
-                    'image'=>'img/techfit_icons_Q-E4.png'
+                    'text'=>'Data loss prevention is critical for business reputation and legal compliance (particularly where that information includes personal data about employees or customers). 62% of companies below 1000 employees have adopted, or will adopt within the next 24 months, mobile device management.',
+                    'image'=>'img/techfit_icons_Q-B4.png'
                 )
             )
         )

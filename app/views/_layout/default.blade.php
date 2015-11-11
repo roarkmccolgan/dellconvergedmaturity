@@ -81,17 +81,16 @@
 						<div class="col-md-4">
 							<div class="btn-group">
 		                        <button type="button" class="btn btn-default rounded dropdown-toggle" data-toggle="dropdown">
-		                            <i class="flag"></i> Change language 
+		                            <i class="flag {{App::getLocale()}}"></i> {{Lang::get('general.changelang')}} 
 		                            <i class="fa fa-angle-down"></i>
 		                        </button>
 		                        <ul class="dropdown-menu" role="menu">
-		                            <li><a href="#"><i class="flag fr"></i> French</a></li>
-		                            <li><a href="#"><i class="flag de"></i> German</a></li>
+		                            {{getLangSwitch()}}
 		                        </ul>
 		                    </div>
 						</div>
 						<div class="col-sm-3 col-md-offset-5">
-							<h5 class="pull-right">SPONSORED BY</h5>
+							<h5 class="pull-right">{{Lang::get('general.assoc')}}</h5>
 						</div>
 					</div>
 					<div class="row">
@@ -104,10 +103,10 @@
 					<div class="row" >
 						<div class="col-md-12" >
 							<div class="col-sm-8 "style="border-top:1px solid #444; padding-top:5px;">
-								<a href="http://www.idc.com/about/termsofuse.jsp" class="pop-up" target="_blank">Terms of Use</a> | <a href="#" data-toggle="modal" data-target="#disclaimer">Disclaimer</a>
+								<a href="http://www.idc.com/about/termsofuse.jsp" class="pop-up" target="_blank">{{Lang::get('general.termsofuse')}}</a> | <a href="#" data-toggle="modal" data-target="#disclaimer">{{Lang::get('general.disclaimer')}}</a>
 							</div> 
 							<div class="col-sm-4" style="border-top:1px solid #444; padding-top:5px;">
-								<p class="text-right">Copyright {{{ date('Y') }}} IDC. All rights reserved.</p>
+								<p class="text-right">{{Lang::get('general.copyright')}} {{{ date('Y') }}} IDC. {{Lang::get('general.allrights')}}.</p>
 							</div>
 						</div>               
 					</div>

@@ -43,6 +43,9 @@ h1.title{
 .font-white {
 	color:#fff;
 }
+.btn-default{
+	border-color: #E5E5E5;
+}
 
 .landing-image .caption-bottom .subtitle {
     display: block;
@@ -418,7 +421,7 @@ ul.categories>li .subprogress {
 	float: left;
     margin-left: 15px;
     margin-bottom: 5px;
-    width: 70%;
+    width: 68%;
 }
 
 ul.categories>li.base .subprogress{
@@ -431,7 +434,7 @@ ul.categories>li .subprogresstext {
 	float: left;
 	text-align: right;
 	padding-right: 8px;
-	width: 20%;
+	width: 22%;
     margin-left: 5px;
     margin-bottom: 5px;
 }

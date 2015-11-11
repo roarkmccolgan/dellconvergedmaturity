@@ -58,25 +58,25 @@ return array(
                 'low' => 16,
                 'high' => 38.4,
                 'copy' => Lang::get('general.currenttxt'),
-				'tweet' => Lang::get('general.reactivetweet')
+				'tweet' => Lang::get('general.currenttweet')
             ),
             'Future-Aware' => array(
                 'low' => 38.5,
                 'high' => 49.9,
                 'copy' => Lang::get('general.future-awaretxt'),
-                'tweet' => Lang::get('general.moderatetweet')
+                'tweet' => Lang::get('general.future-awaretweet')
             ),
             'Future-Focused' => array(
                 'low' => 50,
                 'high' => 61.4,
                 'copy' => Lang::get('general.future-focusedtxt'),
-                'tweet' => Lang::get('general.proactivetweet')
+                'tweet' => Lang::get('general.future-focusedtweet')
             ),
             'Future-Creator' => array(
                 'low' => 61.5,
                 'high' => 77,
                 'copy' => Lang::get('general.future-creatortxt'),
-                'tweet' => Lang::get('general.proactivetweet')
+                'tweet' => Lang::get('general.future-creatortweet')
             )
         )
     )

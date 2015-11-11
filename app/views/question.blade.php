@@ -38,12 +38,12 @@
                     @endforeach
                 </ul>
                 <a href="#" class="btn-u historyback" style="margin-top:5px;"><i class="fa fa-arrow-left"> </i> {{Lang::get('general.back')}} </a>
-                <a href="/" class="btn-u" style="margin-top:5px;"><i class="fa fa-undo"></i> {{Lang::get('general.restart')}}</a>
+                <a href="/{{getLang()}}" class="btn-u" style="margin-top:5px;"><i class="fa fa-undo"></i> {{Lang::get('general.restart')}}</a>
             </div>
         </div>
 
         <div class="col-md-9">
-            <h3 class="heading-sm">Overall Progress ({{ $progress }}%)</h3>
+            <h3 class="heading-sm">{{Lang::get('general.progress')}} ({{ $progress }}%)</h3>
             <div class="progress progress-u progress-xs rounded">
                 <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: {{ $progress }}%; background:#0081BF;"></div>
             </div>
@@ -55,7 +55,7 @@
 
             @foreach ($questions as $question)
             <h2>{{$question['question']}}</h2>
-            {{ Form::open(array('url' => 'quiz/'.$section.'/page'.$page,'id'=>'form-question','class'=>'clearfix question')) }}
+            {{ Form::open(array('url' => getLang().'quiz/'.$section.'/page'.$page,'id'=>'form-question','class'=>'clearfix question')) }}
             {{ Form::errors($errors) }}
                 {{Form::hidden('section', $section);}}
                 {{Form::hidden('page', $page);}}
@@ -225,9 +225,9 @@ if($('div.iradio_line').length){
             if(error==false){
                 console.log(thisBut);
                 html = 
-                    '<div class="clearfix"></div><div class="error pull-right" style="padding:0 15px 0 15px; margin-top: 5px;">'+
-                        '<span style="color: #ed2024;">{{Lang::get('general.multierror')}}</span>'+
-                    '</div>';
+                    "<div class=\"clearfix\"></div><div class=\"error pull-right\" style=\"padding:0 15px 0 15px; margin-top: 5px;\">"+
+                        "<span style=\"color: #ed2024;\">{{Lang::get('general.multierror')}}</span>"+
+                    "</div>";
                 $(html).insertAfter(thisBut).hide().fadeIn("fast");
                 error=true;
             }

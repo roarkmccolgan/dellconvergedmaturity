@@ -58,11 +58,11 @@
             $this->menu = $temp;
         }
 
-        public function getPage($section=false, $page=false, $cunt=false)
+        public function getPage($section=false, $page=false)
         {
-            if($section===false || $page===false) return Redirect::to('/');
+            if($section===false || $page===false) return Redirect::to('/'.getLang());
             $this->loadQuestions();
-            if(!isset($this->quiz[$section]['pages']['page'.$page])) return Redirect::to('/');
+            if(!isset($this->quiz[$section]['pages']['page'.$page])) return Redirect::to('/'.getLang());
             if($section!='demographics' && $this->screenersAnswered==false){
                 \Session::flash('flash_message','Please complete the "Demographics" section before continuing');
                 return Redirect::to('/quiz/demographics/'.$this->screenerToAnswer);
@@ -103,7 +103,7 @@
 
         public function savePage($section=false, $page=false)
         {
-            if($section===false || $page===false) return Redirect::to('/');
+            if($section===false || $page===false) return Redirect::to('/'.getLang());
             $validate_data = Input::except('_token');
             
             Session::put('questions.'.$section.'.pages.page'.$page.'.questions.'.$validate_data['question'].'.selected', $validate_data['answer']);
@@ -154,7 +154,7 @@
                 if(!$questions[$section]['complete']){
                     for($n=$page+1;$n<=count($questions[$section]['pages']);$n++){
                         if(!isset($questions[$section]['pages']['page'.$n]['done'])){
-                            return Redirect::to('quiz/'.$section.'/page'.$n);
+                            return Redirect::to(getLang().'quiz/'.$section.'/page'.$n);
                         }
                     }
                 }
@@ -165,7 +165,7 @@
                     foreach ($questions as $sec) {
                         if($sec['complete']) $totSections--;
                     }
-                    if($totSections==0) return Redirect::to('quiz/complete');
+                    if($totSections==0) return Redirect::to(getLang().'quiz/complete');
                 }
                 $section = key($questions);
                 $page=0;
@@ -394,7 +394,7 @@
 				return View::make('thankyou',$vars);
             }
             Input::flashExcept('_token');
-            return Redirect::to('quiz/complete')->withErrors($validator);
+            return Redirect::to(getLang().'quiz/complete')->withErrors($validator);
         }
         public function getDownload($userid){
             //PDF file is stored under project/public/download/info.pdf

@@ -133,16 +133,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->MultiCell(($this->w/2 - $this->original_lMargin), 0, $txt, 0, 'L');
 
 		$this->SetY($this->GetY()+2);
-		$txt = '
-<ul style="color: #2A96DE; line-height: 1.5; list-style-type:img|png|2|2|'.K_PATH_IMAGES.'/bullet.png">
-    <li>Faster time to market for new products and services, which allow them to better capture competitive advantages</li>
-    <li>Superior business agility and flexibility, enabling them to anticipate and respond quickly to changes in the market, mitigate threats, and capture opportunities</li>
-    <li>Increased employee productivity, allowing them to optimize business processes and reduce costs while increasing output</li>
-    <li>Enhanced customer experience to deliver more reliable, intuitive and better performing services to employees, partners, and customers</li>
-    <li>Innovation, which enables them to move resources and operations into new business areas</li>
-    <li>More efficient IT operations, helping reduce costs while creating a more scalable infrastructure</li>
-    <li>Enablement of mobile operations to deliver a full range of business applications</li>
-<ul>';
+		$txt = Lang::get('report.bullets');
 
 		// output the HTML content
 		$this->writeHTMLCell(($this->w/2 - $this->original_lMargin),0,$this->GetX(),$this->GetY(),$txt,0, true, false, true, '');
@@ -188,7 +179,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->resetText();
 		
 		switch($result['overall']['rating']){
-			case "Current":
+			case "Current-Focused":
 				$txt = Lang::get('report.currentintro');
 				break;
 			case "Future-Aware":
@@ -228,16 +219,74 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		
 		//graphs
 		$this->SetY($this->GetY()+2);
-		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 34, ($this->w/2 - $this->original_lMargin - 5), 30, 5, '0000', 'F',array(), array(230,231,232));
+		//$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 34, ($this->w/2 - $this->original_lMargin - 5), 30, 5, '0000', 'F',array(), array(230,231,232));
 		
 		$rightX = ($this->w/2 - $this->original_lMargin)+17;
-		$this->SetXY($rightX, 36);
+		$this->SetXY($rightX, 38);
+		$this->ImageEps(K_PATH_IMAGES.'graph.ai', $rightX-2, $this->GetY()-4, 90);
 		$this->SetFont('helvetica', '', 9);
 		$this->SetColor('text', 0,82,148);
+		$this->SetXY($rightX,$this->getY()-2);
 		$this->Cell(($this->w/2 - $this->original_lMargin - 5), 0, strtoupper(Lang::get('report.overall')), 0, 1, 'L');
+		//marker
+		switch($result['overall']['rating']){
+			case "Current-Focused":
+				$mx = $rightX+5;
+				$my = 68;
+				break;
+			case "Future-Aware":
+				$mx = $rightX+28;
+				$my = 58;
+				break;
+			case "Future-Focused":
+				$mx = $rightX+49;
+				$my = 49;
+			case "Future-Creator":
+				$mx = $rightX+72;
+				$my = 40;
+				break;
+		}
+		$this->ImageEps(K_PATH_IMAGES.'marker.ai', $mx, $my, 8);
+		$this->SetColor('text', 0,82,148);
+		$this->SetFont('helvetica_condensed', 'B', 10);
+		$this->MultiCell(8, 5, round($result['overall']['score']), 0, 'C', 0, 0, $mx, $my-5, true);
+
+		$overbase = $baseline['overall']['baseline'];
+		foreach ($baseline['overall']['types'] as $key => $value) {
+			if($key=='Current-Focused' && ($overbase>=$value['low'] && $overbase>=$value['high'])){
+				$mx = $rightX+6;
+				$my = 70;
+			}elseif($key=='Future-Aware' && ($overbase>=$value['low'] && $overbase>=$value['high'])){
+				$mx = $rightX+30;
+				$my = 60;
+			}elseif($key=='Future-Focused' && ($overbase>=$value['low'] && $overbase>=$value['high'])){
+				$mx = $rightX+51;
+				$my = 51;
+			}elseif($key=='Future-Creator' && ($overbase>=$value['low'] && $overbase>=$value['high'])){
+				$mx = $rightX+73;
+				$my = 42;
+			}
+		}
+		$this->ImageEps(K_PATH_IMAGES.'marker_base.ai', $mx, $my, 6);
+		$this->SetFont('helvetica_condensed', 'B', 8);
+		$this->MultiCell(6, 5, $overbase, 0, 'C', 0, 0, $mx, $my-4, true);
+
+
+		//legend
+		$this->SetXY($rightX-2,$this->getY()+34);		
+		$this->MultiCell(23, 5, Lang::get('general.current-focused'), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(23, 5, Lang::get('general.future-aware'), 0, 'C', 0, 0, $rightX+21, $this->getY()-9, true);
+        $this->MultiCell(23, 5, Lang::get('general.future-focused'), 0, 'C', 0, 0, $rightX+43, $this->getY()-9.5, true);
+        $this->MultiCell(23, 5, Lang::get('general.future-creator'), 0, 'C', 0, 0, $rightX+65, $this->getY()-10, true);
+
+        $this->SetXY($rightX+28,$this->getY()+28);
+        $this->MultiCell(26, 5, strtoupper(Lang::get('report.yourscore')), 0, 'C', 0, 0, '', '', true);
+        $this->MultiCell(26, 5, strtoupper(Lang::get('report.baselinescore')), 0, 'C', 0, 0, $this->getX()+5, $this->getY(), true);
+
+
 		
 		
-		//first graph
+		/*//first graph
 		$settings = array(
 			'back_colour' => '#eee',
 			'stroke_colour' => '#000',
@@ -271,21 +320,24 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$graph->Values($values);
 		
 		$output = $graph->fetch('HorizontalBarGraph');
-		$this->ImageSVG('@'.$output, $rightX, $this->GetY(), $w=60, $h='', '', $align='', $palign='', '', $fitonpage=false);
-		
-		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 70, ($this->w/2 - $this->original_lMargin - 5), 45, 5, '0000', 'F',array(), array(230,231,232));
+		$this->ImageSVG('@'.$output, $rightX, $this->GetY(), $w=60, $h='', '', $align='', $palign='', '', $fitonpage=false);*/
+
+		//Overal/
+		$this->RoundedRect(($this->w/2 - $this->original_lMargin)+15, 102, ($this->w/2 - $this->original_lMargin - 5), 45, 5, '0000', 'F',array(), array(230,231,232));
 		
 		//overall
-		$this->SetXY($rightX+65, 43);
+		$this->SetXY($rightX, 39);
+		$this->SetColor('text', 42,150,222);
+		$this->SetFont('impact', '', 34);
+		$this->Cell(10, 0, round($result['overall']['score'], 1), 0, 0, 'L');
+		
+		$this->SetXY($rightX+13,44);
 		$this->SetFont('helvetica_condensed', '', 10);
 		$this->SetColor('text', 172);
 		$this->Cell(30, 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
-		$this->SetX($rightX+65);
-		$this->SetFont('impact', '', 34);
-		$this->Cell(30, 0, round($result['overall']['score'], 1), 0, 1, 'L');
 		
 		//second graph
-		$this->SetXY($rightX, 72);
+		$this->SetXY($rightX, 105);
 		$this->SetFont('helvetica', '', 9);
 		$this->SetColor('text', 0,82,148);
 		$this->Cell(($this->w/2 - $this->original_lMargin - 5), 0, strtoupper(Lang::get('report.section')), 0, 1, 'L');

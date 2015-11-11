@@ -1,6 +1,6 @@
 @extends('_layout.default')
 
-@section('pagetitle', 'Dell Converged Infrastructure - Maturity Benchmark')
+@section('pagetitle', Lang::get('general.title'))
 
 
 @section('head')
@@ -14,7 +14,7 @@
    <div class="row">
         <!-- Image -->
         <div class="landing-image">
-            <img src="images/landing3.png" class="img-responsive" alt="landing" width="100%" style="height:350px;">
+            <img src="{{asset('images/landing3.png')}}" class="img-responsive" alt="landing" width="100%" style="height:350px;">
         </div>
         <!-- End Image -->
 
@@ -25,7 +25,7 @@
                         <h2>{{Lang::get('general.title')}}</h2>
                         <h4 class="margin-right-20">{{Lang::get('general.landing')}}
                             <br><br>
-                            <a href="{{'quiz/'.Session::get('startSection').'/page1'}}" class="btn-u pull-right margin-right-20" style="padding:15px 20px; font-size:18px;">{{Lang::get('general.startbut')}} &nbsp; <i class="fa fa-play"> </i></a>
+                            <a href="{{Request::root().'/'.getLang()}}{{'quiz/'.Session::get('startSection').'/page1'}}" class="btn-u pull-right margin-right-20" style="padding:15px 20px; font-size:18px;">{{Lang::get('general.startbut')}} &nbsp; <i class="fa fa-play"> </i></a>
                             <br><br><br>
                         </h4>
                     </div>

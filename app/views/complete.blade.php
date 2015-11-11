@@ -17,15 +17,15 @@
             <div class="row">
                 <div class="col-md-2">
                     <img src="{{asset('images/ribbon.png')}}" alt="Result" width="121"><br/>
-                    <a href="/quiz/demographics/page1"><i class="fa fa-arrow-left"></i> change answers</a>
+                    <a href="{{getLang()}}/quiz/demographics/page1"><i class="fa fa-arrow-left"></i> {{Lang::get('general.change')}}</a>
                 </div>
                 <div class="col-md-10">
-                    <h3 class="heading-sm">Overall Progress (100%)</h3>
+                    <h3 class="heading-sm">{{Lang::get('general.progress')}} (100%)</h3>
                     <div class="progress progress-u progress-xs rounded">
                         <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background:#0081BF;"></div>
                     </div>
 
-                        <div class="headline">result: <h2>{{$result}}</h2></div>
+                        <div class="headline">{{Lang::get('general.result')}}: <h2>{{$result}}</h2></div>
                         <p>
                             {{$sub1}}
                         </p>
@@ -38,7 +38,7 @@
                         <hr class="devider devider-dashed">
                         <p style="margin-bottom: 30px;">
                             <strong>{{Lang::get('general.send')}}</strong><br/>
-                            {{Lang::get('general.fullreport')}}
+                            <!-- {{Lang::get('general.fullreport')}} -->
                             {{Lang::get('general.provide')}}
                         </p>
                 </div>

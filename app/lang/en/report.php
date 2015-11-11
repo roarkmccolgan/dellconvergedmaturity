@@ -10,6 +10,16 @@ Organizations don’t have to be at the top of the future-readiness scale to enj
 The more that an IT organization is future ready, the more that they enjoy significant business advantages over their competition, including:
 ',
     'aims'=>'The quiz was designed to help establish your organization\'s readiness to cope with the evolving demands that businesses place on IT infrastructure, both today and into the future.',
+    'bullets'=>'
+<ul style="color: #2A96DE; line-height: 1.5; list-style-type:img|png|2|2|'.K_PATH_IMAGES.'/bullet.png">
+    <li>Faster time to market for new products and services, which allow them to better capture competitive advantages</li>
+    <li>Superior business agility and flexibility, enabling them to anticipate and respond quickly to changes in the market, mitigate threats, and capture opportunities</li>
+    <li>Increased employee productivity, allowing them to optimize business processes and reduce costs while increasing output</li>
+    <li>Enhanced customer experience to deliver more reliable, intuitive and better performing services to employees, partners, and customers</li>
+    <li>Innovation, which enables them to move resources and operations into new business areas</li>
+    <li>More efficient IT operations, helping reduce costs while creating a more scalable infrastructure</li>
+    <li>Enablement of mobile operations to deliver a full range of business applications</li>
+<ul>',
     'looked'=>'We looked at the following key areas:',
     'itbusiness'=>'IT and the Business',
     'itservicedelivery'=>'IT Service Delivery',
