@@ -14,7 +14,7 @@
    <div class="row">
         <!-- Image -->
         <div class="landing-image">
-            <img src="{{asset('images/landing3.png')}}" class="img-responsive" alt="landing" width="100%" style="height:350px;">
+            <img src="{{asset('images/landing3.png')}}" class="img-responsive" alt="landing" width="100%">
         </div>
         <!-- End Image -->
 
