@@ -189,7 +189,7 @@ ul li, ol li {
 				<tr>
 					<td>
 						<p>Bonjour {{$fname}},</p>
-						<p>Comme promis, voici le lien pour télécharger votre Converged Infrastructure IDC - rapport de référence à l'échéance. Cette décompose vos résultats par catégorie et vous permet de vous comparer à d'autres organisations.</p>
+						<p>Comme promis, voilà le lien pour télécharger votre rapport « Dell Converged Infrastructure Maturity Benchmarking ». Les résultats sont divisés par catégories pour vous aider à vous comparez vis-à-vis d'autres organisations.</p>
 						<table>
 							<tr>
 								<td class="padding">
@@ -197,9 +197,9 @@ ul li, ol li {
 								</td>
 							</tr>
 						</table>
-						<p>Une fois que vous avez digéré le rapport pourquoi ne pas visiter <a href="http://www.dell.com/learn/uk/en/ukbsdt1/converged-solutions" style="color:#024886">Dell Converged Infrastructure IT Solutions</a></p>
+						<p>Après avoir pris connaissance des informations du rapport, visitez le site des solutions de <a href="http://www.dell.com/learn/uk/en/ukbsdt1/converged-solutions" style="color:#024886">Dell Converged IT Infrastructure</a></p>
 						<p>Cordialement,</p>
-						<p><strong>L'équipe IDC</strong></p>
+						<p><strong>L'équipe d'IDC</strong></p>
 					</td>
 				</tr>
 			</table>

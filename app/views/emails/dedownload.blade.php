@@ -189,17 +189,17 @@ ul li, ol li {
 				<tr>
 					<td>
 						<p>Hallo {{$fname}},</p>
-						<p>Wie versprochen, hier ist der Link zu Ihrer Dell Converged Infrastructure Maturity Benchmark Bericht herunterladen. Dieser bricht sie ihre ergebnisse Kategorie und hilft Ihnen Benchmark sich mit anderen Organisationen.</p>
+						<p>wie versprochen finden Sie hier den Link um Ihr Dell Converged Infrastructure Maturity Benchmark Report herunterzuladen. Die Ergebnisse sind in Kategorien unterteilt, die Ihnen beim Benchmarking gegenüber anderen Organisationen helfen können.</p>
 						<table>
 							<tr>
 								<td class="padding">
-									<p><a href="{{ URL::asset('quiz/download/'.$userid) }}" class="btn-primary">Bericht herunterladen</a></p>
+									<p><a href="{{ URL::asset('quiz/download/'.$userid) }}" class="btn-primary">Report herunterladen</a></p>
 								</td>
 							</tr>
 						</table>
-						<p>Sobald Sie den Bericht verdaut haben, warum nicht <a href="http://www.dell.com/learn/uk/en/ukbsdt1/converged-solutions" style="color:#024886">Dell Converged Infrastructure Solutions besuchen IT</a></p>
-						<p>Grüße,</p>
-						<p><strong>Die IDC-Team</strong></p>
+						<p>Wenn Sie Ihren Report durchgegangen sind, schauen Sie sich doch die <a href="http://www.dell.com/learn/uk/en/ukbsdt1/converged-solutions" style="color:#024886">Converged IT Infrastruktur-Lösungen von Dell</a> an</p>
+						<p>Beste Grüße,</p>
+						<p><strong>Das IDC-Team</strong></p>
 					</td>
 				</tr>
 			</table>
