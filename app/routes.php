@@ -43,6 +43,18 @@ Route::group(array('prefix' => 'fr', 'before' => 'french'), function()
 		Route::get('quiz/complete', array('uses' => 'AssesmentController@getComplete'));
 		Route::post('quiz/complete', array('uses' => 'AssesmentController@postComplete'));
 		Route::get('quiz/download/{userid}', array('uses' => 'AssesmentController@getDownload'));
+		Route::get('video', function()
+		{
+			return View::make('video');
+		});
+		Route::get('infobrief/download', function()
+		{
+		    $file= public_path(). '/assets/Dell-Converged-Infobrief_fr_v1.pdf';
+	        $headers = array(
+	            'Content-Type: application/pdf',
+	        );
+	        return Response::download($file,'Dell-Converged-Infobrief_fr_v5', $headers);
+		});
 
 	Route::get('email/{userid}', function($userid)
 	{
@@ -98,6 +110,18 @@ Route::group(array('prefix' => 'de', 'before' => 'german'), function()
 		Route::get('quiz/complete', array('uses' => 'AssesmentController@getComplete'));
 		Route::post('quiz/complete', array('uses' => 'AssesmentController@postComplete'));
 		Route::get('quiz/download/{userid}', array('uses' => 'AssesmentController@getDownload'));
+		Route::get('video', function()
+		{
+			return View::make('video');
+		});
+		Route::get('infobrief/download', function()
+		{
+		    $file= public_path(). '/assets/Dell-Converged-Infobrief_de_v1.pdf';
+	        $headers = array(
+	            'Content-Type: application/pdf',
+	        );
+	        return Response::download($file,'Dell-Converged-Infobrief_de_v1', $headers);
+		});
 
 	Route::get('email/{userid}', function($userid)
 	{
@@ -151,6 +175,18 @@ Route::get('/', array('before'=>'reload', function()
 	Route::get('quiz/complete', array('uses' => 'AssesmentController@getComplete'));
 	Route::post('quiz/complete', array('uses' => 'AssesmentController@postComplete'));
 	Route::get('quiz/download/{userid}', array('uses' => 'AssesmentController@getDownload'));
+	Route::get('video', function()
+	{
+		return View::make('video');
+	});
+	Route::get('infobrief/download', function()
+	{
+	    $file= public_path(). '/assets/Dell-Converged-Infobrief_en_v5.pdf';
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+        return Response::download($file,'Dell-Converged-Infobrief_en_v5', $headers);
+	});
 
 Route::get('email/{userid}', function($userid)
 {

@@ -69,5 +69,20 @@ return array(
     'errorCompany'=>'Entrez votre nom de l\'entreprise',
     'errorCountry'=>'S\'il vous plaît sélectionnez votre pays',
     'errorNumber'=>'Entrez un numéro valide',
-    'errorCheck'=>'S\'il vous plaît accepter les termes et conditions'
+    'errorCheck'=>'S\'il vous plaît accepter les termes et conditions',
+    'disclaimerbody'=>"
+<p>CES INFORMATIONS VOUS SONT FOURNIES EN TANT QU'OUTIL ET RAPPORT DE RÉSULTAT « EN L'ÉTAT », SANS LA MOINDRE REPRÉSENTATION OU GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE. IDC DÉCLINE TOUTES GARANTIES, Y COMPRIS, MAIS SANS CARACTÈRE RESTRICTIF, LES GARANTIES IMPLICITES DE QUALITÉ MARCHANDE OU D'ADÉQUATION À UN USAGE PARTICULIER. IDC NE GARANTIT NI NE FAIT AUCUNE REPRÉSENTATION CONCERNANT L'UTILISATION, LA VALIDITÉ, L'EXACTITUDE OU LA FIABILITÉ DE L'OUTIL OU DES RÉSULTATS DE L'UTILISATION DE CET OUTIL. EN AUCUN CAS, IDC NE SAURAIT ÊTRE TENU RESPONSABLE DES DOMMAGES, Y COMPRIS CEUX QUI RÉSULTENT DE LA NÉGLIGENCE D'IDC, QUE CES DOMMAGES SOIENT DIRECTS, INDIRECTS, ACCESSOIRES OU SPÉCIAUX, DÉCOULANT DE VOTRE UTILISATION OU DE VOTRE INCAPACITÉ À UTILISER L'OUTIL OU LES INFORMATIONS CI-JOINTES, OU LES RÉSULTATS DE L'UTILISATION DE L'OUTIL MÊME SI IDC A ÉTÉ INFORMÉ DE LA POSSIBILITÉ DE TELS DOMMAGES. IL VOUS INCOMBE EN TOUT CAS D'OBTENIR LES RÉSULTATS CALCULÉS. LE PRÉSENT OUTIL N'EST PAS DESTINÉ À FOURNIR LE PRIX DE QUELQUE SOLUTION QUE CE SOIT. LE PRÉSENT OUTIL N'EST PAS DESTINÉ À UNE UTILISATION PAR DES PARTICULIERS/DES CONSOMMATEURS.</p>
+                <p>
+                    En créant et commercialisant le présent outil, IDC entend aider les entreprises informatiques à comprendre les incidences organisationnelles, opérationnelles et financières potentiellement complexes inhérentes à la transition d'une charge de travail d'une plate-forme informatique traditionnelle à un environnement de cloud privé ou public.
+                </p>
+                <p>
+                    Cette évaluation est conçue comme une étape dans le processus de planification et d'évaluation, pas comme une réponse définitive. La qualité et l'utilité de la ligne directrice de ce service sont, bien entendu, liées à l'intégralité et l'exactitude de vos informations.
+                </p>
+                <p>
+                    Le Répertoire des entreprises parées pour l'avenir est fourni « en l'état » et « tel que disponible ». IDC s'efforce de fournir des informations exactes. Toutefois, IDC rejette expressément toutes garanties, y compris, mais sans caractère restrictif, toute garantie quant à l'exactitude et l'exhaustivité des informations fournies.
+                </p>
+                <p>
+                    IDC compilera des statistiques à mesure que vous et d'autres personnes exploitez le service, afin éclairer davantage ses processus de recherche. Si vous avez des questions à ce sujet, nous vous recommandons d'examiner les Conditions d'utilisation d'IDC avant de continuer.
+                </p>
+    "
 );

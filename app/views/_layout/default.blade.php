@@ -95,7 +95,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-3 col-md-offset-9">                       
-							<a href="http://dell.com" class="pull-right"><img src="{{asset('images/dell_intel_lockup.png')}}" alt="logo"></a>
+							<a href="http://dell.com" class="pull-right"><img src="{{asset('images/dell_intel_lockup.png')}}" alt="logo" usemap="#logos"></a>
 
 						</div>
 					</div>
@@ -115,6 +115,10 @@
 			</div>
 		</div>
 	</div>
+	<map name="logos" id="logos">
+		<area  alt="" title="" href="http://dell.com" shape="rect" coords="4,0,80,70" style="outline:none;" target="_blank" />
+		<area  alt="" title="" href="http://www.intel.com/" shape="rect" coords="99,5,182,70" style="outline:none;" target="_blank" />
+	</map>
 	@section('javascript')
 	<script type="text/javascript" src="{{asset('plugins/jquery/jquery.min.js') }}"></script>
 	<script type="text/javascript" src="{{asset('plugins/jquery/jquery-migrate.min.js') }}"></script>
@@ -125,6 +129,26 @@
 	<script type="text/javascript" src="{{asset('plugins/back-to-top.js') }}"></script>
 	<script type="text/javascript" src="{{asset('plugins/smoothScroll.js') }}"></script>
 	<script type="text/javascript" src="{{asset('plugins/jquery.parallax.js') }}"></script>
+	<script type="text/javascript">
+		$.getScript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564d83572aa39771', function() {
+			// replace the following line with your specific layers configuration
+			addthis.layers({
+				'theme' : 'transparent',
+				'share' : {
+					'position' : 'left',
+					'numPreferredServices' : 5
+				},
+				'follow' : {
+					'services' : [
+						{'service' : 'facebook', 'id' : 'IDCResearch'},
+						{'service' : 'twitter', 'id' : 'IDC'}
+					]
+				},
+				'whatsnext' : false,
+				'recommended' : false
+			});
+		});
+	</script>
 	@show
 </body>
 </html>

@@ -1,0 +1,257 @@
+<?php $__env->startSection('pagetitle', $heading); ?>
+
+
+<?php $__env->startSection('head'); ?>
+@parent
+<meta name="description" content="">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('main'); ?>
+<div class="container margin-bottom-20">
+    <?php if(Session::has('flash_message')): ?>
+    <div class="alert alert-warning fade in">
+        <?php echo Session::get('flash_message'); ?>
+
+    </div>
+    <?php endif; ?>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="widget">
+                <ul class="categories">
+                    <?php foreach($menu as $key=>$pages): ?>
+                    <li class="<?php echo $pages['complete'] || $key==$section ? 'passed':''; ?> <?php echo $key==$section ? 'base':''; ?>">
+                        <a tabindex="-1" class="" href="<?php echo URL::to('quiz/'.$key.'/page1'); ?>"><?php echo $pages['title']; ?></a> <!-- class="base" for highlight-->
+                        <div class="subprogress">
+                            <?php foreach($pages['pages'] as $pkey => $qpage): ?>
+                            
+                            <a href="<?php echo URL::to('quiz/'.$key.'/'.$pkey); ?>" title="<?php echo $qpage['title']; ?>"><i class="fa <?php echo $qpage['done'] ? ($pkey == 'page'.$page && $key==$section ? 'fa-check-circle-o':'fa-check') : ($pkey == 'page'.$page && $key==$section ? 'fa-circle':'fa-genderless'); ?>"></i></a>
+                            <?php endforeach; ?>                            
+                        </div>
+                        <?php if($key==$section): ?>
+                        <div class="subprogresstext">
+                            <?php echo $page.' '.Lang::get('general.of').' '.$pages['numpages']; ?>
+
+                        </div>
+                        <?php endif; ?>
+                        <div class="clearfix"></div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                <a href="#" class="btn-u historyback" style="margin-top:5px;"><i class="fa fa-arrow-left"> </i> <?php echo Lang::get('general.back'); ?> </a>
+                <a href="/<?php echo getLang(); ?>" class="btn-u" style="margin-top:5px;"><i class="fa fa-undo"></i> <?php echo Lang::get('general.restart'); ?></a>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h3 class="heading-sm"><?php echo Lang::get('general.progress'); ?> (<?php echo $progress; ?>%)</h3>
+            <div class="progress progress-u progress-xs rounded">
+                <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $progress; ?>%; background:#0081BF;"></div>
+            </div>
+            <div class="headline">
+                <h2> <strong><?php echo $title; ?></strong></h2>
+            </div>
+            <!-- <p><font color="red"> All fields are required </font></p> -->
+            <hr class="margin-15">
+
+            <?php foreach($questions as $question): ?>
+            <h2><?php echo $question['question']; ?></h2>
+            <?php echo Form::open(array('url' => getLang().'quiz/'.$section.'/page'.$page,'id'=>'form-question','class'=>'clearfix question')); ?>
+
+            <?php echo Form::errors($errors); ?>
+
+                <?php echo Form::hidden('section', $section);; ?>
+
+                <?php echo Form::hidden('page', $page);; ?>
+
+                <?php foreach($questions as $num=>$q): ?>
+                    <?php if($q['type'] == 'radio'): ?>
+                        <?php echo Form::idcCheckRad($num,$q,'radio',$page); ?>
+
+                    <?php elseif($q['type'] == 'slider'): ?>
+                        <?php echo Form::idcSlider($num,$q,$page); ?>
+
+                    <?php elseif($q['type'] == 'checkbox'): ?>
+                        <?php echo Form::idcCheckbox($num,$q,$page); ?>
+
+                    <?php elseif($q['type'] == 'groupradio'): ?>
+                        <?php echo Form::idcGroup($num,$q,$page,'radio'); ?>
+
+                    <?php elseif($q['type'] == 'radio'): ?>
+                        <?php echo Form::idcIcon($section,$q,$page,$num); ?>
+
+                    <?php elseif($q['type'] == 'button'): ?>
+                        <?php echo Form::idcButton($section,$q,$page); ?>
+
+                    <?php elseif($q['type'] == 'text'): ?>
+                        <?php echo Form::idcInput($num,$q,$page); ?>
+
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+            <?php echo Form::close(); ?>
+
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('javascript'); ?>
+@parent
+<!-- JS Page Level -->
+
+<script src="<?php echo asset('js/app.js'); ?>"></script>
+<script src="<?php echo asset('js/main.js'); ?>"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+    });
+    error = false;
+    /*jQuery(window).on("beforeunload", function(event){
+      return "Are you sure you would like to leave this page? Your answers for this page will be lost";
+    });*/
+<?php if($report): ?>
+    var els;
+    if($('button.btnoption').length){
+        $('button.btnoption').click(function(e){
+            e.preventDefault();
+            var title = $(this).text();
+            var val = $(this).val();
+            var parent = $(this).parent("form");
+            var parentHeight = parent.css('height');
+            var num = $('button.btnoption').length;
+            var that = this;
+            if(num>0){
+                var start = 1;
+                //inject info
+                html = '<div class="repwrap">'+
+                            '<div class="repmod">'+
+                                '<h4>'+title+'</h4>'+
+                                '<p>'+
+                                    '<?php echo addslashes($report['text']); ?>'+
+                                '</p>'+
+                                '<div class="clearfix"></div>'+
+                            '</div>'+
+                            '<button class="btn-u btn<?php echo $btnsize; ?>" type="submit" value="'+val+'" name="answer"><?php echo Lang::get('general.next'); ?></button>'+
+                        '</div>';
+                $(html).hide().appendTo(parent);
+                
+                //hide next buttton
+                $('div.repwrap').find('button.button<?php echo $btnsize; ?>').hide();
+                $('div.repwrap').find('button.button<?php echo str_replace(" ",".",$btnsize); ?>').hide();
+                
+                //move out of view
+                $('div.repwrap').css({
+                        position : "absolute",
+                        left: -90000
+                });
+                $('div.repwrap').show();
+                //set original height for later
+                var repheight = $('div.repmod').height();
+                if(parentHeight < repheight) {
+                    $(parent).css({height: repheight+70 });
+                }else{
+                    $(parent).css({height: parentHeight });
+                }
+                $('div.repwrap').hide();
+                //move bak into view
+                $('div.repwrap').css({
+                    left: 'auto',
+                    position: 'relative'
+                });
+                
+                
+                jQuery.each($('button.btnoption'), function( i, item ) {
+                    $(item).fadeOut('fast', function() {
+                        start++;
+                        if(num == start){                               
+                            $('div.repwrap').fadeIn("slow",function(){
+                                $('div.repwrap').find('button.button<?php echo $btnsize; ?>').fadeIn("fast");
+                                $('div.repwrap').find('button.button<?php echo str_replace(" ",".",$btnsize); ?>').fadeIn("fast");
+                            });
+                        }
+                    });
+                });
+            }
+        })
+    }
+<?php endif; ?>
+if($('div.iradio_line').length){
+    $('#next').click(function(e){
+        e.preventDefault();
+        var thisBut = this;
+        var title = '<?php echo $heading; ?>';
+        var numGroups = $('fieldset').length;
+        var sibling = $(this).prev("fieldset");
+        var pos = false;
+        var parentHeight = sibling.css('height');
+        var num = $('label.rel').length;
+        var selected = 0;
+        $('fieldset').each(function( index ) {
+            var num = $(this).find('input.chq').length;
+            $(this).find('input.chq').each(function( index ) {
+                if($(this).is(':checked')){
+                    selected ++;
+                }
+            });
+        });
+        if(selected==numGroups){
+            $('div.error').fadeOut('fast', function() {
+                this.remove();
+                error = false;
+            });
+            
+            <?php if($report): ?>
+            var start = 0;
+            thisBut.fadeOut('fast');
+            jQuery.each($('fieldset'), function( i, item ) {
+                $(item).fadeOut('fast', function() {
+                    start++;
+                    if(numGroups == start && selected>0){
+                                                    
+                        //inject new thing
+                        html = 
+                            '<div class="repwrap">'+
+                                '<div class="repmod">'+
+                                    '<h4 style="font-size: 13px;">'+title+'</h4>'+
+                                    '<div class="rep-img">'+
+                                        '<img src="<?php echo URL::to("/").'/'.$report['image']; ?>" alt="" width="80" height="80">'+
+                                    '</div>'+
+                                    '<div class="rep-text">'+
+                                        '<?php echo addslashes($report['text']); ?>'+
+                                    '</div>'+
+                                    '<div class="clearfix"></div>'+
+                                '</div>'+
+                                '<button class="button<?php echo $btnsize; ?>" type="submit"><?php echo Lang::get('general.next'); ?></button>'+
+                            '</div>';
+                        
+                        $(html).appendTo($('#form-question'));
+                    
+                    }
+                });
+            });
+            <?php else: ?>
+                $('#form-question').trigger('submit');
+            <?php endif; ?>
+        }else{
+            if(error==false){
+                console.log(thisBut);
+                html = 
+                    "<div class=\"clearfix\"></div><div class=\"error pull-right\" style=\"padding:0 15px 0 15px; margin-top: 5px;\">"+
+                        "<span style=\"color: #ed2024;\"><?php echo Lang::get('general.multierror'); ?></span>"+
+                    "</div>";
+                $(html).insertAfter(thisBut).hide().fadeIn("fast");
+                error=true;
+            }
+            
+        }
+    })
+}
+</script>
+<!--[if lt IE 9]>
+    <script src="<?php echo asset('plugins/respond.js'); ?>"></script>
+    <script src="<?php echo asset('plugins/html5shiv.js'); ?>"></script>
+    <script src="<?php echo asset('plugins/placeholder-IE-fixes.js'); ?>"></script>
+<![endif]-->
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('_layout.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

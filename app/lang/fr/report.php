@@ -17,7 +17,7 @@ Plus une structure informatique est évolutive, plus elle peut profiter d'avanta
     <li>Une expérience client optimisée pour fournir des services plus fiables, plus intuitifs et plus efficaces aux employés, partenaires et clients</li>
     <li>L\'innovation, qui permet à l\'entreprise de transférer les ressources et activités vers de nouveaux secteurs</li>
     <li>Une exploitation informatique plus efficace, pour réduire les coûts tout en créant une infrastructure plus évolutive</li>
-    <li>Une activation des opérations mobiles pour offrir une gamme complète d'applications d'entreprise</li>
+    <li>Une activation des opérations mobiles pour offrir une gamme complète d\'applications d\'entreprise</li>
 <ul>',
     'looked'=>'Nous nous sommes penchés sur les domaines clés suivants :',
     'itbusiness'=>'Informatique et entreprise',

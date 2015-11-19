@@ -1,3 +1,16 @@
+var myPlayer = false;
+
+if(window.videojs){
+	videojs("iview_video").ready(function(){
+		myPlayer = this;
+		root = location.protocol + '//' + location.host;
+		this.on("ended", function(){
+			setTimeout(function(){
+				window.location = root;
+			}, 3000);
+		});
+	});
+}
 /* ==========================================================================
    Author: XHTMLmaster.com
    ========================================================================== */

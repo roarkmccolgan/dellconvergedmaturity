@@ -689,7 +689,7 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Wir verwenden eine integrierte End-to-End-Dienst-Management-Suite',
+                                'label'=>'Wir verwenden eine integrierte End-to-End Management-Suite',
                                 'value'=>5,
                                 'checked'=>false
                             )

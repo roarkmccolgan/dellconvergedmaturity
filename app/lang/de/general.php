@@ -11,7 +11,7 @@ return array(
     'allrights'=>'Alle Rechte vorbehalten',
     'back'=>'zurück',
     'change'=>'ändern Antworten',
-    'assoc'=>'GEFÖRDERT DURCH',
+    'assoc'=>'Gesponsert von',
     'title'=>'Ist Ihre IT-Infrastruktur zukunftsfähig?',
     'next'=>'Weiter',
     'landing'=>'Ein neuer IT-Stil setzt sich durch, der mit dem rasanten Tempo der Veränderungen Schritt halten kann. Nehmen Sie sich 5–10 Minuten Zeit, um zu bewerten, wie zukunftsfähig Ihre IT-Infrastruktur ist und wie sie im Vergleich mit branchenspezifischen Messgrößen für wichtige Aspekte wie IT und das Unternehmen, Bereitstellung von IT-Services sowie IT-Infrastrukturtechnologie abschneidet. Anschließend erhalten Sie einen kostenlosen Bericht, der Ihre Ergebnisse in den Branchenkontext stellt und Ihnen aufzeigt, welche Verbesserungsmaßnahmen Sie priorisieren sollten.',
@@ -58,15 +58,30 @@ return array(
     'accept'=>'Ich akzeptiere die AGB',
     'required'=>'Pflichtfeld',
     'emailreport'=>'Ich möchte den Bericht<br/> per E-Mail erhalten',
-    'hi'=>'Hallo',
-    'soon'=>'Ihr Link zum Herunterladen erscheint in Kürze in Ihrem Posteingang.',
-    'wait'=>'In der Zwischenzeit könnten Sie Ihre Ergebnisse tweeten und sehen, wie Ihre Kollegen das Quiz meistern.',
+    'hi'=>'Vielen Dank',
+    'soon'=>'Der Link zum Herunterladen wird in Kürze in Ihrem Posteingang verfügbar sein.',
+    'wait'=>'Während Sie darauf warten, tweeten Sie doch Ihre Ergebnisse und schauen Sie wie Ihre Follower abgeschnitten haben.',
     'multierror'=>'Bitte beantworten Sie diese Frage auch weiterhin.',
-    'errorFname'=>'Gib deinen Namen ein',
-    'errorSname'=>'Geben Sie Ihren Nachnamen',
-    'errorEmail'=>'Geben Sie eine gültige E-Mail E-Mail -Adresse',
-    'errorCompany'=>'Geben Sie den Namen Ihres Unternehmens',
+    'errorFname'=>'Geben Sie Ihren Vornamen ein',
+    'errorSname'=>'Geben Sie Ihren Nachnamen ein',
+    'errorEmail'=>'Geben Sie eine gültige E-Mail-Adresse ein',
+    'errorCompany'=>'Geben Sie den Namen Ihres Unternehmens ein',
     'errorCountry'=>'Bitte wählen Sie Ihr Land',
     'errorNumber'=>'Geben Sie eine gültige Nummer',
-    'errorCheck'=>'Please accept terms and conditions'
+    'errorCheck'=>'Akzeptieren Sie die AGB',
+    'disclaimerbody'=>"
+<p>DIESE INFORMATIONEN WERDEN IHNEN ALS TOOL UND ERGEBNISBERICHT OHNE MÄNGELGEWÄHR UND OHNE ZUSICHERUNGEN ODER GEWÄHRLEISTUNGEN IRGENDWELCHER ART BEREITGESTELLT, SOWOHL AUSDRÜCKLICH WIE AUCH STILLSCHWEIGEND. IDC SCHLIESST ALLE GARANTIEN AUS, EINSCHLIESSLICH, OHNE EINSCHRÄNKUNG, STILLSCHWEIGENDER GARANTIEN FÜR DIE MARKTGÄNGIGKEIT ODER EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. IDC GIBT KEINE ZUSICHERUNGEN ODER GEWÄHRLEISTUNGEN IM HINBLICK AUF DIE NUTZUNG, GÜLTIGKEIT, GENAUIGKEIT ODER ZUVERLÄSSIGKEIT DES TOOLS ODER DER ERGEBNISSE AUS DER NUTZUNG DES TOOLS. IN KEINEM FALL KANN IDC FÜR SCHÄDEN HAFTBAR GEMACHT WERDEN, EINSCHLIESSLICH SOLCHER, DIE SICH AUS FAHRLÄSSIGKEIT VON IDC ERGEBEN, UNABHÄNGIG DAVON, OB DIESE SCHÄDEN DIREKTER, MITTELBARER, ZUFÄLLIGER ODER SPEZIELLER NATUR SIND, SICH AUS DER VERWENDUNG ODER NICHT MÖGLICHEN VERWENDUNG DES TOOLS ODER DER BEREITGESTELLTEN INFORMATIONEN ODER AUS DEN ERGEBNISSEN DER VERWENDUNG DES TOOLS ERGEBEN, SELBST WENN IDC AUF DIE MÖGLICHKEIT SOLCHER SCHÄDEN HINGEWIESEN WURDE. DIE LETZTENDLICHE VERANTWORTUNG FÜR DIE BERECHNETEN ERGEBNISSE LIEGT BEI IHNEN. DIESES TOOL IST NICHT DAZU GEDACHT, DIE PREISGESTALTUNG FÜR LÖSUNGEN BEREITZUSTELLEN. DIESES TOOL IST NICHT FÜR DIE VERWENDUNG DURCH ODER FÜR PRIVATPERSONEN/VERBRAUCHER VORGESEHEN.</p>
+                <p>
+                    Der Zweck, den IDC mit der Entwicklung dieses Tools und seiner allgemeinen Verfügbarkeit verfolgt, besteht darin, IT-Organisationen beim Verständnis der potenziell komplexen organisatorischen, betrieblichen und finanziellen Auswirkungen bei der Migration von  Workloads von einer herkömmlichen IT-Plattform in eine Private oder Public Cloud-Umgebung zu unterstützen.
+                </p>
+                <p>
+                    Diese Bewertung ist als Schritt im Planungs- und Auswertungsprozess gedacht, nicht als endgültige Antwort. Die Qualität und Nutzbarkeit der Empfehlungen dieses Service hängt natürlich von der Vollständigkeit und Genauigkeit Ihrer Eingaben ab.
+                </p>
+                <p>
+                    Der Future Ready Enterprise Index wird ohne Mängelgewähr bereitgestellt. IDC ist bestrebt, korrekte Informationen bereitzustellen. IDC schließt jedoch ausdrücklich alle Garantien aus, einschließlich, ohne Einschränkung, aller Garantien für die Richtigkeit und Vollständigkeit der bereitgestellten Informationen.
+                </p>
+                <p>
+                    IDC wird statistische Daten über die Nutzung des Service durch Sie und andere Nutzer sammeln, um weitere Forschung betreiben zu können. Falls Sie Fragen dazu haben, empfehlen wir Ihnen, die Nutzungsbedingungen von IDC zu lesen, bevor Sie fortfahren.
+                </p>
+    "
 );

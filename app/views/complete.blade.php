@@ -44,7 +44,7 @@
                 </div>
             </div>
             
-            {{ Form::open(array('url' => '/quiz/complete','id'=>'form-email-report','class'=>'clearfix form-horizontal')) }}
+            {{ Form::open(array('url' => getLang().'quiz/complete','id'=>'form-email-report','class'=>'clearfix form-horizontal')) }}
                 <input type="hidden" value="{{$source['form_source']}}" name="form_source">
 
                 <div class="form-group{{$errors->has('fname')?' error has-error':''}}">
