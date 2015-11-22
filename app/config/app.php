@@ -70,7 +70,7 @@ return array(
 	/**
 	 * List of alternative languages (not including the one specified as 'locale')
 	 */
-	'alt_langs' => array ('fr', 'de', 'it', 'es'),
+	'alt_langs' => array ('fr', 'de', 'en'),
 	
 	
 	/**

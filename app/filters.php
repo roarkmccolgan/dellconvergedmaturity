@@ -13,7 +13,28 @@
 
 App::before(function($request)
 {
-	//
+	$domain = $_SERVER['SERVER_NAME'];
+	if($domain=='convergedmaturity.com' || $domain=='dellconverged.app')
+	{
+		Config::set('app.locale', 'en');
+		Config::set('app.url','http://' . $domain);
+		Config::set('app.host',$domain);
+		//return Redirect::to('fr/');
+	}
+	elseif($domain=='convergedmaturity.fr')
+	{
+		Config::set('app.locale', 'fr');
+		Config::set('app.url','http://' . $domain);
+		Config::set('app.host',$domain);
+		//return Redirect::to('fr/');
+	}
+	elseif($domain=='bereit-fuer-konvergente-infrastruktur.de')
+	{
+		Config::set('app.locale', 'de');
+		Config::set('app.url','http://' . $domain);
+		Config::set('app.host',$domain);
+		//return Redirect::to('de/');
+	}
 });
 
 
@@ -59,6 +80,13 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('english', function($route)
+{
+	$loc = 'en';
+	if (in_array($loc, Config::get('app.alt_langs'))) {
+		App::setLocale($loc);
+	}
+});
 Route::filter('french', function($route)
 {
 	$loc = 'fr';

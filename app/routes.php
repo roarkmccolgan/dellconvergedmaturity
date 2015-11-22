@@ -146,7 +146,74 @@ Route::group(array('prefix' => 'de', 'before' => 'german'), function()
 	});
 });
 
-//english
+//English
+Route::group(array('prefix' => 'en', 'before' => 'english'), function()
+{
+	Route::get('/', array('before'=>'reload', function()
+	{
+		$form_source = Input::get('form_source');
+		$source = array(
+			'C_emailAddress'=>Input::get('C_emailAddress'),
+			'C_FirstName'=>Input::get('C_FirstName'),
+			'C_LastName'=>Input::get('C_LastName'),
+			'C_Company'=>Input::get('C_Company'),
+			'C_Country'=>Input::get('C_Country'),
+			'C_BusPhone'=>Input::get('C_BusPhone'),
+			'form_source'=>Input::get('form_source','Converged Infrastructure - Maturity Benchmark')
+		);
+		Session::put('source', $source);
+
+		$return_visitor = Cookie::has('quiz_progress');
+		$data = array(
+			'class'=>'intro',
+			'return_visitor'=>$return_visitor
+		);
+		return View::make('introduction',$data);
+	}));
+
+		//Route::get('/', array('as'=> 'introduction', 'uses' => 'PageController@showIntro'));
+		Route::post('quiz/{section}/page{pagenum}', array('uses' => 'AssesmentController@savePage'));
+		Route::get('quiz/{section}/page{pagenum}', array('uses' => 'AssesmentController@getPage'));
+		Route::get('quiz/complete', array('uses' => 'AssesmentController@getComplete'));
+		Route::post('quiz/complete', array('uses' => 'AssesmentController@postComplete'));
+		Route::get('quiz/download/{userid}', array('uses' => 'AssesmentController@getDownload'));
+		Route::get('video', function()
+		{
+			return View::make('video');
+		});
+		Route::get('infobrief/download', function()
+		{
+		    $file= public_path(). '/assets/Dell-Converged-Infobrief_en_v5.pdf';
+	        $headers = array(
+	            'Content-Type: application/pdf',
+	        );
+	        return Response::download($file,'Dell-Converged-Infobrief_en_v5', $headers);
+		});
+
+	Route::get('email/{userid}', function($userid)
+	{
+		$user = User::find($userid);
+		if(is_null($userid) || is_null($user)){
+			return Redirect::to(getLang().'/');
+		}else{
+			return View::make('emails.download2',array('fname'=>$user->fname, 'sname'=>$user->lname, 'userid'=>$userid));
+		}
+	});
+
+	Route::get('restart', function()
+	{
+		if(Cookie::has('quiz_progress')){
+			$progress_id = Cookie::get('quiz_progress');
+			$progress = Progress::find($progress_id);
+			if($progress) $progress->delete();
+			
+		}
+		$cookie = Cookie::forget('quiz_progress');
+		return Redirect::to(getLang().'/')->withCookie($cookie);
+	});
+});
+
+//default
 Route::get('/', array('before'=>'reload', function()
 {
 	$form_source = Input::get('form_source');

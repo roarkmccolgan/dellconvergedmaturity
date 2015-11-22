@@ -2,15 +2,28 @@
 
 function getLang(){
 	$local = App::getLocale();
+	$host = Config::get('app.host');
 	switch($local){
 		case 'en':
-			return '';
+			if($host=='convergedmaturity.com' || $host=='dellconverged.app'){
+				return '';
+			}else{
+				return 'en/';
+			}		
 		break;
 		case 'fr':
-			return 'fr/';
+			if($host=='convergedmaturity.fr'){
+				return '';
+			}else{
+				return 'fr/';
+			}
 		break;
 		case 'de':
-			return 'de/';
+			if($host=='bereit-fuer-konvergente-infrastruktur.de'){
+				return '';
+			}else{
+				return 'de/';
+			}
 		break;
 	}
 }
