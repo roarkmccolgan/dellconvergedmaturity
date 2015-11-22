@@ -14,6 +14,7 @@
 App::before(function($request)
 {
 	$domain = $_SERVER['SERVER_NAME'];
+	dd($domain);
 	if($domain=='convergedmaturity.com' || $domain=='dellconverged.app')
 	{
 		Config::set('app.locale', 'en');
@@ -101,20 +102,6 @@ Route::filter('german', function($route)
 		App::setLocale($loc);
 	}
 });
-Route::filter('italian', function($route)
-{
-	$loc = 'it';
-	if (in_array($loc, Config::get('app.alt_langs'))) {
-		App::setLocale($loc);
-	}
-});
-Route::filter('spanish', function($route)
-{
-	$loc = 'es';
-	if (in_array($loc, Config::get('app.alt_langs'))) {
-		App::setLocale($loc);
-	}
-});
 
 Route::filter('local', function($route)
 {
@@ -128,7 +115,7 @@ Route::filter('reload', function()
 {
 	Session::flush();
 	$currentLocal = App::getLocale();
-	$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
+	$  = $currentLocal=='en' ? '' : $currentLocal;
     $questions = Config::get($localQuestions.'questions');
     Session::put('questions', $questions);
     reset($questions);
