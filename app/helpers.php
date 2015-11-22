@@ -29,6 +29,7 @@ function getLang(){
 }
 function getLangSwitch(){
 	$local = App::getLocale();
+	$host = Config::get('app.host');
 	$fr = '/fr';
 	$de = '/de';
 	$en = '/en';
