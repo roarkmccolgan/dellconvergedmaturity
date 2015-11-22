@@ -14,7 +14,6 @@
 App::before(function($request)
 {
 	$domain = $_SERVER['HTTP_HOST'];
-	dd($domain);
 	if($domain=='convergedmaturity.com' || $domain=='dellconverged.app')
 	{
 		Config::set('app.locale', 'en');
