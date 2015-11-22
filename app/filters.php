@@ -115,7 +115,7 @@ Route::filter('reload', function()
 {
 	Session::flush();
 	$currentLocal = App::getLocale();
-	$  = $currentLocal=='en' ? '' : $currentLocal;
+	$localQuestions = $currentLocal=='en' ? '' : $currentLocal;
     $questions = Config::get($localQuestions.'questions');
     Session::put('questions', $questions);
     reset($questions);
