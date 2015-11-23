@@ -233,8 +233,8 @@ Route::get('/', array('before'=>'reload', function()
 		'class'=>'intro',
 		'return_visitor'=>$return_visitor
 	);
-	dd( Route::getCurrentRoute()->domain());
-	//return View::make('introduction',$data);
+	//dd( Route::getCurrentRoute()->domain());
+	return View::make('introduction',$data);
 }));
 
 	//Route::get('/', array('as'=> 'introduction', 'uses' => 'PageController@showIntro'));
