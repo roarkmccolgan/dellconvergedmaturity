@@ -15,11 +15,9 @@ return array(
     'title'=>'IDC’s Converged Infrastructure – Maturity Benchmark',
     'next'=>'Next',
     'landing'=>'
-In the digital age of the 3rd Platform of IT, the success of many organizations will be driven by their capability to innovate and adapt to rapid and ongoing change. IT can no longer be reactive with a primary focus on cutting costs. For future success, IT needs to act as a key driver for competitive advantage with a business mindset that is actively looking for new ways to help the business tackle new markets.
- 
-A large part of this success will be down to improving the responsiveness and agility of the IT function, and this comes down to being able to make changes quickly and with confidence. IDC research has shown that getting the various parts of the IT infrastructure working together through integration and automation is a critical part of making this reality – and converged infrastructure, where end-to-end integration of servers, storage, networking and management are part of the offering, can help accelerate your journey to IT transformation.
- 
-To find out more about where you are on the journey and how your IT organization compares to others, the IDC Converged Infrastructure Assessment Tool provides an independently sourced, facts-based framework to help make business and IT decisions around IT strategy and the benefits associated with adopting converged infrastructure.
+<p>In the digital age of the 3rd Platform of IT, the success of many organizations will be driven by their capability to innovate and adapt to rapid and ongoing change. IT can no longer be reactive with a primary focus on cutting costs. For future success, IT needs to act as a key driver for competitive advantage with a business mindset that is actively looking for new ways to help the business tackle new markets.</p>
+<p>A large part of this success will be down to improving the responsiveness and agility of the IT function, and this comes down to being able to make changes quickly and with confidence. IDC research has shown that getting the various parts of the IT infrastructure working together through integration and automation is a critical part of making this reality – and converged infrastructure, where end-to-end integration of servers, storage, networking and management are part of the offering, can help accelerate your journey to IT transformation.</p>
+<p>To find out more about where you are on the journey and how your IT organization compares to others, the IDC Converged Infrastructure Assessment Tool provides an independently sourced, facts-based framework to help make business and IT decisions around IT strategy and the benefits associated with adopting converged infrastructure.</p>
     ',
     'startbut'=>'Get Started',
     'of'=>'of',
