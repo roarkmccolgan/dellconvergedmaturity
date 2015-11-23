@@ -5,7 +5,7 @@ function getLang(){
 	$host = Config::get('app.host');
 	switch($local){
 		case 'en':
-			if($host=='convergedmaturity.com' || $host=='dellconverged.app'){
+			if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='dellconverged.app'){
 				return '';
 			}else{
 				return 'en/';
@@ -34,7 +34,7 @@ function getLangSwitch(){
 	$de = '/de';
 	$en = '/en';
 
-	if($host=='convergedmaturity.com' || $host=='dellconverged.app'){
+	if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='dellconverged.app'){
 		$en = '';
 	}elseif($host=='convergedmaturity.fr'){
 		$fr = '';
