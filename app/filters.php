@@ -15,7 +15,7 @@ App::before(function($request)
 {
 	$domain = apache_request_headers();
 	$domain = $domain['Host'];
-	if($domain=='convergedmaturity.com' || $domain=='convergedmaturity.co.uk' || $domain=='dellconverged.app')
+	if($domain=='convergedmaturity.com' || $domain=='convergedmaturity.co.uk' || $domain=='certus.convergedmaturity.co.uk' || $domain=='dellconverged.app' || $domain=='itf.convergedmaturity.com' || $domain=='infoniqa.convergedmaturity.com')
 	{
 		Config::set('app.locale', 'en');
 		Config::set('app.url','http://' . $domain);
@@ -31,7 +31,7 @@ App::before(function($request)
 		Config::set('app.analytics','UA-156016-30');
 		//return Redirect::to('fr/');
 	}
-	elseif($domain=='bereit-fuer-konvergente-infrastruktur.de')
+	elseif($domain=='bereit-fuer-konvergente-infrastruktur.de' || $domain=='niteflite.bereit-fuer-konvergente-infrastruktur.de')
 	{
 		Config::set('app.locale', 'de');
 		Config::set('app.url','http://' . $domain);
@@ -39,7 +39,6 @@ App::before(function($request)
 		Config::set('app.analytics','UA-156016-31');
 		//return Redirect::to('de/');
 	}
-	return $domain;
 });
 
 
