@@ -39,6 +39,7 @@ App::before(function($request)
 		Config::set('app.analytics','UA-156016-31');
 		//return Redirect::to('de/');
 	}
+	return $domain;
 });
 
 
