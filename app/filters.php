@@ -13,7 +13,8 @@
 
 App::before(function($request)
 {
-	$domain = $_SERVER['HTTP_HOST'];
+	$domain = apache_request_headers();
+	$domain = $domain['Host'];
 	if($domain=='convergedmaturity.com' || $domain=='convergedmaturity.co.uk' || $domain=='dellconverged.app')
 	{
 		Config::set('app.locale', 'en');

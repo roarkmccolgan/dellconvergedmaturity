@@ -46,6 +46,7 @@
             
             {{ Form::open(array('url' => getLang().'quiz/complete','id'=>'form-email-report','class'=>'clearfix form-horizontal')) }}
                 <input type="hidden" value="{{$source['form_source']}}" name="form_source">
+                <input type="hidden" value="{{$source['referer']}}" name="referer">
 
                 <div class="form-group{{$errors->has('fname')?' error has-error':''}}">
                     <label for="fname" class="col-sm-2 control-label">{{Lang::get('general.fname')}} *</label>
