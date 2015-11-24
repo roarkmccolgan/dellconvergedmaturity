@@ -34,9 +34,6 @@
 	<link rel="stylesheet" href="{{asset('css/spacing.css')}}">
 
 	@show
-</head>
-
-<body>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -46,6 +43,9 @@
 		ga('create', '{{Config::get('app.analytics')}}', 'auto');
 		ga('send', 'pageview');
 	</script>
+</head>
+
+<body>
 	<div class="wrapper">
 		<!--=== Header Default ===-->
 		<div class="header-v1">
