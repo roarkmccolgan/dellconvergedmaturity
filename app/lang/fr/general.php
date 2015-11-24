@@ -15,7 +15,11 @@ return array(
     'title'=>'Votre infrastructure informatique est-elle évolutive ?',
     'next'=>'Suivant',
 
-    'landing'=>'Une nouvelle ère informatique voit le jour. En accordant 5 à 10 minutes à ce questionnaire, vous découvrirez où se trouve votre entreprise par rapport aux normes du secteur dans des domaines clés tels que la sécurité et la mobilité. Vous obtiendrez également un rapport qui vous aidera à optimiser votre informatique.',
+    'landing'=>"
+<p>Dans l'ère numérique de la 3ème plate-forme de l'informatique, le succès de nombreuses organisations sera pilotée par leur capacité à innover et à s'adapter au changement rapide et continue . Il ne peut plus être réactif avec un accent mis sur la réduction des coûts . Pour la réussite future , il doit agir comme un facteur clé pour l'avantage concurrentiel avec un état ​​d'esprit d'entreprise qui est activement à la recherche de nouvelles façons d' aider l'entreprise à attaquer de nouveaux marchés .</p>
+<p>Une grande partie de ce succès sera vers le bas pour améliorer la réactivité et l'agilité de la fonction informatique , et cela revient à être capable de faire des changements rapidement et avec confiance . IDC a montré que l'obtention des différentes parties de l'infrastructure informatique de travailler ensemble à travers l'intégration et l'automatisation est une partie essentielle de rendre cette réalité - et infrastructure convergente , où l'intégration des serveurs de bout en bout , le stockage , la mise en réseau et de gestion font partie des l'offre , peut aider à accélérer votre voyage à la transformation des TI .</p>
+<p>Pour en savoir plus sur l'endroit où vous êtes sur le voyage et la façon dont votre organisation informatique compare à d'autres , l' IDC Converged Infrastructure Outil d'évaluation fournit un cadre axé sur les faits de source indépendante pour aider à faire des affaires et de TI décisions autour de la stratégie informatique et les avantages associés à adoptant infrastructure convergente .</p>
+    ",
     'startbut'=>'Répondre au questionnaire',
     'of'=>'sur',
     'youre'=>'Vous êtes',

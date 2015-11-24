@@ -42,7 +42,7 @@
                         <div class="media">
                             <div class="media-left">
                             <a href="{{Request::root().'/'.getLang()}}video">
-                                <img src="{{asset('images/envideopreview.jpg')}}" class="media-object" style="width: 220px; height: 124px;">
+                                <img src="{{Lang::get('assets.videoimage')}}" class="media-object" style="width: 220px; height: 124px;">
                             </a>
                             </div>
                             <div class="media-body">

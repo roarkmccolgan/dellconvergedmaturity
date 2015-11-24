@@ -14,7 +14,11 @@ return array(
     'assoc'=>'Gesponsert von',
     'title'=>'Ist Ihre IT-Infrastruktur zukunftsfähig?',
     'next'=>'Weiter',
-    'landing'=>'Ein neuer IT-Stil setzt sich durch, der mit dem rasanten Tempo der Veränderungen Schritt halten kann. Nehmen Sie sich 5–10 Minuten Zeit, um zu bewerten, wie zukunftsfähig Ihre IT-Infrastruktur ist und wie sie im Vergleich mit branchenspezifischen Messgrößen für wichtige Aspekte wie IT und das Unternehmen, Bereitstellung von IT-Services sowie IT-Infrastrukturtechnologie abschneidet. Anschließend erhalten Sie einen kostenlosen Bericht, der Ihre Ergebnisse in den Branchenkontext stellt und Ihnen aufzeigt, welche Verbesserungsmaßnahmen Sie priorisieren sollten.',
+    'landing'=>'
+<p>Im digitalen Zeitalter des 3. Plattform der IT , wird der Erfolg von vielen Organisationen, die von ihrer Fähigkeit angetrieben werden , zu innovieren und sich auf eine schnelle und anhaltende Veränderung. IT kann nicht mehr mit einem primären Fokus auf Kostensenkungen reagieren. Für den zukünftigen Erfolg , muss er als ein Schlüsseltreiber für Wettbewerbsvorteil mit einem Business- Denkweise, die sich aktiv auf der Suche nach neuen Möglichkeiten, um das Geschäft zu bewältigen , neue Märkte zu handeln.</p>
+<p>Ein großer Teil dieses Erfolges wird sich auf die Verbesserung der Reaktionsfähigkeit und Agilität der IT -Funktion sein, und das kommt darauf an, in der Lage, Änderungen schnell und mit Zuversicht treffen. IDC-Studie hat gezeigt, dass immer die verschiedenen Teile der IT-Infrastruktur durch Integration und Automatisierung zusammenarbeiten ist ein wichtiger Teil der Herstellung dieser Realität - und konvergente Infrastruktur , in dem End-to- End-Integration von Servern, Speicher, Netzwerk und Management sind Teil des das Angebot , kann zur Beschleunigung Ihrer Reise nach IT-Transformation .</p>
+<p>Um mehr zu erfahren , wo Sie sind auf dem Weg , und wie Sie Ihre IT-Organisation im Vergleich zu anderen , die IDC Converged Infrastructure Assessment Tool bietet einen neutralen Quellen , Fakten - basiertes Framework zu helfen, Geschäfts- und IT- Entscheidungen rund um IT-Strategie und die Vorteile im Zusammenhang mit Annahme konvergente Infrastruktur .</p>
+    ',
     'startbut'=>'Erste Schritte',
     'of'=>'von',
     'youre'=>'Sie sind ',
