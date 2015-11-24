@@ -178,7 +178,7 @@
     </head>
     <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
     <p style="color:#242638 !important;	display:block; font-family:'Avenir', arial; font-size:14px; font-style:normal; font-weight:normal; line-height:120%; letter-spacing:normal; margin-top:0; margin-right:0; margin-bottom:15px; margin-left:0;text-align:left;">
-    	<strong>{{$fname}}</strong> just completed the HP Tech Fitness quiz.<br/><br/>
+    	<strong>{{$fname}}</strong> just completed the Converged Infrastructure – Maturity Benchmark.<br/><br/>
         Full name: <strong>{{$fname}} {{$sname}}</strong><br/>
         email: <strong>{{$email}}</strong><br/>
         Company: <strong>{{$company}}</strong><br/>
