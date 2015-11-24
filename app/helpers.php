@@ -5,7 +5,7 @@ function getLang(){
 	$host = Config::get('app.host');
 	switch($local){
 		case 'en':
-			if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='dellconverged.app'){
+			if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='certus.convergedmaturity.co.uk' || $host=='dellconverged.app' || $host=='itf.convergedmaturity.com' || $host=='infoniqa.convergedmaturity.com'){
 				return '';
 			}else{
 				return 'en/';
@@ -19,7 +19,7 @@ function getLang(){
 			}
 		break;
 		case 'de':
-			if($host=='bereit-fuer-konvergente-infrastruktur.de'){
+			if($host=='bereit-fuer-konvergente-infrastruktur.de' || $host=='niteflite.bereit-fuer-konvergente-infrastruktur.de'){
 				return '';
 			}else{
 				return 'de/';
@@ -34,11 +34,11 @@ function getLangSwitch(){
 	$de = '/de';
 	$en = '/en';
 
-	if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='dellconverged.app'){
+	if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='certus.convergedmaturity.co.uk' || $host=='dellconverged.app' || $host=='itf.convergedmaturity.com' || $host=='infoniqa.convergedmaturity.com'){
 		$en = '';
 	}elseif($host=='convergedmaturity.fr'){
 		$fr = '';
-	}elseif($host=='bereit-fuer-konvergente-infrastruktur.de'){
+	}elseif($host=='bereit-fuer-konvergente-infrastruktur.de' || $host=='niteflite.bereit-fuer-konvergente-infrastruktur.de'){
 		$de = '';
 	}
 	switch($local){
