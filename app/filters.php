@@ -19,6 +19,7 @@ App::before(function($request)
 		Config::set('app.locale', 'en');
 		Config::set('app.url','http://' . $domain);
 		Config::set('app.host',$domain);
+		Config::set('app.analytics','UA-156016-29');
 		//return Redirect::to('fr/');
 	}
 	elseif($domain=='convergedmaturity.fr')
@@ -26,6 +27,7 @@ App::before(function($request)
 		Config::set('app.locale', 'fr');
 		Config::set('app.url','http://' . $domain);
 		Config::set('app.host',$domain);
+		Config::set('app.analytics','UA-156016-30');
 		//return Redirect::to('fr/');
 	}
 	elseif($domain=='bereit-fuer-konvergente-infrastruktur.de')
@@ -33,6 +35,7 @@ App::before(function($request)
 		Config::set('app.locale', 'de');
 		Config::set('app.url','http://' . $domain);
 		Config::set('app.host',$domain);
+		Config::set('app.analytics','UA-156016-31');
 		//return Redirect::to('de/');
 	}
 });

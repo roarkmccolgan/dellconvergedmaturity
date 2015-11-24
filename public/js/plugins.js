@@ -80,8 +80,8 @@ b[_type],e=/wn|up/.test(d)?t:v;if(!c[n]){if(d==_click)A(a,!1,!0);else{if(/wn|er|
   
   // self injection init
   var msg = 'We use cookies to ensure that we give you the best experience on our website. By continuing to browse through our website you are agreeing to our use of cookies in accordance with our <a href="/cookies">Cookies Policy</a>. We have updated our <a href="/privacy">Privacy Policy</a>, effective as of 21 Jan 2015, by using continuing to browse through our website you are also agreeing to this updated policy.';
-  var isFrench = (window.location.href.indexOf("/fr/")!=-1 || window.location.host=='convergedmaturity.fr')? true: false;
-  var isGerman = (window.location.href.indexOf("/de/")!=-1 || window.location.host=='bereit-fuer-konvergente-infrastruktur.de')? true: false;
+  var isFrench = (window.location.href.indexOf("/fr")!=-1 || window.location.host=='convergedmaturity.fr')? true: false;
+  var isGerman = (window.location.href.indexOf("/de")!=-1 || window.location.host=='bereit-fuer-konvergente-infrastruktur.de')? true: false;
   if(isFrench){
     var msg = 'Nous utilisons les cookies pour nous assurer que nous vous offrons la meilleure expérience sur notre site. En continuant à parcourir notre site , vous acceptez notre utilisation des cookies en conformité avec notre <a href="/cookies">politique sur les cookies</a>. Nous avons mis à jour notre <a href="/privacy">Politique de confidentialité</a>, à compter du 21 janvier 2015 , à l\'aide continue à parcourir notre site, vous acceptez également à cette politique mise à jour.';
   }

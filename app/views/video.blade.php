@@ -41,7 +41,7 @@
                                 <div class="preview">
                                     <video id="iview_video" class="video-js vjs-default-skin vjs-big-play-centered video-js-fullscreen"
                                     controls preload="auto" width="640" height="360"
-                                    poster="https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/envideopreview.jpg"
+                                    poster="{{Lang::get('assets.videoimage')}}"
                                     data-setup='{ "example_option": true, "width": "auto", "height": "auto", "autoplay": true, "techOrder": <?=$isie;?> }'>
                                         <source src="{{Lang::get('assets.hdvideo')}}" type="video/mp4" data-quality="hd" data-res="HD" data-default="true">
                                         <source src="{{Lang::get('assets.sdvideo')}}" type="video/mp4" data-quality="sd" data-res="SD">

@@ -15,7 +15,7 @@ return array(
     'take'=>'Take the assesment now',
     'infobrief'=>'IDC Infobrief',
     'infobriefintro'=>'Convergence should always be about driving customer outcomes by reducing complexity',
-    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/',
-    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/',
+    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/dell+Networking+V1-HD.mp4',
+    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/dell+Networking+V1-SD.mp4',
     'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/envideopreview.jpg',
 );
