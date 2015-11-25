@@ -50,11 +50,11 @@ Route::group(array('prefix' => 'fr', 'before' => 'french'), function()
 		});
 		Route::get('infobrief/download', function()
 		{
-		    $file= public_path(). '/assets/Dell-Converged-Infobrief_en_v7.pdf';
+		    $file= public_path(). '/assets/'.Lang::get('assets.ibdownload');
 	        $headers = array(
 	            'Content-Type: application/pdf',
 	        );
-	        return Response::download($file,'Dell-Converged-Infobrief_en_v7.pdf', $headers);
+	        return Response::download($file,Lang::get('assets.ibdownload'), $headers);
 		});
 
 	Route::get('email/{userid}', function($userid)
@@ -118,11 +118,11 @@ Route::group(array('prefix' => 'de', 'before' => 'german'), function()
 		});
 		Route::get('infobrief/download', function()
 		{
-		    $file= public_path(). '/assets/Dell-Converged-Infobrief_de_v3.pdf';
+		    $file= public_path(). '/assets/'.Lang::get('assets.ibdownload');
 	        $headers = array(
 	            'Content-Type: application/pdf',
 	        );
-	        return Response::download($file,'Dell-Converged-Infobrief_de_v3.pdf', $headers);
+	        return Response::download($file,Lang::get('assets.ibdownload'), $headers);
 		});
 
 	Route::get('email/{userid}', function($userid)
@@ -186,11 +186,11 @@ Route::group(array('prefix' => 'en', 'before' => 'english'), function()
 		});
 		Route::get('infobrief/download', function()
 		{
-		    $file= public_path(). '/assets/Dell-Converged-Infobrief_en_v7.pdf';
+		    $file= public_path(). '/assets/'.Lang::get('assets.ibdownload');
 	        $headers = array(
 	            'Content-Type: application/pdf',
 	        );
-	        return Response::download($file,'Dell-Converged-Infobrief_en_v7.pdf', $headers);
+	        return Response::download($file,Lang::get('assets.ibdownload'), $headers);
 		});
 
 	Route::get('email/{userid}', function($userid)
@@ -254,18 +254,11 @@ Route::get('/', array('before'=>'reload', function()
 	
 	Route::get('infobrief/download', function()
 	{
-		$download = 'Dell-Converged-Infobrief_en_v7.pdf';
-		if(Config::get('app.locale')=='de'){
-			$download = 'Dell-Converged-Infobrief_de_v3.pdf';
-		}
-		if(Config::get('app.locale')=='fr'){
-			$download = 'Dell-Converged-Infobrief_en_v7.pdf';
-		}
-	    $file= public_path(). '/assets/'.$download;
+	    $file= public_path(). '/assets/'.Lang::get('assets.ibdownload');
         $headers = array(
             'Content-Type: application/pdf',
         );
-        return Response::download($file,$download, $headers);
+        return Response::download($file,Lang::get('assets.ibdownload'), $headers);
 	});
 
 Route::get('email/{userid}', function($userid)
