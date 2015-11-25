@@ -251,15 +251,16 @@ Route::get('/', array('before'=>'reload', function()
 	{
 		return View::make('video');
 	});
-	$download = 'Dell-Converged-Infobrief_en_v7.pdf';
-	if(Config::get('app.locale')=='de'){
-		$download = 'Dell-Converged-Infobrief_de_v3.pdf';
-	}
-	if(Config::get('app.locale')=='fr'){
-		$download = 'Dell-Converged-Infobrief_en_v7.pdf';
-	}
+	
 	Route::get('infobrief/download', function()
 	{
+		$download = 'Dell-Converged-Infobrief_en_v7.pdf';
+		if(Config::get('app.locale')=='de'){
+			$download = 'Dell-Converged-Infobrief_de_v3.pdf';
+		}
+		if(Config::get('app.locale')=='fr'){
+			$download = 'Dell-Converged-Infobrief_en_v7.pdf';
+		}
 	    $file= public_path(). '/assets/'.$download;
         $headers = array(
             'Content-Type: application/pdf',
