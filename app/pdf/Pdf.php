@@ -175,7 +175,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetColor('text', 0,82,148);
 
 		$this->SetY($this->GetY()+2);
-		$this->Cell(($this->w - $this->original_lMargin), 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
+		$this->Cell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, strtoupper(Lang::get('general.'.strtolower($result['overall']['rating']))), 0, 1, 'L');
 		$this->resetText();
 		
 		switch($result['overall']['rating']){
@@ -193,19 +193,19 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 				break;
 		}
 		$this->SetY($this->GetY()+1);
-		$this->MultiCell(($this->w - $this->original_lMargin), 0, $txt, 0, 'L');
+		$this->MultiCell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, $txt, 0, 'L');
 		$this->resetText();
 		$this->SetY($this->GetY()+2);
 		if($result['overall']['rating']=='Current' || $result['overall']['rating']=='Future-Aware'){
-			$this->MultiCell(($this->w - $this->original_lMargin), 0, str_replace('#STATUS#', $result['overall']['rating'],  Lang::get('report.currentaware')), 0, 'L');
+			$this->MultiCell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, str_replace('#STATUS#', $result['overall']['rating'],  Lang::get('report.currentaware')), 0, 'L');
 		}else{
-			$this->MultiCell(($this->w - $this->original_lMargin), 0, str_replace('#STATUS#', $result['overall']['rating'],  Lang::get('report.focusedcreator')), 0, 'L');
+			$this->MultiCell(($this->w - $this->original_lMargin - $this->original_rMargin), 0, str_replace('#STATUS#', $result['overall']['rating'],  Lang::get('report.focusedcreator')), 0, 'L');
 		}
 		$this->SetY($this->GetY()+1);
 		foreach($result as $key=>$res){
 			if($key!='overall' && ($res['rating']=='Reactive' || $res['rating']=='Mainstream')){
 				
-				if($this->GetX()+$this->GetStringWidth($this->tempLabels[strtolower($key)])+2 > ($this->w - $this->original_lMargin)){
+				if($this->GetX()+$this->GetStringWidth($this->tempLabels[strtolower($key)])+2 > ($this->w - $this->original_lMargin - $this->original_rMargin)){
 					$this->SetXY($this->original_lMargin, $this->GetY()+1);
 					$this->ln();
 				}
@@ -329,7 +329,7 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 		$this->SetXY($rightX, 39);
 		$this->SetColor('text', 42,150,222);
 		$this->SetFont('impact', '', 34);
-		$this->Cell(10, 0, round($result['overall']['score'], 1), 0, 0, 'L');
+		$this->Cell(10, 0, round($result['overall']['score']), 0, 0, 'L');
 		
 		$this->SetXY($rightX+13,44);
 		$this->SetFont('helvetica_condensed', '', 10);

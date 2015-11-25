@@ -421,7 +421,7 @@ ul.categories>li .subprogress {
 	float: left;
     margin-left: 15px;
     margin-bottom: 5px;
-    width: 68%;
+    width: 66%;
 }
 
 ul.categories>li.base .subprogress{
@@ -434,7 +434,7 @@ ul.categories>li .subprogresstext {
 	float: left;
 	text-align: right;
 	padding-right: 8px;
-	width: 22%;
+	width: 24%;
     margin-left: 5px;
     margin-bottom: 5px;
 }

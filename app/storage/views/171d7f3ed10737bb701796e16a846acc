@@ -20,11 +20,11 @@
                 <ul class="categories">
                     <?php foreach($menu as $key=>$pages): ?>
                     <li class="<?php echo $pages['complete'] || $key==$section ? 'passed':''; ?> <?php echo $key==$section ? 'base':''; ?>">
-                        <a tabindex="-1" class="" href="<?php echo URL::to('quiz/'.$key.'/page1'); ?>"><?php echo $pages['title']; ?></a> <!-- class="base" for highlight-->
+                        <a tabindex="-1" class="" href="<?php echo URL::to(getLang().'quiz/'.$key.'/page1'); ?>"><?php echo $pages['title']; ?></a> <!-- class="base" for highlight-->
                         <div class="subprogress">
                             <?php foreach($pages['pages'] as $pkey => $qpage): ?>
                             
-                            <a href="<?php echo URL::to('quiz/'.$key.'/'.$pkey); ?>" title="<?php echo $qpage['title']; ?>"><i class="fa <?php echo $qpage['done'] ? ($pkey == 'page'.$page && $key==$section ? 'fa-check-circle-o':'fa-check') : ($pkey == 'page'.$page && $key==$section ? 'fa-circle':'fa-genderless'); ?>"></i></a>
+                            <a href="<?php echo URL::to(getLang().'quiz/'.$key.'/'.$pkey); ?>" title="<?php echo $qpage['title']; ?>"><i class="fa <?php echo $qpage['done'] ? ($pkey == 'page'.$page && $key==$section ? 'fa-check-circle-o':'fa-check') : ($pkey == 'page'.$page && $key==$section ? 'fa-circle':'fa-genderless'); ?>"></i></a>
                             <?php endforeach; ?>                            
                         </div>
                         <?php if($key==$section): ?>

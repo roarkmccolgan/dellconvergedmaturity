@@ -14,7 +14,7 @@ return array(
     'assoc'=>'SPONSORISÉ PAR',
     'title'=>'Votre infrastructure informatique est-elle évolutive ?',
     'next'=>'Suivant',
-
+    'loading'=>'S\'il vous plaît, attendez',
     'landing'=>"
 <p>Dans l'ère numérique de la 3ème plate-forme de l'informatique, le succès de nombreuses organisations sera pilotée par leur capacité à innover et à s'adapter au changement rapide et continue . Il ne peut plus être réactif avec un accent mis sur la réduction des coûts . Pour la réussite future , il doit agir comme un facteur clé pour l'avantage concurrentiel avec un état ​​d'esprit d'entreprise qui est activement à la recherche de nouvelles façons d' aider l'entreprise à attaquer de nouveaux marchés .</p>
 <p>Une grande partie de ce succès sera vers le bas pour améliorer la réactivité et l'agilité de la fonction informatique , et cela revient à être capable de faire des changements rapidement et avec confiance . IDC a montré que l'obtention des différentes parties de l'infrastructure informatique de travailler ensemble à travers l'intégration et l'automatisation est une partie essentielle de rendre cette réalité - et infrastructure convergente , où l'intégration des serveurs de bout en bout , le stockage , la mise en réseau et de gestion font partie des l'offre , peut aider à accélérer votre voyage à la transformation des TI .</p>

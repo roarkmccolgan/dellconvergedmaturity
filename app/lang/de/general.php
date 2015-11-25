@@ -14,6 +14,7 @@ return array(
     'assoc'=>'Gesponsert von',
     'title'=>'Ist Ihre IT-Infrastruktur zukunftsfähig?',
     'next'=>'Weiter',
+    'loading'=>'Warten Sie mal',
     'landing'=>'
 <p>Im digitalen Zeitalter der dritten Plattform der IT wird der Erfolg von vielen Unternehmen durch ihre Innovationsfähigkeit, sowie der Anpassung an schnelle und kontinuierliche Veränderungen angetrieben. Die IT kann nicht mehr nur reakiv mit einem Schwerpunkt auf Kosteneinsparungen wirken. Um erfolgreich für die Zukunft aufgestellt zu sein muss die IT als Hauptantriebskraft für Wettbewerbsvorteile agieren und dabei ein Business-Mindset haben sowie aktiv nach neuen Wegen suchen, um der Geschäftsführung zu helfen, neue Märkte zu erschließen.</p>
 <p>Ein großer Teil dieses Erfolges beruht auf der Verbesserung der Reaktionsfähigkeit und Agilität der IT-Funktion, und dies wirkt sich auf die Fähigkeit aus, Veränderungen schnell und selbstbewusst anzugehen. Studien von IDC haben gezeigt, dass ein kritischer Teil des Realisierungsprozesses darin besteht, dass verschiedene Bereiche der IT-Infrastruktur durch Integration und Automatisierung zusammenarbeiten können – dabei ist die konvergente Infrastruktur mit der End-to-End Integration von Server, Speicher, Netzwerk und deren Verwaltung als Teil der Gesamtlösung hilfreich um Ihren Weg zur IT-Transformation zu beschleunigen.</p>

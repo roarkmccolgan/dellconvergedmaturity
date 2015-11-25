@@ -27,6 +27,7 @@ $(function() {
 	
 	$('#form-email-report').submit(function() {
 		if (validate(this)) {
+			$('#submitbut').html('<i class="fa fa-refresh fa-spin"></i> '+$('#loadingtext').text()).attr('disabled',true);
 			return true;
 		}
 		else 
@@ -144,7 +145,7 @@ function validate(form){
 	});
 
 	if(flag) {
-		return true;
+		return true;		
 	}
 	else {     
 		return false;

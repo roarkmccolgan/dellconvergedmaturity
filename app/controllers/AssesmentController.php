@@ -427,6 +427,7 @@
                                 }
                             }else{
                                 $val = explode('|', $details['selected']);
+                                if(!isset($val[1])) dd($details['selected']);
                                 $val = $val[1];
                             }
                             if (isset($result[$key]['score'])){

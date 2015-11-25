@@ -674,12 +674,12 @@ return array(
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Wir verwenden hauptsächlich "gebrauchsfertige" Programme von unserem Hardwarelieferanten',
+                                'label'=>'Wir verwenden hauptsächlich &quot;gebrauchsfertige&quot; Programme von unserem Hardwarelieferanten',
                                 'value'=>2,
                                 'checked'=>false
                             ),
                             array(
-                                'label'=>'Wir verwenden eine Kombination aus spezialisierten Management-Programmen mit einigen "gebrauchsfertigen" Programmen',
+                                'label'=>'Wir verwenden eine Kombination aus spezialisierten Management-Programmen mit einigen &quot;gebrauchsfertigen&quot; Programmen',
                                 'value'=>3,
                                 'checked'=>false
                             ),

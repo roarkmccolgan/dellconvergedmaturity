@@ -46,7 +46,7 @@
             
             {{ Form::open(array('url' => getLang().'quiz/complete','id'=>'form-email-report','class'=>'clearfix form-horizontal')) }}
                 <input type="hidden" value="{{$source['form_source']}}" name="form_source">
-                <input type="hidden" value="{{$source['referer']}}" name="referer">
+                <input type="hidden" value="{{isset($source['referer'])?$source['referer']:''}}" name="referer">
 
                 <div class="form-group{{$errors->has('fname')?' error has-error':''}}">
                     <label for="fname" class="col-sm-2 control-label">{{Lang::get('general.fname')}} *</label>
@@ -359,8 +359,9 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn-u {{$btnclass}}">{{Lang::get('general.emailreport')}}</button>
+                        <button id="submitbut" type="submit" class="btn-u {{$btnclass}}">{{Lang::get('general.emailreport')}}</button>
                     </div>
+                    <i class="hidden" id="loadingtext">{{Lang::get('general.loading')}}</i>
                 </div>
             {{ Form::close() }}
         </div>

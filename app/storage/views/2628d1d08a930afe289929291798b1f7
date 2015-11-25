@@ -49,7 +49,7 @@
             <?php echo Form::open(array('url' => getLang().'quiz/complete','id'=>'form-email-report','class'=>'clearfix form-horizontal')); ?>
 
                 <input type="hidden" value="<?php echo $source['form_source']; ?>" name="form_source">
-                <input type="hidden" value="<?php echo $source['referer']; ?>" name="referer">
+                <input type="hidden" value="<?php echo isset($source['referer'])?$source['referer']:''; ?>" name="referer">
 
                 <div class="form-group<?php echo $errors->has('fname')?' error has-error':''; ?>">
                     <label for="fname" class="col-sm-2 control-label"><?php echo Lang::get('general.fname'); ?> *</label>
@@ -364,8 +364,9 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn-u <?php echo $btnclass; ?>"><?php echo Lang::get('general.emailreport'); ?></button>
+                        <button id="submitbut" type="submit" class="btn-u <?php echo $btnclass; ?>"><?php echo Lang::get('general.emailreport'); ?></button>
                     </div>
+                    <i class="hidden" id="loadingtext"><?php echo Lang::get('general.loading'); ?></i>
                 </div>
             <?php echo Form::close(); ?>
 

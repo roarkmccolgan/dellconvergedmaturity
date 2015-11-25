@@ -21,11 +21,11 @@
                 <ul class="categories">
                     @foreach ($menu as $key=>$pages)
                     <li class="{{$pages['complete'] || $key==$section ? 'passed':''}} {{$key==$section ? 'base':''}}">
-                        <a tabindex="-1" class="" href="{{URL::to('quiz/'.$key.'/page1') }}">{{$pages['title']}}</a> <!-- class="base" for highlight-->
+                        <a tabindex="-1" class="" href="{{URL::to(getLang().'quiz/'.$key.'/page1') }}">{{$pages['title']}}</a> <!-- class="base" for highlight-->
                         <div class="subprogress">
                             @foreach ($pages['pages'] as $pkey => $qpage)
                             
-                            <a href="{{URL::to('quiz/'.$key.'/'.$pkey) }}" title="{{$qpage['title']}}"><i class="fa {{ $qpage['done'] ? ($pkey == 'page'.$page && $key==$section ? 'fa-check-circle-o':'fa-check') : ($pkey == 'page'.$page && $key==$section ? 'fa-circle':'fa-genderless')}}"></i></a>
+                            <a href="{{URL::to(getLang().'quiz/'.$key.'/'.$pkey) }}" title="{{$qpage['title']}}"><i class="fa {{ $qpage['done'] ? ($pkey == 'page'.$page && $key==$section ? 'fa-check-circle-o':'fa-check') : ($pkey == 'page'.$page && $key==$section ? 'fa-circle':'fa-genderless')}}"></i></a>
                             @endforeach                            
                         </div>
                         @if($key==$section)

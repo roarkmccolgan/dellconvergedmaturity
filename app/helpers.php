@@ -3,6 +3,7 @@
 function getLang(){
 	$local = App::getLocale();
 	$host = Config::get('app.host');
+	//return($local);
 	switch($local){
 		case 'en':
 			if($host=='convergedmaturity.com' || $host=='convergedmaturity.co.uk' || $host=='certus.convergedmaturity.co.uk' || $host=='dellconverged.app' || $host=='itf.convergedmaturity.com' || $host=='infoniqa.convergedmaturity.com'){
