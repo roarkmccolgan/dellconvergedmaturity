@@ -18,4 +18,5 @@ return array(
     'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_v6-HD.mp4',
     'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_v6-SD.mp4',
     'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/devideopreview.jpg',
+    'ibdownload'=>'Dell-Converged-Infobrief_de.pdf',
 );
