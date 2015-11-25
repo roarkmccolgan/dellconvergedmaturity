@@ -2,9 +2,9 @@
 
 return array(
     'introduction'=>'Einführung von',
-    'analystname'=>'Andrew buss',
-    'analysttitle'=>'Consulting Manager',
-    'analystarea'=>'Europe - Data Center Infrastructure and Client Devices',
+    'analystname'=>'Chrystelle Labasque',
+    'analysttitle'=>'Associate Research Director',
+    'analystarea'=>'Europäische',
     'more'=>'Mehr über kovergente Infrastruktur',
     'video'=>'Video-Podcast',
     'videointro'=>'Mehr und mehr Business-Nutzer erwarten, dass ihre IT-Abteilung das Geschäftswachstum und Innovation vorantreibt',

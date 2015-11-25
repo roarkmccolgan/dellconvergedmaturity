@@ -2,9 +2,9 @@
 
 return array(
     'introduction'=>'introduction par',
-    'analystname'=>'Andrew buss',
-    'analysttitle'=>'Gestionnaire de conseil',
-    'analystarea'=>'Europe - Data Center Infrastructure et Client Devices',
+    'analystname'=>'Chrystelle Labasque',
+    'analysttitle'=>'Responsable de la Recherche',
+    'analystarea'=>'L\'Europe',
     'more'=>'Apprendre plus des infrastructures convergents',
     'video'=>'Le Podcast de vidéo',
     'videointro'=>'Plus en plus d\'utilisateurs commerciaux demandent à leurs équipes informatiques de stimuler la croissance commerciale et l\'innovation.',
