@@ -319,9 +319,11 @@
 				$user->email = $validate_data['email'];
 				$user->company = $validate_data['company'];
 				$user->country = $validate_data['country'];
-				$user->tel = $validate_data['phone'];
+                $user->tel = $validate_data['phone'];
+				$user->referer = $validate_data['referer'];
 				$user->quiz = json_encode($this->quiz);
 				$user->result = json_encode($this->howfit);
+
 				
 				$user->save();
 				$this->userid = $user->id;

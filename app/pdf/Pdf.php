@@ -239,11 +239,12 @@ class Pdf extends \Maxxscho\LaravelTcpdf\LaravelTcpdf {
 				$my = 58;
 				break;
 			case "Future-Focused":
-				$mx = $rightX+49;
-				$my = 49;
+				$mx = $rightX+51;
+				$my = 48;
+				break;
 			case "Future-Creator":
-				$mx = $rightX+72;
-				$my = 40;
+				$mx = $rightX+74;
+				$my = 38;
 				break;
 		}
 		$this->ImageEps(K_PATH_IMAGES.'marker.ai', $mx, $my, 8);
