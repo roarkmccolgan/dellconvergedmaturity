@@ -59,7 +59,7 @@ return array(
     'country'=>'Pays',
     'phone'=>'Numéro de téléphone',
     'terms'=>'Conditions générales',
-    'byreg'=>'En vous inscrivant auprès d\'IDC, vous acceptez notre politique de <a href="/privacy" target="_blank">protection de la confidentialité</a> et celle de DELL. Les informations que nous recueillons seront partagées avec <a href="http://www.dell.com/learn/uk/en/ukcorp1/policies-privacy" target="_blank">HP</a> à des fins de marketing direct',
+    'byreg'=>'En vous inscrivant auprès d\'IDC, vous acceptez notre politique de <a href="/privacy" target="_blank">protection de la confidentialité</a> et celle de DELL. Les informations que nous recueillons seront partagées avec <a href="http://www.dell.com/learn/uk/en/ukcorp1/policies-privacy" target="_blank">DELL</a> à des fins de marketing direct',
     'accept'=>'J\'accepte les conditions',
     'required'=>'Obligatoire',
     'emailreport'=>'M\'envoyer le<br/> rapport par e-mail',
