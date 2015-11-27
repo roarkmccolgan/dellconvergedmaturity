@@ -15,8 +15,8 @@ return array(
     'take'=>'Commencer l\'évaluation',
     'infobrief'=>'L\'Infobrief d\'IDC',
     'infobriefintro'=>'Il faut que la convergence se concentre aux résultats des clients et réduit la complexité',
-    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_v6-HD.mp4',
-    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_v6-SD.mp4',
+    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_v7-SD.mp4',
+    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_v7-SD.mp4',
     'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/frvideopreview.jpg',
     'ibdownload'=>'Dell-Converged-Infobrief_fr.pdf',
 );
