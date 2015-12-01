@@ -12,13 +12,13 @@ return array(
     'back'=>'arrière',
     'change'=>'modifier les réponses',
     'assoc'=>'SPONSORISÉ PAR',
-    'title'=>'Votre infrastructure informatique est-elle évolutive ?',
+    'title'=>'Votre infrastructure informatique est-elle évolutive ?',
     'next'=>'Suivant',
     'loading'=>'S\'il vous plaît, attendez',
     'landing'=>"
-<p>Dans l'ère numérique de la 3ème plate-forme de l'informatique, le succès de nombreuses organisations sera pilotée par leur capacité à innover et à s'adapter au changement rapide et continue . Il ne peut plus être réactif avec un accent mis sur la réduction des coûts . Pour la réussite future , il doit agir comme un facteur clé pour l'avantage concurrentiel avec un état ​​d'esprit d'entreprise qui est activement à la recherche de nouvelles façons d' aider l'entreprise à attaquer de nouveaux marchés .</p>
-<p>Une grande partie de ce succès sera vers le bas pour améliorer la réactivité et l'agilité de la fonction informatique , et cela revient à être capable de faire des changements rapidement et avec confiance . IDC a montré que l'obtention des différentes parties de l'infrastructure informatique de travailler ensemble à travers l'intégration et l'automatisation est une partie essentielle de rendre cette réalité - et infrastructure convergente , où l'intégration des serveurs de bout en bout , le stockage , la mise en réseau et de gestion font partie des l'offre , peut aider à accélérer votre voyage à la transformation des TI .</p>
-<p>Pour en savoir plus sur l'endroit où vous êtes sur le voyage et la façon dont votre organisation informatique compare à d'autres , l' IDC Converged Infrastructure Outil d'évaluation fournit un cadre axé sur les faits de source indépendante pour aider à faire des affaires et de TI décisions autour de la stratégie informatique et les avantages associés à adoptant infrastructure convergente .</p>
+<p>Dans l'ère numérique de la 3ème plate-forme informatique, le succès de nombreuses organisations sera lié à capacité à innover et à s'adapter au changement rapide et continu des demandes internes et externes. L’organisation ne peut plus être seulement réactive avec un accent mis sur la réduction des coûts. Pour la réussite future, elle doit agir comme un facteur clé de l'avantage concurrentiel avec un état d'esprit d'entreprise et d’innovation.</p>
+<p>Une grande partie de ce succès sera sur la structure IT pour améliorer sa réactivité et son agilité, et cela revient à être capable de s’adapter rapidement et en toute confiance . IDC a montré que l’orchestration des différentes composante de l'infrastructure informatique à travers l'intégration et l'automatisation est une partie essentielle de d’une infrastructure convergente, où l'intégration de bout en bout des serveurs, du stockage, la mise en réseau et de gestion peut aider à accélérer cette transformation.</p>
+<p>Pour en savoir plus sur votre avancement sur l’agilité ou la convergence et la façon dont votre organisation informatique compare à d'autres organisations, IDC met vous propose un assesment gratuit en ligne. Cet outil basé sur une étude indépendante en France vous permettra d’en savoir plus sur votre infrastructure IT, quels seront les bénéfices de la convergence et quelle est la stratégie à mettre en place.</p>
     ",
     'startbut'=>'Répondre au questionnaire',
     'of'=>'sur',

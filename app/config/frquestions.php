@@ -47,7 +47,7 @@ return array(
                         'options'=>array(
                             array(
                                 'class'=>'',
-                                'label'=>'250-499 employés',
+                                'label'=>'moins de 499 employés',
                                 'value'=>false,
                                 'checked'=>false
                             ),
