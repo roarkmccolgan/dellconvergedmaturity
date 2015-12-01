@@ -401,7 +401,7 @@
         public function getDownload($userid){
             //PDF file is stored under project/public/download/info.pdf
 			$user = User::find($userid);
-            $file= public_path(). '/download/'.$user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Converged_Infrastructure_Report.pdf';
+            $file= storage_path().'/reports/'.$user->id.'_'.str_replace(" ", "_", $user->fname).'_'.str_replace(" ", "_", $user->lname).'_Converged_Infrastructure_Report.pdf';
             $headers = array(
                 'Content-Type: application/pdf',
             );
@@ -476,7 +476,7 @@
             $this->report->SetY($this->report->GetY()+2);
             //$this->report->cell(120,0, 'report took '.$execution_time.'seconds to generate');
 			$this->report->SetDisplayMode('fullpage'); 		
-            $this->report->Output(public_path().'/download/'.$this->userid.'_'.str_replace(" ", "_", Session::get('user.fname')).'_'.str_replace(" ", "_", Session::get('user.sname')).'_Converged_Infrastructure_Report.pdf','F');
+            $this->report->Output(storage_path().'/reports/'.$this->userid.'_'.str_replace(" ", "_", Session::get('user.fname')).'_'.str_replace(" ", "_", Session::get('user.sname')).'_Converged_Infrastructure_Report.pdf','F');
         }
  
     }
