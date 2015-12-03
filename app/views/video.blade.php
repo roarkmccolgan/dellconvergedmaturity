@@ -85,7 +85,7 @@
                         <div class="media">
                             <div class="media-left">
                             <a href="{{Request::root().'/'.getLang()}}infobrief/download">
-                                <img src="{{asset('images/ibpreview.jpg')}}" class="media-object" style="width: 220px; height: 124px;">
+                                <img src="{{Lang::get('assets.infobriefimage')}}" class="media-object" style="width: 220px; height: 124px;">
                             </a>
                             </div>
                             <div class="media-body">

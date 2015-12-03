@@ -15,8 +15,9 @@ return array(
     'take'=>'Bewertung jetzt starten',
     'infobrief'=>'IDC Infobrief',
     'infobriefintro'=>'Bei der Konvergenz sollte immer das Ergebnis für den Kunden im Mittelpunkt stehen und somit die Komplexität reduziert werden.',
-    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_v7-SD.mp4',
-    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_v7-SD.mp4',
+    'infobriefimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/deibpreview.jpg',
+    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_480p.mp4',
+    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_480p.mp4',
     'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/devideopreview.jpg',
     'ibdownload'=>'Dell-Converged-Infobrief_de.pdf',
 );

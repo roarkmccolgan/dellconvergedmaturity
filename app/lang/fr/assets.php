@@ -15,8 +15,9 @@ return array(
     'take'=>'Commencer l\'évaluation',
     'infobrief'=>'Infobrief IDC',
     'infobriefintro'=>'Votre infrastructure est-elle évolutive ?',
-    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_v7-SD.mp4',
-    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_v7-SD.mp4',
-    'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/frvideopreview.jpg',
+    'infobriefimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/fribpreview.jpg',
+    'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_480p.mp4',
+    'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_french_480p.mp4',
+    'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/frvideopreview2.jpg',
     'ibdownload'=>'Dell-Converged-Infobrief_fr.pdf',
 );
