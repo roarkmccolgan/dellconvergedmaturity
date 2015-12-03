@@ -18,6 +18,6 @@ return array(
     'infobriefimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/deibpreview.jpg',
     'hdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_480p.mp4',
     'sdvideo'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/Dell_German_480p.mp4',
-    'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/devideopreview.jpg',
+    'videoimage'=>'https://s3-eu-west-1.amazonaws.com/assesments/dellconvergedinfrastructure/devideopreview2.jpg',
     'ibdownload'=>'Dell-Converged-Infobrief_de.pdf',
 );
