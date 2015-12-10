@@ -35,7 +35,7 @@ return array(
                             ),
                             array(
                                 'class'=>'',
-                                'label'=>'Reste de l\'Europe',
+                                'label'=>'Europe - autre',
                                 'value'=>false,
                                 'checked'=>false
                             )
