@@ -32,6 +32,12 @@ return array(
                                 'label'=>'Royaume-Uni',
                                 'value'=>false,
                                 'checked'=>false
+                            ),
+                            array(
+                                'class'=>'',
+                                'label'=>'Reste de l\'Europe',
+                                'value'=>false,
+                                'checked'=>false
                             )
                         )
                     )
