@@ -20,7 +20,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2><?php echo Lang::get('general.title'); ?></h2>
+                        <h1><?php echo Lang::get('general.title'); ?></h1>
+                        <a href="<?php echo Lang::get('general.ctalink'); ?>" target="_blank" class="pull-right" style="border: 1px solid #ccc; margin-left: 30px; margin-bottom: 40px;"><img src="<?php echo asset('images/cta'.App::getLocale().'.png'); ?>" alt=""></a>
                         <h4 class="margin-right-20"><?php echo Lang::get('general.landing'); ?>
 
                             <br><br>
@@ -55,7 +56,7 @@
                         <div class="media">
                             <div class="media-left">
                             <a href="<?php echo Request::root().'/'.getLang(); ?>infobrief/download">
-                                <img src="<?php echo asset('images/ibpreview.jpg'); ?>" class="media-object" style="width: 220px; height: 124px;">
+                                <img src="<?php echo Lang::get('assets.infobriefimage'); ?>" class="media-object" style="width: 220px; height: 124px;">
                             </a>
                             </div>
                             <div class="media-body">

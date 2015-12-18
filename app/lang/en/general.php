@@ -88,5 +88,7 @@ return array(
                 <p>
                     IDC will be accumulating statistics as you and other individuals operate the service to further inform our research process. If you have any questions about this, we recommend you review IDC's Terms of Use before continuing.
                 </p>
-    "
+    ",
+    'ctatxt'=>"Intel Inside&reg;. Powerful Data Center Outside.",
+    'ctalink'=>'http://www.dell.com/learn/uk/en/ukbsdt1/large-business/intel-xeon?c=uk&l=en&s=bsd&cs=ukbsdt1'
 );

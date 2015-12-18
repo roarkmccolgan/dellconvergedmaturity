@@ -22,7 +22,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>{{Lang::get('general.title')}}</h2>
+                        <h1>{{Lang::get('general.title')}}</h1>
+                        <a href="{{Lang::get('general.ctalink')}}" target="_blank" class="pull-right" style="border: 1px solid #ccc; margin-left: 30px; margin-bottom: 40px;"><img src="{{asset('images/cta'.App::getLocale().'.png')}}" alt=""></a>
                         <h4 class="margin-right-20">{{Lang::get('general.landing')}}
                             <br><br>
                             <div class="text-center">

@@ -88,5 +88,7 @@ return array(
                 <p>
                     IDC wird statistische Daten über die Nutzung des Service durch Sie und andere Nutzer sammeln, um weitere Forschung betreiben zu können. Falls Sie Fragen dazu haben, empfehlen wir Ihnen, die Nutzungsbedingungen von IDC zu lesen, bevor Sie fortfahren.
                 </p>
-    "
+    ",
+    'ctatxt'=>"Intel Inside&reg;. Leistungsstarke Rechenzentren Outside.",
+    'ctalink'=>'http://www.dell.com/learn/de/de/debsdt1/large-business/intel-xeon?c=de&l=de&s=bsd&cs=debsdt1'
 );

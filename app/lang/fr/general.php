@@ -88,5 +88,7 @@ return array(
                 <p>
                     IDC compilera des statistiques à mesure que vous et d'autres personnes exploitez le service, afin éclairer davantage ses processus de recherche. Si vous avez des questions à ce sujet, nous vous recommandons d'examiner les Conditions d'utilisation d'IDC avant de continuer.
                 </p>
-    "
+    ",
+    'ctatxt'=>"Intel Inside&reg;. pour un data center très performant.",
+    'ctalink'=>'http://www.dell.com/learn/fr/fr/frbsdt1/large-business/intel-xeon?c=fr&l=fr&s=bsd&cs=frbsdt1'
 );
