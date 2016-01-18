@@ -110,6 +110,11 @@
 							</div>
 						</div>               
 					</div>
+					<div class="row" >
+						<div class="col-md-12" >
+							<small>{{Lang::get('general.copyright')}}</small>
+						</div>               
+					</div>
 					@include('_modal.disclaimer')
 				</div>
 			</div>
