@@ -91,5 +91,5 @@ return array(
     ",
     'ctatxt'=>"Intel Inside&reg;. Leistungsstarke Rechenzentren Outside.",
     'ctalink'=>'http://www.dell.com/learn/de/de/debsdt1/large-business/intel-xeon?c=de&l=de&s=bsd&cs=debsdt1',
-    'copyright'=>'Ultrabook, Celeron, Celeron Inside, Core Inside, Intel, Intel Logo, Intel Atom, Intel Atom Inside, Intel Core, Intel Inside, Intel Inside Logo, Intel vPro, Itanium, Itanium Inside, Pentium, Pentium Inside, vPro Inside, Xeon, Xeon Phi, and Xeon Inside are trademarks of Intel Corporation in the U.S. and/or other countries.'
+    'intelcopyright'=>'Ultrabook, Celeron, Celeron Inside, Core Inside, Intel, Intel Logo, Intel Atom, Intel Atom Inside, Intel Core, Intel Inside, Intel Inside Logo, Intel vPro, Itanium, Itanium Inside, Pentium, Pentium Inside, vPro Inside, Xeon, Xeon Phi, and Xeon Inside are trademarks of Intel Corporation in the U.S. and/or other countries.'
 );

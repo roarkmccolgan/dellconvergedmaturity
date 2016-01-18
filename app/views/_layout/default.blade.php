@@ -112,7 +112,7 @@
 					</div>
 					<div class="row" >
 						<div class="col-md-12" >
-							<small>{{Lang::get('general.copyright')}}</small>
+							<small class="text-center">{{Lang::get('general.intelcopyright')}}</small>
 						</div>               
 					</div>
 					@include('_modal.disclaimer')
