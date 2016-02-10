@@ -99,6 +99,27 @@ class Response {
 	 */
 	public static function download($file, $name = null, array $headers = array(), $disposition = 'attachment')
 	{
+		$response = new BinaryFileResponse($file, 200, $headers, true);
+
+		if (is_null($name))
+		{
+			$name = basename($file);
+		}
+		
+		return $response->setContentDisposition($disposition, $name, Str::ascii($name));
+	}
+
+	/**
+	 * Create a new file download response.
+	 *
+	 * @param  \SplFileInfo|string  $file
+	 * @param  string  $name
+	 * @param  array   $headers
+	 * @param  null|string  $disposition
+	 * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+	 
+	public static function download($file, $name = null, array $headers = array(), $disposition = 'attachment')
+	{
 		$response = new BinaryFileResponse($file, 200, $headers, true, $disposition);
 
 		if ( ! is_null($name))
@@ -107,6 +128,6 @@ class Response {
 		}
 
 		return $response;
-	}
+	}*/
 
 }
